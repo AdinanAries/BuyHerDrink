@@ -88,3 +88,13 @@ body{
 .ProfileDetailsInfoDiv p{
     font-size: 15px;
 }
+.MainMenu{
+    position: fixed;
+    z-index: 101;
+    left: 2px;
+    top: 60px;
+    height:calc(100% - 80px);
+    width: 150px;
+    background-color: beige;
+    display: none;
+}
