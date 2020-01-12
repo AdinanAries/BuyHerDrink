@@ -36,21 +36,82 @@ body{
     margin-top: 10px;
     width: 30px; 
     float: left;
+    position: relative;
 }
-#firstMenuIconBar{
+/*#firstMenuIconBar{
     border-top: 3px solid black; 
     display: block; 
     margin-bottom: 5px;
+    position: absolute;
+    z-index: 102;
+    
+}
+#firstMenuIconBar::before{
+    content: '';
 }
 #secondMenuIconBar{
     border-top: 3px solid black; 
     display: block; 
     margin-bottom: 5px;
+    position: absolute;
+}
+#secondMenuIconBar::before{
+    content: '';
+    width: 100%;
 }
 #thirdMenuIconBar{
     border-top: 3px solid black; 
     display: block;
+    position: absolute;
 }
+#thirdMenuIconBar::before{
+    content: '';
+}
+*/
+
+#nav-toggle { 
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+}
+
+#nav-toggle {
+    cursor: pointer;
+    padding: 10px 35px 16px 0px; 
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: black;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px; 
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
 .LogoDiv{
     width: 40px; 
     height: 40px; 
@@ -68,33 +129,80 @@ body{
     border-bottom: 1px solid #cacaca;
     height: 250px;
     width: 100%;
+    position: relative;
 }
 .ProfilePictureContainer{
     border-radius: 100%;
-    border: 1px solid black;
+    border: 1px solid pink;
     width: 100px;
     height: 100px;
     float: left;
     margin-left: 5px;
     margin-top: 5px;
     background-color: darkgrey;
-    
+    background-size: cover;
+    background-position: center;
+    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
 }
+
 .ProfileDetailsInfoDiv{
     width: calc(100% - 145px);
     float: right;
     margin-top: 20px;
 }
 .ProfileDetailsInfoDiv p{
-    font-size: 15px;
+    font-size: 14px;
 }
 .MainMenu{
+    padding: 10px;
     position: fixed;
     z-index: 101;
-    left: 2px;
     top: 60px;
     height:calc(100% - 80px);
-    width: 150px;
+    width: 300px;
     background-color: beige;
     display: none;
+}
+
+.MainMenu table tbody tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.MainMenu table tbody tr td img{
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.MainMenu .SettingName{
+    border-bottom: 1px solid black;
+}
+
+.EditProfileBottons {
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+}
+.EditProfileBottons table{
+    width: 100%;
+    border-spacing: 5px 0;
+}
+.EditProfileBottons #EditProfileBtn{
+    text-align: center;
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: pink;
+}
+.EditProfileBottons #viewDrinkOffersBtn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 15px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: aquamarine;
 }
