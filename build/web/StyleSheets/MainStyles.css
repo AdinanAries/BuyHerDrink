@@ -127,7 +127,7 @@ body{
 }
 .ProfileDetailsDiv{
     border-bottom: 1px solid #cacaca;
-    height: 250px;
+    height: calc(100vh - 450px);
     width: 100%;
     position: relative;
 }
@@ -151,19 +151,42 @@ body{
     margin-top: 20px;
 }
 .ProfileDetailsInfoDiv p{
-    font-size: 14px;
+    font-size: 15px;
 }
 .MainMenu{
     padding: 10px;
     position: fixed;
     z-index: 101;
     top: 60px;
-    height:calc(100% - 80px);
+    height:calc(100% - 79px);
     width: 300px;
-    background-color: beige;
+    /*background-color: beige;*/
+    background-color: black;
+    color: white;
     display: none;
+    opacity: 0.9;
 }
-
+.SearchDiv{
+    padding: 5px;
+    background-color: cornflowerblue;
+}
+.MainSearchFld{
+    border: 0;
+    width: calc(100% - 40px);
+    float: left;
+    height: 31px;
+}
+.MainSearchBtn{
+    padding-top: 3px;
+    text-align: center;
+    background-color: aqua;
+    width: 40px;
+    float: right;
+}
+.MainSearchBtn img{
+    width: 23px;
+    height: 23px;
+}
 .MainMenu table tbody tr td{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -176,7 +199,7 @@ body{
 }
 
 .MainMenu .SettingName{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 
 .EditProfileBottons {
@@ -205,4 +228,25 @@ body{
     width: 50%;
     border-radius: 5px;
     background-color: aquamarine;
+}
+
+.PublishDrinkFieldSet input[type="text"], input[type="password"], select{
+    border: 0;
+    background-color: white;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    color: darkgrey;
+    
+}
+.PublishDrinkFieldSet fieldset{
+    padding: 5px;
+}
+
+.UserProfilePageSubmitDrinkRequestBtn{
+    text-align: center;
+    font-size: 15px;
+    width: 95%;
+    border-radius: 5px;
+    background-color: pink;
+    padding: 5px;
 }

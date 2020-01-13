@@ -49,15 +49,15 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        
+                                        <img src="icons/icons8-champagne-48_1.png" alt=""/>
                                     </td>
                                     <td class="SettingName">
-                                        Drink Requests
+                                        Drink Offers
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        
+                                        <img src="icons/icons8-cocktail-48.png" alt=""/>
                                     </td>
                                     <td class="SettingName">
                                         Published Requests
@@ -82,6 +82,13 @@ and open the template in the editor.
                             </tbody>
                         </table>
                     </div>
+                    <div class="SearchDiv">
+                        <input type="text" class="MainSearchFld" />
+                        <div class="MainSearchBtn" >
+                            <img src="icons/ExploreIcon.png" alt=""/>
+                        </div>
+                        <p style="clear: both;"></p>
+                    </div>
                     <div class='UserProfileIframeDiv'>
                         <div class='ProfileDetailsDiv'>
                             <div class='ProfilePictureContainer'></div>
@@ -105,14 +112,42 @@ and open the template in the editor.
                                 </table>
                             </div>
                         </div>
+                        <div class='PublishRequestDiv'>
+                            <p style="text-align: center; font-weight: bolder; margin-top: 4px; font-size: 16px;">Publish Drink Request</p>
+                            <div class="PublishDrinkFieldSet">
+                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                  <legend style="font-size: 15px; font-weight: bolder;">Add Bar/Restaurant</legend>
+                                  Address: <input type="text" name="BarAddress" /><br />
+                                  Bar/Restaurant: <input type="text" name="Bar" /><br />
+                                  Meeting Time: <select>
+                                      <option>5:00am</option>
+                                  </select>
+                                </fieldset>
+
+                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                  <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
+                                  <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="radio" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
+                                  <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="radio" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
+                                  <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="radio" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Drink And Dinner</label>
+                                </fieldset>
+
+                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                  <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
+                                  <center><textarea style="width: 95%; height: 70px;">
+
+                                  </textarea></center>
+                                </fieldset>
+                            </div>
+                            <center><div class="UserProfilePageSubmitDrinkRequestBtn">Publish Request</div></center>
+                        </div>
                     </div>
-                    <div class='PublishRequestDiv'>
-                        <p style="text-align: center; font-weight: bolder;">Publish Drink Request</p>
-                        
+                    <div class="DrinkRequestsIframe">
+                    </div>
+                    <div class="DrinkOffersIframe">
                     </div>
                 </div>
                 <div></div>
-                <div class='Footer'><p style='margin-right: 10px; font-size: 15px;'>ByHerDrink 2020</p></div>
+                <div class='Footer'><p style='margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
             </div>
         </div>
         <script src="Scripts/MainScript.js" type="text/javascript"></script>
