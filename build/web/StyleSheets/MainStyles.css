@@ -1,8 +1,12 @@
 *{
+    -webkit-appearance: none;
     padding: 0;
     margin: 0;
     font-family: "Roboto";
     font-size: 19px;
+}
+input, select{
+    border-radius: 0;
 }
 
 body{
@@ -34,7 +38,6 @@ body{
 }
 .MenuIcon{
     margin-top: 10px;
-    width: 30px; 
     float: left;
     position: relative;
 }
@@ -97,7 +100,7 @@ body{
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-  transition: all 500ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 #nav-toggle.active span {
   background-color: transparent;
