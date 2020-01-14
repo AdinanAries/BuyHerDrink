@@ -134,18 +134,23 @@ body{
     width: 100%;
     position: relative;
 }
-.ProfilePictureContainer{
+.ProfileCover{
+    padding-top: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+}
+.ProfilePicture{
     border-radius: 100%;
     border: 1px solid pink;
     width: 100px;
     height: 100px;
     float: left;
     margin-left: 5px;
-    margin-top: 5px;
     background-color: darkgrey;
     background-size: cover;
     background-position: center;
-    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
 }
 
 .ProfileDetailsInfoDiv{
@@ -252,4 +257,108 @@ body{
     border-radius: 5px;
     background-color: pink;
     padding: 5px;
+}
+
+.DrinkRequestDiv{
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+
+.RequesteeCoverPhoto{
+    padding-top: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+}
+.RequesteePicture{
+    border-radius: 100%;
+    border: 3px solid white;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    background-color: darkgrey;
+    object-fit: cover;
+}
+
+.RequesteeInfoDiv{
+    float: right;
+    width: 60%;
+    padding: 4px;
+}
+.RegularIcons{
+    width: 15px;
+    height: 15px;
+}
+.RequesteeInfoDiv p{
+    font-size: 14px;
+}
+.RequesteeOnlineStatusLed{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+    float: right;
+    margin-right: 10px;
+    margin-top: 30px;
+    border: 2px solid white;
+}
+.RequesteeOnlineStatusText{
+    margin-right: 14px;
+    margin-top: 30px;
+    float: right;
+    width: 30px;
+    color: white;
+    font-size: 14px;
+}
+.RequesteeAdditionalMessage{
+    font-size: 14px;
+    height: 60px;
+    border-top: 1px #cacaca solid;
+    margin-top: 3px;
+    padding: 3px;
+    text-align: justify;
+}
+
+.ViewRequesteeFullProfileAndMakeOfferBtns{
+    width: 100%;
+}
+
+.ViewRequesteeFullProfileAndMakeOfferBtns tbody tr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50%;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+.DrinkRequesteesListDiv{
+    left: 0;
+    bottom: 15px;
+    height: 200px;
+    overflow-x: auto;
+}
+.DrinkRequesteesListDiv table{
+    min-width: 200px;
+    overflow-x: auto;
+}
+.DrinkRequesteesListDiv table tbody tr td div{
+    float: right;
+    margin-top: 94px;
+    width: 160px;
+    padding: 3px;
+    background-color: black;
+    opacity: 0.8;
+    margin-right: -3px;
+}
+.DrinkRequesteesListDiv table tbody tr td div p{
+    color: white;
+    font-size: 14px;
+}
+.DrinkRequesteesListDiv table tbody tr td{
+    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+    background-size: cover;
+    min-width: 250px;
+    height: 150px;
+    padding: 3px;
 }
