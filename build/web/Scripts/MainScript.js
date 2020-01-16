@@ -1,5 +1,9 @@
 document.querySelector(".MainMenu").style.display = "none";
 
+var SetWindowTitle = function(title){
+    document.querySelector(".PageTitle").innerText = title;
+};
+
 function ToggleMenuDisplay() {
     document.querySelector( "#nav-toggle" ).classList.toggle( "active" );
     var MenuDisplay = document.querySelector(".MainMenu").style.display;
@@ -47,13 +51,42 @@ var showUserProfile = function(){
    var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
    var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
    
+   ToggleMenuDisplay();
+   SetWindowTitle("Your Profile");
+   
    UserProfileIframe.style.display = "block";
+   DrinkRequestsIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "none";
    
-   if(DrinkRequestsIframe.style.display === "block")
-       DrinkRequestsIframe.style.display = "none";
+};
+
+var showDrinkOffers = function(){
+    
+   var UserProfileIframe = document.getElementById("UserProfileIframe");
+   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
    
-   if(DrinkOffersIframe.style.display === "block")
-       DrinkOffersIframe.style.display = "none";
+   ToggleMenuDisplay();
+   SetWindowTitle("Drink Offers");
+   
+   UserProfileIframe.style.display = "none";
+   DrinkRequestsIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "block";
+   
+};
+
+var showDrinkRequests = function(){
+    
+   var UserProfileIframe = document.getElementById("UserProfileIframe");
+   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   
+   ToggleMenuDisplay();
+   SetWindowTitle("Drink Requests");
+   
+   DrinkRequestsIframe.style.display = "block";
+   UserProfileIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "none";
    
 };
 
@@ -61,4 +94,12 @@ $("#UserProfileMenuOption").click(function(event){
     
     showUserProfile();
     
+});
+
+$("#DrinkRequestMenuOption").click(function(event){
+    showDrinkRequests();
+});
+
+$("#DrinkOffersMenuOption").click(function(event){
+    showDrinkOffers();
 });
