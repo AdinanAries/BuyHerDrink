@@ -37,4 +37,28 @@ function ToggleMenuDisplay() {
 $(".MenuIcon").click(function(event){
     
     ToggleMenuDisplay();
+    
+});
+
+
+var showUserProfile = function(){
+    
+   var UserProfileIframe = document.getElementById("UserProfileIframe");
+   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   
+   UserProfileIframe.style.display = "block";
+   
+   if(DrinkRequestsIframe.style.display === "block")
+       DrinkRequestsIframe.style.display = "none";
+   
+   if(DrinkOffersIframe.style.display === "block")
+       DrinkOffersIframe.style.display = "none";
+   
+};
+
+$("#UserProfileMenuOption").click(function(event){
+    
+    showUserProfile();
+    
 });
