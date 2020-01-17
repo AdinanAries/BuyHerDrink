@@ -227,25 +227,25 @@ body{
     border-bottom: 1px solid white;
 }
 
-.EditProfileBottons {
+.ActivitiesAndDrinkOffersBtn {
     cursor: pointer;
     position: absolute;
     bottom: 5px;
     left: 0;
     width: 100%;
 }
-.EditProfileBottons table{
+.ActivitiesAndDrinkOffersBtn table{
     width: 100%;
     border-spacing: 5px 0;
 }
-.EditProfileBottons #EditProfileBtn{
+.ActivitiesAndDrinkOffersBtn #YourActivitiesBtn{
     text-align: center;
     font-size: 15px;
     width: 50%;
     border-radius: 5px;
     background-color: pink;
 }
-.EditProfileBottons #viewDrinkOffersBtn{
+.ActivitiesAndDrinkOffersBtn #viewDrinkOffersBtn{
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
@@ -286,7 +286,7 @@ body{
     height: 50px;
     background-size: cover;
     background-position: center;
-    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+    background-image: url("../Pictures/TestPhotos/1.jpg");
 }
 .RequesteePicture{
     border-radius: 100%;
@@ -385,19 +385,38 @@ body{
     font-size: 14px;
 }
 .DrinkRequesteesListDiv table tbody tr td{
-    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
     background-size: cover;
     min-width: 250px;
     height: 150px;
     padding: 3px;
     box-shadow: 4px 3px 3px #cacaca;
 }
+
+.DrinkRequesteesListDiv table tbody tr td img{
+    object-fit: cover;
+}
+
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto{
+    background-image: url("../Pictures/TestPhotos/1.jpg");
+}
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto2{
+    background-image: url("../Pictures/TestPhotos/2.jpg");
+}
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto3{
+    background-image: url("../Pictures/TestPhotos/3.jpg");
+}
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto4{
+    background-image: url("../Pictures/TestPhotos/4.jpg");
+}
+
+
+
 .RequestessProfileFromList{
     border-radius: 100%;
     width: 100px;
     height: 100px;
     float: left;
-    border: 2px solid white;
+    border: 3px solid white;
 }
 #DrinkRequestsIframe{
     display: none;
