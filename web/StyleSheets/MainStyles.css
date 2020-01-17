@@ -152,6 +152,23 @@ body{
     background-size: cover;
     background-position: center;
 }
+.UserProfileSettingsIcons{
+    text-align: right;
+    padding: 5px;
+    padding-bottom: 0;
+    width: calc(100% - 140px);
+    float: right;
+    background-color: black;
+    opacity: 0.7;
+    margin-top: 14px;
+}
+.UserProfileSettingsIcons img{
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 .ProfileDetailsInfoDiv{
     width: calc(100% - 145px);
