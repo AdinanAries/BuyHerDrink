@@ -156,7 +156,7 @@ body{
     text-align: right;
     padding: 5px;
     padding-bottom: 0;
-    width: calc(100% - 140px);
+    max-width: calc(100% - 140px);
     float: right;
     background-color: black;
     opacity: 0.7;
@@ -255,7 +255,7 @@ body{
     background-color: aquamarine;
 }
 
-.PublishDrinkFieldSet input[type="text"], input[type="password"], select{
+.PublishDrinkFieldSet input[type="text"], select{
     border: 0;
     background-color: white;
     border-bottom: 1px solid black;
@@ -338,7 +338,7 @@ body{
 }
 .RequesteeAdditionalMessage{
     font-size: 14px;
-    height: 100px;
+    height: 120px;
     border-top: 1px #cacaca solid;
     border-bottom: 1px #cacaca solid;
     margin-top: 3px;
@@ -366,7 +366,7 @@ body{
     overflow-x: auto;
 }
 .DrinkRequesteesListDiv table{
-    border-spacing: 4px;
+    border-spacing: 6px;
     min-width: 200px;
     overflow-x: auto;
 }
@@ -390,7 +390,7 @@ body{
     min-width: 250px;
     height: 150px;
     padding: 3px;
-    border-radius: 4px;
+    box-shadow: 4px 3px 3px #cacaca;
 }
 .RequestessProfileFromList{
     border-radius: 100%;
@@ -401,4 +401,51 @@ body{
 }
 #DrinkRequestsIframe{
     display: none;
+}
+#DrinkOffersIframe{
+    display: none;
+}
+
+input[type=checkbox] {
+    position: relative;
+    appearance: none; outline: none;
+    width: 20px; height: 10px;
+    background-color: #ffffff; border: 1px solid #D9DADC;
+    border-radius: 50px; box-shadow: inset -20px 0 0 0 #ffffff;
+    transition-duration: 200ms;
+}
+
+input[type=checkbox]:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 6.5px; height: 6.5px;
+    background-color: transparent;
+    border: 1px solid darkgrey;
+    background-color: white;
+    border-radius: 50%; box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+}
+
+input[type=checkbox]:checked {
+    border-color: #4ED164;
+    box-shadow: inset 20px 0 0 0 #4ED164;
+}
+
+input[type=checkbox]:checked:after {
+    left: 10px;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.05);
+}
+
+input[type=radio]{
+    position: relative;
+    appearance: none; outline: none;
+    width: 10px; height: 10px;
+    background-color: #ffffff; border: 1px solid #D9DADC;
+    border-radius: 50px; box-shadow: inset -20px 0 0 0 #ffffff;
+    transition-duration: 200ms;
+}
+
+input[type=radio]:checked {
+    border-color: #4ED164;
+    box-shadow: inset 20px 0 0 0 #4ED164;
 }

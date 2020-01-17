@@ -135,9 +135,9 @@ and open the template in the editor.
 
                                 <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
                                   <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
-                                  <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="radio" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
-                                  <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="radio" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
-                                  <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="radio" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Drink And Dinner</label>
+                                  <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
+                                  <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
+                                  <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
                                 </fieldset>
 
                                 <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
@@ -182,19 +182,21 @@ and open the template in the editor.
                                 <p style="font-size: 14px;">
                                     This is a placeholder text for user added message to drink or dinner requests. It lets user add more clarity to the request being made
                                 </p>
+                                <table class="ViewRequesteeFullProfileAndMakeOfferBtns">
+                                    <tbody>
+                                        <tr>
+                                            <td style="background-color: aquamarine;">
+                                                Customize Your Offer
+                                            </td>
+                                            <td style="background-color: pink;">
+                                                Make Drink Offer
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
                             </div>
-                            <table class="ViewRequesteeFullProfileAndMakeOfferBtns">
-                                <tbody>
-                                    <tr>
-                                        <td style="background-color: aquamarine;">
-                                            Customize Your Offer
-                                        </td>
-                                        <td style="background-color: pink;">
-                                            Make Drink Offer
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            
                                 <p style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Requests</p>
                                 <div class="DrinkRequesteesListDiv">
                                 <table>
