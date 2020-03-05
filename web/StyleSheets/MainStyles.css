@@ -10,7 +10,6 @@ input[type="text"], select{
 }
 
 body{
-    position: fixed;
     height: 100%;
     width: 100%;
 }
@@ -20,21 +19,23 @@ body{
 .wrapper{
 }
 .Header{
-    position: relative;
+    z-index: 1001;
+    position: fixed;
     background-color: pink;
     padding: 10px;
     width: 95%;
 }
 .Main{
-    
+    padding-top: 60px;
 }
 .Footer{
     background-color: red;
     width: 100%;
-    position: absolute;
+    /*position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0;*/
     text-align: right;
+    margin-top: 10px;
 }
 .MenuIcon{
     margin-top: 10px;
@@ -130,7 +131,7 @@ body{
 }
 .ProfileDetailsDiv{
     border-bottom: 1px solid #cacaca;
-    height: calc(100vh - 450px);
+    /*height: calc(100vh - 450px);*/
     width: 100%;
     position: relative;
 }
@@ -171,9 +172,10 @@ body{
 }
 
 .ProfileDetailsInfoDiv{
-    width: calc(100% - 145px);
+    width: 200px;
     float: right;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .ProfileDetailsInfoDiv p{
     font-size: 15px;
@@ -184,7 +186,7 @@ body{
     z-index: 101;
     top: 60px;
     height:calc(100% - 79px);
-    width: 300px;
+    width: 100%;
     /*background-color: beige;*/
     background-color: black;
     color: white;
@@ -229,10 +231,11 @@ body{
 
 .ActivitiesAndDrinkOffersBtn {
     cursor: pointer;
-    position: absolute;
+    /*position: absolute;
     bottom: 5px;
-    left: 0;
+    left: 0;*/
     width: 100%;
+    margin-bottom: 5px;
 }
 .ActivitiesAndDrinkOffersBtn table{
     width: 100%;
@@ -277,7 +280,7 @@ body{
 }
 
 .DrinkRequestDiv{
-    height: calc(100vh - 100px);
+    height: auto;
     width: 100%;
 }
 
@@ -362,7 +365,7 @@ body{
 .DrinkRequesteesListDiv{
     left: 0;
     bottom: 15px;
-    height: 200px;
+    height: auto;
     overflow-x: auto;
 }
 .DrinkRequesteesListDiv table{
@@ -467,4 +470,25 @@ input[type=radio]{
 input[type=radio]:checked {
     border-color: #4ED164;
     box-shadow: inset 20px 0 0 0 #4ED164;
+}
+
+#ExploreRestaurantsDiv{
+    display: none;
+}
+#ExploreRestaurantsDiv table{
+    border-spacing: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+#ExploreRestaurantsDiv table tbody tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    height: 110px;
+    border-radius: 10px;
+    border: 0;
+    background: linear-gradient(-45deg, #98b3ff, #98d7ff);
+    text-align: center;
+    box-shadow: #ccc 3px 3px 3px;
 }

@@ -50,6 +50,7 @@ var showUserProfile = function(){
    var UserProfileIframe = document.getElementById("UserProfileIframe");
    var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
    var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Your Profile");
@@ -57,6 +58,7 @@ var showUserProfile = function(){
    UserProfileIframe.style.display = "block";
    DrinkRequestsIframe.style.display = "none";
    DrinkOffersIframe.style.display = "none";
+   ExploreRestaurantsDiv.style.display = "none";
    
 };
 
@@ -65,6 +67,7 @@ var showDrinkOffers = function(){
    var UserProfileIframe = document.getElementById("UserProfileIframe");
    var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
    var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Drink Offers");
@@ -72,7 +75,24 @@ var showDrinkOffers = function(){
    UserProfileIframe.style.display = "none";
    DrinkRequestsIframe.style.display = "none";
    DrinkOffersIframe.style.display = "block";
+   ExploreRestaurantsDiv.style.display = "none";
    
+};
+
+var showDrinkOffersNotMenu = () => {
+    
+   var UserProfileIframe = document.getElementById("UserProfileIframe");
+   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   
+   SetWindowTitle("Drink Offers");
+   
+   UserProfileIframe.style.display = "none";
+   DrinkRequestsIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "block";
+   ExploreRestaurantsDiv.style.display = "none";
+    
 };
 
 var showDrinkRequests = function(){
@@ -80,6 +100,7 @@ var showDrinkRequests = function(){
    var UserProfileIframe = document.getElementById("UserProfileIframe");
    var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
    var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Drink Requests");
@@ -87,7 +108,23 @@ var showDrinkRequests = function(){
    DrinkRequestsIframe.style.display = "block";
    UserProfileIframe.style.display = "none";
    DrinkOffersIframe.style.display = "none";
+   ExploreRestaurantsDiv.style.display = "none";
    
+};
+
+var showExploreRestaurantsDiv = () => {
+   var UserProfileIframe = document.getElementById("UserProfileIframe");
+   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   
+   ToggleMenuDisplay();
+   SetWindowTitle("Search Restaurants");
+   
+   ExploreRestaurantsDiv.style.display = "block";
+   DrinkRequestsIframe.style.display = "none";
+   UserProfileIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "none";
 };
 
 $("#UserProfileMenuOption").click(function(event){
@@ -102,4 +139,38 @@ $("#DrinkRequestMenuOption").click(function(event){
 
 $("#DrinkOffersMenuOption").click(function(event){
     showDrinkOffers();
+});
+
+
+$("#viewDrinkOffersBtn").click(function(event){
+    showDrinkOffersNotMenu();
+});
+
+$("#MenuOptionSearch").click(function(event){
+    showExploreRestaurantsDiv();
+});
+
+function ProcessImageForBase64String(Path){
+  
+    alert("result");
+  
+    $.ajax({
+        url: "GetBase64StringControl",
+        data: "ImgPath=" + Path,
+        type: "GET",
+        success: function(result){
+            alert(result);
+        }
+    });
+      
+}
+
+ProcessImageForBase64String("http://localhost/ByHerDrinkUI/Pictures/TestPhotos/1.jpg");
+
+$(document).ready(function(){
+    $("").click(function(event){
+        $.ajax({
+            
+        });
+    });
 });
