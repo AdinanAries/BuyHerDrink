@@ -47,10 +47,12 @@ $(".MenuIcon").click(function(event){
 
 var showUserProfile = function(){
     
-   var UserProfileIframe = document.getElementById("UserProfileIframe");
-   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Your Profile");
@@ -59,15 +61,19 @@ var showUserProfile = function(){
    DrinkRequestsIframe.style.display = "none";
    DrinkOffersIframe.style.display = "none";
    ExploreRestaurantsDiv.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
    
 };
 
 var showDrinkOffers = function(){
     
-   var UserProfileIframe = document.getElementById("UserProfileIframe");
-   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Drink Offers");
@@ -76,15 +82,19 @@ var showDrinkOffers = function(){
    DrinkRequestsIframe.style.display = "none";
    DrinkOffersIframe.style.display = "block";
    ExploreRestaurantsDiv.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
    
 };
 
 var showDrinkOffersNotMenu = () => {
     
-   var UserProfileIframe = document.getElementById("UserProfileIframe");
-   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
    
    SetWindowTitle("Drink Offers");
    
@@ -92,15 +102,19 @@ var showDrinkOffersNotMenu = () => {
    DrinkRequestsIframe.style.display = "none";
    DrinkOffersIframe.style.display = "block";
    ExploreRestaurantsDiv.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
     
 };
 
 var showDrinkRequests = function(){
     
-   var UserProfileIframe = document.getElementById("UserProfileIframe");
-   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Drink Requests");
@@ -109,14 +123,18 @@ var showDrinkRequests = function(){
    UserProfileIframe.style.display = "none";
    DrinkOffersIframe.style.display = "none";
    ExploreRestaurantsDiv.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
    
 };
 
 var showExploreRestaurantsDiv = () => {
-   var UserProfileIframe = document.getElementById("UserProfileIframe");
-   var DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-   var DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-   var ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
    
    ToggleMenuDisplay();
    SetWindowTitle("Search Restaurants");
@@ -125,7 +143,54 @@ var showExploreRestaurantsDiv = () => {
    DrinkRequestsIframe.style.display = "none";
    UserProfileIframe.style.display = "none";
    DrinkOffersIframe.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
 };
+
+var showFullProfileDiv = () => {
+    let UserProfileIframe = document.getElementById("UserProfileIframe");
+    let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+    let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+    let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+    let settingsDiv = document.getElementById("settingsDiv");
+    
+    SetWindowTitle("Profile Details");
+    
+    fullProfileDiv.style.display = "block";
+    UserProfileIframe.style.display = "none";
+    DrinkRequestsIframe.style.display = "none";
+    DrinkOffersIframe.style.display = "none";
+    ExploreRestaurantsDiv.style.display = "none";
+    settingsDiv.style.display = "none";
+};
+
+var showSettingsDiv = () => {
+    let UserProfileIframe = document.getElementById("UserProfileIframe");
+    let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+    let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+    let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+    let settingsDiv = document.getElementById("settingsDiv");
+    
+    ToggleMenuDisplay();
+    SetWindowTitle("Settings");
+    
+    settingsDiv.style.display = "block";
+    UserProfileIframe.style.display = "none";
+    DrinkRequestsIframe.style.display = "none";
+    DrinkOffersIframe.style.display = "none";
+    ExploreRestaurantsDiv.style.display = "none";
+    fullProfileDiv.style.display = "none";
+};
+
+$("#SettingsMenuOption").click(function(event){
+    showSettingsDiv();
+});
+
+$(".viewFullProfileBtn").click(function(event){
+    showFullProfileDiv();
+});
 
 $("#UserProfileMenuOption").click(function(event){
     

@@ -279,19 +279,19 @@ body{
     padding: 5px;
 }
 
-.DrinkRequestDiv{
+.DrinkRequestDiv, .DrinkOffersDiv{
     height: auto;
     width: 100%;
 }
 
-.RequesteeCoverPhoto{
+.RequesteeCoverPhoto, .OffererCoverPhoto{
     padding-top: 50px;
     height: 50px;
     background-size: cover;
     background-position: center;
     background-image: url("../Pictures/TestPhotos/1.jpg");
 }
-.RequesteePicture{
+.RequesteePicture, .OffererPicture{
     border-radius: 100%;
     border: 3px solid white;
     width: 100px;
@@ -301,7 +301,7 @@ body{
     object-fit: cover;
 }
 
-.RequesteeInfoDiv{
+.RequesteeInfoDiv, .OffererInfoDiv{
     float: right;
     width: 60%;
     padding: 4px;
@@ -310,10 +310,10 @@ body{
     width: 15px;
     height: 15px;
 }
-.RequesteeInfoDiv p{
+.RequesteeInfoDiv p, .OffererInfoDiv p{
     font-size: 14px;
 }
-.RequesteeOnlineStatusLed{
+.RequesteeOnlineStatusLed, .OffererOnlineStatusLed{
     width: 10px;
     height: 10px;
     border-radius: 100%;
@@ -323,7 +323,7 @@ body{
     margin-top: 30px;
     border: 2px solid white;
 }
-.RequesteeOnlineStatusLedFromList{
+.RequesteeOnlineStatusLedFromList, .OfferersOnlineStatusLedFromList{
     width: 10px;
     height: 10px;
     border-radius: 100%;
@@ -331,7 +331,7 @@ body{
     float: right;
     border: 2px solid white;
 }
-.RequesteeOnlineStatusText{
+.RequesteeOnlineStatusText, .OffererOnlineStatusText{
     margin-right: 14px;
     margin-top: 30px;
     float: right;
@@ -339,7 +339,7 @@ body{
     color: white;
     font-size: 14px;
 }
-.RequesteeAdditionalMessage{
+.RequesteeAdditionalMessage, .OffererAdditionalMessage{
     font-size: 14px;
     height: 120px;
     border-top: 1px #cacaca solid;
@@ -350,11 +350,11 @@ body{
     text-align: justify;
 }
 
-.ViewRequesteeFullProfileAndMakeOfferBtns{
+.ViewRequesteeFullProfileAndMakeOfferBtns, .ViewOffererFullProfileAndMakeOfferBtns{
     width: 100%;
 }
 
-.ViewRequesteeFullProfileAndMakeOfferBtns tbody tr td{
+.ViewRequesteeFullProfileAndMakeOfferBtns tbody tr td, .ViewOffererFullProfileAndMakeOfferBtns tbody tr td{
     padding-top: 5px;
     padding-bottom: 5px;
     width: 50%;
@@ -362,18 +362,18 @@ body{
     text-align: center;
     font-size: 14px;
 }
-.DrinkRequesteesListDiv{
+.DrinkRequesteesListDiv, .DrinkOfferersListDiv{
     left: 0;
     bottom: 15px;
     height: auto;
     overflow-x: auto;
 }
-.DrinkRequesteesListDiv table{
+.DrinkRequesteesListDiv table, .DrinkOfferersListDiv table{
     border-spacing: 6px;
     min-width: 200px;
     overflow-x: auto;
 }
-.DrinkRequesteesListDiv table tbody tr td div{
+.DrinkRequesteesListDiv table tbody tr td div, .DrinkOfferersListDiv table tbody tr td div{
     border-top: 1px solid white;
     float: right;
     /*margin-top: 110px;*/
@@ -383,11 +383,11 @@ body{
     opacity: 0.8;
     margin-right: -3px;
 }
-.DrinkRequesteesListDiv table tbody tr td div p{
+.DrinkRequesteesListDiv table tbody tr td div p, .DrinkOfferersListDiv table tbody tr td div p{
     color: white;
     font-size: 14px;
 }
-.DrinkRequesteesListDiv table tbody tr td{
+.DrinkRequesteesListDiv table tbody tr td, .DrinkOfferersListDiv table tbody tr td{
     background-size: cover;
     min-width: 250px;
     height: 150px;
@@ -395,26 +395,27 @@ body{
     box-shadow: 4px 3px 3px #cacaca;
 }
 
-.DrinkRequesteesListDiv table tbody tr td img{
+.DrinkRequesteesListDiv table tbody tr td img, .DrinkOfferersListDiv table tbody tr td img{
     object-fit: cover;
 }
 
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto{
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto{
     background-image: url("../Pictures/TestPhotos/1.jpg");
 }
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto2{
+
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto2, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto2{
     background-image: url("../Pictures/TestPhotos/2.jpg");
 }
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto3{
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto3, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto3{
     background-image: url("../Pictures/TestPhotos/3.jpg");
 }
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto4{
+.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto4, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto4{
     background-image: url("../Pictures/TestPhotos/4.jpg");
 }
 
 
 
-.RequestessProfileFromList{
+.RequesteesProfileFromList, .OfferersProfileFromList{
     border-radius: 100%;
     width: 100px;
     height: 100px;
@@ -472,7 +473,7 @@ input[type=radio]:checked {
     box-shadow: inset 20px 0 0 0 #4ED164;
 }
 
-#ExploreRestaurantsDiv{
+#ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv{
     display: none;
 }
 #ExploreRestaurantsDiv table{
@@ -491,4 +492,15 @@ input[type=radio]:checked {
     background: linear-gradient(-45deg, #98b3ff, #98d7ff);
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
+}
+
+#acceptOfferBtn{
+    background-color: red; 
+    color: white;
+    cursor: pointer;
+}
+
+#declineOfferBtn{
+    background-color: deepskyblue;
+    cursor: pointer;
 }
