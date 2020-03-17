@@ -217,14 +217,14 @@ $("#MenuOptionSearch").click(function(event){
 
 function ProcessImageForBase64String(Path){
   
-    alert("result");
+    //alert("result");
   
     $.ajax({
         url: "GetBase64StringControl",
         data: "ImgPath=" + Path,
         type: "GET",
         success: function(result){
-            alert(result);
+            //alert(result);
         }
     });
       

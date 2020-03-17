@@ -24,7 +24,7 @@ public class GetBase64StringControl extends HttpServlet {
             throws ServletException, IOException {
         
         String Path = request.getParameter("ImgPath");
-        JOptionPane.showMessageDialog(null, Path);
+        //JOptionPane.showMessageDialog(null, Path);
         encoder = new encodeBinaryPhotoToBase64String(Path);
         
         Base64StringImage = encoder.GetBaseString64Image();

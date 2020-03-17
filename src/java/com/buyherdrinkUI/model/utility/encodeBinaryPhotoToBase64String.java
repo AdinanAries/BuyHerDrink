@@ -44,7 +44,7 @@ public class encodeBinaryPhotoToBase64String {
     }
     
     public encodeBinaryPhotoToBase64String(String Path){
-        JOptionPane.showMessageDialog(null, "encoder called");
+        //JOptionPane.showMessageDialog(null, "encoder called");
         FileImageInByte = convertPicFileToByteArray(Path);
         
         try{
@@ -77,7 +77,7 @@ public class encodeBinaryPhotoToBase64String {
              
             */
             
-            JOptionPane.showMessageDialog(null, "Im here");
+            //JOptionPane.showMessageDialog(null, "Im here");
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write( originalImage, "jpg", baos );
             baos.flush();
@@ -85,7 +85,7 @@ public class encodeBinaryPhotoToBase64String {
             
         }catch(Exception e){}
         
-        JOptionPane.showMessageDialog(null, imageInByte);
+        //JOptionPane.showMessageDialog(null, imageInByte);
         return imageInByte;
         
     }

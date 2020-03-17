@@ -126,26 +126,60 @@ and open the template in the editor.
                             <div class="PublishDrinkFieldSet">
                                 <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
                                   <legend style="font-size: 15px; font-weight: bolder;">Add Bar/Restaurant</legend>
-                                  Address: <input type="text" name="BarAddress" /><br />
-                                  Bar/Restaurant: <input type="text" name="Bar" /><br />
-                                  Meeting Time: <select>
-                                      <option>5:00am</option>
-                                  </select>
-                                </fieldset>
+                                  <table>
+                                      <tbody>
+                                        <tr style="background-color: #afe9ff;">
+                                            <td>
+                                              <img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/>
+                                            <td>
+                                              <input type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="Bar"  placeholder="resturant/bar name" /><br />
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #afe9ff;">
+                                            <td> 
+                                                <img class="RegularIcons_3" src="icons/icons8-watch-filled-30.png" alt=""/>
+                                            </td>
+                                            <td>
+                                                <select>
+                                                    <option>5:00am</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img class="RegularIcons_3" src="icons/icons8-cash-50.png" alt=""/>
+                                            </td>
+                                            <td>
+                                                <select>
+                                                    <option>$5.00</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                                      </fieldset>
 
-                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
-                                  <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
-                                  <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
-                                  <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
-                                  <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
-                                </fieldset>
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                        <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
+                                        <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
+                                        <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
+                                        <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
+                                      </fieldset>
 
-                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
-                                  <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
-                                  <center><textarea style="width: 95%; height: 70px;">
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                        <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
+                                        <center><textarea style="width: 95%; height: 70px;">
 
-                                  </textarea></center>
-                                </fieldset>
+                                        </textarea></center>
+                                      </fieldset>
                             </div>
                             <center><div class="UserProfilePageSubmitDrinkRequestBtn">Publish Request</div></center>
                         </div>
@@ -360,7 +394,38 @@ and open the template in the editor.
                         
                     </div>
                     <div id="settingsDiv">
-                        
+                        <p style="font-size: 20px; font-weight: bolder; margin: 10px;">
+                            <img id="profilePic" src="Pictures/ProfilePicPlaceHolder.jpg" alt=""/>
+                        </p> 
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="background-color: #ccc;">
+                                        <div><span></span></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ffffff;">
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ccc;">
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ffffff;">
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ccc;">
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div></div>

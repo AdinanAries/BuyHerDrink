@@ -310,6 +310,14 @@ body{
     width: 15px;
     height: 15px;
 }
+.RegularIcons_2{
+    width: 20px;
+    height: 20px;
+}
+.RegularIcons_3{
+    width: 25px;
+    height: 25px;
+}
 .RequesteeInfoDiv p, .OffererInfoDiv p{
     font-size: 14px;
 }
@@ -482,6 +490,19 @@ input[type=radio]:checked {
     width: 100%;
 }
 
+#settingsDiv table{
+    width: 100%;
+    min-height: 100px;
+}
+#settingsDiv table tbody tr td{
+    width: 100%;
+}
+#settingsDiv #profilePic{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+
 #ExploreRestaurantsDiv table tbody tr td{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -503,4 +524,20 @@ input[type=radio]:checked {
 #declineOfferBtn{
     background-color: deepskyblue;
     cursor: pointer;
+}
+
+.PublishRequestDiv input[type="text"], select{
+    padding: 4px 0;
+    background: none;
+    color: black;
+    border: 0;
+    width: 100%;
+}
+.PublishRequestDiv table{
+    background-color: #d4f3ff;
+    width: 100%;
+    border-spacing: 0;
+}
+.PublishRequestDiv table tr td{
+    padding: 5px 0;
 }
