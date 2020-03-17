@@ -188,6 +188,24 @@ $("#SettingsMenuOption").click(function(event){
     showSettingsDiv();
 });
 
+$("#editUserProfileIcon").click(function(){
+    let UserProfileIframe = document.getElementById("UserProfileIframe");
+    let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+    let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+    let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+    let settingsDiv = document.getElementById("settingsDiv");
+    
+    SetWindowTitle("Settings");
+    
+    settingsDiv.style.display = "block";
+    UserProfileIframe.style.display = "none";
+    DrinkRequestsIframe.style.display = "none";
+    DrinkOffersIframe.style.display = "none";
+    ExploreRestaurantsDiv.style.display = "none";
+    fullProfileDiv.style.display = "none";
+});
+
 $(".viewFullProfileBtn").click(function(event){
     showFullProfileDiv();
 });
