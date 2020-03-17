@@ -206,6 +206,17 @@ $("#editUserProfileIcon").click(function(){
     fullProfileDiv.style.display = "none";
 });
 
+var showNotifications = () => {
+    let notificationsDiv = document.getElementById("notificationsDiv");
+    notificationsDiv.style.display = "block";
+    console.log("notifications");
+    
+};
+
+$("#notificationsIcon").click(function (event){
+    showNotifications();
+});
+
 $(".viewFullProfileBtn").click(function(event){
     showFullProfileDiv();
 });
