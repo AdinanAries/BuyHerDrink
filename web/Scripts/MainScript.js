@@ -209,7 +209,6 @@ $("#editUserProfileIcon").click(function(){
 var showNotifications = () => {
     let notificationsDiv = document.getElementById("notificationsDiv");
     notificationsDiv.style.display = "block";
-    console.log("notifications");
     
 };
 
@@ -217,6 +216,24 @@ var showGalleryDiv = () => {
     let galleryDiv = document.getElementById("galleryDiv");
     galleryDiv.style.display = "block";
 };
+
+var closeNotification = () => {
+    let notificationsDiv = document.getElementById("notificationsDiv");
+    notificationsDiv.style.display = "none";
+};
+
+var closeGallery = () => {
+    let galleryDiv = document.getElementById("galleryDiv");
+    galleryDiv.style.display = "none";
+};
+
+$("#closeNotificationBtn").click(function (event){
+    closeNotification();
+});
+
+$("#closeGalleryBtn").click(function (event){
+    closeGallery();
+});
 
 $("#notificationsIcon").click(function (event){
     showNotifications();
