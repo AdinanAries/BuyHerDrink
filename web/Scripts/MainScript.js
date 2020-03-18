@@ -213,8 +213,17 @@ var showNotifications = () => {
     
 };
 
+var showGalleryDiv = () => {
+    let galleryDiv = document.getElementById("galleryDiv");
+    galleryDiv.style.display = "block";
+};
+
 $("#notificationsIcon").click(function (event){
     showNotifications();
+});
+
+$("#galleryIcon").click(function (event){
+    showGalleryDiv();
 });
 
 $(".viewFullProfileBtn").click(function(event){

@@ -91,13 +91,22 @@ and open the template in the editor.
                     </div>
                     <div id='UserProfileIframe'>
                         <div id='notificationsDiv'>
-                            <div><p>Close</p></div>
+                            <div>
+                                <img class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                <p style="width: 100%; text-align: center; margin-top: -30px;">Notifications</p>
+                            </div>
+                        </div>
+                        <div id='galleryDiv'>
+                            <div>
+                                <img class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Photos</p>
+                            </div>
                         </div>
                         <div class='ProfileDetailsDiv'>
                             <div class="ProfileCover">
                                 <img class='ProfilePicture' src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
                                 <div class="UserProfileSettingsIcons">
-                                    <img src="icons/icons8-photo-gallery-20.png" alt=""/>
+                                    <img id="galleryIcon" src="icons/icons8-photo-gallery-20.png" alt=""/>
                                     <img id='notificationsIcon' src="icons/icons8-notification-50.png" alt=""/>
                                     <span class='notificationCounter'>0</span>
                                     <img id="editUserProfileIcon" src="icons/icons8-pencil-20.png" alt=""/>
@@ -434,7 +443,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td style="background-color: #ffffff;">
-                                        <p class='status_1'>your email is note verified</p>
+                                        <p class='status_1'>your email is not verified</p>
                                         <div style="font-size: 14px;">Email: <br/>
                                             <span><input type="text" value="m.adinan@yahoo.com"/></span></div>
                                     </td>

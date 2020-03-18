@@ -320,6 +320,14 @@ body{
     width: 25px;
     height: 25px;
 }
+.RegularIcons_4{
+    width: 30px;
+    height: 30px;
+}
+.RegularIcons_5{
+    width: 35px;
+    height: 35px;
+}
 .RequesteeInfoDiv p, .OffererInfoDiv p{
     font-size: 14px;
 }
@@ -483,7 +491,7 @@ input[type=radio]:checked {
     box-shadow: inset 20px 0 0 0 #4ED164;
 }
 
-#ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv, #notificationsDiv{
+#ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv, #notificationsDiv, #galleryDiv{
     display: none;
 }
 #ExploreRestaurantsDiv table{
@@ -571,13 +579,14 @@ input[type=radio]:checked {
     padding: 0 4px;
     padding-top: 1px;
 }
-#notificationsDiv{
+#notificationsDiv, #galleryDiv{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     overflow-y: auto;
-    z-index: 1000;
-    background-color: white;
+    z-index: 1100;
+    background-color: black;
+    color: white;
 }
