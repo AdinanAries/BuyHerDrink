@@ -90,13 +90,16 @@ and open the template in the editor.
                         <p style="clear: both;"></p>
                     </div>
                     <div id='UserProfileIframe'>
+                        <div id='notificationsDiv'>
+                            <div><p>Close</p></div>
+                        </div>
                         <div class='ProfileDetailsDiv'>
                             <div class="ProfileCover">
                                 <img class='ProfilePicture' src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
                                 <div class="UserProfileSettingsIcons">
                                     <img src="icons/icons8-photo-gallery-20.png" alt=""/>
-                                    <img src="icons/icons8-notification-50.png" alt=""/>
-                                    
+                                    <img id='notificationsIcon' src="icons/icons8-notification-50.png" alt=""/>
+                                    <span class='notificationCounter'>0</span>
                                     <img id="editUserProfileIcon" src="icons/icons8-pencil-20.png" alt=""/>
                                 </div>
                                 <p style="height: 0; clear: both;"></p>
@@ -400,11 +403,12 @@ and open the template in the editor.
                     <div id="settingsDiv">
                         <p style="font-size: 20px; font-weight: bolder; margin: 10px;">
                             <img id="profilePic" src="Pictures/ProfilePicPlaceHolder.jpg" alt=""/>
+                            <span></span>
                         </p> 
                         <table>
                             <tbody>
                                 <tr>
-                                    <td style="background-color: #ccc;">
+                                    <td style="background-color: #D9DADC;">
                                         <div style="font-size: 14px;">Full Name: <br/>
                                             <span><input type="text" value="Mohammed Adinan"/></span></div>
                                     </td>
@@ -416,7 +420,7 @@ and open the template in the editor.
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="background-color: #ccc;">
+                                    <td style="background-color: #D9DADC;">
                                         <div style="font-size: 14px;">Sex: <br/>
                                             <span>
                                                 <select style="max-width: 200px;"> 
@@ -430,12 +434,13 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td style="background-color: #ffffff;">
+                                        <p class='status_1'>your email is note verified</p>
                                         <div style="font-size: 14px;">Email: <br/>
                                             <span><input type="text" value="m.adinan@yahoo.com"/></span></div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="background-color: #ccc;">
+                                    <td style="background-color: #D9DADC;">
                                         <div style="font-size: 14px;">Phone: <br/>
                                             <span><input type="text" value="8482481118"/></span></div>
                                     </td>
@@ -443,6 +448,7 @@ and open the template in the editor.
                             </tbody>
                         </table>
                     </div>
+                    
                 </div>
                 <div></div>
                 <div class='Footer'><p style='margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
