@@ -96,6 +96,12 @@ and open the template in the editor.
                                 <p style="width: 100%; text-align: center; margin-top: -30px;">Notifications</p>
                             </div>
                         </div>
+                        <div id='UserActivityDiv'>
+                            <div>
+                                <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Activities</p>
+                            </div>
+                        </div>
                         <div id='galleryDiv'>
                             <div>
                                 <img id="closeGalleryBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
@@ -144,7 +150,28 @@ and open the template in the editor.
                                             <td>
                                               <img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/>
                                             <td>
-                                              <input type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
+                                              <div class="RestaurantListPopup" style="width: 100%">
+                                                <input onclick="hideRestaurantPopupListByAddress();" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
+                                                <div class="RestaurantListDiv" id="RestaurantList" style="height: 200px; width: 100%; overflow-y: auto;">
+                                                    <p style="color: blue; font-size: 14px; margin: 5px;">2034 murthal ave. Brookly, NY 1203</p>
+                                                    <ul style="text-align: left; margin: 5px;" onclick="hideRestaurantPopupListByAddress();">
+                                                        <li>
+                                                            Restaurant 1
+                                                        </li>
+                                                        <li>
+                                                            Restaurant 2
+                                                        </li>
+                                                        <li>
+                                                            Restaurant 1
+                                                        </li>
+                                                        <li>
+                                                            Restaurant 2
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <button onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Search Restaurants</button>
+                                              </div>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
@@ -152,26 +179,74 @@ and open the template in the editor.
                                                 <img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
                                             </td>
                                             <td>
-                                                <input type="text" name="Bar"  placeholder="resturant/bar name" /><br />
+                                                <input onclick="hideRestaurantPopupListByAddress();" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
+                                                <button onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant Location</button>
                                             </td>
                                         </tr>
-                                        <tr style="background-color: #afe9ff;">
+                                        <tr style="background-color: #afe9ff;" onclick="hideRestaurantPopupListByAddress();">
                                             <td> 
                                                 <img class="RegularIcons_3" src="icons/icons8-watch-filled-30.png" alt=""/>
                                             </td>
                                             <td>
                                                 <select>
+                                                    <option>12:00am</option>
+                                                    <option>1:00am</option>
+                                                    <option>2:00am</option>
+                                                    <option>3:00am</option>
+                                                    <option>4:00am</option>
                                                     <option>5:00am</option>
+                                                    <option>6:00am</option>
+                                                    <option>7:00am</option>
+                                                    <option>8:00am</option>
+                                                    <option>9:00am</option>
+                                                    <option>10:00am</option>
+                                                    <option>11:00am</option>
+                                                    <option>12:00pm</option>
+                                                    <option>1:00pm</option>
+                                                    <option>2:00pm</option>
+                                                    <option>3:00pm</option>
+                                                    <option>4:00pm</option>
+                                                    <option>5:00pm</option>
+                                                    <option>6:00pm</option>
+                                                    <option>7:00pm</option>
+                                                    <option>8:00pm</option>
+                                                    <option>9:00pm</option>
+                                                    <option>10:00pm</option>
+                                                    <option>11:00pm</option>
                                                 </select>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr onclick="hideRestaurantPopupListByAddress();">
                                             <td>
                                                 <img class="RegularIcons_3" src="icons/icons8-cash-50.png" alt=""/>
                                             </td>
                                             <td>
                                                 <select>
                                                     <option>$5.00</option>
+                                                    <option>$10.00</option>
+                                                    <option>$15.00</option>
+                                                    <option>$20.00</option>
+                                                    <option>$25.00</option>
+                                                    <option>$30.00</option>
+                                                    <option>$35.00</option>
+                                                    <option>$5.00</option>
+                                                    <option>$45.00</option>
+                                                    <option>$50.00</option>
+                                                    <option>$55.00</option>
+                                                    <option>$60.00</option>
+                                                    <option>$65.00</option>
+                                                    <option>$70.00</option>
+                                                    <option>$75.00</option>
+                                                    <option>$80.00</option>
+                                                    <option>$85.00</option>
+                                                    <option>$90.00</option>
+                                                    <option>$95.00</option>
+                                                    <option>$100.00</option>
+                                                    <option>$200.00</option>
+                                                    <option>$300.00</option>
+                                                    <option>$400.00</option>
+                                                    <option>$500.00</option>
+                                                    <option>$500+</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -179,14 +254,14 @@ and open the template in the editor.
                                 </table>
                                       </fieldset>
 
-                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
                                         <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
                                         <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
                                         <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
                                       </fieldset>
 
-                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
                                         <center><textarea style="width: 95%; height: 70px;">
 
@@ -410,10 +485,14 @@ and open the template in the editor.
                         
                     </div>
                     <div id="settingsDiv">
-                        <p style="font-size: 20px; font-weight: bolder; margin: 10px;">
+                        <p style="font-size: 20px; font-weight: bolder; margin: 10px; width: fit-content; float: right;">
                             <img id="profilePic" src="Pictures/ProfilePicPlaceHolder.jpg" alt=""/>
-                            <span></span>
                         </p> 
+                        <div style="width: fit-content; margin: 10px;">
+                            <p style="font-size: 11px; color: red;">8 people viewed you.</p>
+                            <p style="font-size: 11px; color: red;">15 people viewed your drink requests.</p>
+                            <p style="font-size: 14px; color: blue;">Profile Score: 40%</p>
+                        </div>
                         <table>
                             <tbody>
                                 <tr>
@@ -460,13 +539,30 @@ and open the template in the editor.
                                             <span><sub>0</sub><input style="background: none; width: 80%; height: 0; border: 1px solid black; margin-bottom: 15px;" type="range" id="points" name="points" min="0" max="100"><sub>100%</sub></span></div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td style="background-color: #D9DADC;">
+                                        <div style="font-size: 14px;">Interests: <br/>
+                                            <span>
+                                                <select style="max-width: 200px;"> 
+                                                    <option>Male</option> 
+                                                    <option>Female</option>
+                                                    <option>Both</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
+                        <div style="width: fit-content; background-color: #ff9c9c; padding: 10px; padding-bottom: 5px; margin: 10px; border-radius: 4px;">
+                            <img src="icons/icons8-sign-out-50.png" style="width: 25px; height: 25px;" alt=""/>
+                            <sup style="font-size: 14px;">Signout</sup>
+                        </div>
                     </div>
                     
                 </div>
                 <div></div>
-                <div class='Footer'><p style='margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
+                <div class='Footer'><p style='color: white; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
             </div>
         </div>
         <script src="Scripts/MainScript.js" type="text/javascript"></script>

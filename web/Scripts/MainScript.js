@@ -217,6 +217,16 @@ var showGalleryDiv = () => {
     galleryDiv.style.display = "block";
 };
 
+var showUserActivity = () => {
+    let UserActivityDiv = document.getElementById("UserActivityDiv");
+    UserActivityDiv.style.display = "block";
+};
+
+var closeUserActivity = () => {
+    let UserActivityDiv = document.getElementById("UserActivityDiv");
+    UserActivityDiv.style.display = "none";
+};
+
 var closeNotification = () => {
     let notificationsDiv = document.getElementById("notificationsDiv");
     notificationsDiv.style.display = "none";
@@ -227,6 +237,10 @@ var closeGallery = () => {
     galleryDiv.style.display = "none";
 };
 
+$("#closeUserActivityBtn").click(function(event){
+    closeUserActivity();
+});
+
 $("#closeNotificationBtn").click(function (event){
     closeNotification();
 });
@@ -235,6 +249,9 @@ $("#closeGalleryBtn").click(function (event){
     closeGallery();
 });
 
+$("#YourActivitiesBtn").click(function(){
+    showUserActivity();
+});
 $("#notificationsIcon").click(function (event){
     showNotifications();
 });
@@ -270,6 +287,17 @@ $("#MenuOptionSearch").click(function(event){
     showExploreRestaurantsDiv();
 });
 
+function showRestaurantsPopupListByAddress() {
+  let RestaurantList = document.getElementById("RestaurantList");
+  RestaurantList.classList.add("show");
+  //popup.classList.toggle("show");
+}
+function hideRestaurantPopupListByAddress() {
+    let RestaurantList = document.getElementById("RestaurantList");
+    RestaurantList.classList.remove("show");
+    
+}
+
 function ProcessImageForBase64String(Path){
   
     //alert("result");
@@ -294,3 +322,5 @@ $(document).ready(function(){
         });
     });
 });
+
+
