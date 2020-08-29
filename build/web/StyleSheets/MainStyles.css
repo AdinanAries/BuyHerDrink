@@ -148,6 +148,7 @@ body{
     background-size: cover;
     background-position: center;
     background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+    background-position: center;
 }
 .ProfilePicture{
     border-radius: 100%;
@@ -157,11 +158,11 @@ body{
     float: left;
     margin-left: 5px;
     background-color: darkgrey;
-    background-size: cover;
-    background-position: center;
+    /*background-size: cover;*/
+    object-fit: cover;
+   /*background-position: center;*/
 }
 .UserProfileSettingsIcons{
-    
     text-align: right;
     padding: 5px;
     padding-bottom: 0;
@@ -195,7 +196,8 @@ body{
     position: fixed;
     z-index: 101;
     top: 60px;
-    height:calc(100% - 79px);
+    /*height:calc(100% - 79px);*/
+    height: 100vh;
     width: 100%;
     /*background-color: beige;*/
     background-color: black;

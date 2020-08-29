@@ -1,4 +1,5 @@
 document.querySelector(".MainMenu").style.display = "none";
+document.cookie = "SameSite=None;";
 
 var SetWindowTitle = function(title){
     document.querySelector(".PageTitle").innerText = title;
