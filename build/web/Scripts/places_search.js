@@ -77,7 +77,7 @@ function initMap(lat, lng) {
     
     var request = {
         location: current_location,
-        radius: '500',
+        radius: '5000',
         type: ['restaurant']
     };
     
@@ -90,10 +90,12 @@ function initMap(lat, lng) {
             for(var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
                 let li_elem = document.createElement("li");
-                li_elem.innerHTML = `<p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
-                                     <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
-                                        <p style="color: darkgrey;">types: </p>
-                                        <p>${results[i].types.join(', ')}</p>
+                li_elem.innerHTML = `<div>
+                                        <p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
+                                         <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
+                                            <p style="color: darkgrey;">types: </p>
+                                            <p>${results[i].types.join(', ')}</p>
+                                         </div>
                                     </div>`;
                 current_restaurants_list.appendChild(li_elem);
                 console.log(results[i]);
