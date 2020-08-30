@@ -1,6 +1,8 @@
 
 var rest_locations_input_fld = document.getElementById("rest_locations_input_fld");
 var search_restaurants_btn = document.getElementById("search_restaurants_btn");
+var rests_list_location_display = document.getElementById("rests_list_location_display");
+var current_restaurants_list = document.getElementById("current_restaurants_list");
 
 var GoogleReturnedZipCode;
 var GoogleReturnedCity;
@@ -69,6 +71,7 @@ var infowindow;
 function initMap(lat, lng) {
     var current_location = new google.maps.LatLng(lat, lng);
     
+    infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(
             document.getElementById('map'), {center: current_location, zoom: 12});
     
@@ -83,12 +86,33 @@ function initMap(lat, lng) {
     
     function callback(results, status){
         if(status == google.maps.places.PlacesServiceStatus.OK){
+            current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
+                let li_elem = document.createElement("li");
+                li_elem.innerHTML = `<p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
+                                     <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
+                                        <p style="color: darkgrey;">types: </p>
+                                        <p>${results[i].types.join(', ')}</p>
+                                    </div>`;
+                current_restaurants_list.appendChild(li_elem);
+                console.log(results[i]);
             }
         }
     }
     
+}
+
+function createMarker(place) {
+  const marker = new google.maps.Marker({
+    map,
+    position: place.geometry.location
+  });
+  google.maps.event.addListener(marker, "click", () => {
+      alert(place.name);
+    infowindow.setContent(place.name);
+    infowindow.open(map);
+  });
 }
 
 function getLocation(){
@@ -125,6 +149,7 @@ function showPosition(position){
             GoogleReturnedZipCode = CityZipCodeParts[2].trim();
             
             rest_locations_input_fld.value = `${GoogleReturnedTown} ${GoogleReturnedCity}, ${GoogleReturnedZipCode}`;
+            rests_list_location_display.innerText = `${GoogleReturnedTown} ${GoogleReturnedCity}, ${GoogleReturnedZipCode}`;
         }
     });
 }

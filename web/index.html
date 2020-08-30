@@ -16,10 +16,14 @@ and open the template in the editor.
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&libraries=places"></script>
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         
     </head>
     <body>
@@ -155,20 +159,9 @@ and open the template in the editor.
                                               <div class="RestaurantListPopup" style="width: 100%">
                                                 <input id="rest_locations_input_fld" onclick="hideRestaurantPopupListByAddress();" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
                                                 <div class="RestaurantListDiv" id="RestaurantList" style="height: 200px; width: 100%; overflow-y: auto;">
-                                                    <p style="color: blue; font-size: 14px; margin: 5px;">2034 murthal ave. Brookly, NY 1203</p>
-                                                    <ul style="text-align: left; margin: 5px;" onclick="hideRestaurantPopupListByAddress();">
-                                                        <li>
-                                                            Restaurant 1
-                                                        </li>
-                                                        <li>
-                                                            Restaurant 2
-                                                        </li>
-                                                        <li>
-                                                            Restaurant 1
-                                                        </li>
-                                                        <li>
-                                                            Restaurant 2
-                                                        </li>
+                                                    <p style="color: seagreen; font-size: 14px; margin: 5px;"><i class="fa fa-map-marker" style="color: black; font-size: 20px;" aria-hidden="true"></i> <span id="rests_list_location_display">2034 murthal ave. Brookly, NY 1203</span></p>
+                                                    <ul id="current_restaurants_list" style="text-align: left; margin: 5px;" onclick="hideRestaurantPopupListByAddress();">
+                                                        
                                                     </ul>
                                                 </div>
                                                 <button id="search_restaurants_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Search Restaurants</button>
