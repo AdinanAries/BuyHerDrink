@@ -146,6 +146,11 @@ and open the template in the editor.
                         </div>
                         <div class='PublishRequestDiv'>
                             <p style="text-align: center; font-weight: bolder; margin-top: 4px; font-size: 16px;">Publish Drink Request</p>
+                            <p style="margin: 10px 5px; font-size: 15px; color: darkgray; text-align: center;">
+                                    A drink request lets you reach out for potential date.
+                                    Other people will see your drink request and make an offer.
+                                    Then its up to you to either accept or decline their offer.
+                            </p>
                             <div class="PublishDrinkFieldSet">
                                 <div id="map" style="height: 200px;"></div>
                                 <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
@@ -157,6 +162,7 @@ and open the template in the editor.
                                               <img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/>
                                             <td>
                                               <div class="RestaurantListPopup" style="width: 100%">
+                                                  <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurants by location:</p>
                                                 <input id="rest_locations_input_fld" onclick="hideRestaurantPopupListByAddress();" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
                                                 <div class="RestaurantListDiv" id="RestaurantList" style="height: 200px; width: 100%; overflow-y: auto;">
                                                     <p style="color: seagreen; font-size: 14px; margin: 5px;"><i class="fa fa-map-marker" style="color: black; font-size: 20px;" aria-hidden="true"></i> <span id="rests_list_location_display">2034 murthal ave. Brookly, NY 1203</span></p>
@@ -174,15 +180,19 @@ and open the template in the editor.
                                                 <img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
                                             </td>
                                             <td>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurant by name:</p>
                                                 <input onclick="hideRestaurantPopupListByAddress();" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
                                                 <button onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant Location</button>
                                             </td>
                                         </tr>
                                         <tr style="background-color: #afe9ff;" onclick="hideRestaurantPopupListByAddress();">
-                                            <td> 
+                                            <td style="padding-right: 10px;"> 
                                                 <img class="RegularIcons_3" src="icons/icons8-watch-filled-30.png" alt=""/>
                                             </td>
                                             <td>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Add date and time:</p>
+                                                <input style="width: 100px; margin-right: 10px;" type="text" placeholder="add date here" />
+                                                -
                                                 <select>
                                                     <option>12:00am</option>
                                                     <option>1:00am</option>
@@ -216,6 +226,7 @@ and open the template in the editor.
                                                 <img class="RegularIcons_3" src="icons/icons8-cash-50.png" alt=""/>
                                             </td>
                                             <td>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Put a price on your date:</p>
                                                 <select>
                                                     <option>$5.00</option>
                                                     <option>$10.00</option>
