@@ -89,13 +89,39 @@ function initMap(lat, lng) {
             current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
+                
+                let rating_int = Math.round(results[i].rating);
+                let stars = "★★★★★ ";
+                if(rating_int === 1){
+                    stars="★☆☆☆☆";
+                }else if(rating_int === 2){
+                    stars="★★☆☆☆";
+                }else if(rating_int === 3){
+                    stars="★★★☆☆";
+                }else if(rating_int === 4){
+                    stars="★★★★☆";
+                }else {
+                    stars="★★★★★";
+                }
+                    
                 let li_elem = document.createElement("li");
                 li_elem.innerHTML = `<div>
                                         <p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
-                                            <p style="color: darkgrey;">types: </p>
-                                            <p>${results[i].types.join(', ')}</p>
+                                            <div style="margin: 5px 0;">
+                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid darkgrey; padding-bottom: 5px;">
+                                                    <div style="width: 200px; height: 100px; overflow: hidden;">
+                                                        <img src="${results[i].photos[0].getUrl()}" style="width: 200px; height: auto;"/>
+                                                    </div>
+                                                    <p style="padding: 0 10px; background-color: darkblue; border-radius: 4px; color: white; height: 60px; display: flex; flex-direction: column; justify-content: center;">Choose</p>
+                                                </div>
+                                                <p><img src="${results[i].icon}" style="width: 20px; height: auto;"/> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> ${results[i].vicinity}<p>
+                                             </div>
+                                             <p style="color: darkgrey;">types: </p>
+                                             <p>${results[i].types.join(', ').replace(/_/g, " ")}</p>
                                          </div>
+                                         
                                     </div>`;
                 current_restaurants_list.appendChild(li_elem);
                 console.log(results[i]);
