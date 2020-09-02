@@ -1,5 +1,6 @@
 
 var rest_locations_input_fld = document.getElementById("rest_locations_input_fld");
+var search_rest_by_name_fld = document.getElementById("search_rest_by_name_fld");
 var search_restaurants_btn = document.getElementById("search_restaurants_btn");
 var rests_list_location_display = document.getElementById("rests_list_location_display");
 var current_restaurants_list = document.getElementById("current_restaurants_list");
@@ -68,7 +69,7 @@ var map;
 var service;
 var infowindow;
 
-function initMap(lat, lng) {
+function initMap(lat, lng, search_radius) {
     var current_location = new google.maps.LatLng(lat, lng);
     
     infowindow = new google.maps.InfoWindow();
@@ -77,7 +78,7 @@ function initMap(lat, lng) {
     
     var request = {
         location: current_location,
-        radius: '5000',
+        radius: search_radius,
         type: ['restaurant']
     };
     
@@ -156,7 +157,7 @@ function showPosition(position){
     //alert(position.coords.latitude);
     //alert(position.coords.longitude);
     
-    initMap(position.coords.latitude, position.coords.longitude);
+    initMap(position.coords.latitude, position.coords.longitude, '5000');
     
     $.ajax({
         type: "GET",
@@ -183,5 +184,45 @@ function showPosition(position){
 }
 
 getLocation();
+
+
+//Finding places by user's query
+/*var Qmap;
+var Qservice;
+var Qinfowindow
+
+function QinitMap(){
+    let 
+}*/
+
+//function gets long and lat from user provided address
+google.maps.event.addDomListener(window, 'load', initialize);
+
+function initialize() {
+    
+    //for all location based searches
+    var autocomplete = new google.maps.places.Autocomplete(rest_locations_input_fld);
+    autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+    
+        // place variable will have all the information you are looking for.
+        initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000');
+        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        //console.log(place.geometry['location'].lat());
+        //console.log(place.geometry['location'].lng());
+    });
+    
+    //for all name based searches
+    var autocomplete = new google.maps.places.Autocomplete(search_rest_by_name_fld);
+    autocomplete.addListener('place_changed', function () {
+        var place = autocomplete.getPlace();
+    
+        // place variable will have all the information you are looking for.
+        initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '10');
+        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        //console.log(place.geometry['location'].lat());
+        //console.log(place.geometry['location'].lng());
+    });
+}
 
 

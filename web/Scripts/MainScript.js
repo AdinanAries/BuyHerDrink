@@ -149,21 +149,21 @@ var showExploreRestaurantsDiv = () => {
 };
 
 var showFullProfileDiv = () => {
-    let UserProfileIframe = document.getElementById("UserProfileIframe");
+    /*let UserProfileIframe = document.getElementById("UserProfileIframe");
     let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
     let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");*/
     let fullProfileDiv = document.getElementById("viewFullProfileDiv");
-    let settingsDiv = document.getElementById("settingsDiv");
+    //let settingsDiv = document.getElementById("settingsDiv");
     
-    SetWindowTitle("Profile Details");
+    //SetWindowTitle("Profile Details");
     
     fullProfileDiv.style.display = "block";
-    UserProfileIframe.style.display = "none";
+    /*UserProfileIframe.style.display = "none";
     DrinkRequestsIframe.style.display = "none";
     DrinkOffersIframe.style.display = "none";
     ExploreRestaurantsDiv.style.display = "none";
-    settingsDiv.style.display = "none";
+    settingsDiv.style.display = "none";*/
 };
 
 var showSettingsDiv = () => {
