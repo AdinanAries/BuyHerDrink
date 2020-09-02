@@ -13,5 +13,6 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
     RP_rest_rating.innerText = rating;
     RP_rest_location.innerText = locationAddress,
     RP_rest_types.innerText = typesList;
+    hideRestaurantPopupListByAddress();
 }
 
