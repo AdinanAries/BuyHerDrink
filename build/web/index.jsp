@@ -16,6 +16,8 @@ and open the template in the editor.
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>
         
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&libraries=places"></script>
@@ -194,7 +196,7 @@ and open the template in the editor.
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Add date and time:</p>
-                                                <input style="width: 100px; margin-right: 10px;" type="text" placeholder="add date here" />
+                                                <input id="PDR_date_fld" style="width: 100px; margin-right: 10px;" type="text" placeholder="add date here" />
                                                 -
                                                 <select>
                                                     <option>12:00am</option>
@@ -277,7 +279,28 @@ and open the template in the editor.
                                         </textarea></center>
                                       </fieldset>
                             </div>
-                            <center><div class="UserProfilePageSubmitDrinkRequestBtn">Publish Request</div></center>
+                            <div id="PDR_details_pane">
+                                <p style="text-align: center; font-weight: bolder; font-size: 16px;">Review and Post</p>
+                                <div style="margin: 5px; border: 1px solid pink; padding: 5px;">
+                                        <p id='RP_rest_name' style="font-weight: bolder; color: blue;">Restaurant name here</p> 
+                                         <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
+                                            <div style="margin: 5px 0;">
+                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid darkgrey; padding-bottom: 5px;">
+                                                    <div style="width: 200px; height: 100px; overflow: hidden;">
+                                                        <img id='RP_rest_photo' src="" style="width: 200px; height: auto;"/>
+                                                    </div>
+                                                    <p style="padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; display: flex; flex-direction: column; justify-content: center;">Post</p>
+                                                </div>
+                                                <p><img id='RP_rest_icon' src="" style="width: 20px; height: auto;"/> <span id='RP_rest_rating' style="color: #37a0f5; font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span id='RP_rest_location'>restaurant location address here</span><p>
+                                             </div>
+                                             <p style="color: darkgrey;">types: </p>
+                                             <p id='RP_rest_types'>Restaurant service types here</p>
+                                         </div>
+                                         
+                                    </div>
+                                <!--p class="UserProfilePageSubmitDrinkRequestBtn"></p-->
+                            </div>
                         </div>
                     </div>
                     <div id="DrinkRequestsIframe">
@@ -579,6 +602,7 @@ and open the template in the editor.
                 <div class='Footer'><p style='color: white; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
             </div>
         </div>
+        <script src="Scripts/client_side_proccesses.js" type="text/javascript"></script>
         <script src="Scripts/places_search.js" type="text/javascript"></script>
         <script src="Scripts/MainScript.js" type="text/javascript"></script>
     </body>

@@ -325,3 +325,4 @@ $(document).ready(function(){
 });
 
 
+$("#PDR_date_fld").datepicker();
