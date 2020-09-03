@@ -14,11 +14,25 @@
         <link href="StyleSheets/login_styles.css" rel="stylesheet" type='text/css' />
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
     <body>
+        <header>
+            <h1>BuyMeDrink</h1>
+            <p style="text-align: center; margin-top: -10px;">&copy; 2020, all rights reserved</p>
+            <p style="text-align: center; color: darkblue;">
+                <i id="lgn_snp_pg_status_icon" class="fa fa-exclamation-triangle" style="color: red;"></i>
+                <span id="lgn_snp_pg_status_msg">You're not logged in. Login or Signup below</span>
+            </p>
+        </header>
         <div class="login-page">
             <div class="form">
               <form class="register-form">
+                <h1 style="font-weight: bolder; color: #37a0f5;
+                    font-size: 22px; margin: 20px 0; text-align: center;">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Register
+                </h1>
                 <input type="text" placeholder="name"/>
                 <input type="password" placeholder="password"/>
                 <input type="text" placeholder="email address"/>
@@ -26,6 +40,11 @@
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </form>
               <form class="login-form">
+                <h1 style="font-weight: bolder; color: #37a0f5;
+                    font-size: 22px; margin: 20px 0; text-align: center;">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login
+                </h1>
                 <input type="text" placeholder="username"/>
                 <input type="password" placeholder="password"/>
                 <button>login</button>
