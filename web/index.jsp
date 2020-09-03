@@ -31,11 +31,25 @@ and open the template in the editor.
     
     <script>
         
+        var userToken = JSON.parse(localStorage.getItem("BHDJWT"));
+        
+        function display_user_profile_info(username, gender, age, address){
+            document.getElementById("user_info_name_display").innerText = username;
+            document.getElementById("user_info_gender_display").innerText = gender;
+            document.getElementById("user_info_age_display").innerText = age;
+            document.getElementById("user_info_address_display").innerText = address;
+        };
+        
+        $(document).ready(()=>{
+            display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
+        });
+        
+        console.log(userToken);
         
         $.ajax({
             type: "GET",
             url: "./isUserLoggedIn",
-            data: "token=lskjI44sljhR470ghTkjdGj0ghjskj2SIki",
+            data: "token="+userToken.token_id,
             success: function(result){
                 if(result === "true"){
                     //get updated information here
@@ -163,9 +177,9 @@ and open the template in the editor.
                                 <p style="height: 0; clear: both;"></p>
                             </div>
                             <div class='ProfileDetailsInfoDiv'>
-                                <p style="font-weight: bolder;">Mohammed Adinan Salifu</p>
-                                <p>male, 26 years</p>
-                                <p>General New York Area</p>
+                                <p id='user_info_name_display' style="font-weight: bolder;"></p>
+                                <p><span style='font-size: 16px;' id='user_info_gender_display'></span>, <span style='font-size: 16px;' id='user_info_age_display'></span> years</p>
+                                <p id='user_info_address_display'></p>
                             </div>
                             <div class="ActivitiesAndDrinkOffersBtn">
                                 <table style="width: 100%;">

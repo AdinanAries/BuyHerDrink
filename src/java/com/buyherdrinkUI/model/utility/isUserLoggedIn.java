@@ -34,7 +34,7 @@ public class isUserLoggedIn extends HttpServlet {
         String userToken = request.getParameter("token");
         
         //return true if user is logged in
-        response.getWriter().print("false");
+        response.getWriter().print("true");
         
     }
 

@@ -45,9 +45,9 @@
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     Login
                 </h1>
-                <input type="text" placeholder="username"/>
-                <input type="password" placeholder="password"/>
-                <button>login</button>
+                <input id='lgn_user_name_fld' type="text" placeholder="username"/>
+                <input id='lgn_password_fld' type="password" placeholder="password"/>
+                <button id='login_btn'>login</button>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
               </form>
             </div>

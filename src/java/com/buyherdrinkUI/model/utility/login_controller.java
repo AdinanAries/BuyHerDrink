@@ -33,8 +33,13 @@ public class login_controller extends HttpServlet {
         String Password = request.getParameter("password");
         String json_res = 
                 "{"
-                + "\"status\":\"success\","
-                + "\"user_id\":\"2eighkui3iwuhdo9478khdskj022\""
+                + "\"status\": \"success\","
+                + "\"token_id\": \"JWTi4Udhe4348HDkidksseiIK094Kj\","
+                + "\"user_id\": \"2eighkui3iwuhdo9478khdskj022\","
+                + "\"user_name\": \"Mohammed Adinan\","
+                + "\"gender\": \"male\","
+                + "\"age\": \"26\","
+                + "\"area\": \"General New York Area\""
                 + "}";
         
         response.getWriter().print(json_res);
