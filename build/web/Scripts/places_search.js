@@ -206,9 +206,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function initialize() {
     
     //for all location based searches
-    var autocomplete = new google.maps.places.Autocomplete(rest_locations_input_fld);
+    let autocomplete = new google.maps.places.Autocomplete(rest_locations_input_fld);
     autocomplete.addListener('place_changed', function () {
-        var place = autocomplete.getPlace();
+        let place = autocomplete.getPlace();
     
         // place variable will have all the information you are looking for.
         initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000');
@@ -218,9 +218,9 @@ function initialize() {
     });
     
     //for all name based searches
-    var autocomplete = new google.maps.places.Autocomplete(search_rest_by_name_fld);
-    autocomplete.addListener('place_changed', function () {
-        var place = autocomplete.getPlace();
+    let autocomplete2 = new google.maps.places.Autocomplete(search_rest_by_name_fld);
+    autocomplete2.addListener('place_changed', function () {
+        let place = autocomplete2.getPlace();
     
         // place variable will have all the information you are looking for.
         initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '10');

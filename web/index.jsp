@@ -28,7 +28,43 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         
     </head>
+    
+    <script>
+        
+        
+        $.ajax({
+            type: "GET",
+            url: "./isUserLoggedIn",
+            data: "token=lskjI44sljhR470ghTkjdGj0ghjskj2SIki",
+            success: function(result){
+                if(result === "true"){
+                    //get updated information here
+                    document.getElementById("loadingPage").style.display = "none";
+                }else if(result === "false"){
+                    window.location.href = "./login_and_signup.jsp";
+                }
+            }
+        });
+        
+    </script>
+    
     <body>
+        <div id='loadingPage'>
+            <div class='loader_container'>
+                <div class="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <p style='margin: 10px 0; color: darkgrey; font-weight: bolder; opacity: 0.8; text-align: center;'>&copy; 2020, BuyMeDrink</p>
+        </div>
         <div class='Container'>
             <div class='wrapper'>
                 <div class='Header'>
@@ -280,8 +316,8 @@ and open the template in the editor.
                                       </fieldset>
                             </div>
                             <div id="PDR_details_pane">
-                                <p style="text-align: center; font-weight: bolder; font-size: 16px;">Review and Post</p>
-                                <div style="margin: 5px; border: 1px solid pink; padding: 5px;">
+                                <p style="text-align: center; font-weight: bolder; font-size: 16px; padding: 10px 0;">Review and Post</p>
+                                <div style="margin: 5px; border: #37a0f5 1px solid; padding: 5px; background-color: #d4f3ff;">
                                     <p id='RP_rest_name' style="font-weight: bolder; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
                                             <div style="margin: 5px 0; border-bottom: 1px solid darkgrey;">

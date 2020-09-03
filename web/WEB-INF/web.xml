@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>login_controller</servlet-name>
+        <servlet-class>com.buyherdrinkUI.model.utility.login_controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>signup_controller</servlet-name>
+        <servlet-class>com.buyherdrinkUI.model.utility.signup_controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>isUserLoggedIn</servlet-name>
+        <servlet-class>com.buyherdrinkUI.model.utility.isUserLoggedIn</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login_controller</servlet-name>
+        <url-pattern>/login_controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>signup_controller</servlet-name>
+        <url-pattern>/signup_controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>isUserLoggedIn</servlet-name>
+        <url-pattern>/isUserLoggedIn</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
