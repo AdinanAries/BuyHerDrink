@@ -7,6 +7,7 @@ package com.buyherdrinkUI.model.utility;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,9 +33,18 @@ public class isUserLoggedIn extends HttpServlet {
         
         //token for validation
         String userToken = request.getParameter("token");
+        String status = "false";
+        
+        user_tokens_inmemory_db userTokens = user_tokens_inmemory_db.getInstance();
         
         //return true if user is logged in
-        response.getWriter().print("true");
+        String dbToken = userTokens.findItem(userToken);
+        if(dbToken.equals(userToken)){
+            status = "true";
+        }
+        //System.out.println(dbToken);
+        response.getWriter().print(status);
+        
         
     }
 

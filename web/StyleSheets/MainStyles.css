@@ -581,7 +581,7 @@ input[type=checkbox]:after {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 6.5px; height: 6.5px;
+    width: 8.5px; height: 8.5px;
     background-color: transparent;
     border: 1px solid darkgrey;
     background-color: white;

@@ -29,12 +29,18 @@ public class login_controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String Username = request.getParameter("username");
         String Password = request.getParameter("password");
+        
+        user_tokens_inmemory_db userTokens = user_tokens_inmemory_db.getInstance();
+        
+        userTokens.addItem("JWTi4Udhe4348HDkidksseiIK094Kw");
+        
         String json_res = 
                 "{"
                 + "\"status\": \"success\","
-                + "\"token_id\": \"JWTi4Udhe4348HDkidksseiIK094Kj\","
+                + "\"token_id\": \"JWTi4Udhe4348HDkidksseiIK094Kw\","
                 + "\"user_id\": \"2eighkui3iwuhdo9478khdskj022\","
                 + "\"user_name\": \"Mohammed Adinan\","
                 + "\"gender\": \"male\","
