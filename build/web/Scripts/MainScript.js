@@ -338,3 +338,27 @@ setInterval(()=>{
 setInterval(()=>{
     document.getElementById("RP_price_display").innerText = document.getElementById("PDR_price_fld").value;
 },1);
+
+var DrinkOnlyPurpose = document.getElementById("DrinkOnlyPurpose");
+var DinnerOnlyPurpose = document.getElementById("DinnerOnlyPurpose");
+var DrinkAndDinnerPurpose = document.getElementById("DrinkAndDinnerPurpose");
+var RP_purpose_display = document.getElementById("RP_purpose_display");
+setInterval(()=>{
+    if(DrinkOnlyPurpose.checked && DinnerOnlyPurpose.checked && DrinkAndDinnerPurpose.checked){
+        RP_purpose_display.innerText = "Drink, Dinner, Other";
+    }else if(DrinkOnlyPurpose.checked && DinnerOnlyPurpose.checked){
+        RP_purpose_display.innerText = "Drink, Dinner";
+    }else if(DrinkOnlyPurpose.checked && DrinkAndDinnerPurpose.checked){
+        RP_purpose_display.innerText = "Drink, Other";
+    }else if(DinnerOnlyPurpose.checked && DrinkAndDinnerPurpose.checked){
+        RP_purpose_display.innerText = "Dinner, Other";
+    }
+    else if(DrinkOnlyPurpose.checked){
+        RP_purpose_display.innerText = "Drink";
+    }else if(DinnerOnlyPurpose.checked){
+        RP_purpose_display.innerText = "Dinner";
+    }
+    else if(DrinkAndDinnerPurpose.checked){
+        RP_purpose_display.innerText = "Other";
+    }
+},1);

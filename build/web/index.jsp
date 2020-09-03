@@ -298,7 +298,7 @@ and open the template in the editor.
                                                     <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span id='RP_time_display' style='color: darkblue;'>12:00am</span>
                                                 </p>
                                                 <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
+                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span id='RP_purpose_display' style='color: darkblue; margin-right: 15px;'>Drink</span>
                                                     <i class="fa fa-money" aria-hidden="true"></i> <span id='RP_price_display' style='color: darkblue;'>$5.00</span>
                                                 </p>
                                              </div>
