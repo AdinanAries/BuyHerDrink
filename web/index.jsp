@@ -198,7 +198,7 @@ and open the template in the editor.
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Add date and time:</p>
                                                 <input id="PDR_date_fld" style="width: 100px; margin-right: 10px;" type="text" placeholder="add date here" />
                                                 -
-                                                <select>
+                                                <select id='PDR_time_fld'>
                                                     <option>12:00am</option>
                                                     <option>1:00am</option>
                                                     <option>2:00am</option>
@@ -232,7 +232,7 @@ and open the template in the editor.
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Put a price on your date:</p>
-                                                <select>
+                                                <select id='PDR_price_fld'>
                                                     <option>$5.00</option>
                                                     <option>$10.00</option>
                                                     <option>$15.00</option>
@@ -267,7 +267,7 @@ and open the template in the editor.
 
                                       <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
-                                        <input id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
+                                        <input checked="true" id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
                                         <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
                                         <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
                                       </fieldset>
@@ -282,20 +282,28 @@ and open the template in the editor.
                             <div id="PDR_details_pane">
                                 <p style="text-align: center; font-weight: bolder; font-size: 16px;">Review and Post</p>
                                 <div style="margin: 5px; border: 1px solid pink; padding: 5px;">
-                                        <p id='RP_rest_name' style="font-weight: bolder; color: blue;">Restaurant name here</p> 
+                                    <p id='RP_rest_name' style="font-weight: bolder; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
-                                            <div style="margin: 5px 0;">
-                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid darkgrey; padding-bottom: 5px;">
+                                            <div style="margin: 5px 0; border-bottom: 1px solid darkgrey;">
+                                                <div style="border-bottom: 1px solid darkgrey; display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
                                                     <div style="width: 200px; height: 100px; overflow: hidden;">
                                                         <img id='RP_rest_photo' src="" style="width: 200px; height: auto;"/>
                                                     </div>
                                                     <p style="padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; display: flex; flex-direction: column; justify-content: center;">Post</p>
                                                 </div>
                                                 <p><img id='RP_rest_icon' src="" style="width: 20px; height: auto;"/> <span id='RP_rest_rating' style="color: #37a0f5; font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span id='RP_rest_location'>restaurant location address here</span><p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span id='RP_rest_location'><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></span><p>
+                                                <p style='color: darkgrey; padding-top: 10px;'>
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span id='RP_date_display' style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
+                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span id='RP_time_display' style='color: darkblue;'>12:00am</span>
+                                                </p>
+                                                <p style='color: darkgrey; padding-bottom: 10px;'>
+                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
+                                                    <i class="fa fa-money" aria-hidden="true"></i> <span id='RP_price_display' style='color: darkblue;'>$5.00</span>
+                                                </p>
                                              </div>
                                              <p style="color: darkgrey;">types: </p>
-                                             <p id='RP_rest_types'>Restaurant service types here</p>
+                                             <p id='RP_rest_types'><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p>
                                          </div>
                                          
                                     </div>

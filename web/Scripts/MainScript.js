@@ -324,5 +324,17 @@ $(document).ready(function(){
     });
 });
 
+var currentDate = new Date();
+$("#PDR_date_fld").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 
-$("#PDR_date_fld").datepicker();
+setInterval(()=>{
+    document.getElementById("RP_date_display").innerText = document.getElementById("PDR_date_fld").value;
+},1);
+
+setInterval(()=>{
+    document.getElementById("RP_time_display").innerText = document.getElementById("PDR_time_fld").value;
+},1);
+
+setInterval(()=>{
+    document.getElementById("RP_price_display").innerText = document.getElementById("PDR_price_fld").value;
+},1);
