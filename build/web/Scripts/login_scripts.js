@@ -11,15 +11,20 @@ function login_function(username, password){
             console.log(result);
             localStorage.setItem("BHDJWT", result);
             window.location.href = "./index.jsp";
+            //document.getElementById("loadingPage").style.display = "none";
         }
     });
 }
 
 $(document).ready(()=>{
     document.getElementById("login_btn").addEventListener("click", ()=>{
+        document.getElementById("loadingPage").style.display = "flex";
         let username = document.getElementById("lgn_user_name_fld").value;
         let password = document.getElementById("lgn_password_fld").value;
         login_function(username, password);
     });
 });
 
+$(document).ready(()=>{
+    document.getElementById("loadingPage").style.display = "none";
+});

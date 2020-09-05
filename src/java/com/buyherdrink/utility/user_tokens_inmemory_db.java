@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.buyherdrinkUI.model.utility;
+package com.buyherdrink.utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.Optional;
  */
 public class user_tokens_inmemory_db {
     
-    List<String> tokenList;
+    private List<String> tokenList;
     
     private static user_tokens_inmemory_db singleton_instance;
     
@@ -41,6 +41,8 @@ public class user_tokens_inmemory_db {
                 .findFirst().get();
         }catch(NoSuchElementException e){
             System.out.println(e.getMessage());
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
 
         if(temp_token.equals("")){
@@ -55,6 +57,10 @@ public class user_tokens_inmemory_db {
     }
     
     public void removeItem(String tokenId){
-        this.tokenList.remove(tokenId);
+        try{
+            this.tokenList.remove(tokenId);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

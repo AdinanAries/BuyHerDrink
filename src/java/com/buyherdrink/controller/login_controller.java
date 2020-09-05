@@ -1,41 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.buyherdrink.controller;
 
-package com.buyherdrinkUI.model.utility;
-
+import com.buyherdrink.utility.user_tokens_inmemory_db;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
-@WebServlet(name = "GetBase64StringControl", urlPatterns = {"/GetBase64StringControl"})
+/**
+ *
+ * @author aries
+ */
+public class login_controller extends HttpServlet {
 
-public class GetBase64StringControl extends HttpServlet {
-    
-    String Base64StringImage = ""; 
-    String ImgProperty = "";
-    String JSONData = "";
-    
-    encodeBinaryPhotoToBase64String encoder = null;
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String Path = request.getParameter("ImgPath");
-        //JOptionPane.showMessageDialog(null, Path);
-        encoder = new encodeBinaryPhotoToBase64String(Path);
+        String Username = request.getParameter("username");
+        String Password = request.getParameter("password");
         
-        Base64StringImage = encoder.GetBaseString64Image();
-        ImgProperty = encoder.GetImageAsElementProp();
+        user_tokens_inmemory_db userTokens = user_tokens_inmemory_db.getInstance();
         
-        JSONData = "{"
-                 +    "\"Base64StringImage\": \"" + Base64StringImage + "\","
-                 +    "\"ImgProperty\": \"" + ImgProperty + "\""
-                 + "}";
+        userTokens.addItem("JWTi4Udhe4348HDkidksseiIK094Kw");
         
-        response.getWriter().print(JSONData);
+        String json_res = 
+                "{"
+                + "\"status\": \"success\","
+                + "\"token_id\": \"JWTi4Udhe4348HDkidksseiIK094Kw\","
+                + "\"user_id\": \"2eighkui3iwuhdo9478khdskj022\","
+                + "\"user_name\": \"Mohammed Adinan\","
+                + "\"gender\": \"male\","
+                + "\"age\": \"26\","
+                + "\"area\": \"General New York Area\""
+                + "}";
+        
+        response.getWriter().print(json_res);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

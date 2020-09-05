@@ -40,25 +40,31 @@ and open the template in the editor.
             document.getElementById("user_info_address_display").innerText = address;
         };
         
-        $(document).ready(()=>{
-            display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
-        });
-        
-        console.log(userToken);
-        
-        $.ajax({
-            type: "GET",
-            url: "./isUserLoggedIn",
-            data: "token="+userToken.token_id,
-            success: function(result){
-                if(result === "true"){
-                    //get updated information here
-                    document.getElementById("loadingPage").style.display = "none";
-                }else if(result === "false"){
-                    window.location.href = "./login_and_signup.jsp";
+        function checkUserLoginStatus(){
+            $.ajax({
+                type: "GET",
+                url: "./isUserLoggedIn",
+                data: "token="+userToken.token_id,
+                success: function(result){
+                    if(result === "true"){
+                        //get updated information here
+                        document.getElementById("loadingPage").style.display = "none";
+                    }else if(result === "false"){
+                        window.location.href = "./login_and_signup.jsp";
+                    }
                 }
-            }
-        });
+            });
+        }
+        
+        if(userToken === null){
+            window.location.href = "./login_and_signup.jsp"
+        }else{
+            checkUserLoginStatus();
+            $(document).ready(()=>{
+                display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
+            });
+        }
+        
         
     </script>
     
@@ -414,8 +420,8 @@ and open the template in the editor.
                                 <div class="DrinkRequesteesListDiv">
                                 <table>
                                     <tbody>
-                                        <tr>
-                                            <td id="RequesteeListCoverPhoto">
+                                        <tr id="drink_requests_list">
+                                            <!--td id="RequesteeListCoverPhoto">
                                                 <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
                                                 <div>
                                                     <p style="font-size: 15px; font-weight: bolder;">Filomina Gomez</p>
@@ -443,7 +449,7 @@ and open the template in the editor.
                                                     <p style="font-size: 15px; font-weight: bolder;">Sasha Atkingston</p>
                                                     <p>female, 24 - Drink <span class="RequesteeOnlineStatusLedFromList"></span></p>
                                                 </div>
-                                            </td>
+                                            </td-->
                                         </tr>
                                     </tbody>
                                 </table>
@@ -649,7 +655,7 @@ and open the template in the editor.
                                 </tr>
                             </tbody>
                         </table>
-                        <div style="width: fit-content; background-color: #ff9c9c; padding: 10px; padding-bottom: 5px; margin: 10px; border-radius: 4px;">
+                        <div id="logout_btn" style="width: fit-content; background-color: #ff9c9c; padding: 10px; padding-bottom: 5px; margin: 10px; border-radius: 4px;">
                             <img src="icons/icons8-sign-out-50.png" style="width: 25px; height: 25px;" alt=""/>
                             <sup style="font-size: 14px;">Signout</sup>
                         </div>
@@ -662,6 +668,8 @@ and open the template in the editor.
         </div>
         <script src="Scripts/client_side_proccesses.js" type="text/javascript"></script>
         <script src="Scripts/places_search.js" type="text/javascript"></script>
+        <script src="Scripts/logout_script.js" type="text/javascript"></script>
         <script src="Scripts/MainScript.js" type="text/javascript"></script>
+        
     </body>
 </html>

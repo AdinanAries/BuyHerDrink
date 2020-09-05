@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.buyherdrinkUI.model.utility;
+package com.buyherdrink.utility;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aries
  */
-public class signup_controller extends HttpServlet {
+public class isUserLoggedIn extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,19 +30,22 @@ public class signup_controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet signup_controller</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet signup_controller at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        //token for validation
+        String userToken = request.getParameter("token");
+        String status = "false";
+        
+        user_tokens_inmemory_db userTokens = user_tokens_inmemory_db.getInstance();
+        
+        //return true if user is logged in
+        String dbToken = userTokens.findItem(userToken);
+        if(dbToken.equals(userToken)){
+            status = "true";
         }
+        //System.out.println(dbToken);
+        response.getWriter().print(status);
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -538,7 +538,7 @@ body{
     object-fit: cover;
 }
 
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto{
+.DrinkRequesteesListDiv table tbody tr .RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto{
     background-image: url("../Pictures/TestPhotos/1.jpg");
 }
 

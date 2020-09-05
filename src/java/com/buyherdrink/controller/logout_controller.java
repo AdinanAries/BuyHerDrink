@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.buyherdrinkUI.model.utility;
+package com.buyherdrink.controller;
 
+import com.buyherdrink.utility.user_tokens_inmemory_db;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aries
  */
-public class isUserLoggedIn extends HttpServlet {
+public class logout_controller extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,21 +30,14 @@ public class isUserLoggedIn extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String logout_status = "success";
         
-        //token for validation
-        String userToken = request.getParameter("token");
-        String status = "false";
+        String user_token = request.getParameter("user_token");
         
-        user_tokens_inmemory_db userTokens = user_tokens_inmemory_db.getInstance();
+        user_tokens_inmemory_db token_db = user_tokens_inmemory_db.getInstance();
+        token_db.removeItem(user_token);
         
-        //return true if user is logged in
-        String dbToken = userTokens.findItem(userToken);
-        if(dbToken.equals(userToken)){
-            status = "true";
-        }
-        //System.out.println(dbToken);
-        response.getWriter().print(status);
-        
+        response.getWriter().print(logout_status);
         
     }
 

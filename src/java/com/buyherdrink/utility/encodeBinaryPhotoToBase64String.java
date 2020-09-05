@@ -1,5 +1,5 @@
 
-package com.buyherdrinkUI.model.utility;
+package com.buyherdrink.utility;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;

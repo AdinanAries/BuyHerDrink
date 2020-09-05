@@ -17,10 +17,26 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
     <body>
+        <div id='loadingPage'>
+            <div class='loader_container'>
+                <div class="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <p style='margin: 10px 0; color: darkgrey; font-weight: bolder; opacity: 0.8; text-align: center;'>&copy; 2020, BuyMeDrink</p>
+        </div>
         <header>
             <h1>BuyMeDrink</h1>
             <p style="text-align: center; margin-top: -10px;">&copy; 2020, all rights reserved</p>
-            <p style="text-align: center; color: darkblue;">
+            <p style="text-align: center; color: darkblue; font-weight: bolder;">
                 <i id="lgn_snp_pg_status_icon" class="fa fa-exclamation-triangle" style="color: red;"></i>
                 <span id="lgn_snp_pg_status_msg">You're not logged in. Login or Signup below</span>
             </p>
