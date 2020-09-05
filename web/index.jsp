@@ -510,8 +510,8 @@ and open the template in the editor.
                                 <div class="DrinkOfferersListDiv">
                                 <table>
                                     <tbody>
-                                        <tr>
-                                            <td id="OfferesListCoverPhoto">
+                                        <tr id="drink_offers_list">
+                                            <!--td class="OfferesListCoverPhoto">
                                                 <img class="OfferersProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
                                                 <div>
                                                     <p style="font-size: 15px; font-weight: bolder;">Filomina Gomez</p>
@@ -539,7 +539,7 @@ and open the template in the editor.
                                                     <p style="font-size: 15px; font-weight: bolder;">Sasha Atkingston</p>
                                                     <p>female, 24 - Drink <span class="OfferersOnlineStatusLedFromList"></span></p>
                                                 </div>
-                                            </td>
+                                            </td-->
                                         </tr>
                                     </tbody>
                                 </table>
