@@ -456,21 +456,9 @@ and open the template in the editor.
                     </div>
                     <div id="DrinkOffersIframe">
                         <div class="DrinkOffersDiv">
-                            <div class="OffererCoverPhoto">
-                                <span class="OffererOnlineStatusLed"></span>
-                                <span class="OffererOnlineStatusText">Offline</span>
-                                <img class='OffererPicture' src="Pictures/TestPhotos/1.jpg" alt=""/>
+                            <div id="selected_drink_offer_user_info">
+                            
                             </div>
-                            <div class="OffererInfoDiv">
-                                <p style="font-weight: bolder;">Filomina Gomez</p>
-                                <p>25 years, female</p>
-                                <p>General New York Area</p>
-                            </div>
-                            <p style="clear: both;"></p>
-                            <center><p class="viewFullProfileBtn" style="color: white; background-color: cadetblue; padding: 5px; 
-                                       text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
-                                    View Full Profile
-                                </p></center>
                             
                             <div class="OffererAdditionalMessage">
                                 <div id="current_selected_drink_offer">
