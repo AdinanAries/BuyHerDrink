@@ -178,6 +178,14 @@ function get_recent_ten_drink_request(city, town, country){
         success: function(result){
             console.log(JSON.parse(result));
             let request_list = JSON.parse(result);
+            
+            //rendering first request as selected by default
+            //user details
+            render_each_selected_drink_request_user(request_list[0].requestee_name, request_list[0].requestee_age, request_list[0].requestee_gender, request_list[0].requestee_address);
+            //request details
+            render_each_selected_drink_request(request_list[0].rest_name, request_list[0].request_purpose, request_list[0].rest_location, request_list[0].meeting_date, request_list[0].meeting_time, request_list[0].meeting_budget, request_list[0].added_message);
+            
+            
             request_list.forEach( request => {
                 render_drink_request_to_list(request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
             });
@@ -193,8 +201,15 @@ function get_recent_ten_drink_offers(clientId){
         data: "client_id="+clientId,
         success: function(result){
             //console.log(JSON.parse(result));
-            let request_list = JSON.parse(result);
-            request_list.forEach( request => {
+            let offer_list = JSON.parse(result);
+            
+            //rendering first offer as selected by default
+            //user details
+            render_each_selected_drink_offer_user(offer_list[0].requestee_name, offer_list[0].requestee_age, offer_list[0].requestee_gender, offer_list[0].requestee_address);
+            //offer details
+            render_each_selected_drink_offer(offer_list[0].rest_name, offer_list[0].request_purpose, offer_list[0].rest_location, offer_list[0].meeting_date, offer_list[0].meeting_time, offer_list[0].meeting_budget, offer_list[0].added_message);
+            
+            offer_list.forEach( request => {
                 render_drink_offers_to_list(request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
             });
         }

@@ -333,7 +333,7 @@ body{
 
 .MainMenu table tbody tr td img{
     width: 30px;
-    height: 30px;
+    height: auto;
     padding-right: 10px;
 }
 

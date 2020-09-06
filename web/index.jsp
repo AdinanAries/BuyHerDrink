@@ -462,7 +462,7 @@ and open the template in the editor.
                             
                             <div class="OffererAdditionalMessage">
                                 <div id="current_selected_drink_offer">
-                                    <div style="padding: 3px; padding-top: 0;">
+                                    <!--div style="padding: 3px; padding-top: 0;">
                                         <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
                                         <p style="font-size: 14px;">
                                             <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
@@ -482,7 +482,7 @@ and open the template in the editor.
                                             This is a placeholder text for user added message to drink or dinner requests. 
                                             It lets user add more clarity to the request being made
                                         </p>
-                                    </div>
+                                    </div-->
                                 </div>
                                 <table class="ViewOffererFullProfileAndMakeOfferBtns">
                                     <tbody>
