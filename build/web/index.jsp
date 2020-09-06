@@ -368,39 +368,36 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div id="DrinkRequestsIframe">
+                        
                         <div class="DrinkRequestDiv">
-                            <div class="RequesteeCoverPhoto">
-                                <span class="RequesteeOnlineStatusLed"></span>
-                                <span class="RequesteeOnlineStatusText">Offline</span>
-                                <img class='RequesteePicture' src="Pictures/TestPhotos/1.jpg" alt=""/>
+                            <div id="selected_drink_request_user_info">
+                                
                             </div>
-                            <div class="RequesteeInfoDiv">
-                                <p style="font-weight: bolder;">Filomina Gomez</p>
-                                <p>25 years, female</p>
-                                <p>General New York Area</p>
-                            </div>
-                            <p style="clear: both;"></p>
-                            <center><p class="viewFullProfileBtn" style="color: white; background-color: tomato; padding: 5px; 
-                                       text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
-                                    View Full Profile
-                                </p></center>
                             
                             <div class="RequesteeAdditionalMessage">
-                                <div style="padding: 3px; padding-top: 0;">
-                                    <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Request Details</p>
-                                    <p style="font-size: 14px;">
-                                        <img class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
-                                        - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
-                                        <img style="" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">9:15pm</span>
-                                        <img style="margin-left: 20px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">$5.00</span>
-                                    </p>
+                                <div id="current_selected_drink_request">
+                                    <!--div style="padding: 3px; padding-top: 0;">
+                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Request Details</p>
+                                        <p style="font-size: 14px;">
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
+                                            - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-marker-filled-30_1.png" alt="">
+                                            <a style="color: white;" href="https://maps.google.com/?q=" target="_blank"><span style="color: tomato; font-size: 14px;">1815 davidson ave, bronx NY, USA</span></a><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">12/04/2020</span> - <span style="color: tomato; font-size: 14px;">9:15pm</span><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">$5.00</span>
+                                        </p>
+                                    </div>
+                                    <div style="padding: 10px; border-top: 1px solid darkgrey;">
+                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
+                                        <p style="font-size: 14px;">
+                                            This is a placeholder text for user added message to drink or dinner requests. 
+                                            It lets user add more clarity to the request being made
+                                        </p>
+                                    </div-->
                                 </div>
-                                <p style="font-size: 14px;">
-                                    This is a placeholder text for user added message to drink or dinner requests. It lets user add more clarity to the request being made
-                                </p>
                                 <table class="ViewRequesteeFullProfileAndMakeOfferBtns">
                                     <tbody>
                                         <tr>
@@ -476,21 +473,29 @@ and open the template in the editor.
                                 </p></center>
                             
                             <div class="OffererAdditionalMessage">
-                                <div style="padding: 3px; padding-top: 0;">
-                                    <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
-                                    <p style="font-size: 14px;">
-                                        <img class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
-                                        - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
-                                        <img style="" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">9:15pm</span>
-                                        <img style="margin-left: 20px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                        <span style="color: tomato; font-size: 14px;">$5.00</span>
-                                    </p>
+                                <div id="current_selected_drink_offer">
+                                    <div style="padding: 3px; padding-top: 0;">
+                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
+                                        <p style="font-size: 14px;">
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
+                                            - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-marker-filled-30_1.png" alt="">
+                                            <a style="color: white;" href="https://maps.google.com/?q=" target="_blank"><span style="color: tomato; font-size: 14px;">1815 davidson ave, bronx NY, USA</span></a><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">12/04/2020</span> - <span style="color: tomato; font-size: 14px;">9:15pm</span><br/>
+                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
+                                            <span style="color: tomato; font-size: 14px;">$5.00</span>
+                                        </p>
+                                    </div>
+                                    <div style="padding: 10px; border-top: 1px solid darkgrey;">
+                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
+                                        <p style="font-size: 14px;">
+                                            This is a placeholder text for user added message to drink or dinner requests. 
+                                            It lets user add more clarity to the request being made
+                                        </p>
+                                    </div>
                                 </div>
-                                <p style="font-size: 14px;">
-                                    This is a placeholder text for user added message to drink or dinner requests. It lets user add more clarity to the request being made
-                                </p>
                                 <table class="ViewOffererFullProfileAndMakeOfferBtns">
                                     <tbody>
                                         <tr>
