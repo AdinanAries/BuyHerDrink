@@ -131,13 +131,10 @@ body{
     padding-top: 60px;
 }
 .Footer{
-    background-color: red;
+    background-color: royalblue;
     width: 100%;
-    /*position: absolute;
-    bottom: 0;
-    left: 0;*/
     text-align: right;
-    margin-top: 10px;
+    padding: 10px 0;
 }
 .MenuIcon{
     margin-top: 10px;
@@ -255,9 +252,14 @@ body{
     float: left;
     margin-left: 5px;
     background-color: darkgrey;
-    /*background-size: cover;*/
+    overflow: hidden;
+    /*background-size: cover;
     object-fit: cover;
-   /*background-position: center;*/
+   background-position: center;*/
+}
+.ProfilePicture img{
+    width: 100px;
+    height: auto;
 }
 .UserProfileSettingsIcons{
     text-align: right;
@@ -421,7 +423,12 @@ body{
     height: 100px;
     margin-left: 5px;
     background-color: darkgrey;
-    object-fit: cover;
+    overflow: hidden;
+}
+
+.RequesteePicture img, .OffererPicture img{
+    width: 100px;
+    height: auto;
 }
 
 .RequesteeInfoDiv, .OffererInfoDiv{
@@ -535,7 +542,8 @@ body{
 }
 
 .DrinkRequesteesListDiv table tbody tr td img, .DrinkOfferersListDiv table tbody tr td img{
-    object-fit: cover;
+    width: 100px;
+    height: auto;
 }
 
 .DrinkRequesteesListDiv table tbody tr .RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr .OfferesListCoverPhoto{
@@ -555,11 +563,12 @@ body{
 
 
 .RequesteesProfileFromList, .OfferersProfileFromList{
-    border-radius: 100%;
-    width: 100px;
-    height: 100px;
-    float: left;
+    border-radius: 100% !important;
+    width: 100px !important;
+    height: 100px !important;
+    float: left !important;
     border: 3px solid white;
+    overflow: hidden !important;
 }
 #DrinkRequestsIframe{
     display: none;
@@ -668,14 +677,17 @@ input[type=radio]:checked {
 }
 
 #acceptOfferBtn{
-    background-color: red; 
-    color: white;
+    background-color: deepskyblue;
     cursor: pointer;
+    color: white;
+    padding: 10px 0;
 }
 
 #declineOfferBtn{
-    background-color: deepskyblue;
+    background-color: red; 
+    color: white;
     cursor: pointer;
+    padding: 10px 0;
 }
 
 .PublishRequestDiv input[type="text"], select{

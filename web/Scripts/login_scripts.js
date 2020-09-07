@@ -1,7 +1,9 @@
+///jquery function for toggling in between login and signup pages
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
 
+//this function logs the user in
 function login_function(username, password){
     $.ajax({
         type: "GET",
@@ -16,6 +18,7 @@ function login_function(username, password){
     });
 }
 
+//this onclick event gets the username and password inputs and try to log in
 $(document).ready(()=>{
     document.getElementById("login_btn").addEventListener("click", ()=>{
         document.getElementById("loadingPage").style.display = "flex";
@@ -25,6 +28,7 @@ $(document).ready(()=>{
     });
 });
 
+//loadingPage is display: block; by default, so set it to display none when page finishes loading
 $(document).ready(()=>{
     document.getElementById("loadingPage").style.display = "none";
 });

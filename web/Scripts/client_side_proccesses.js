@@ -41,7 +41,9 @@ function render_drink_request_to_list(requestee_name, requestee_gender, requeste
     
     td.classList.add("RequesteeListCoverPhoto");
     td.innerHTML = `
-                    <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
+                    <div class="RequesteesProfileFromList">
+                        <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                    </div>
                     <div>
                         <p style="font-size: 15px; font-weight: bolder;">${requestee_name}</p>
                         <p>${requestee_gender},  ${requestee_age} - ${request_purpose} <span class="RequesteeOnlineStatusLedFromList"></span></p>
@@ -62,7 +64,9 @@ function render_drink_offers_to_list(requestee_name, requestee_gender, requestee
     });
     
     td.innerHTML = `
-                    <img class="OfferersProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
+                    <div class="OfferersProfileFromList">
+                        <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                    </div>
                     <div>
                         <p style="font-size: 15px; font-weight: bolder;">${requestee_name}</p>
                         <p>${requestee_gender}, ${requestee_age} - ${request_purpose} <span class="OfferersOnlineStatusLedFromList"></span></p>
@@ -104,7 +108,9 @@ function render_each_selected_drink_request_user(name, age, gender, address){
                     <div class="RequesteeCoverPhoto">
                         <span class="RequesteeOnlineStatusLed"></span>
                         <span class="RequesteeOnlineStatusText">Offline</span>
-                        <img class='RequesteePicture' src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <div class='RequesteePicture'>
+                            <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        </div>
                     </div>
                     <div class="RequesteeInfoDiv">
                         <p style="font-weight: bolder;">${name}</p>
@@ -112,7 +118,8 @@ function render_each_selected_drink_request_user(name, age, gender, address){
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" style="margin: auto; color: white; background-color: tomato; padding: 5px; 
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv();"
+                       style="margin: auto; color: white; background-color: tomato; padding: 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
                     </p>
@@ -123,7 +130,7 @@ function render_each_selected_drink_request_user(name, age, gender, address){
 function render_each_selected_drink_offer(restaurant, purpose, location, date, time, budget, message){
     current_selected_drink_offer.innerHTML = `
                         <div style="padding: 3px; padding-top: 0;">
-                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Request Details</p>
+                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
                             <p style="font-size: 14px;">
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${restaurant}</span>
@@ -151,7 +158,9 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                     <div class="OffererCoverPhoto">
                         <span class="OffererOnlineStatusLed"></span>
                         <span class="OffererOnlineStatusText">Offline</span>
-                        <img class='OffererPicture' src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <div class='OffererPicture'>
+                            <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        </div>
                     </div>
                     <div class="OffererInfoDiv">
                         <p style="font-weight: bolder;">${name}</p>
@@ -159,7 +168,8 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" style="margin: auto; color: white; background-color: cadetblue; padding: 5px; 
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv();"
+                        style="margin: auto; color: white; background-color: cadetblue; padding: 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
                     </p>

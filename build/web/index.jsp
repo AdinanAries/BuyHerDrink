@@ -31,8 +31,10 @@ and open the template in the editor.
     
     <script>
         
+        //Get user login jwt token 
         var userToken = JSON.parse(localStorage.getItem("BHDJWT"));
         
+        //function definition for displaying currently logged in user information
         function display_user_profile_info(username, gender, age, address){
             document.getElementById("user_info_name_display").innerText = username;
             document.getElementById("user_info_gender_display").innerText = gender;
@@ -40,6 +42,7 @@ and open the template in the editor.
             document.getElementById("user_info_address_display").innerText = address;
         };
         
+        //function that calls the backend server to verify if user's tokenId is valid as a logged in user
         function checkUserLoginStatus(){
             $.ajax({
                 type: "GET",
@@ -56,8 +59,10 @@ and open the template in the editor.
             });
         }
         
+        //flow control that handles whether user gets sent to login/signup page or checkes if verification of token is needed to allow user login
+        //if userToken is null, then it is not present in localStorage
         if(userToken === null){
-            window.location.href = "./login_and_signup.jsp"
+            window.location.href = "./login_and_signup.jsp";
         }else{
             checkUserLoginStatus();
             $(document).ready(()=>{
@@ -173,7 +178,9 @@ and open the template in the editor.
                         </div>
                         <div class='ProfileDetailsDiv'>
                             <div class="ProfileCover">
-                                <img class='ProfilePicture' src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
+                                <div class='ProfilePicture'>
+                                    <img src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
+                                </div>
                                 <div class="UserProfileSettingsIcons">
                                     <img id="galleryIcon" src="icons/icons8-photo-gallery-20.png" alt=""/>
                                     <span id='notificationsIcon'><img src="icons/icons8-notification-50.png" alt=""/>
@@ -376,27 +383,7 @@ and open the template in the editor.
                             
                             <div class="RequesteeAdditionalMessage">
                                 <div id="current_selected_drink_request">
-                                    <!--div style="padding: 3px; padding-top: 0;">
-                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Request Details</p>
-                                        <p style="font-size: 14px;">
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
-                                            - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-marker-filled-30_1.png" alt="">
-                                            <a style="color: white;" href="https://maps.google.com/?q=" target="_blank"><span style="color: tomato; font-size: 14px;">1815 davidson ave, bronx NY, USA</span></a><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">12/04/2020</span> - <span style="color: tomato; font-size: 14px;">9:15pm</span><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">$5.00</span>
-                                        </p>
-                                    </div>
-                                    <div style="padding: 10px; border-top: 1px solid darkgrey;">
-                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
-                                        <p style="font-size: 14px;">
-                                            This is a placeholder text for user added message to drink or dinner requests. 
-                                            It lets user add more clarity to the request being made
-                                        </p>
-                                    </div-->
+                                    
                                 </div>
                                 <table class="ViewRequesteeFullProfileAndMakeOfferBtns">
                                     <tbody>
@@ -418,35 +405,7 @@ and open the template in the editor.
                                 <table>
                                     <tbody>
                                         <tr id="drink_requests_list">
-                                            <!--td id="RequesteeListCoverPhoto">
-                                                <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Filomina Gomez</p>
-                                                    <p>female, 25 - Drink <span class="RequesteeOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td>
-                                            <td id="RequesteeListCoverPhoto2">
-                                                <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/2.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Anna Rodriqez</p>
-                                                    <p>female, 22 - Dinner <span class="RequesteeOnlineStatusLedFromList" style="background-color: green;"></span></p>
-                                                    
-                                                </div>
-                                            </td>
-                                            <td id="RequesteeListCoverPhoto3">
-                                                <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/3.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Nicole Mohammed</p>
-                                                    <p>female, 20 - Dinner <span class="RequesteeOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td>
-                                            <td id="RequesteeListCoverPhoto4">
-                                                <img class="RequesteesProfileFromList" src="Pictures/TestPhotos/4.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Sasha Atkingston</p>
-                                                    <p>female, 24 - Drink <span class="RequesteeOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td-->
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -454,7 +413,7 @@ and open the template in the editor.
                         </div>
                         
                     </div>
-                    <div id="DrinkOffersIframe">
+                    <div style="background-color: #d4f3ff;" id="DrinkOffersIframe">
                         <div class="DrinkOffersDiv">
                             <div id="selected_drink_offer_user_info">
                             
@@ -462,36 +421,18 @@ and open the template in the editor.
                             
                             <div class="OffererAdditionalMessage">
                                 <div id="current_selected_drink_offer">
-                                    <!--div style="padding: 3px; padding-top: 0;">
-                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
-                                        <p style="font-size: 14px;">
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">Suspendenders Bar</span>
-                                            - <span style="color: tomato; font-size: 14px;">Drink</span><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-marker-filled-30_1.png" alt="">
-                                            <a style="color: white;" href="https://maps.google.com/?q=" target="_blank"><span style="color: tomato; font-size: 14px;">1815 davidson ave, bronx NY, USA</span></a><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">12/04/2020</span> - <span style="color: tomato; font-size: 14px;">9:15pm</span><br/>
-                                            <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                            <span style="color: tomato; font-size: 14px;">$5.00</span>
-                                        </p>
-                                    </div>
-                                    <div style="padding: 10px; border-top: 1px solid darkgrey;">
-                                        <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
-                                        <p style="font-size: 14px;">
-                                            This is a placeholder text for user added message to drink or dinner requests. 
-                                            It lets user add more clarity to the request being made
-                                        </p>
-                                    </div-->
+                                    
                                 </div>
                                 <table class="ViewOffererFullProfileAndMakeOfferBtns">
                                     <tbody>
                                         <tr>
-                                            <td id="acceptOfferBtn">
-                                                Decline Offer
-                                            </td>
                                             <td id="declineOfferBtn">
+                                                Decline Offer
+                                                <i class="fa fa-times" style="color: white; margin-left: 10px;"></i>
+                                            </td>
+                                            <td id="acceptOfferBtn">
                                                 Accept Offer
+                                                <i class="fa fa-check" style="color: darkgreen; margin-left: 10px;"></i>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -504,35 +445,7 @@ and open the template in the editor.
                                 <table>
                                     <tbody>
                                         <tr id="drink_offers_list">
-                                            <!--td class="OfferesListCoverPhoto">
-                                                <img class="OfferersProfileFromList" src="Pictures/TestPhotos/1.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Filomina Gomez</p>
-                                                    <p>female, 25 - Drink <span class="OfferersOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td>
-                                            <td id="OfferesListCoverPhoto2">
-                                                <img class="OfferersProfileFromList" src="Pictures/TestPhotos/2.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Anna Rodriqez</p>
-                                                    <p>female, 22 - Dinner <span class="OfferersOnlineStatusLedFromList" style="background-color: green;"></span></p>
-                                                    
-                                                </div>
-                                            </td>
-                                            <td id="OfferesListCoverPhoto3">
-                                                <img class="OfferersProfileFromList" src="Pictures/TestPhotos/3.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Nicole Mohammed</p>
-                                                    <p>female, 20 - Dinner <span class="OfferersOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td>
-                                            <td id="OfferesListCoverPhoto4">
-                                                <img class="OfferersProfileFromList" src="Pictures/TestPhotos/4.jpg" alt=""/>
-                                                <div>
-                                                    <p style="font-size: 15px; font-weight: bolder;">Sasha Atkingston</p>
-                                                    <p>female, 24 - Drink <span class="OfferersOnlineStatusLedFromList"></span></p>
-                                                </div>
-                                            </td-->
+                                            
                                         </tr>
                                     </tbody>
                                 </table>
@@ -656,7 +569,7 @@ and open the template in the editor.
                     
                 </div>
                 <div></div>
-                <div class='Footer'><p style='color: white; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
+                <div class='Footer'><p style='color: white; font-weight: bolder; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
             </div>
         </div>
         <script src="Scripts/client_side_proccesses.js" type="text/javascript"></script>
