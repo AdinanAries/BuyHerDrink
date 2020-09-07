@@ -14,6 +14,22 @@ var current_selected_drink_offer = document.getElementById("current_selected_dri
 var selected_drink_request_user_info = document.getElementById("selected_drink_request_user_info");
 var selected_drink_offer_user_info = document.getElementById("selected_drink_offer_user_info");
 
+//In memory Object to hold processes data
+var publish_request_data = {
+                    "request_id": "created on server",
+                    "request_purpose": "Drink",
+                    "rest_location": "1913 Bronxdale Ave, The Bronx",
+                    "rest_name": "F&J Pine",
+                    "rest_rating": 5,
+                    "rest_photo": "url from google",
+                    "rest_category_icon": "from google places",
+                    "rest_service_types": "from google places",
+                    "meeting_date": "09/04/2020",
+                    "meeting_time": "14:00",
+                    "meeting_budget": "$5.00",
+                    "added_message": "This is a place holder text for message to be added on for the drink request",
+                    "requestee_id": "value from client"
+                };
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //DOM manipulation functions
@@ -226,6 +242,24 @@ function get_recent_ten_drink_offers(clientId){
     });
 }
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//functions that post data from the endpoints
+
+function post_drink_request(data){
+    $.ajax({
+        type: "POST",
+        url: "./post_drink_request_controller",
+        data: JSON.stringify(data),
+        success: function(result){
+            //alert(result);
+        }
+    });
+}
+
+$("#RP_post_request_btn").click(function(event){
+    alert("clicked");
+    post_drink_request(publish_request_data);
+});
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application
 $(document).ready(()=>{
