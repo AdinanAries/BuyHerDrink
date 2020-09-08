@@ -202,6 +202,7 @@ and open the template in the editor.
                                                Your Activities
                                             </td>
                                             <td id="viewDrinkOffersBtn">
+                                                <img src="icons/icons8-champagne-48_1.png" style="width: 15px; height: auto; margin-right: 5px;" alt=""/>
                                                Drink Offers 
                                             </td>
                                         </tr>
@@ -224,7 +225,8 @@ and open the template in the editor.
                                       <tbody>
                                         <tr style="background-color: #afe9ff;">
                                             <td>
-                                              <img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/>
+                                              <!--img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/-->
+                                              <i style="font-size: 22px; margin: 0 10px;" class="fa fa-map-marker" aria-hidden="true"></i>
                                             <td>
                                               <div class="RestaurantListPopup" style="width: 100%">
                                                   <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurants by location:</p>
@@ -245,7 +247,8 @@ and open the template in the editor.
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
+                                                <!--img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/-->
+                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-cutlery" aria-hidden="true"></i>
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurant by name:</p>
@@ -255,7 +258,8 @@ and open the template in the editor.
                                         </tr>
                                         <tr style="background-color: #afe9ff;" onclick="hideRestaurantPopupListByAddress();">
                                             <td style="padding-right: 10px;"> 
-                                                <img class="RegularIcons_3" src="icons/icons8-watch-filled-30.png" alt=""/>
+                                                <!--img class="RegularIcons_3" src="icons/icons8-watch-filled-30.png" alt=""/-->
+                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-calendar" aria-hidden="true"></i>
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Add date and time:</p>
@@ -291,7 +295,8 @@ and open the template in the editor.
                                         </tr>
                                         <tr onclick="hideRestaurantPopupListByAddress();">
                                             <td>
-                                                <img class="RegularIcons_3" src="icons/icons8-cash-50.png" alt=""/>
+                                                <!--img class="RegularIcons_3" src="icons/icons8-cash-50.png" alt=""/-->
+                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-money" aria-hidden="true"></i>
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Put a price on your date:</p>
@@ -389,10 +394,12 @@ and open the template in the editor.
                                     <tbody>
                                         <tr>
                                             <td style="background-color: aquamarine;">
-                                                Customize Your Offer
+                                                Customize Offer
+                                                <i style="margin-left: 10px;" class="fa fa-pencil" aria-hidden="true"></i>
                                             </td>
                                             <td style="background-color: pink;">
-                                                Make Drink Offer
+                                                Make Offer
+                                                <i style="margin-left: 10px;" class="fa fa-check"></i>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -432,7 +439,7 @@ and open the template in the editor.
                                             </td>
                                             <td id="acceptOfferBtn">
                                                 Accept Offer
-                                                <i class="fa fa-check" style="color: darkgreen; margin-left: 10px;"></i>
+                                                <i class="fa fa-handshake-o" aria-hidden="true" style="color: white; margin-left: 10px;"></i>
                                             </td>
                                         </tr>
                                     </tbody>
