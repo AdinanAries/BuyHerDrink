@@ -42,7 +42,7 @@ var currentDate = new Date();
 //DOM manipulation functions
 
 //this function displays selected restaurants for drink request to review and post pane
-function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, typesList){
+function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, typesList, rating_number){
     RP_rest_name.innerText = name;
     RP_rest_photo.src = photoUrl;
     RP_rest_icon.src = iconUrl;
@@ -50,7 +50,7 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
     RP_rest_location.innerText = locationAddress,
     RP_rest_types.innerText = typesList;
     hideRestaurantPopupListByAddress();
-    add_selected_rest_post_data(name, rating, photoUrl, iconUrl, typesList, locationAddress);
+    add_selected_rest_post_data(name, rating_number, photoUrl, iconUrl, typesList, locationAddress);
 }
 
 //this function renders drink requests to list that displays them

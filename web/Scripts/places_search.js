@@ -117,7 +117,7 @@ function initMap(lat, lng, search_radius) {
                                                     <div style="width: 200px; height: 100px; overflow: hidden;">
                                                         <img src="${results[i].photos[0].getUrl()}" style="width: 200px; height: auto;"/>
                                                     </div>
-                                                    <p onclick="pick_restaurant('${rest_name}', '${results[i].photos[0].getUrl()}', '${results[i].icon}', '${stars}', '${results[i].vicinity}', '${types_list}');"
+                                                    <p onclick="pick_restaurant('${rest_name}', '${results[i].photos[0].getUrl()}', '${results[i].icon}', '${stars}', '${results[i].vicinity}', '${types_list}', ${results[i].rating});"
                                                         style="padding: 0 10px; background-color: darkblue; border-radius: 4px; color: white; height: 60px; display: flex; flex-direction: column; justify-content: center;">
                                                         Choose
                                                     </p>
