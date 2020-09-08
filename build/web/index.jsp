@@ -167,7 +167,7 @@ and open the template in the editor.
                         <div id='UserActivityDiv'>
                             <div>
                                 <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
-                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Activities</p>
+                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Dates</p>
                             </div>
                         </div>
                         <div id='galleryDiv'>
@@ -199,11 +199,16 @@ and open the template in the editor.
                                     <tbody>
                                         <tr>
                                             <td id="YourActivitiesBtn">
-                                               Your Activities
+                                                <p style="font-size: 14px; font-weight: bolder;">
+                                                    <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
+                                                    Your Dates
+                                                </p>
                                             </td>
                                             <td id="viewDrinkOffersBtn">
-                                                <img src="icons/icons8-champagne-48_1.png" style="width: 15px; height: auto; margin-right: 5px;" alt=""/>
-                                               Drink Offers 
+                                                <p style="font-size: 14px; font-weight: bolder;">
+                                                    <i style="margin-right: 5px; color: goldenrod;" class="fa fa-glass" aria-hidden="true"></i>
+                                                    Drink Offers 
+                                                </p>
                                             </td>
                                         </tr>
                                     </tbody>
