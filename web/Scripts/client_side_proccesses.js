@@ -114,8 +114,9 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${date}</span> - <span style="color: tomato; font-size: 14px;">${time}</span><br/>
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                <span style="color: tomato; font-size: 14px;">${budget}</span>
+                                <span style="color: tomato; font-size: 14px;">${budget} </span><br/> 
                             </p>
+                            <p style="color: white; font-size: 14px; border-radius: 4px; padding: 10px; background-color: darkslateblue; text-align: center; margin: 5px 0;">beat current bid: $50.00</p>
                         </div>
                         <div style="padding: 10px; border-top: 1px solid darkgrey;">
                             <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
