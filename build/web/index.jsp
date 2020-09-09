@@ -167,7 +167,8 @@ and open the template in the editor.
                         <div id='UserActivityDiv'>
                             <div>
                                 <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
-                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Dates</p>
+                                <p style="width: 100%; text-align: center; margin-top: -30px;">Your Dates 
+                                    <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup></p>
                             </div>
                         </div>
                         <div id='galleryDiv'>
@@ -201,13 +202,13 @@ and open the template in the editor.
                                             <td id="YourActivitiesBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
-                                                    Your Dates
+                                                    Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
                                                 </p>
                                             </td>
                                             <td id="viewDrinkOffersBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-glass" aria-hidden="true"></i>
-                                                    Drink Offers 
+                                                    Drink Offers <sup style="font-size: 14px; color: seagreen; margin-left: 5px; font-weight: bolder;">5</sup>
                                                 </p>
                                             </td>
                                         </tr>
