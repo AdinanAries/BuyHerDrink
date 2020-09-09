@@ -675,7 +675,20 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
-
+#dates_list_container{
+    /*border-top: 1px #D9DADC solid;*/
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.each_date_details_div{
+    width: 100%;
+    border-radius: 5px;
+    min-height: 150px;
+    margin-bottom: 5px;
+    background-color: #333333;
+}
 #acceptOfferBtn{
     background-color: deepskyblue;
     cursor: pointer;

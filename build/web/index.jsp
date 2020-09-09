@@ -169,6 +169,48 @@ and open the template in the editor.
                                 <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
                                 <p style="width: 100%; text-align: center; margin-top: -30px;">Your Dates 
                                     <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup></p>
+                                <div id="dates_list_container">
+                                    <div class="each_date_details_div">
+                                        <div style="display: flex; padding: 10px;">
+                                            <div style="width: 100px; height: 100px; border-radius: 100%; background-color: #D9DADC;">
+                                                <img src="" style="width: 100%; height: auto;"/>
+                                            </div>
+                                            <div style="padding: 5px; margin-left: 15px; display: flex; flex-direction: column; justify-content: flex-end;">
+                                                <p style="color: #4CAF50; font-weight: bolder;">Ana Rodriguez</p>
+                                                <p style="font-size: 14px;">female, 28, Dinner</p>
+                                                <p style="font-size: 14px;">Greater New York Area</p>
+                                            </div>
+                                        </div>
+                                        <div style='padding: 10px; margin-top: 5px; border-top: #999999 1px solid;'>
+                                            <p style="color: aqua; font-weight: bolder;">Cafe' Bravo</p>
+                                            <p style="font-size: 14px;">1770 Greenwich st, NY 1039</p>
+                                            <p style="font-size: 14px;">09/03/2021 at 12:30pm - $45:00</p>
+                                        </div>
+                                        <div style='display: flex; padding: 10px; justify-content: space-between;'>
+                                            <div style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
+                                                <p style="font-size: 14px;">Postpone</p>
+                                            </div>
+                                            <div style="padding: 10px; background-color: #98d7ff; border-radius: 5px; margin-left: 10px; background-color: crimson">
+                                                <p style="font-size: 14px;">Cancel</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="each_date_details_div">
+                                        
+                                    </div>
+                                    <div class="each_date_details_div">
+                                        
+                                    </div>
+                                    <div class="each_date_details_div">
+                                        
+                                    </div>
+                                    <div class="each_date_details_div">
+                                        
+                                    </div>
+                                    <div class="each_date_details_div">
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div id='galleryDiv'>
