@@ -165,7 +165,9 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${date}</span> - <span style="color: tomato; font-size: 14px;">${time}</span><br/>
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                <span style="color: tomato; font-size: 14px;">${budget}</span>
+                                <span style="color: tomato; font-size: 14px;">${budget} -
+                                    <span style="color: darkgreen; font-size: 14px; font-weight: bolder;">see highest bidder: $50.00</span>
+                                </span>
                             </p>
                         </div>
                         <div style="padding: 10px; border-top: 1px solid darkgrey;">
