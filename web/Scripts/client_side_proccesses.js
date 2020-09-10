@@ -203,6 +203,39 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                 `;
 }
 
+//this function renders dinner dates
+function render_dinner_date(name, gender, age, address, rest_name, rest_location, meeting_date, meeting_time, meeting_purpose, meeting_price){
+    let div = document.createElement("div");
+    div.innerHTML = `
+                <div class="each_date_details_div">
+                    <div style="display: flex; padding: 10px;">
+                        <div style="width: 100px; height: 100px; border-radius: 100%; background-color: #D9DADC;">
+                            <img src="" style="width: 100%; height: auto;"/>
+                        </div>
+                        <div style="padding: 5px; margin-left: 15px; display: flex; flex-direction: column; justify-content: flex-end;">
+                            <p style="color: #4CAF50; font-weight: bolder;">${name}</p>
+                            <p style="font-size: 14px;">${gender}, ${age}, ${meeting_purpose}</p>
+                            <p style="font-size: 14px;">${address}</p>
+                        </div>
+                    </div>
+                    <div style='padding: 10px; margin-top: 5px; border-top: #999999 1px solid;'>
+                        <p style="color: aqua; font-weight: bolder;">${rest_name}</p>
+                        <p style="font-size: 14px;">${rest_location}</p>
+                        <p style="font-size: 14px;">${meeting_date} at ${meeting_time} - ${meeting_price}</p>
+                    </div>
+                    <div style='display: flex; padding: 10px; justify-content: space-between;'>
+                        <div style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
+                            <p style="font-size: 14px;">Postpone</p>
+                        </div>
+                        <div style="padding: 10px; background-color: #98d7ff; border-radius: 5px; margin-left: 10px; background-color: crimson">
+                            <p style="font-size: 14px;">Cancel</p>
+                        </div>
+                    </div>
+            </div>
+        `;
+    document.getElementById("dates_list_container").appendChild(div);
+}
+
 $("#PDR_date_fld").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 
 setInterval(()=>{
@@ -312,6 +345,26 @@ function get_recent_ten_drink_offers(clientId){
     });
 }
 
+
+//getting and rendering dinner dates
+function get_recent_ten_dinner_dates(user_id){
+    $.ajax({
+        type: "POST",
+        url: "./get_recent_ten_dinner_dates",
+        data: "user_id="+user_id,
+        success: function(result){
+            let data = JSON.parse(result);
+            data.forEach(item => {
+                console.log(item);
+                render_dinner_date(item.date_name, item.date_gender, item.date_age, item.date_address,
+                                    item.rest_name, item.rest_location, item.meeting_date, 
+                                    item.meeting_time, item.meeting_purpose, item.meeting_pric
+                                );
+            });
+        }
+    });
+}
+
 //functions that collect data for various processes
 //
 //This function sets the selected restaurant's data to data object to be published to the server
@@ -346,4 +399,5 @@ $("#RP_post_request_btn").click(function(event){
 $(document).ready(()=>{
     get_recent_ten_drink_request("New York", "Bronx", "USA");
     get_recent_ten_drink_offers("jkdhise43hkjJJdjkI4h8dGN09lskw");
+    get_recent_ten_dinner_dates("jkdhise43hkjJJdjkI4h8dGN09lskw");
 });

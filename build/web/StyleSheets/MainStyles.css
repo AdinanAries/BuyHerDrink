@@ -675,9 +675,17 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
+#dinner_dates_header{
+    position: fixed; 
+    padding: 5px;
+    width: 100%;
+    background-color: black;
+    padding-bottom: 15px;
+    border-bottom: #4ED164 1px solid;
+}
 #dates_list_container{
     /*border-top: 1px #D9DADC solid;*/
-    margin-top: 10px;
+    margin-top: 85px;
     padding: 5px;
     display: flex;
     flex-direction: column;
