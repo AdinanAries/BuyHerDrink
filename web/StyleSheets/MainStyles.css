@@ -1,3 +1,22 @@
+/* html, body css compatible for page loader
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-smooth: auto;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #444;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}*/
+
 *{
     -webkit-appearance: none;
     padding: 0;
@@ -9,6 +28,10 @@ input[type="text"], select{
     border-radius: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body{
     max-width: 700px;
     margin: auto;
@@ -16,6 +39,80 @@ body{
     width: 100%;
     
 }
+#loadingPage{
+    position: fixed;
+    z-index: 1111;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.loader_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+  position: relative;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 2px;
+  width: 100px;
+  height: 100px;
+}
+.loader > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: tomato;
+  transform: scale(0);
+  transform-origin: center center;
+  animation: loader 2s infinite linear;
+}
+.loader > div:nth-of-type(1), .loader > div:nth-of-type(5), .loader > div:nth-of-type(9) {
+  animation-delay: 0.4s;
+}
+.loader > div:nth-of-type(4), .loader > div:nth-of-type(8) {
+  animation-delay: 0.2s;
+}
+.loader > div:nth-of-type(2), .loader > div:nth-of-type(6) {
+  animation-delay: 0.6s;
+}
+.loader > div:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
 .Container{
     width: 100%;
 }
@@ -34,13 +131,10 @@ body{
     padding-top: 60px;
 }
 .Footer{
-    background-color: red;
+    background-color: royalblue;
     width: 100%;
-    /*position: absolute;
-    bottom: 0;
-    left: 0;*/
     text-align: right;
-    margin-top: 10px;
+    padding: 10px 0;
 }
 .MenuIcon{
     margin-top: 10px;
@@ -144,7 +238,7 @@ body{
 }
 .ProfileCover{
     padding-top: 50px;
-    height: 50px;
+    height: 100px;
     background-size: cover;
     background-position: center;
     background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
@@ -158,9 +252,14 @@ body{
     float: left;
     margin-left: 5px;
     background-color: darkgrey;
-    /*background-size: cover;*/
+    overflow: hidden;
+    /*background-size: cover;
     object-fit: cover;
-   /*background-position: center;*/
+   background-position: center;*/
+}
+.ProfilePicture img{
+    width: 100px;
+    height: auto;
 }
 .UserProfileSettingsIcons{
     text-align: right;
@@ -236,7 +335,7 @@ body{
 
 .MainMenu table tbody tr td img{
     width: 30px;
-    height: 30px;
+    height: auto;
     padding-right: 10px;
 }
 
@@ -285,6 +384,10 @@ body{
     padding: 5px;
 }
 
+#PDR_details_pane{
+    min-height: 200px;
+}
+
 .UserProfilePageSubmitDrinkRequestBtn{
     text-align: center;
     font-size: 15px;
@@ -292,6 +395,8 @@ body{
     border-radius: 5px;
     background-color: pink;
     padding: 5px;
+    text-align: center;
+    margin: auto;
 }
 
 .DrinkRequestDiv, .DrinkOffersDiv{
@@ -301,12 +406,12 @@ body{
 
 #current_restaurants_list li{
     padding: 10px 5px;
-    border-bottom: 1px solid darkblue;
+    border-bottom: 1px solid cadetblue;
 }
 
 .RequesteeCoverPhoto, .OffererCoverPhoto{
     padding-top: 50px;
-    height: 50px;
+    height: 100px;
     background-size: cover;
     background-position: center;
     background-image: url("../Pictures/TestPhotos/1.jpg");
@@ -318,7 +423,12 @@ body{
     height: 100px;
     margin-left: 5px;
     background-color: darkgrey;
-    object-fit: cover;
+    overflow: hidden;
+}
+
+.RequesteePicture img, .OffererPicture img{
+    width: 100px;
+    height: auto;
 }
 
 .RequesteeInfoDiv, .OffererInfoDiv{
@@ -432,10 +542,11 @@ body{
 }
 
 .DrinkRequesteesListDiv table tbody tr td img, .DrinkOfferersListDiv table tbody tr td img{
-    object-fit: cover;
+    width: 100px;
+    height: auto;
 }
 
-.DrinkRequesteesListDiv table tbody tr #RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr #OfferesListCoverPhoto{
+.DrinkRequesteesListDiv table tbody tr .RequesteeListCoverPhoto, .DrinkOfferersListDiv table tbody tr .OfferesListCoverPhoto{
     background-image: url("../Pictures/TestPhotos/1.jpg");
 }
 
@@ -452,11 +563,12 @@ body{
 
 
 .RequesteesProfileFromList, .OfferersProfileFromList{
-    border-radius: 100%;
-    width: 100px;
-    height: 100px;
-    float: left;
+    border-radius: 100% !important;
+    width: 100px !important;
+    height: 100px !important;
+    float: left !important;
     border: 3px solid white;
+    overflow: hidden !important;
 }
 #DrinkRequestsIframe{
     display: none;
@@ -478,7 +590,7 @@ input[type=checkbox]:after {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 6.5px; height: 6.5px;
+    width: 8.5px; height: 8.5px;
     background-color: transparent;
     border: 1px solid darkgrey;
     background-color: white;
@@ -518,6 +630,20 @@ input[type=radio]:checked {
     width: 100%;
 }
 
+#viewFullProfileDiv{
+    position: fixed;
+    top: 100px;
+    background-color: #afe9ff;
+    z-index: 1000;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px 0;
+    box-shadow: 0 0 4px black;
+}
+
 #settingsDiv table{
     width: 100%;
     min-height: 100px;
@@ -549,16 +675,40 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
-
+#dinner_dates_header{
+    position: fixed; 
+    padding: 5px;
+    width: 100%;
+    background-color: black;
+    padding-bottom: 15px;
+    border-bottom: #4ED164 1px solid;
+}
+#dates_list_container{
+    /*border-top: 1px #D9DADC solid;*/
+    margin-top: 85px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.each_date_details_div{
+    width: 100%;
+    border-radius: 5px;
+    min-height: 150px;
+    margin-bottom: 5px;
+    background-color: #333333;
+}
 #acceptOfferBtn{
-    background-color: red; 
-    color: white;
+    background-color: deepskyblue;
     cursor: pointer;
+    color: white;
+    padding: 10px 0;
 }
 
 #declineOfferBtn{
-    background-color: deepskyblue;
+    background-color: red; 
+    color: white;
     cursor: pointer;
+    padding: 10px 0;
 }
 
 .PublishRequestDiv input[type="text"], select{
@@ -627,7 +777,9 @@ input[type=radio]:checked {
   width: 160px;
   background-color: #afe9ff;
   text-align: center;
-  /*border-radius: 6px;*/
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 4px black;
   padding: 8px 0;
   position: absolute;
   z-index: 1;
@@ -636,7 +788,7 @@ input[type=radio]:checked {
   margin-left: -80px;*/
 }
 
-/* Popup arrow */
+/* Popup arrow 
 .RestaurantListPopup .RestaurantListDiv::after {
   content: "";
   position: absolute;
@@ -646,7 +798,7 @@ input[type=radio]:checked {
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
-}
+}*/
 
 /* Toggle this class - hide and show the popup */
 .RestaurantListPopup .show {

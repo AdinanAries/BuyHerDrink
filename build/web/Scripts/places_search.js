@@ -1,5 +1,6 @@
 
 var rest_locations_input_fld = document.getElementById("rest_locations_input_fld");
+var search_rest_by_name_fld = document.getElementById("search_rest_by_name_fld");
 var search_restaurants_btn = document.getElementById("search_restaurants_btn");
 var rests_list_location_display = document.getElementById("rests_list_location_display");
 var current_restaurants_list = document.getElementById("current_restaurants_list");
@@ -68,7 +69,7 @@ var map;
 var service;
 var infowindow;
 
-function initMap(lat, lng) {
+function initMap(lat, lng, search_radius) {
     var current_location = new google.maps.LatLng(lat, lng);
     
     infowindow = new google.maps.InfoWindow();
@@ -77,7 +78,7 @@ function initMap(lat, lng) {
     
     var request = {
         location: current_location,
-        radius: '5000',
+        radius: search_radius,
         type: ['restaurant']
     };
     
@@ -89,13 +90,45 @@ function initMap(lat, lng) {
             current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
+                
+                let rating_int = Math.round(results[i].rating);
+                let stars = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+                if(rating_int === 1){
+                    stars="&#9733;&#9734;&#9734;&#9734;&#9734;";
+                }else if(rating_int === 2){
+                    stars="&#9733;&#9733;&#9734;&#9734;&#9734;";
+                }else if(rating_int === 3){
+                    stars="&#9733;&#9733;&#9733;&#9734;&#9734;";
+                }else if(rating_int === 4){
+                    stars="&#9733;&#9733;&#9733;&#9733;&#9734;";
+                }else {
+                    stars="&#9733;&#9733;&#9733;&#9733;&#9733;";
+                }
+                
+                let types_list = results[i].types.join(', ').replace(/_/g, ' ');
+                let rest_name  = results[i].name.replace(/'/g, "");
+                
                 let li_elem = document.createElement("li");
                 li_elem.innerHTML = `<div>
                                         <p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
-                                            <p style="color: darkgrey;">types: </p>
-                                            <p>${results[i].types.join(', ')}</p>
+                                            <div style="margin: 5px 0;">
+                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid darkgrey; padding-bottom: 5px;">
+                                                    <div style="width: 200px; height: 100px; overflow: hidden;">
+                                                        <img src="${results[i].photos[0].getUrl()}" style="width: 200px; height: auto;"/>
+                                                    </div>
+                                                    <p onclick="pick_restaurant('${rest_name}', '${results[i].photos[0].getUrl()}', '${results[i].icon}', '${stars}', '${results[i].vicinity}', '${types_list}', ${results[i].rating});"
+                                                        style="padding: 0 10px; background-color: darkblue; border-radius: 4px; color: white; height: 60px; display: flex; flex-direction: column; justify-content: center;">
+                                                        Choose
+                                                    </p>
+                                                </div>
+                                                <p><img src="${results[i].icon}" style="width: 20px; height: auto;"/> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> ${results[i].vicinity}<p>
+                                             </div>
+                                             <p style="color: darkgrey;">types: </p>
+                                             <p>${types_list}</p>
                                          </div>
+                                         
                                     </div>`;
                 current_restaurants_list.appendChild(li_elem);
                 console.log(results[i]);
@@ -111,7 +144,7 @@ function createMarker(place) {
     position: place.geometry.location
   });
   google.maps.event.addListener(marker, "click", () => {
-      alert(place.name);
+    
     infowindow.setContent(place.name);
     infowindow.open(map);
   });
@@ -130,14 +163,14 @@ function showPosition(position){
     //alert(position.coords.latitude);
     //alert(position.coords.longitude);
     
-    initMap(position.coords.latitude, position.coords.longitude);
+    initMap(position.coords.latitude, position.coords.longitude, '5000');
     
     $.ajax({
         type: "GET",
         data: 'latlng=' + position.coords.latitude + ',' + position.coords.longitude + '&sensor=true&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ',
         url: 'https://maps.googleapis.com/maps/api/geocode/json',
         success: function(result){
-            console.log(result);
+            //console.log(result);
             GoogleReturnedCity = result.results[0].address_components[4].long_name;
             GoogleReturnedTown = result.results[0].address_components[3].long_name;
 
@@ -157,5 +190,45 @@ function showPosition(position){
 }
 
 getLocation();
+
+
+//Finding places by user's query
+/*var Qmap;
+var Qservice;
+var Qinfowindow
+
+function QinitMap(){
+    let 
+}*/
+
+//function gets long and lat from user provided address
+google.maps.event.addDomListener(window, 'load', initialize);
+
+function initialize() {
+    
+    //for all location based searches
+    let autocomplete = new google.maps.places.Autocomplete(rest_locations_input_fld);
+    autocomplete.addListener('place_changed', function () {
+        let place = autocomplete.getPlace();
+    
+        // place variable will have all the information you are looking for.
+        initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000');
+        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        //console.log(place.geometry['location'].lat());
+        //console.log(place.geometry['location'].lng());
+    });
+    
+    //for all name based searches
+    let autocomplete2 = new google.maps.places.Autocomplete(search_rest_by_name_fld);
+    autocomplete2.addListener('place_changed', function () {
+        let place = autocomplete2.getPlace();
+    
+        // place variable will have all the information you are looking for.
+        initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '10');
+        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        //console.log(place.geometry['location'].lat());
+        //console.log(place.geometry['location'].lng());
+    });
+}
 
 

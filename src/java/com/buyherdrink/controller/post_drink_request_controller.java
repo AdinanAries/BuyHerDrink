@@ -1,41 +1,46 @@
 
-package com.buyherdrinkUI.model.utility;
+package com.buyherdrink.controller;
 
+import com.buyherdrink.model.RequestData;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.stream.Collectors;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
 
-@WebServlet(name = "GetBase64StringControl", urlPatterns = {"/GetBase64StringControl"})
-
-public class GetBase64StringControl extends HttpServlet {
-    
-    String Base64StringImage = ""; 
-    String ImgProperty = "";
-    String JSONData = "";
-    
-    encodeBinaryPhotoToBase64String encoder = null;
+public class post_drink_request_controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String Path = request.getParameter("ImgPath");
-        //JOptionPane.showMessageDialog(null, Path);
-        encoder = new encodeBinaryPhotoToBase64String(Path);
+        String payload = "";
+        RequestData request_data = null;
+        Gson gson = new Gson();
         
-        Base64StringImage = encoder.GetBaseString64Image();
-        ImgProperty = encoder.GetImageAsElementProp();
+        //reading the body content of the post request
+       if ("POST".equalsIgnoreCase(request.getMethod())) 
+        {
+           payload = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+        }
+       
+       request_data = gson.fromJson(payload, RequestData.class);
+       
+       JOptionPane.showMessageDialog(null, request_data.getMeeting_budget());
+       JOptionPane.showMessageDialog(null, request_data.getRest_location());
+       JOptionPane.showMessageDialog(null, request_data.getMeeting_date());
+       JOptionPane.showMessageDialog(null, request_data.getMeeting_time());
+       JOptionPane.showMessageDialog(null, request_data.getRest_name());
+       JOptionPane.showMessageDialog(null, request_data.getRest_photo());
+       JOptionPane.showMessageDialog(null, request_data.getRest_rating());
+       JOptionPane.showMessageDialog(null, request_data.getRest_service_types());
+       JOptionPane.showMessageDialog(null, request_data.getRequest_purpose());
+       
         
-        JSONData = "{"
-                 +    "\"Base64StringImage\": \"" + Base64StringImage + "\","
-                 +    "\"ImgProperty\": \"" + ImgProperty + "\""
-                 + "}";
         
-        response.getWriter().print(JSONData);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
