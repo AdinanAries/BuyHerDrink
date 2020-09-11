@@ -15,6 +15,10 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&libraries=places"></script>
+        
     </head>
     <body>
         <div id='loadingPage'>
@@ -49,10 +53,43 @@
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     Register
                 </h1>
-                <input type="text" placeholder="name"/>
+                <input type="text" placeholder="full name"/>
+                <select>
+                    <option>21 years</option>
+                    <option>22 years</option>
+                    <option>23 years</option>
+                    <option>24 years</option>
+                    <option>25 years</option>
+                    <option>26 years</option>
+                    <option>27 years</option>
+                    <option>28 years</option>
+                    <option>29 years</option>
+                    <option>30 years</option>
+                    <option>31 years</option>
+                    <option>32 years</option>
+                    <option>33 years</option>
+                    <option>34 years</option>
+                    <option>35 years</option>
+                    <option>36 years</option>
+                    <option>37 years</option>
+                    <option>38 years</option>
+                </select>
+                <select>
+                    <option>gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                <select>
+                    <option>sexual orientation</option>
+                    <option>Straight</option>
+                    <option>Gay</option>
+                    <option>Bi</option>
+                    <option>Prefer Not to Say</option>
+                </select>
+                <input id="signup_address_fld" type="text" placeholder="residence address"/>
                 <input type="password" placeholder="password"/>
                 <input type="text" placeholder="email address"/>
-                <button>create</button>
+                <button>Register</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </form>
               <form class="login-form">

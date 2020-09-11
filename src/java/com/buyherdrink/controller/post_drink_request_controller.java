@@ -37,6 +37,7 @@ public class post_drink_request_controller extends HttpServlet {
        JOptionPane.showMessageDialog(null, request_data.getRest_photo());
        JOptionPane.showMessageDialog(null, request_data.getRest_rating());
        JOptionPane.showMessageDialog(null, request_data.getRest_service_types());
+       JOptionPane.showMessageDialog(null, request_data.getRequest_purpose());
        
         
         
