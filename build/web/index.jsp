@@ -473,30 +473,49 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div id="ExploreRestaurantsDiv">
+                        <p style="padding: 20px; color: darkblue; font-weight: bolder;">What is your search for?</p>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        
+                                        <p>Restaurants</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-restaurant-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                     <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                    <td>
-                                        
+                                        <p>Parks</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-seesaw-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        
+                                        <p>Movies</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-cinema-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                     <td>
-                                        
+                                        <p>Museums</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-museum-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Gardens</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-plant-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p>Ice Skating</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-ice-skate-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
