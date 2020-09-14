@@ -151,7 +151,7 @@ and open the template in the editor.
                         </table>
                     </div>
                     <div class="SearchDiv">
-                        <input type="text" class="MainSearchFld" />
+                        <input type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
                         <div class="MainSearchBtn" >
                             <img src="icons/ExploreIcon.png" alt=""/>
                         </div>
@@ -520,6 +520,32 @@ and open the template in the editor.
                                 </tr>
                             </tbody>
                         </table>
+                        
+                        <div id="SearchResultDiv">
+                            <p style="color: darkblue; margin: 15px; font-weight: bolder;">Search results</p>
+                            <div id="map_div">
+                                <p>map</p>
+                            </div>
+                            <div id="search_results_list">
+                                <div class="each_search_result_item">
+                                    <div style="display: flex;">
+                                        <div style="width: 100px; height: 100px; background-color: #4d4d4d;">
+                                            <img src="" style="width: 100px; height: auto;">
+                                        </div>
+                                        <div style="max-width: 200px; margin-left: 10px;">
+                                            <p style="color: darkblue; font-weight: bolder; margin-bottom: 5px;">Place Name Here</p>
+                                            <p><img src="https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+                                            <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> 4961 Broadway, New York<p>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <p style="color: darkgrey;">types: </p>
+                                        <p>cafe, restaurant, food, point of interest, establishment</p>
+                                    </div>
+                                    <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white;">Make Drink Request</div>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                     <div id="viewFullProfileDiv">
