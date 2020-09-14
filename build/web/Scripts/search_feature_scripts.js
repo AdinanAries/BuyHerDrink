@@ -11,6 +11,7 @@ var SearchResultDiv = document.getElementById("SearchResultDiv");
 var search_results_list = document.getElementById("search_results_list");
 var search_page_start_page = document.getElementById("search_page_start_page");
 var search_page_location_P = document.getElementById("search_page_location_P");
+var main_search_fld = document.getElementById("main_search_fld");
 
 
 //even handlers for search option clicks
@@ -19,7 +20,7 @@ var search_page_location_P = document.getElementById("search_page_location_P");
 search_page_restaurant_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
-    _getLocation();
+    get_location();
 });
 
 //parks option
@@ -62,9 +63,9 @@ var Google_Reached = false;
 
 
 //Finding places using a search query
-var _map;
-var _service;
-var _infowindow;
+var sp_map;
+var sp_service;
+var sp_infowindow;
 
 var State_Abbrev = {
                 "AL": "Alabama",
@@ -120,28 +121,28 @@ var State_Abbrev = {
             };
 
 function init_map(lat, lng, search_radius) {
-    var current_location = new google.maps.LatLng(lat, lng);
+    var sp_current_location = new google.maps.LatLng(lat, lng);
     
-    _infowindow = new google.maps.InfoWindow();
-    _map = new google.maps.Map(
-            document.getElementById('map_div'), {center: current_location, zoom: 12});
+    sp_infowindow = new google.maps.InfoWindow();
+    sp_map = new google.maps.Map(
+            document.getElementById('map_div'), {center: sp_current_location, zoom: 12});
     
-    var _request = {
-        location: current_location,
+    var sp_request = {
+        location: sp_current_location,
         radius: search_radius,
         type: ["restaurant"]
     };
     
-    _service = new google.maps.places.PlacesService(_map);
-    _service.nearbySearch(_request, call_back);
+    sp_service = new google.maps.places.PlacesService(sp_map);
+    sp_service.nearbySearch(sp_request, call_back);
     
     function call_back(results, status){
         if(status == google.maps.places.PlacesServiceStatus.OK){
             
-            for(var i = 0; i < results.length; i++) {
-                create_marker(results[i]);
+            for(var w = 0; w < results.length; w++) {
+                create_marker(results[w]);
                 
-                let rating_int = Math.round(results[i].rating);
+                let rating_int = Math.round(results[w].rating);
                 let stars = "&#9733;&#9733;&#9733;&#9733;&#9733;";
                 if(rating_int === 1){
                     stars="&#9733;&#9734;&#9734;&#9734;&#9734;";
@@ -155,20 +156,20 @@ function init_map(lat, lng, search_radius) {
                     stars="&#9733;&#9733;&#9733;&#9733;&#9733;";
                 }
                 
-                let types_list = results[i].types.join(', ').replace(/_/g, ' ');
-                let rest_name  = results[i].name.replace(/'/g, "");
+                let types_list = results[w].types.join(', ').replace(/_/g, ' ');
+                let rest_name  = results[w].name.replace(/'/g, "");
                 
                 let div = document.createElement("div");
                 div.innerHTML = `
                             <div class="each_search_result_item">
                                 <div style="display: flex;">
-                                    <div style="width: 100px; height: 100px; background-color: #4d4d4d;">
-                                        <img src="${results[i].photos[0].getUrl()}" style="width: 100px; height: auto;">
+                                    <div style="width: 100px; height: 100px; background-color: #4d4d4d; overflow: hidden;">
+                                        <img src="${results[w].photos[0].getUrl()}" style="width: 100px; height: auto;">
                                     </div>
                                     <div style="max-width: 200px; margin-left: 10px;">
                                         <p style="color: darkblue; font-weight: bolder; margin-bottom: 5px;">${rest_name}</p>
-                                        <p><img src="${results[i].icon}" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
-                                        <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> ${results[i].vicinity}<p>
+                                        <p><img src="${results[w].icon}" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
+                                        <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> ${results[w].vicinity}<p>
                                     </div>
                                 </div>
                                 <div style="margin-top: 5px;">
@@ -187,27 +188,28 @@ function init_map(lat, lng, search_radius) {
 }
 
 function create_marker(place) {
-  const _marker = new google.maps.Marker({
-    _map,
+  const sp_marker = new google.maps.Marker({
+    sp_map,
     position: place.geometry.location
   });
-  google.maps.event.addListener(_marker, "click", () => {
+  google.maps.event.addListener(sp_marker, "click", () => {
     
-    _infowindow.setContent(place.name);
-    _infowindow.open(_map);
+    sp_infowindow.setContent(place.name);
+    sp_infowindow.open(sp_map);
   });
 }
 
-function _getLocation(){
+//*********************************
+function get_location(){
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(_showPosition);
+        navigator.geolocation.getCurrentPosition(show_position);
     }else {
         alert("Your browser doesn't support locations feature");
     }
 }
 
 
-function _showPosition(position){
+function show_position(position){
     //alert(position.coords.latitude);
     //alert(position.coords.longitude);
     
@@ -238,3 +240,35 @@ function _showPosition(position){
     });
 }
 
+//main search autocompletion and search
+    var sp_autocomplete = new google.maps.places.Autocomplete(main_search_fld);
+    sp_autocomplete.addListener('place_changed', function () {
+        let place = sp_autocomplete.getPlace();
+    
+        // place variable will have all the information you are looking for.
+        init_map(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000');
+        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        sp_showExploreRestaurantsDiv();
+        search_page_start_page.style.display = "none";
+        SearchResultDiv.style.display = "block";
+        //console.log(place.geometry['location'].lat());
+        //console.log(place.geometry['location'].lng());
+    });
+    
+   var sp_showExploreRestaurantsDiv = () => {
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
+   
+   SetWindowTitle("Search Results");
+   
+   ExploreRestaurantsDiv.style.display = "block";
+   DrinkRequestsIframe.style.display = "none";
+   UserProfileIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
+};

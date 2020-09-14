@@ -131,7 +131,7 @@ function initMap(lat, lng, search_radius) {
                                          
                                     </div>`;
                 current_restaurants_list.appendChild(li_elem);
-                console.log(results[i]);
+                //console.log(results[i]);
             }
         }
     }
@@ -229,6 +229,7 @@ function initialize() {
         //console.log(place.geometry['location'].lat());
         //console.log(place.geometry['location'].lng());
     });
+    
 }
 
 

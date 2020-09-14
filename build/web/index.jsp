@@ -151,7 +151,7 @@ and open the template in the editor.
                         </table>
                     </div>
                     <div class="SearchDiv">
-                        <input type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
+                        <input id="main_search_fld" type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
                         <div class="MainSearchBtn" >
                             <img src="icons/ExploreIcon.png" alt=""/>
                         </div>
@@ -527,7 +527,7 @@ and open the template in the editor.
                             <p style="color: darkblue; margin: 15px; font-weight: bolder;">Search results</p>
                             <p id="search_page_location_P" style="font-size: 15px; font-weight: bolder; margin-bottom: 5px; color: darkgray;"></p>
                             <div id="map_div">
-                                <p>map</p>
+                                
                             </div>
                             <div id="search_results_list">
                                 <!--div class="each_search_result_item">
