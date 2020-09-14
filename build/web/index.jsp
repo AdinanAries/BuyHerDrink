@@ -151,7 +151,7 @@ and open the template in the editor.
                         </table>
                     </div>
                     <div class="SearchDiv">
-                        <input type="text" class="MainSearchFld" />
+                        <input type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
                         <div class="MainSearchBtn" >
                             <img src="icons/ExploreIcon.png" alt=""/>
                         </div>
@@ -473,34 +473,79 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div id="ExploreRestaurantsDiv">
+                        <p style="padding: 20px; color: darkblue; font-weight: bolder;">What is your search for?</p>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        
+                                        <p>Restaurants</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-restaurant-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                     <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                    <td>
-                                        
+                                        <p>Parks</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-seesaw-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        
+                                        <p>Movies</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-cinema-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                     <td>
-                                        
+                                        <p>Museums</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-museum-80.png" style="width: 40px; height: auto;" alt=""/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Gardens</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-plant-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p>Ice Skating</p>
+                                        <div style="padding: 5px;">
+                                            <img src="icons/icons8-ice-skate-80.png" style="width: 50px; height: auto;" alt=""/>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                        
+                        <div id="SearchResultDiv">
+                            <p style="color: darkblue; margin: 15px; font-weight: bolder;">Search results</p>
+                            <div id="map_div">
+                                <p>map</p>
+                            </div>
+                            <div id="search_results_list">
+                                <div class="each_search_result_item">
+                                    <div style="display: flex;">
+                                        <div style="width: 100px; height: 100px; background-color: #4d4d4d;">
+                                            <img src="" style="width: 100px; height: auto;">
+                                        </div>
+                                        <div style="max-width: 200px; margin-left: 10px;">
+                                            <p style="color: darkblue; font-weight: bolder; margin-bottom: 5px;">Place Name Here</p>
+                                            <p><img src="https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+                                            <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> 4961 Broadway, New York<p>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 5px;">
+                                        <p style="color: darkgrey;">types: </p>
+                                        <p>cafe, restaurant, food, point of interest, establishment</p>
+                                    </div>
+                                    <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white;">Make Drink Request</div>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                     <div id="viewFullProfileDiv">

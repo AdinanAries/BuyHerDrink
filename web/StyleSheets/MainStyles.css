@@ -683,6 +683,24 @@ input[type=radio]:checked {
     padding-bottom: 15px;
     border-bottom: #4ED164 1px solid;
 }
+#SearchResultDiv{
+    padding: 5px;
+}
+#SearchResultDiv #map_div{
+    min-height: 300px; 
+    background-color: #D9DADC;
+}
+#SearchResultDiv #search_results_list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#search_results_list .each_search_result_item{
+    background-color: #afe9ff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 #dates_list_container{
     /*border-top: 1px #D9DADC solid;*/
     margin-top: 85px;
