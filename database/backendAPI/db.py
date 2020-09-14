@@ -1,0 +1,1 @@
+connection_string='mysql://root:root@localhost/buyherdrink'
