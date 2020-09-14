@@ -685,6 +685,7 @@ input[type=radio]:checked {
 }
 #SearchResultDiv{
     padding: 5px;
+    display: none;
 }
 #SearchResultDiv #map_div{
     min-height: 300px; 

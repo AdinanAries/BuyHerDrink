@@ -473,61 +473,64 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div id="ExploreRestaurantsDiv">
-                        <p style="padding: 20px; color: darkblue; font-weight: bolder;">What is your search for?</p>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <p>Restaurants</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-restaurant-80.png" style="width: 40px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>Parks</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-seesaw-80.png" style="width: 50px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>Movies</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-cinema-80.png" style="width: 40px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>Museums</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-museum-80.png" style="width: 40px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>Gardens</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-plant-80.png" style="width: 50px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>Ice Skating</p>
-                                        <div style="padding: 5px;">
-                                            <img src="icons/icons8-ice-skate-80.png" style="width: 50px; height: auto;" alt=""/>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div id="search_page_start_page">
+                            <p style="padding: 20px; color: darkblue; font-weight: bolder;">What is your search for?</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td id="search_page_restaurant_option">
+                                            <p>Restaurants</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-restaurant-80.png" style="width: 40px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                        <td id="search_page_parks_option">
+                                            <p>Parks</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-seesaw-80.png" style="width: 50px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="search_page_movies_option">
+                                            <p>Movies</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-cinema-80.png" style="width: 40px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                        <td id="search_page_museums_option">
+                                            <p>Museums</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-museum-80.png" style="width: 40px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="search_page_garderns_option">
+                                            <p>Gardens</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-plant-80.png" style="width: 50px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                        <td id="search_page_skating_option">
+                                            <p>Ice Skating</p>
+                                            <div style="padding: 5px;">
+                                                <img src="icons/icons8-ice-skate-80.png" style="width: 50px; height: auto;" alt=""/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         
                         <div id="SearchResultDiv">
                             <p style="color: darkblue; margin: 15px; font-weight: bolder;">Search results</p>
+                            <p id="search_page_location_P" style="font-size: 15px; font-weight: bolder; margin-bottom: 5px; color: darkgray;"></p>
                             <div id="map_div">
                                 <p>map</p>
                             </div>
                             <div id="search_results_list">
-                                <div class="each_search_result_item">
+                                <!--div class="each_search_result_item">
                                     <div style="display: flex;">
                                         <div style="width: 100px; height: 100px; background-color: #4d4d4d;">
                                             <img src="" style="width: 100px; height: auto;">
@@ -543,7 +546,7 @@ and open the template in the editor.
                                         <p>cafe, restaurant, food, point of interest, establishment</p>
                                     </div>
                                     <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white;">Make Drink Request</div>
-                                </div>
+                                </div-->
                             </div>
                         </div>
                         
@@ -641,6 +644,6 @@ and open the template in the editor.
         <script src="Scripts/places_search.js" type="text/javascript"></script>
         <script src="Scripts/logout_script.js" type="text/javascript"></script>
         <script src="Scripts/MainScript.js" type="text/javascript"></script>
-        
+        <script src="Scripts/search_feature_scripts.js" type="text/javascript"></script>
     </body>
 </html>
