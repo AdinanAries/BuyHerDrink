@@ -152,6 +152,26 @@ and open the template in the editor.
                     </div>
                     <div class="SearchDiv">
                         <input id="main_search_fld" type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
+                        <select id="main_search_types">
+                            <option value="restaurant">
+                                Type
+                            </option>
+                            <option value="restaurant">
+                                Restaurant
+                            </option>
+                            <option value="bar">
+                                Bar
+                            </option>
+                            <option value="movie_theater">
+                                Movie Theater
+                            </option>
+                            <option value="museum">
+                                Museum
+                            </option>
+                            <option value="cafe">
+                                Cafe
+                            </option>
+                        </select>
                         <div class="MainSearchBtn" >
                             <img src="icons/ExploreIcon.png" alt=""/>
                         </div>
@@ -506,16 +526,16 @@ and open the template in the editor.
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td id="search_page_garderns_option">
-                                            <p>Gardens</p>
+                                        <td id="search_page_cafe_option">
+                                            <p>Cafe</p>
                                             <div style="padding: 5px;">
-                                                <img src="icons/icons8-plant-80.png" style="width: 50px; height: auto;" alt=""/>
+                                                <img src="icons/icons8-cafe-80.png" style="width: 50px; height: auto;" alt=""/>
                                             </div>
                                         </td>
-                                        <td id="search_page_skating_option">
-                                            <p>Ice Skating</p>
+                                        <td id="search_page_bar_option">
+                                            <p>Bar</p>
                                             <div style="padding: 5px;">
-                                                <img src="icons/icons8-ice-skate-80.png" style="width: 50px; height: auto;" alt=""/>
+                                                <img src="icons/icons8-wine-glass-80.png" style="width: 50px; height: auto;" alt=""/>
                                             </div>
                                         </td>
                                     </tr>
@@ -524,6 +544,11 @@ and open the template in the editor.
                         </div>
                         
                         <div id="SearchResultDiv">
+                            <p id="back_to_search_home_icons_btn"
+                                style="font-weight: bolder; margin: 5px; padding: 5px; border-radius: 4px; background-color: dodgerblue; width: 150px; text-align: center;">
+                                <i style="color: white; font-weight: bolder; margin-right: 10px;" class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                                Categories
+                            </p>
                             <p style="color: darkblue; margin: 15px; font-weight: bolder;">Search results</p>
                             <p id="search_page_location_P" style="font-size: 15px; font-weight: bolder; margin-bottom: 5px; color: darkgray;"></p>
                             <div id="map_div">

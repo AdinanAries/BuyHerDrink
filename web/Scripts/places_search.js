@@ -163,6 +163,8 @@ function getLocation(){
 function showPosition(position){
     //alert(position.coords.latitude);
     //alert(position.coords.longitude);
+    current_lng = position.coords.longitude;
+    current_lat = position.coords.latitude;
     
     initMap(position.coords.latitude, position.coords.longitude, '5000');
     

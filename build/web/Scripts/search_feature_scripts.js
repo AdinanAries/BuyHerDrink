@@ -4,22 +4,34 @@ var search_page_restaurant_option = document.getElementById("search_page_restaur
 var search_page_parks_option = document.getElementById("search_page_parks_option");
 var search_page_movies_option = document.getElementById("search_page_movies_option");
 var search_page_museums_option = document.getElementById("search_page_museums_option");
-var search_page_garderns_option = document.getElementById("search_page_garderns_option");
-var search_page_skating_option = document.getElementById("search_page_skating_option");
+var search_page_cafe_option = document.getElementById("search_page_cafe_option");
+var search_page_bar_option = document.getElementById("search_page_bar_option");
 var map_div = document.getElementById("map_div");
 var SearchResultDiv = document.getElementById("SearchResultDiv");
 var search_results_list = document.getElementById("search_results_list");
 var search_page_start_page = document.getElementById("search_page_start_page");
 var search_page_location_P = document.getElementById("search_page_location_P");
 var main_search_fld = document.getElementById("main_search_fld");
+var back_to_search_home_icons_btn = document.getElementById("back_to_search_home_icons_btn");
+var main_search_types = document.getElementById("main_search_types");
 
+//this global variable lets us know what search button was clicked
+var type_of_search = "restaurant";
+var current_lng, current_lat;
 
 //even handlers for search option clicks
+
+//back to search home function
+back_to_search_home_icons_btn.addEventListener("click", (evnt)=>{
+    SearchResultDiv.style.display = "none";
+    search_page_start_page.style.display = "block";
+});
 
 //restaurant option
 search_page_restaurant_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "restaurant";
     get_location();
 });
 
@@ -27,12 +39,16 @@ search_page_restaurant_option.addEventListener("click", (evnt)=>{
 search_page_parks_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "park";
+    get_location();
 });
 
 //movies option
 search_page_movies_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "movie_theater";
+    get_location();
 });
 
 
@@ -40,18 +56,24 @@ search_page_movies_option.addEventListener("click", (evnt)=>{
 search_page_museums_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "museum";
+    get_location();
 });
 
 //garderns option
-search_page_garderns_option.addEventListener("click", (evnt)=>{
+search_page_cafe_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "cafe";
+    get_location();
 });
 
 //skating option
-search_page_skating_option.addEventListener("click", (evnt)=>{
+search_page_bar_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
+    type_of_search = "bar";
+    get_location();
 });
 
 
@@ -120,7 +142,7 @@ var State_Abbrev = {
                 "WY": "Wyoming"
             };
 
-function init_map(lat, lng, search_radius) {
+function init_map(lat, lng, search_radius, type = "restaurant") {
     var sp_current_location = new google.maps.LatLng(lat, lng);
     
     sp_infowindow = new google.maps.InfoWindow();
@@ -130,7 +152,7 @@ function init_map(lat, lng, search_radius) {
     var sp_request = {
         location: sp_current_location,
         radius: search_radius,
-        type: ["restaurant"]
+        type: [type]
     };
     
     sp_service = new google.maps.places.PlacesService(sp_map);
@@ -204,7 +226,7 @@ function show_position(position){
     //alert(position.coords.latitude);
     //alert(position.coords.longitude);
     
-    init_map(position.coords.latitude, position.coords.longitude, '5000');
+    init_map(position.coords.latitude, position.coords.longitude, '5000', type_of_search);
     
     $.ajax({
         type: "GET",
@@ -232,18 +254,34 @@ function show_position(position){
 }
 
 //main search autocompletion and search
+    
     var sp_autocomplete = new google.maps.places.Autocomplete(main_search_fld);
     sp_autocomplete.addListener('place_changed', function () {
         let place = sp_autocomplete.getPlace();
-    
+        
+        current_lng = place.geometry['location'].lng();
+        current_lat = place.geometry['location'].lat();
+        
         // place variable will have all the information you are looking for.
-        init_map(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000');
-        document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        let search_type = main_search_types.value;
+        init_map(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000', search_type);
+        search_page_location_P.innerText = main_search_fld.value;
+        //document.getElementById("rest_list_scroll_div").scrollTop = 0;
         sp_showExploreRestaurantsDiv();
         search_page_start_page.style.display = "none";
         SearchResultDiv.style.display = "block";
         //console.log(place.geometry['location'].lat());
         //console.log(place.geometry['location'].lng());
+    });
+    
+    //when the selected type of search value changes
+    main_search_types.addEventListener("change", ()=>{
+        init_map(current_lat, current_lng, '5000', main_search_types.value);
+        search_page_location_P.innerText = main_search_fld.value;
+        //document.getElementById("rest_list_scroll_div").scrollTop = 0;
+        sp_showExploreRestaurantsDiv();
+        search_page_start_page.style.display = "none";
+        SearchResultDiv.style.display = "block";
     });
     
    var sp_showExploreRestaurantsDiv = () => {

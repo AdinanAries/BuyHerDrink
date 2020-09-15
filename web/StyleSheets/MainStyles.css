@@ -39,7 +39,7 @@ body{
     width: 100%;
     
 }
-span, p{
+span, p, option{
     font-size: 16px;
 }
 #loadingPage{
@@ -317,10 +317,14 @@ span, p{
 .MainSearchFld{
     font-size: 16px;
     border: 0;
-    /*width: calc(100% - 40px);*/
-    width: 100%;
+    width: calc(100% - 130px);
     /*float: left;*/
     height: 31px;
+}
+#main_search_types{
+    width: 100px;
+    font-size: 16px;
+    text-align: right;
 }
 .MainSearchBtn{
     display: none;
