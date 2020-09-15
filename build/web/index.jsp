@@ -136,7 +136,7 @@ and open the template in the editor.
                                         <img src="icons/ExploreIcon.png" alt=""/>
                                     </td>
                                     <td class="SettingName">
-                                        Search Restaurants and Bars
+                                        Search Places
                                     </td>
                                 </tr>
                                 <tr id="SettingsMenuOption">
@@ -151,16 +151,18 @@ and open the template in the editor.
                         </table>
                     </div>
                     <div class="SearchDiv">
-                        <input id="main_search_fld" type="text" placeholder="search bars, parks, museums, etc." class="MainSearchFld" />
+                        <span><i class="fa fa-map-marker"></i></span>
+                        <input id="main_search_fld" type="text" placeholder="enter address to search" class="MainSearchFld" />
+                        <span style="color: darkgrey;">Type:</span>
                         <select id="main_search_types">
-                            <option value="restaurant">
-                                Type
-                            </option>
                             <option value="restaurant">
                                 Restaurant
                             </option>
                             <option value="bar">
                                 Bar
+                            </option>
+                            <option value="park">
+                                Park
                             </option>
                             <option value="movie_theater">
                                 Movie Theater
