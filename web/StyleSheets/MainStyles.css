@@ -39,6 +39,9 @@ body{
     width: 100%;
     
 }
+span, p{
+    font-size: 16px;
+}
 #loadingPage{
     position: fixed;
     z-index: 1111;
@@ -312,12 +315,15 @@ body{
     background-color: cornflowerblue;
 }
 .MainSearchFld{
+    font-size: 16px;
     border: 0;
-    width: calc(100% - 40px);
-    float: left;
+    /*width: calc(100% - 40px);*/
+    width: 100%;
+    /*float: left;*/
     height: 31px;
 }
 .MainSearchBtn{
+    display: none;
     padding-top: 3px;
     text-align: center;
     background-color: aqua;

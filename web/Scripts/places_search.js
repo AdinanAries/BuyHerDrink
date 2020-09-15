@@ -89,7 +89,8 @@ function initMap(lat, lng, search_radius) {
         if(status == google.maps.places.PlacesServiceStatus.OK){
             current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
+                
+                createMarker(results[i], map, infowindow);
                 
                 let rating_int = Math.round(results[i].rating);
                 let stars = "&#9733;&#9733;&#9733;&#9733;&#9733;";
@@ -138,7 +139,7 @@ function initMap(lat, lng, search_radius) {
     
 }
 
-function createMarker(place) {
+function createMarker(place, map, infowindow) {
   const marker = new google.maps.Marker({
     map,
     position: place.geometry.location

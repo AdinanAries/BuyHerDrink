@@ -139,8 +139,11 @@ function init_map(lat, lng, search_radius) {
     function call_back(results, status){
         if(status == google.maps.places.PlacesServiceStatus.OK){
             
+            search_results_list.innerHTML = "";
+            
             for(var w = 0; w < results.length; w++) {
-                create_marker(results[w]);
+                
+                createMarker(results[w], sp_map, sp_infowindow);
                 
                 let rating_int = Math.round(results[w].rating);
                 let stars = "&#9733;&#9733;&#9733;&#9733;&#9733;";
@@ -176,7 +179,7 @@ function init_map(lat, lng, search_radius) {
                                     <p style="color: darkgrey;">types: </p>
                                     <p>${types_list}</p>
                                 </div>
-                                <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white;">Make Drink Request</div>
+                                <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white; font-size: 16px;">Make Drink Request</div>
                             </div>
                     `;
                 
@@ -185,18 +188,6 @@ function init_map(lat, lng, search_radius) {
         }
     }
     
-}
-
-function create_marker(place) {
-  const sp_marker = new google.maps.Marker({
-    sp_map,
-    position: place.geometry.location
-  });
-  google.maps.event.addListener(sp_marker, "click", () => {
-    
-    sp_infowindow.setContent(place.name);
-    sp_infowindow.open(sp_map);
-  });
 }
 
 //*********************************
