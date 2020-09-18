@@ -1,3 +1,6 @@
+var SearchResultDiv = document.getElementById("SearchResultDiv");
+var search_page_start_page = document.getElementById("search_page_start_page");
+
 document.querySelector(".MainMenu").style.display = "none";
 document.cookie = "SameSite=None;";
 
@@ -138,7 +141,7 @@ var showExploreRestaurantsDiv = () => {
    let settingsDiv = document.getElementById("settingsDiv");
    
    ToggleMenuDisplay();
-   SetWindowTitle("Search Restaurants");
+   SetWindowTitle("Search Places");
    
    ExploreRestaurantsDiv.style.display = "block";
    DrinkRequestsIframe.style.display = "none";
@@ -146,6 +149,9 @@ var showExploreRestaurantsDiv = () => {
    DrinkOffersIframe.style.display = "none";
    fullProfileDiv.style.display = "none";
    settingsDiv.style.display = "none";
+   
+   SearchResultDiv.style.display = "none";
+   search_page_start_page.style.display = "block";
 };
 
 var showFullProfileDiv = () => {

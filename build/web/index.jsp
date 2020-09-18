@@ -254,7 +254,7 @@ and open the template in the editor.
                             </p>
                             <div class="PublishDrinkFieldSet">
                                 <div id="map" style="height: 200px;"></div>
-                                <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                <fieldset id="publish_drink_request_fields" style="border: 1px solid pink; margin: 5px; font-size: 15px;">
                                   <legend style="font-size: 15px; font-weight: bolder;">Add Bar/Restaurant</legend>
                                   <table>
                                       <tbody>

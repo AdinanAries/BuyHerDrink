@@ -201,7 +201,9 @@ function init_map(lat, lng, search_radius, type = "restaurant") {
                                     <p style="color: darkgrey;">types: </p>
                                     <p>${types_list}</p>
                                 </div>
-                                <div style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white; font-size: 16px;">Make Drink Request</div>
+                                <div onclick="pick_restaurant_from_search();"
+                                     style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white; font-size: 16px;">
+                                        Make Drink Request</div>
                             </div>
                     `;
                 
@@ -301,3 +303,37 @@ function show_position(position){
    fullProfileDiv.style.display = "none";
    settingsDiv.style.display = "none";
 };
+
+function pick_restaurant_from_search(){
+    document.getElementById("rest_locations_input_fld").value = main_search_fld.value;
+    
+    initMap(current_lat, current_lng, '5000');
+    document.getElementById("rest_list_scroll_div").scrollTop = 0;
+    
+    document.getElementById("search_rest_by_name_fld").value = "";
+    hide_search_and_show_home();
+    document.getElementById("publish_drink_request_fields").scrollIntoView();
+    
+    
+    /*if($(window).width() < 1000){
+       $(window).scrollTop(1000);
+    }*/
+}
+
+function hide_search_and_show_home(){
+   let UserProfileIframe = document.getElementById("UserProfileIframe");
+   let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+   let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+   let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+   let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+   let settingsDiv = document.getElementById("settingsDiv");
+   
+   SetWindowTitle("Your Profile");
+   
+   UserProfileIframe.style.display = "block";
+   DrinkRequestsIframe.style.display = "none";
+   DrinkOffersIframe.style.display = "none";
+   ExploreRestaurantsDiv.style.display = "none";
+   fullProfileDiv.style.display = "none";
+   settingsDiv.style.display = "none";
+}
