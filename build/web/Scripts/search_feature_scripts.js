@@ -201,7 +201,7 @@ function init_map(lat, lng, search_radius, type = "restaurant") {
                                     <p style="color: darkgrey;">types: </p>
                                     <p>${types_list}</p>
                                 </div>
-                                <div onclick="pick_restaurant_from_search();"
+                                <div onclick="pick_restaurant_from_search('${rest_name}', '${results[w].photos[0].getUrl()}', '${results[w].icon}', '${stars}', '${results[w].vicinity}', '${types_list}', '${results[w].rating}');"
                                      style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white; font-size: 16px;">
                                         Make Drink Request</div>
                             </div>
@@ -304,13 +304,15 @@ function show_position(position){
    settingsDiv.style.display = "none";
 };
 
-function pick_restaurant_from_search(){
+function pick_restaurant_from_search(rest_name, rest_photos, rest_icon, stars, rest_location, rest_types_list, rest_rating_number){
     document.getElementById("rest_locations_input_fld").value = main_search_fld.value;
     
     initMap(current_lat, current_lng, '5000');
     document.getElementById("rest_list_scroll_div").scrollTop = 0;
     
-    document.getElementById("search_rest_by_name_fld").value = "";
+    pick_restaurant(rest_name, rest_photos, rest_icon, stars, rest_location, rest_types_list, rest_rating_number);
+    
+    document.getElementById("search_rest_by_name_fld").value = rest_name;
     hide_search_and_show_home();
     document.getElementById("publish_drink_request_fields").scrollIntoView();
     
