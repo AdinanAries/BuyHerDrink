@@ -473,20 +473,19 @@ and open the template in the editor.
                                 <div id="current_selected_drink_offer">
                                     
                                 </div>
-                                <table class="ViewOffererFullProfileAndMakeOfferBtns">
-                                    <tbody>
-                                        <tr>
-                                            <td id="declineOfferBtn">
-                                                Decline Offer
-                                                <i class="fa fa-times" style="color: white; margin-left: 10px;"></i>
-                                            </td>
-                                            <td id="acceptOfferBtn">
-                                                Accept Offer
-                                                <i class="fa fa-handshake-o" aria-hidden="true" style="color: white; margin-left: 10px;"></i>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                
+                                <p id="drink_offer_status_P" class="status_text"></p>
+                                
+                                <div class="ViewOffererFullProfileAndMakeOfferBtns">
+                                    <div id="declineOfferBtn">
+                                        Decline Offer
+                                        <i class="fa fa-times" style="color: white; margin-left: 10px;"></i>
+                                   </div>
+                                    <div id="acceptOfferBtn">
+                                         Accept Offer
+                                        <i class="fa fa-handshake-o" aria-hidden="true" style="color: white; margin-left: 10px;"></i>
+                                    </div>
+                                </div>
                                 
                             </div>
                             
