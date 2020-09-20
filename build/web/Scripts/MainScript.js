@@ -263,8 +263,13 @@ $("#closeGalleryBtn").click(function (event){
 $("#YourActivitiesBtn").click(function(){
     showUserActivity();
 });
+$("#DatesMenuOption").click(function(){
+    showUserActivity();
+    ToggleMenuDisplay();
+});
 $("#notificationsIcon").click(function (event){
     showNotifications();
+    
 });
 
 $("#galleryIcon").click(function (event){

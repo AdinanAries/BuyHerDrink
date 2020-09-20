@@ -147,6 +147,14 @@ and open the template in the editor.
                                         Settings
                                     </td>
                                 </tr>
+                                <tr id="DatesMenuOption">
+                                    <td>
+                                        <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
+                                    </td>
+                                    <td class="SettingName">
+                                        Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
