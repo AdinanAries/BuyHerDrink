@@ -265,7 +265,7 @@ $("#YourActivitiesBtn").click(function(){
 });
 $("#DatesMenuOption").click(function(){
     showUserActivity();
-    ToggleMenuDisplay();
+    showUserProfile();
 });
 $("#notificationsIcon").click(function (event){
     showNotifications();

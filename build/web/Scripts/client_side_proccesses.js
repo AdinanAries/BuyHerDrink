@@ -20,20 +20,26 @@ var RP_purpose_display = document.getElementById("RP_purpose_display");
 
 //In memory Object to hold processes data
 var publish_request_data = {
-                    "request_id": "created on server",
-                    "request_purpose": "Drink",
-                    "rest_location": "1913 Bronxdale Ave, The Bronx",
-                    "rest_name": "F&J Pine",
-                    "rest_rating": 5,
-                    "rest_photo": "url from google",
-                    "rest_category_icon": "from google places",
-                    "rest_service_types": "from google places",
-                    "meeting_date": "09/04/2020",
-                    "meeting_time": "14:00",
-                    "meeting_budget": "$5.00",
-                    "added_message": "This is a place holder text for message to be added on for the drink request",
-                    "requestee_id": "value from client"
-                };
+    "request_id": "created on server",
+    "request_purpose": "Drink",
+    "rest_location": "1913 Bronxdale Ave, The Bronx",
+    "rest_name": "F&J Pine",
+    "rest_rating": 5,
+    "rest_photo": "url from google",
+    "rest_category_icon": "from google places",
+    "rest_service_types": "from google places",
+    "meeting_date": "09/04/2020",
+    "meeting_time": "14:00",
+    "meeting_budget": "$5.00",
+    "added_message": "This is a place holder text for message to be added on for the drink request",
+    "requestee_id": "value from client"
+};
+
+var post_dinner_date_data = {
+    "user_id": "jkdhise43hkjJJdjkI4h8dGN09lskw",
+    "date_party_id": "this your date party id",
+    "drink_offer_id": "this is the drink offer id for this date"
+};
 
 //Gobal variables for various utility functions
 var currentDate = new Date();
@@ -78,13 +84,14 @@ function render_drink_request_to_list(requestee_name, requestee_gender, requeste
 
 //this function renders drink offers to list that displays them
 //it also add a click event listener to each request in the list thats used to diplay the selected user and drink offer info
-function render_drink_offers_to_list(requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
+function render_drink_offers_to_list(date_party_id, drink_offer_id, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
     let td = document.createElement("td");
     td.classList.add("OfferesListCoverPhoto");
     
     td.addEventListener("click", ()=>{
         render_each_selected_drink_offer(restaurant, request_purpose, location, date, time, budget, message);
         render_each_selected_drink_offer_user(requestee_name, requestee_age, requestee_gender, requestee_address);
+        add_dinner_date_data(date_party_id, drink_offer_id);
     });
     
     td.innerHTML = `
@@ -339,7 +346,7 @@ function get_recent_ten_drink_offers(clientId){
             render_each_selected_drink_offer(offer_list[0].rest_name, offer_list[0].request_purpose, offer_list[0].rest_location, offer_list[0].meeting_date, offer_list[0].meeting_time, offer_list[0].meeting_budget, offer_list[0].added_message);
             
             offer_list.forEach( request => {
-                render_drink_offers_to_list(request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
+                render_drink_offers_to_list("new_date_party_id", "new_drink_offer_id", request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
             });
         }
     });
@@ -377,6 +384,10 @@ function add_selected_rest_post_data(name, rating, photo_url, icon, types, addre
     publish_request_data.rest_location = address;
 }
 
+function add_dinner_date_data(date_party_id, drink_offer_id){
+    post_dinner_date_data.date_party_id = date_party_id;
+    post_dinner_date_data.drink_offer_id = drink_offer_id;
+}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that post data from the endpoints
 
@@ -393,6 +404,19 @@ function post_drink_request(data){
 
 $("#RP_post_request_btn").click(function(event){
     post_drink_request(publish_request_data);
+});
+
+
+function post_dinner_date(data){
+    console.log(data.user_id);
+    console.log(data.date_party_id);
+    console.log(data.drink_offer_id);
+    //document.getElementById("this_current_item_in_list").style.display = "none";
+    alert("Your date has been confirmed");
+}
+
+$("#acceptOfferBtn").click((evnt) => {
+    post_dinner_date(post_dinner_date_data);
 });
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application
