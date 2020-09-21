@@ -20,7 +20,10 @@ var RP_purpose_display = document.getElementById("RP_purpose_display");
 var drink_offer_status_P = document.getElementById("drink_offer_status_P");
 var ViewOffererFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewOffererFullProfileAndMakeOfferBtns")[0];
 var acceptOfferBtn = document.getElementById("acceptOfferBtn");
-var declineOfferBtn =document.getElementById("declineOfferBtn");
+var declineOfferBtn = document.getElementById("declineOfferBtn");
+var mainMakeOfferBtn = document.getElementById("mainMakeOfferBtn");
+var customizeOfferBtn = document.getElementById("customizeOfferBtn");
+var drink_request_status_P = document.getElementById("drink_request_status_P");
 
 //In memory Object to hold processes data
 var publish_request_data = {
@@ -45,8 +48,13 @@ var post_dinner_date_data = {
     "drink_offer_id": "this is the drink offer id for this date"
 };
 
+var send_drink_offer_data = {
+    
+};
+
 //Gobal variables for various utility functions
 var current_drink_offer_item = "";
+var current_drink_request_item = "";
 var currentDate = new Date();
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,12 +74,18 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
 
 //this function renders drink requests to list that displays them
 //it also add a click event listener to each request in the list thats used to diplay the selected user and drink request info
-function render_drink_request_to_list(requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
+function render_drink_request_to_list(number, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
     let td = document.createElement("td");
+    td.id = "drink_request_"+number;
     
     td.addEventListener("click", ()=>{
+        drink_request_status_P.innerHTML = "";
+        mainMakeOfferBtn.style.display = "block";
+        customizeOfferBtn.style.display = "block"; 
+        
         render_each_selected_drink_request(restaurant, request_purpose, location, date, time, budget, message);
         render_each_selected_drink_request_user(requestee_name, requestee_age, requestee_gender, requestee_address);
+        set_current_drink_request_item("drink_request_"+number);
     });
     
     td.classList.add("RequesteeListCoverPhoto");
@@ -329,10 +343,11 @@ function get_recent_ten_drink_request(city, town, country){
                                                 request_list[0].meeting_time, request_list[0].meeting_budget,
                                                 request_list[0].added_message
                                               );
+            current_drink_request_item = "drink_request_0";
             
-            
-            request_list.forEach( request => {
+            request_list.forEach( (request, index) => {
                 render_drink_request_to_list(
+                                                index,
                                                 request.requestee_name, request.requestee_gender, request.requestee_age, 
                                                 request.requestee_address, request.request_purpose, request.rest_name, request.rest_location,
                                                 request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message
@@ -404,8 +419,12 @@ function add_dinner_date_data(date_party_id, drink_offer_id){
 }
 
 function set_current_drink_offer_item(item_id){
-        current_drink_offer_item = item_id;
-    }
+    current_drink_offer_item = item_id;
+}
+    
+function set_current_drink_request_item(item_id){
+    current_drink_request_item = item_id;
+}
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that post data from the endpoints
 
@@ -448,6 +467,17 @@ function decline_drink_offer(drink_offer_id, current_item){
 
 $("#declineOfferBtn").click((evnt)=>{
     decline_drink_offer("drink_offer_id", current_drink_offer_item);
+});
+
+function send_drink_offer(send_offer_data){
+    drink_request_status_P.innerHTML = "<i style='color: green;' class='fa fa-check'></i> your offer has been sent";
+    document.getElementById(current_drink_request_item).style.display = "none";
+    mainMakeOfferBtn.style.display = "none";
+    customizeOfferBtn.style.display = "none";
+}
+
+$("#mainMakeOfferBtn").click((evnt)=>{
+    send_drink_offer(send_drink_offer_data);
 });
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application

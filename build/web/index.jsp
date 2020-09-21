@@ -433,6 +433,40 @@ and open the template in the editor.
                                 <div id="current_selected_drink_request">
                                     
                                 </div>
+                                
+                                <div id="drink_bidding_form" style="display: none; display: flex; padding: 5px;">
+                                    <p style="font-size: 17px; padding: 5px 0; color: darkblue; font-weight: bolder; min-width: 200px;"><i style="margin-right: 5px;" class="fa fa-money"></i> name your price here:</p>
+                                    <select style="font-size: 15px; border: 1px solid black;" id='bidding_price_fld'>
+                                        <option>$5.00</option>
+                                        <option>$10.00</option>
+                                        <option>$15.00</option>
+                                        <option>$20.00</option>
+                                        <option>$25.00</option>
+                                        <option>$30.00</option>
+                                        <option>$35.00</option>
+                                        <option>$5.00</option>
+                                        <option>$45.00</option>
+                                        <option>$50.00</option>
+                                        <option>$55.00</option>
+                                        <option>$60.00</option>
+                                        <option>$65.00</option>
+                                        <option>$70.00</option>
+                                        <option>$75.00</option>
+                                        <option>$80.00</option>
+                                        <option>$85.00</option>
+                                        <option>$90.00</option>
+                                        <option>$95.00</option>
+                                        <option>$100.00</option>
+                                        <option>$200.00</option>
+                                        <option>$300.00</option>
+                                        <option>$400.00</option>
+                                        <option>$500.00</option>
+                                        <option>$500+</option>
+                                    </select>
+                                </div>
+                                
+                                <p id="drink_request_status_P" class="status_text"></p>
+                                
                                 <div class="ViewRequesteeFullProfileAndMakeOfferBtns">
                                     <div id="customizeOfferBtn" style="background-color: aquamarine;">
                                         Customize Offer
