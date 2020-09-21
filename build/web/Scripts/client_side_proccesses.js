@@ -24,6 +24,8 @@ var declineOfferBtn = document.getElementById("declineOfferBtn");
 var mainMakeOfferBtn = document.getElementById("mainMakeOfferBtn");
 var customizeOfferBtn = document.getElementById("customizeOfferBtn");
 var drink_request_status_P = document.getElementById("drink_request_status_P");
+var drink_bidding_form = document.getElementById("drink_bidding_form");
+
 
 //In memory Object to hold processes data
 var publish_request_data = {
@@ -150,7 +152,8 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${budget} </span><br/> 
                             </p>
-                            <p style="color: white; font-size: 14px; border-radius: 4px; padding: 10px; background-color: darkslateblue; text-align: center; margin: 5px 0;">beat current bid: $50.00</p>
+                            <p id="beat_bid_btn"
+                               style="color: white; font-size: 14px; border-radius: 4px; padding: 10px; background-color: darkslateblue; text-align: center; margin: 5px 0;">beat current bid: $50.00</p>
                         </div>
                         <div style="padding: 10px; border-top: 1px solid darkgrey;">
                             <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
@@ -159,6 +162,17 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
                             </p>
                         </div>
                 `;
+    
+     $("HTML, BODY").animate({
+            scrollTop: 0
+        }, 300);
+    document.getElementById("beat_bid_btn").style.display = "block";
+    drink_bidding_form.style.display = "none";
+    
+    document.getElementById("beat_bid_btn").addEventListener("click", ()=>{
+        document.getElementById("beat_bid_btn").style.display = "none";
+        drink_bidding_form.style.display = "flex";
+    });
 }
 
 //this function renders each selected drink request's user info
@@ -211,6 +225,10 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                             </p>
                         </div>
                 `;
+    
+    $("HTML, BODY").animate({
+            scrollTop: 0
+        }, 300);
 }
 
 //this function renders each selected drink offer's user info
@@ -479,6 +497,7 @@ function send_drink_offer(send_offer_data){
 $("#mainMakeOfferBtn").click((evnt)=>{
     send_drink_offer(send_drink_offer_data);
 });
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application
 $(document).ready(()=>{
