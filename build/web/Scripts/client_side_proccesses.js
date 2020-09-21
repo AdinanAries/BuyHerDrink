@@ -429,7 +429,6 @@ function post_dinner_date(data, current_item){
     console.log(data.user_id);
     console.log(data.date_party_id);
     console.log(data.drink_offer_id);
-    alert(current_item);
     drink_offer_status_P.innerHTML = "<i style='color: green;' class='fa fa-check'></i> your have confirmed this date";
     document.getElementById(current_item).style.display = "none";
     acceptOfferBtn.style.display = "none";
@@ -438,6 +437,17 @@ function post_dinner_date(data, current_item){
 
 $("#acceptOfferBtn").click((evnt) => {
     post_dinner_date(post_dinner_date_data, current_drink_offer_item);
+});
+
+function decline_drink_offer(drink_offer_id, current_item){
+    drink_offer_status_P.innerHTML = "<i style='color: red;' class='fa fa-exclamation-triangle'></i> you've declined this offer";
+    document.getElementById(current_item).style.display = "none";
+    acceptOfferBtn.style.display = "none";
+    declineOfferBtn.style.display = "none";
+}
+
+$("#declineOfferBtn").click((evnt)=>{
+    decline_drink_offer("drink_offer_id", current_drink_offer_item);
 });
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application

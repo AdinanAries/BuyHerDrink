@@ -433,20 +433,16 @@ and open the template in the editor.
                                 <div id="current_selected_drink_request">
                                     
                                 </div>
-                                <table class="ViewRequesteeFullProfileAndMakeOfferBtns">
-                                    <tbody>
-                                        <tr>
-                                            <td style="background-color: aquamarine;">
-                                                Customize Offer
-                                                <i style="margin-left: 10px;" class="fa fa-pencil" aria-hidden="true"></i>
-                                            </td>
-                                            <td style="background-color: pink;">
-                                                Make Offer
-                                                <i style="margin-left: 10px;" class="fa fa-check"></i>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="ViewRequesteeFullProfileAndMakeOfferBtns">
+                                    <div id="customizeOfferBtn" style="background-color: aquamarine;">
+                                        Customize Offer
+                                        <i style="margin-left: 10px;" class="fa fa-pencil" aria-hidden="true"></i>
+                                    </div>
+                                    <div id="mainMakeOfferBtn" style="background-color: pink;">
+                                        Make Offer
+                                        <i style="margin-left: 10px;" class="fa fa-check"></i>
+                                    </div>
+                                </div>
                                 
                             </div>
                             
