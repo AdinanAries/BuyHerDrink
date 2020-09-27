@@ -25,6 +25,7 @@ var mainMakeOfferBtn = document.getElementById("mainMakeOfferBtn");
 var customizeOfferBtn = document.getElementById("customizeOfferBtn");
 var drink_request_status_P = document.getElementById("drink_request_status_P");
 var drink_bidding_form = document.getElementById("drink_bidding_form");
+var drink_request_comments_div = document.getElementById("drink_request_comments_div");
 
 
 //In memory Object to hold processes data
@@ -83,7 +84,9 @@ function render_drink_request_to_list(number, requestee_name, requestee_gender, 
     td.addEventListener("click", ()=>{
         drink_request_status_P.innerHTML = "";
         mainMakeOfferBtn.style.display = "block";
+        mainMakeOfferBtn.style.width = "48%";
         customizeOfferBtn.style.display = "block"; 
+        drink_request_comments_div.style.display = "none";
         
         render_each_selected_drink_request(restaurant, request_purpose, location, date, time, budget, message);
         render_each_selected_drink_request_user(requestee_name, requestee_age, requestee_gender, requestee_address);
@@ -492,12 +495,20 @@ function send_drink_offer(send_offer_data){
     document.getElementById(current_drink_request_item).style.display = "none";
     mainMakeOfferBtn.style.display = "none";
     customizeOfferBtn.style.display = "none";
+    drink_request_comments_div.style.display = "none";
+    document.getElementById("beat_bid_btn").style.display = "none";
+    drink_bidding_form.style.display = "none";
 }
 
 $("#mainMakeOfferBtn").click((evnt)=>{
     send_drink_offer(send_drink_offer_data);
 });
 
+customizeOfferBtn.addEventListener("click", ()=>{
+    customizeOfferBtn.style.display = "none";
+    drink_request_comments_div.style.display = "block";
+    mainMakeOfferBtn.style.width = "100%";
+});
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //functions that initialize application
 $(document).ready(()=>{
