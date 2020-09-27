@@ -23,7 +23,7 @@ app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = [
     "refresh",
 ]  # allow blacklisting for access and refresh tokens
 app.config['JWT_SECRET_KEY']='TestingMagic'
-app.config['JWT_TOKEN_LOCATION'] = ['cookies']
+app.config['JWT_TOKEN_LOCATION'] = ['cookies','headers']
 app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 api = Api(app)
 

@@ -101,11 +101,13 @@ class UserLogin(Resource):
             access_token = create_access_token(identity=user.user_id, fresh=True)
             refresh_token = create_refresh_token(user.user_id)
 
-            resp = jsonify({'login': True})
+            resp = jsonify({'login': True,'access_token':access_token,'refresh_token':refresh_token})
             set_access_cookies(resp, access_token)
             set_refresh_cookies(resp, refresh_token)
             #cookies=[ ('Set-Cookie', 'access_token=%s'.format(access_token)), ('Set-Cookie', 'refresh_token=%s'.format(refresh_token)),'Set-Cookie' ]
-            return make_response(resp,200)
+            resp.headers['Authorization']=str('Bearer '+access_token)
+            print(resp)
+            return resp
 
         return {"message": "Invalid credentials!"}, 401
 
@@ -118,6 +120,7 @@ class UserLogout(Resource):
         BLACKLIST.add(jti)
         # Delete the cookie
         resp = jsonify({'logout': True,"message": "User <id={}> successfully logged out.".format(user_id)})
+        
         unset_jwt_cookies(resp)
         return resp
 
