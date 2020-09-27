@@ -12,8 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login/Register</title>
         <link href="StyleSheets/login_styles.css" rel="stylesheet" type='text/css' />
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
