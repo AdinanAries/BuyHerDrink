@@ -3,8 +3,78 @@
 <body>
     <div>
         <p>
-            I am placeholder Text to test the system! Working as intended-check terminal logs for more info.
+            System test. Non-production!
         </p>
     </div>
+    <form action="/login" method="POST">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
 
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit">Login</button>
+    
+    </form>
+
+    <p>New User? Register below!</p>
+    
+    <form action="/register" method="POST">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+    
+        <label for="password"><b>Password</b></label>
+        <input type="text" placeholder="Enter New Password" name="password" required>
+        <button type="submit">Register</button>
+    </form>
+    <p>Get list of Users when logged in.</p>
+    <form action="/getusers" method="POST">
+        <button type="submit">Get Users</button>
+    </form>
+
+    <p>Get current logged in User</p>
+    <form action="/getusers" method="GET">
+        <button type="submit">Get User Info</button>
+    </form>
+    <p>Get posts made by Logged in User</p>
+    <form action="/mypost" method="GET">
+        <button type="submit">Get User Posts</button>
+    </form>
+
+    <p>Get all Posts</p>
+    <form action="/allposts" method="GET">
+        <button type="submit">Get All Posts</button>
+    </form>
+
+
+    <p>Quick Create Post</p>
+    <form action="/createpost" method="POST">
+
+
+        <button type="submit">Create Post</button>
+    </form>
+
+    <p>Create Post</p>
+    <form action="/createpost" method="POST">
+        <label for="body"><b>Title</b></label>
+        <input type="text" placeholder="Enter Title" name="body" required>
+        <br>
+        <label for="message"><b>Message</b></label>
+        <textarea placeholder="Enter Message" name="messag" rows="4" cols="50"required></textarea>
+        <br>
+        
+        <input id="on" type="radio" name="active" value="1">
+        <label for="on"><b>Active Posting</b></label>
+        <input id="off" type="radio" name="active" value="0">
+        <label for="off"><b>Not Active</b></label>
+        
+        <button type="submit">Create Post</button>
+    </form>
+
+    <p>Logout.</p>
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+
+
+</form>
 </body>
