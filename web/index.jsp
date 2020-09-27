@@ -13,8 +13,8 @@ and open the template in the editor.
         
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel='stylesheet'>
 
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>
@@ -434,7 +434,7 @@ and open the template in the editor.
                                     
                                 </div>
                                 
-                                <div id="drink_bidding_form" style="display: none; padding: 5px;">
+                                <div id="drink_bidding_form" style="display: none; padding: 5px; padding-top: 10px; border-top: 1px solid #D9DADC; margin-top: 10px;">
                                     <p style="font-size: 17px; padding: 5px 0; color: darkblue; font-weight: bolder; min-width: 200px;"><i style="margin-right: 5px;" class="fa fa-money"></i> name your price here:</p>
                                     <select style="font-size: 15px; border: 1px solid black;" id='bidding_price_fld'>
                                         <option>$5.00</option>
@@ -465,12 +465,17 @@ and open the template in the editor.
                                     </select>
                                 </div>
                                 
+                                <div id="drink_request_comments_div">
+                                    <textarea id="drink_request_comments_fld">add your comments here
+                                    </textarea>
+                                </div>
+                                
                                 <p id="drink_request_status_P" class="status_text"></p>
                                 
                                 <div class="ViewRequesteeFullProfileAndMakeOfferBtns">
                                     <div id="customizeOfferBtn" style="background-color: aquamarine;">
-                                        Customize Offer
-                                        <i style="margin-left: 10px;" class="fa fa-pencil" aria-hidden="true"></i>
+                                        Add Comments
+                                        <i style="margin-left: 10px;" class="fa fa-commenting" aria-hidden="true"></i>
                                     </div>
                                     <div id="mainMakeOfferBtn" style="background-color: pink;">
                                         Make Offer
