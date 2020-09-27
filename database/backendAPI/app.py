@@ -3,7 +3,10 @@ from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 from db import db,connection_string
-from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout,Username
+from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout,Username,GetAll
+from resources.posts import Post,AllPosts,PostRegister
+
+from flask import jsonify
 
 from blacklist import BLACKLIST
 
@@ -20,6 +23,8 @@ app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = [
     "refresh",
 ]  # allow blacklisting for access and refresh tokens
 app.config['JWT_SECRET_KEY']='TestingMagic'
+app.config['JWT_TOKEN_LOCATION'] = ['cookies']
+app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 api = Api(app)
 
 @app.route('/')
@@ -111,8 +116,13 @@ api.add_resource(Username, "/username/<string:name>")
 api.add_resource(UserLogin, "/login")
 api.add_resource(TokenRefresh, "/refresh")
 api.add_resource(UserLogout, "/logout")
-db.init_app(app)
-app.run(port=5000, debug=True)
+api.add_resource(GetAll,"/getusers")
+api.add_resource(Post,"/mypost")
+api.add_resource(AllPosts,"/allposts")
+api.add_resource(PostRegister,"/createpost")
 if __name__ == "__main__":
+    db.init_app(app)
+    app.run(port=5000, debug=True)
+else:
     db.init_app(app)
     app.run(port=5000, debug=True)

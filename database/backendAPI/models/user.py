@@ -14,7 +14,8 @@ class UserModel(db.Model):
 
     def json(self):
         return {"id": self.user_id, "username": self.username,"name":self.name}
-    
+    def alljson(self):
+        return {"id": self.user_id, "username": self.username,"password":self.password,"name":self.name}
     @classmethod
     def find_by_username(cls,username):
         return cls.query.filter_by(username=username).first()
@@ -34,3 +35,6 @@ class UserModel(db.Model):
     def delete_from_db(self):
         db.session.delete(self)
         db.session.commit()
+    @classmethod
+    def find_all(cls):
+        return cls.query.all()

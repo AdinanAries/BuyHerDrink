@@ -8,9 +8,13 @@ from flask_jwt_extended import (
     get_jwt_identity,
     jwt_required,
     get_raw_jwt,
+    set_access_cookies,
+    set_refresh_cookies, 
+    unset_jwt_cookies
 )
 from models.user import UserModel
 from blacklist import BLACKLIST
+from flask import jsonify, make_response
 # User class 
 
 _user_parser = reqparse.RequestParser()
@@ -35,7 +39,7 @@ class UserRegister(Resource):
 
         return {"message": "User created successfully."}, 201
 
-# Used as test
+# Used as test for logins and outs
 class User(Resource):
    
 
@@ -54,6 +58,31 @@ class User(Resource):
         user.delete_from_db()
         return {"message": "User deleted."}, 200
 
+    #Check if user is accessing a page they have edit rights on.
+    @classmethod
+    @jwt_required
+    def post(cls,user_id:int):
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user = UserModel.find_by_id(user_id)
+        if uid ==user_id:
+            return {"message":"Logged in as the user. "},200
+        else:
+            return {"message": "Logged in as user id {}, access deined".format(uid)},200
+class GetAll(Resource):
+    @classmethod
+    @jwt_required
+    def post(cls):
+        users=[user.json() for user in UserModel.find_all()]
+        return {"users":users},200
+    @classmethod
+    @jwt_required
+    def get(cls):
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user = UserModel.find_by_id(uid)
+        return user.alljson(),200
+
 class Username(Resource):
     @classmethod
     def get(cls, name:str):
@@ -71,7 +100,12 @@ class UserLogin(Resource):
         if user and safe_str_cmp(user.password, data["password"]):
             access_token = create_access_token(identity=user.user_id, fresh=True)
             refresh_token = create_refresh_token(user.user_id)
-            return {"access_token": access_token, "refresh_token": refresh_token}, 200
+
+            resp = jsonify({'login': True})
+            set_access_cookies(resp, access_token)
+            set_refresh_cookies(resp, refresh_token)
+            #cookies=[ ('Set-Cookie', 'access_token=%s'.format(access_token)), ('Set-Cookie', 'refresh_token=%s'.format(refresh_token)),'Set-Cookie' ]
+            return make_response(resp,200)
 
         return {"message": "Invalid credentials!"}, 401
 
@@ -82,7 +116,10 @@ class UserLogout(Resource):
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         user_id = get_jwt_identity()
         BLACKLIST.add(jti)
-        return {"message": "User <id={}> successfully logged out.".format(user_id)}, 200
+        # Delete the cookie
+        resp = jsonify({'logout': True,"message": "User <id={}> successfully logged out.".format(user_id)})
+        unset_jwt_cookies(resp)
+        return resp
 
 
 class TokenRefresh(Resource):
