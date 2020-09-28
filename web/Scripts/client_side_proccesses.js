@@ -55,6 +55,22 @@ var send_drink_offer_data = {
     
 };
 
+var highest_bidder = {
+    "bid_amount": "$40",
+    "restaurant": "hb restaurant name", 
+    "purpose": "hb offer purpose",
+    "location": "hb rest location", 
+    "date": "hb date", 
+    "time": "hb time", 
+    "budget": "hb budget", 
+    "message": "hb message",
+    "bidder_name": "hb name", 
+    "age": "hb age", 
+    "gender": "hb gender", 
+    "address": "hb home addr"
+};
+
+
 //Gobal variables for various utility functions
 var current_drink_offer_item = "";
 var current_drink_request_item = "";
@@ -109,7 +125,7 @@ function render_drink_request_to_list(number, requestee_name, requestee_gender, 
 //this function renders drink offers to list that displays them
 //it also add a click event listener to each request in the list thats used to diplay the selected user and drink offer info
 
-function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_offer_id, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
+function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_offer_id, drink_request_id, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
     
     let td = document.createElement("td");
     td.classList.add("OfferesListCoverPhoto");
@@ -124,6 +140,7 @@ function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_o
         render_each_selected_drink_offer_user(requestee_name, requestee_age, requestee_gender, requestee_address);
         add_dinner_date_data(date_party_id, drink_offer_id);
         set_current_drink_offer_item("drink_offer_"+ drink_offer_counter);
+        get_highest_bidder(drink_request_id);
     });
     
     td.innerHTML = `
@@ -216,9 +233,13 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-watch-filled-30.png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${date}</span> - <span style="color: tomato; font-size: 14px;">${time}</span><br/>
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-cash-50.png" alt=""/>
-                                <span style="color: tomato; font-size: 14px;">${budget} -
-                                    <span style="color: darkgreen; font-size: 14px; font-weight: bolder;">see highest bidder: $50.00</span>
-                                </span>
+                                <span style="color: tomato; font-size: 14px;">${budget} </span>
+                            </p>
+                            <p id="see_highest_bidder_btn" 
+                                        style="color: darkgreen; font-size: 14px; font-weight: bolder; padding: 5px; border-radius: 4px; 
+                                                background-color: darkslateblue; color: white; margin: 5px 0; max-width: 250px; text-align: center;">
+                                    see highest bidder: ${highest_bidder.bid_amount}
+                              
                             </p>
                         </div>
                         <div style="padding: 10px; border-top: 1px solid darkgrey;">
@@ -232,6 +253,13 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
     $("HTML, BODY").animate({
             scrollTop: 0
         }, 300);
+        
+        document.getElementById("see_highest_bidder_btn").addEventListener("click", (evnt) => {
+            render_each_selected_drink_offer(highest_bidder.restaurant, highest_bidder.purpose, highest_bidder.location, highest_bidder.date, highest_bidder.time, highest_bidder.budget, highest_bidder.message);
+            render_each_selected_drink_offer_user(highest_bidder.bidder_name, highest_bidder.age, highest_bidder.gender, highest_bidder.address);
+            //console.log("rendering highest bidder");
+            
+        });
 }
 
 //this function renders each selected drink offer's user info
@@ -396,7 +424,7 @@ function get_recent_ten_drink_offers(clientId){
             current_drink_offer_item = "drink_offer_0";
             
             offer_list.forEach( (request, index) => {
-                render_drink_offers_to_list(index,"new_date_party_id", "new_drink_offer_id", request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
+                render_drink_offers_to_list(index,"new_date_party_id", "new_drink_offer_id", "new_drink_request_id", request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
             });
         }
     });
@@ -420,6 +448,14 @@ function get_recent_ten_dinner_dates(user_id){
             });
         }
     });
+}
+
+//getting highest bidder for each request
+function get_highest_bidder(drink_request_id){
+    console.log(drink_request_id);
+    console.log("getting the highest bidder");
+    highest_bidder.bid_amount = "$30";
+    document.getElementById("see_highest_bidder_btn").innerText = "see highest bidder: " + highest_bidder.bid_amount;
 }
 
 //functions that collect data for various processes
