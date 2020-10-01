@@ -7,6 +7,7 @@ var RP_rest_icon = document.getElementById("RP_rest_icon");
 var RP_rest_rating = document.getElementById("RP_rest_rating");
 var RP_rest_location = document.getElementById("RP_rest_location");
 var RP_rest_types = document.getElementById("RP_rest_types");
+var RP_post_request_btn = document.getElementById("RP_post_request_btn");
 var drink_requests_list = document.getElementById("drink_requests_list");
 var drink_offers_list = document.getElementById("drink_offers_list");
 var current_selected_drink_request = document.getElementById("current_selected_drink_request");
@@ -33,7 +34,7 @@ var publish_request_data = {
     "request_id": "created on server",
     "request_purpose": "Drink",
     "rest_location": "1913 Bronxdale Ave, The Bronx",
-    "rest_name": "F&J Pine",
+    "rest_name": null,
     "rest_rating": 5,
     "rest_photo": "url from google",
     "rest_category_icon": "from google places",
@@ -497,6 +498,7 @@ function post_drink_request(data){
 }
 
 $("#RP_post_request_btn").click(function(event){
+    //alert(RP_post_request_btn.disabled);
     post_drink_request(publish_request_data);
 });
 
@@ -552,3 +554,16 @@ $(document).ready(()=>{
     get_recent_ten_drink_offers("jkdhise43hkjJJdjkI4h8dGN09lskw");
     get_recent_ten_dinner_dates("jkdhise43hkjJJdjkI4h8dGN09lskw");
 });
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//functions that enforce checks
+
+setInterval(()=>{
+    if(publish_request_data.rest_name === null){
+        RP_post_request_btn.style.backgroundColor = "darkgrey";
+        RP_post_request_btn.disabled = "true";
+    }else{
+        RP_post_request_btn.style.backgroundColor = "darkslateblue";
+        RP_post_request_btn.disabled = "false";
+    }
+}, 1);
