@@ -32,6 +32,10 @@
         <servlet-name>get_recent_ten_dinner_dates</servlet-name>
         <servlet-class>com.buyherdrink.controller.get_recent_ten_dinner_dates</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>get_highest_bidder</servlet-name>
+        <servlet-class>com.buyherdrink.controller.get_highest_bidder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>login_controller</servlet-name>
         <url-pattern>/login_controller</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>get_recent_ten_dinner_dates</servlet-name>
         <url-pattern>/get_recent_ten_dinner_dates</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>get_highest_bidder</servlet-name>
+        <url-pattern>/get_highest_bidder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
