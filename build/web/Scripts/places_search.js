@@ -87,6 +87,7 @@ function initMap(lat, lng, search_radius) {
     
     function callback(results, status){
         if(status == google.maps.places.PlacesServiceStatus.OK){
+            rests_list_location_display.innerText = rest_locations_input_fld.value;
             current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
                 
@@ -225,7 +226,10 @@ function initialize() {
     let autocomplete2 = new google.maps.places.Autocomplete(search_rest_by_name_fld);
     autocomplete2.addListener('place_changed', function () {
         let place = autocomplete2.getPlace();
-    
+        
+        //setting the address to the locations input field
+        rest_locations_input_fld.value = place.formatted_address;
+        
         // place variable will have all the information you are looking for.
         initMap(place.geometry['location'].lat(), place.geometry['location'].lng(), '10');
         document.getElementById("rest_list_scroll_div").scrollTop = 0;
