@@ -36,13 +36,13 @@ public class get_highest_bidder extends HttpServlet {
                 +       "\"meeting_time\": \"14:00\","
                 +       "\"meeting_budget\": \"$50.00\","
                 +       "\"added_message\": \"This request was so good it needed a 50.00 offer from me\","
-                +       "\"requestee_id\": 252,"
-                +       "\"requestee_propic\": null,"
-                +       "\"requestee_coverphoto\": null,"
-                +       "\"requestee_name\": \"Kristina Rodriquez\","
-                +       "\"requestee_gender\": \"female\","
-                +       "\"requestee_age\": 21,"
-                +       "\"requestee_address\": \"3423 River Ave, Albany, NY\""
+                +       "\"bidder_id\": 252,"
+                +       "\"bidder_propic\": null,"
+                +       "\"bidder_coverphoto\": null,"
+                +       "\"bidder_name\": \"Kristina Rodriquez\","
+                +       "\"bidder_gender\": \"female\","
+                +       "\"bidder_age\": 21,"
+                +       "\"bidder_address\": \"3423 River Ave, Albany, NY\""
                 + "}");
         
     }

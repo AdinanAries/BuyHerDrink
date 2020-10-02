@@ -57,18 +57,25 @@ var send_drink_offer_data = {
 };
 
 var highest_bidder = {
-    "bid_amount": "$40",
-    "restaurant": "hb restaurant name", 
-    "purpose": "hb offer purpose",
-    "location": "hb rest location", 
-    "date": "hb date", 
-    "time": "hb time", 
-    "budget": "hb budget", 
-    "message": "hb message",
-    "bidder_name": "hb name", 
-    "age": "hb age", 
-    "gender": "hb gender", 
-    "address": "hb home addr"
+    "added_message": "This request was so good it needed a 50.00 offer from me",
+    "meeting_budget": "$50.00",
+    "meeting_date": "09/04/2020",
+    "meeting_time": "14:00",
+    "request_id": 24,
+    "request_purpose": "Drink",
+    "bidder_address": "3423 River Ave, Albany, NY",
+    "bidder_age": 21,
+    "bidder_coverphoto": null,
+    "bidder_gender": "female",
+    "bidder_id": 252,
+    "bidder_name": "Kristina Rodriquez",
+    "bidder_propic": null,
+    "rest_category_icon": null,
+    "rest_location": "1913 Bronxdale Ave, The Bronx",
+    "rest_name": "F&J Pine",
+    "rest_photo": null,
+    "rest_rating": 5,
+    "rest_service_types": null
 };
 
 
@@ -239,7 +246,7 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                             <p id="see_highest_bidder_btn" 
                                         style="color: darkgreen; font-size: 14px; font-weight: bolder; padding: 5px; border-radius: 4px; 
                                                 background-color: darkslateblue; color: white; margin: 5px 0; max-width: 250px; text-align: center;">
-                                    see highest bidder: ${highest_bidder.bid_amount}
+                                    see highest bidder: ${highest_bidder.meeting_budget}
                               
                             </p>
                         </div>
@@ -256,8 +263,9 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
         }, 300);
         
         document.getElementById("see_highest_bidder_btn").addEventListener("click", (evnt) => {
-            render_each_selected_drink_offer(highest_bidder.restaurant, highest_bidder.purpose, highest_bidder.location, highest_bidder.date, highest_bidder.time, highest_bidder.budget, highest_bidder.message);
-            render_each_selected_drink_offer_user(highest_bidder.bidder_name, highest_bidder.age, highest_bidder.gender, highest_bidder.address);
+            render_each_selected_drink_offer(highest_bidder.rest_name, highest_bidder.request_purpose, highest_bidder.rest_location, highest_bidder.meeting_date, highest_bidder.meeting_time, highest_bidder.meeting_budget, highest_bidder.added_message);
+            render_each_selected_drink_offer_user(highest_bidder.bidder_name, highest_bidder.bidder_age, highest_bidder.bidder_gender, highest_bidder.bidder_address);
+            document.getElementById("see_highest_bidder_btn").style.display = "none";
             //console.log("rendering highest bidder");
             
         });
@@ -454,9 +462,17 @@ function get_recent_ten_dinner_dates(user_id){
 //getting highest bidder for each request
 function get_highest_bidder(drink_request_id){
     console.log(drink_request_id);
-    console.log("getting the highest bidder");
-    highest_bidder.bid_amount = "$30";
-    document.getElementById("see_highest_bidder_btn").innerText = "see highest bidder: " + highest_bidder.bid_amount;
+    $.ajax({
+        type: "GET",
+        url: "./get_highest_bidder",
+        data: "drink_request_id="+drink_request_id,
+        success: function(result){
+            let obj = JSON.parse(result);
+            highest_bidder = obj;
+        }
+    });
+    
+    document.getElementById("see_highest_bidder_btn").innerText = "see highest bidder: " + highest_bidder.meeting_budget;
 }
 
 //functions that collect data for various processes
