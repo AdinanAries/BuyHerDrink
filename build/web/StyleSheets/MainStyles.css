@@ -868,6 +868,30 @@ input[type=radio]:checked {
   animation: fadeIn 1s;
 }
 
+.postpone_dinner_date_fld{
+    width: 145px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px !important;
+}
+.postpone_dinner_date_btns{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.update_dinner_date_btn, .cancel_update_dinner_date_btn{
+    border-radius: 5px;
+    background-color: #4ED164;
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    width: 80px;
+}
+.cancel_update_dinner_date_btn{
+    background-color: crimson;
+}
+
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
   from {opacity: 0;} 

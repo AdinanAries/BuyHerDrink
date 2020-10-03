@@ -296,7 +296,7 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
 }
 
 //this function renders dinner dates
-function render_dinner_date(name, gender, age, address, rest_name, rest_location, meeting_date, meeting_time, meeting_purpose, meeting_price){
+function render_dinner_date(index, name, gender, age, address, rest_name, rest_location, meeting_date, meeting_time, meeting_purpose, meeting_price){
     let div = document.createElement("div");
     div.innerHTML = `
                 <div class="each_date_details_div">
@@ -315,7 +315,22 @@ function render_dinner_date(name, gender, age, address, rest_name, rest_location
                         <p style="font-size: 14px;">${rest_location}</p>
                         <p style="font-size: 14px;">${meeting_date} at ${meeting_time} - ${meeting_price}</p>
                     </div>
-                    <div style='display: flex; padding: 10px; justify-content: space-between;'>
+                    <div class='postpone_dinner_date_form' id="postpone_dinner_date_form${index}">
+                        <p style="text-align: center; color: white; font-weight: bolder; margin: 5px 0;">Postpone this date</p>
+                        <div style="display: flex; justify-content: center;">
+                            <div style="width: 300px;">
+                                <input style="margin-right: 5px;" class="postpone_dinner_date_fld" type="text" />
+                                <input class="postpone_dinner_date_fld" type="text" />
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; padding: 5px;">
+                            <div class="postpone_dinner_date_btns">
+                                <div class='update_dinner_date_btn'>Update</div>
+                                <div class='cancel_update_dinner_date_btn'>Cancel</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="update_dinner_date_btns${index}" class="update_dinner_date_btns" style='display: flex; padding: 10px; justify-content: space-between;'>
                         <div style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
                             <p style="font-size: 14px;">Postpone</p>
                         </div>
@@ -329,6 +344,7 @@ function render_dinner_date(name, gender, age, address, rest_name, rest_location
 }
 
 $("#PDR_date_fld").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
+$("#postpone_dinner_date_fld1").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 
 setInterval(()=>{
     let picked_date = document.getElementById("PDR_date_fld").value;
@@ -448,8 +464,8 @@ function get_recent_ten_dinner_dates(user_id){
         data: "user_id="+user_id,
         success: function(result){
             let data = JSON.parse(result);
-            data.forEach(item => {
-                render_dinner_date(item.date_name, item.date_gender, item.date_age, item.date_address,
+            data.forEach((item, index) => {
+                render_dinner_date(index, item.date_name, item.date_gender, item.date_age, item.date_address,
                                     item.rest_name, item.rest_location, item.meeting_date, 
                                     item.meeting_time, item.meeting_purpose, item.meeting_pric
                                 );
