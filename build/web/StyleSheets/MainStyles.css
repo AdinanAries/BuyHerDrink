@@ -867,8 +867,11 @@ input[type=radio]:checked {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
-
-.postpone_dinner_date_fld{
+.postpone_dinner_date_form{
+    display: none;
+    padding-bottom: 10px;
+}
+.postpone_dinner_date_fld, .postpone_dinner_time_fld{
     width: 145px;
     padding: 5px;
     border: none;

@@ -319,19 +319,21 @@ function render_dinner_date(index, name, gender, age, address, rest_name, rest_l
                         <p style="text-align: center; color: white; font-weight: bolder; margin: 5px 0;">Postpone this date</p>
                         <div style="display: flex; justify-content: center;">
                             <div style="width: 300px;">
-                                <input style="margin-right: 5px;" class="postpone_dinner_date_fld" type="text" />
-                                <input class="postpone_dinner_date_fld" type="text" />
+                                <input style="margin-right: 5px;" id="postpone_dinner_date_fld${index}" class="postpone_dinner_date_fld" type="text" />
+                                <input class="postpone_dinner_time_fld" id="postpone_dinner_time_fld${index}" type="text" />
                             </div>
                         </div>
                         <div style="display: flex; justify-content: center; padding: 5px;">
                             <div class="postpone_dinner_date_btns">
                                 <div class='update_dinner_date_btn'>Update</div>
-                                <div class='cancel_update_dinner_date_btn'>Cancel</div>
+                                <div onclick="show_postpone_dinner_date_form('${index}');" class='cancel_update_dinner_date_btn'>Cancel</div>
                             </div>
                         </div>
                     </div>
-                    <div id="update_dinner_date_btns${index}" class="update_dinner_date_btns" style='display: flex; padding: 10px; justify-content: space-between;'>
-                        <div style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
+                    <div
+                         id="update_dinner_date_btns${index}" 
+                         class="update_dinner_date_btns" style='display: flex; padding: 10px; justify-content: space-between;'>
+                        <div onclick="show_postpone_dinner_date_form('${index}');" style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
                             <p style="font-size: 14px;">Postpone</p>
                         </div>
                         <div style="padding: 10px; background-color: #98d7ff; border-radius: 5px; margin-left: 10px; background-color: crimson">
@@ -344,7 +346,7 @@ function render_dinner_date(index, name, gender, age, address, rest_name, rest_l
 }
 
 $("#PDR_date_fld").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
-$("#postpone_dinner_date_fld1").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
+$("#postpone_dinner_date_fld0").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 
 setInterval(()=>{
     let picked_date = document.getElementById("PDR_date_fld").value;
