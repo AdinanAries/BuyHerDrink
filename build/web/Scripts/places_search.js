@@ -115,7 +115,7 @@ function initMap(lat, lng, search_radius) {
                                         <p style="font-weight: bolder; color: blue;">${results[i].name}</p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
                                             <div style="margin: 5px 0;">
-                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid darkgrey; padding-bottom: 5px;">
+                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
                                                     <div style="width: 200px; height: 100px; overflow: hidden;">
                                                         <img src="${results[i].photos[0].getUrl()}" style="width: 200px; height: auto;"/>
                                                     </div>

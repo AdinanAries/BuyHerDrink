@@ -254,7 +254,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <div class='PublishRequestDiv'>
-                            <p style="text-align: center; font-weight: bolder; margin-top: 4px; font-size: 16px;">Publish Drink Request</p>
+                            <p style="text-align: center; font-weight: bolder; margin-top: 10px; font-size: 16px;">Publish Drink Request Below</p>
                             <p style="margin: 10px 5px; font-size: 15px; color: darkgray; text-align: center;">
                                     A drink request lets you reach out for potential date.
                                     Other people will see your drink request and make an offer.

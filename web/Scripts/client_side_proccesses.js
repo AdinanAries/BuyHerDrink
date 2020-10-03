@@ -183,7 +183,7 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
                             <p id="beat_bid_btn"
                                style="color: white; font-size: 14px; border-radius: 4px; padding: 10px; background-color: darkslateblue; text-align: center; margin: 5px 0;">beat current bid: $50.00</p>
                         </div>
-                        <div style="padding: 10px; border-top: 1px solid darkgrey;">
+                        <div style="padding: 10px;">
                             <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
                             <p style="font-size: 14px;">
                                 ${message}
@@ -250,7 +250,7 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                               
                             </p>
                         </div>
-                        <div style="padding: 10px; border-top: 1px solid darkgrey;">
+                        <div style="padding: 10px;">
                             <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
                             <p style="font-size: 14px;">
                                 ${message}

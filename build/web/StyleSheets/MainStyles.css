@@ -24,6 +24,9 @@ body {
     font-family: "Roboto";
     font-size: 19px;
 }
+a{
+    text-decoration: none;
+}
 input[type="text"], select{
     border-radius: 0;
 }
@@ -235,8 +238,8 @@ span, p, option{
     font-weight: bolder;
 }
 .ProfileDetailsDiv{
-    border-bottom: 1px solid #cacaca;
-    /*height: calc(100vh - 450px);*/
+    /*border-bottom: 1px solid #cacaca;
+    height: calc(100vh - 450px);*/
     width: 100%;
     position: relative;
 }
@@ -361,7 +364,7 @@ span, p, option{
 }
 
 .MainMenu .SettingName{
-    border-bottom: 1px solid darkgrey;
+    /*border-bottom: #D9DADC 1px solid;*/
 }
 
 .ActivitiesAndDrinkOffersBtn {
@@ -427,7 +430,7 @@ span, p, option{
 
 #current_restaurants_list li{
     padding: 10px 5px;
-    border-bottom: 1px solid cadetblue;
+    /*border-bottom: 1px solid cadetblue;*/
 }
 
 .RequesteeCoverPhoto, .OffererCoverPhoto{
@@ -509,8 +512,6 @@ span, p, option{
 .RequesteeAdditionalMessage, .OffererAdditionalMessage{
     font-size: 14px;
     min-height: 120px;
-    border-top: 1px #cacaca solid;
-    border-bottom: 1px #cacaca solid;
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 3px;
