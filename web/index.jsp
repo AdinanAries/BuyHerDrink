@@ -627,6 +627,23 @@ and open the template in the editor.
                                 x
                             </span>
                         </p>
+                        <div style="display: flex; padding: 5px; border-bottom: #98d7ff 1px solid; padding-bottom: 20px;">
+                            <div>
+                                <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #D9DADC;">
+                                    
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; justify-content: flex-end; margin-left: 15px;">
+                                <p style="font-weight: bolder;">Ana Rodiriquez</p>
+                                <p style="font-size: 14px;">25 years, Female</p>
+                                <p style="font-size: 14px;">1332 davidson ave, Bronx, NY</p>
+                                <p style="font-size: 14px;">somebody@emailserver.com</p>
+                                <p style="font-size: 14px;">(1) 737 282 7721</p>
+                            </div>
+                        </div>
+                        <div style="background-color: black; min-height: 250px; margin: 0 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                            
+                        </div>
                     </div>
                     <div id="settingsDiv">
                         <p style="font-size: 20px; font-weight: bolder; margin: 10px; width: fit-content; float: right;">
