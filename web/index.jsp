@@ -99,9 +99,12 @@ and open the template in the editor.
                         <div id='secondMenuIconBar' style=''></div>
                         <div id='thirdMenuIconBar' style=''></div-->
                     </div>
-                    <div class='LogoDiv' ><p style='font-size: 15px; color: red;'>LOGO</p></div>
-                    <div class='PageTitle' style=''>Your Profile</div>
-                    <p style='clear: both;'></p>
+                    <div style='display: flex; flex-direction: column; justify-content: center;'>
+                        <p class='PageTitle'>Your Profile<p>
+                    </div>
+                    <div class='LogoDiv' >
+                        <img src='buyherdrinkLOGO.png' style='width: 60px; height: auto;' />
+                    </div>
                 </div>
                 <div class='Main'>
                     <div class='MainMenu'>

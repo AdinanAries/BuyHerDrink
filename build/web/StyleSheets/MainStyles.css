@@ -129,7 +129,9 @@ span, p, option{
     margin:auto;
     z-index: 1001;
     position: fixed;
-    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
     background-color: #98b3ff;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 1px 3px 1px rgba(60,64,67,0.15);
     width: 100%;
@@ -144,9 +146,7 @@ span, p, option{
     padding: 10px 0;
 }
 .MenuIcon{
-    margin-top: 10px;
-    margin-left: 10px;
-    float: left;
+    margin-top: -25px;
     position: relative;
 }
 /*#firstMenuIconBar{
@@ -224,16 +224,11 @@ span, p, option{
 }
 
 .LogoDiv{
-    margin-right: 10px;
-    width: 40px; 
-    height: 40px; 
-    float: right; 
-    background-color: white;
+    width: 60px;
 }
 .PageTitle{
-    width: calc(100% - 96px); 
-    float: right;
-    padding-top: 10px;
+    margin-left: 50px;
+    font-size: 19px;
     text-align: center;
     font-weight: bolder;
 }
