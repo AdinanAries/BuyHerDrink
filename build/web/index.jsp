@@ -385,9 +385,12 @@ and open the template in the editor.
 
                                       <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
-                                        <center><textarea style="width: 95%; height: 70px;">
+                                        <center><textarea id='PDR_notes_fld' style="width: 95%; height: 70px;">
 
                                         </textarea></center>
+                                      <script>
+                                          document.getElementById("PDR_notes_fld").innerText = "";
+                                      </script>
                                       </fieldset>
                             </div>
                             <div id="PDR_details_pane">
@@ -395,8 +398,8 @@ and open the template in the editor.
                                 <div style="margin: 5px; border: #37a0f5 1px solid; padding: 5px; background-color: #d4f3ff;">
                                     <p id='RP_rest_name' style="font-weight: bolder; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
-                                            <div style="margin: 5px 0; border-bottom: 1px solid darkgrey;">
-                                                <div style="border-bottom: 1px solid darkgrey; display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
+                                            <div style="margin: 5px 0;">
+                                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
                                                     <div style="width: 200px; height: 100px; overflow: hidden;">
                                                         <img id='RP_rest_photo' src="" style="width: 200px; height: auto;"/>
                                                     </div>
@@ -485,8 +488,11 @@ and open the template in the editor.
                                 
                             </div>
                             
-                                <p style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Requests</p>
-                                <div class="DrinkRequesteesListDiv">
+                            <p style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Requests</p>
+                            <div class="DrinkRequesteesListDiv">
+                                <p id='no_available_drink_request_msg' style='margin-top: 20px; margin-bottom: 80px; text-align: center;'>
+                                    <i class='fa fa-exclamation-triangle' style='color: orange'></i> there are no requests at this time
+                                </p>
                                 <table>
                                     <tbody>
                                         <tr id="drink_requests_list">
@@ -524,8 +530,11 @@ and open the template in the editor.
                                 
                             </div>
                             
-                                <p style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Offers Made</p>
-                                <div class="DrinkOfferersListDiv">
+                            <p style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Offers</p>
+                            <div class="DrinkOfferersListDiv">
+                                <p id='no_available_drink_offers_msg' style='margin-top: 20px; margin-bottom: 80px; text-align: center;'>
+                                    <i class='fa fa-exclamation-triangle' style='color: orange'></i> you don't have any offer at this time
+                                </p>
                                 <table>
                                     <tbody>
                                         <tr id="drink_offers_list">

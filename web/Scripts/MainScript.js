@@ -1,5 +1,7 @@
 var SearchResultDiv = document.getElementById("SearchResultDiv");
 var search_page_start_page = document.getElementById("search_page_start_page");
+var no_available_drink_offers_msg = document.getElementById("no_available_drink_offers_msg");
+var no_available_drink_request_msg = document.getElementById("no_available_drink_request_msg");
 
 document.querySelector(".MainMenu").style.display = "none";
 document.cookie = "SameSite=None;";
@@ -303,6 +305,66 @@ $("#viewDrinkOffersBtn").click(function(event){
 $("#MenuOptionSearch").click(function(event){
     showExploreRestaurantsDiv();
 });
+
+function check_if_drink_offers_list_node_are_all_hidden(){
+    let drink_offers_list = document.getElementById("drink_offers_list");
+    let isAllHidden = true;
+    
+    if(drink_offers_list.hasChildNodes()){
+        Array.from(drink_offers_list.childNodes).forEach(item => {
+            
+            if($(item).is(':visible')){
+                isAllHidden = false;
+            }
+            /*if(typeof item.style !== "undefined"){
+                if(item.style.display === "block"){
+                    isAllHidden = false;
+                }
+            }*/
+
+        });
+    }else{
+        isAllHidden = true;
+    }
+    
+    if(isAllHidden){
+        no_available_drink_offers_msg.style.display = "block";
+    }else{
+        no_available_drink_offers_msg.style.display = "none";
+    }
+}
+
+setInterval(check_if_drink_offers_list_node_are_all_hidden ,1);
+
+function check_if_drink_request_list_node_are_all_hidden(){
+    let drink_requests_list = document.getElementById("drink_requests_list");
+    let isAllHidden = true;
+    
+    if(drink_requests_list.hasChildNodes()){
+        Array.from(drink_requests_list.childNodes).forEach(item => {
+            
+            if($(item).is(':visible')){
+                isAllHidden = false;
+            }
+            /*if(typeof item.style !== "undefined"){
+                if(item.style.display === "block"){
+                    isAllHidden = false;
+                }
+            }*/
+
+        });
+    }else{
+        isAllHidden = true;
+    }
+    
+    if(isAllHidden){
+        no_available_drink_request_msg.style.display = "block";
+    }else{
+        no_available_drink_request_msg.style.display = "none";
+    }
+}
+
+setInterval(check_if_drink_request_list_node_are_all_hidden ,1);
 
 function showRestaurantsPopupListByAddress() {
   let RestaurantList = document.getElementById("RestaurantList");
