@@ -330,14 +330,26 @@ function render_dinner_date(index, name, gender, age, address, rest_name, rest_l
                             </div>
                         </div>
                     </div>
+                    <div class='cancel_dinner_date_form' id="cancel_dinner_date_form${index}">
+                        <p style="text-align: center; color: white; font-size: 15px; font-weight: bolder; margin: 5px 0;">
+                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to cancel this date
+                        </p>
+                        
+                        <div style="display: flex; justify-content: center; padding: 5px;">
+                            <div class="cancel_dinner_date_btns">
+                                <div class='cancel_dinner_date_yes_btn'>Yes</div>
+                                <div onclick="show_cancel_dinner_date_form('${index}');" class='_cancel_dinner_date_no_btn'>No</div>
+                            </div>
+                        </div>
+                    </div>
                     <div
                          id="update_dinner_date_btns${index}" 
                          class="update_dinner_date_btns" style='display: flex; padding: 10px; justify-content: space-between;'>
                         <div onclick="show_postpone_dinner_date_form('${index}');" style="padding: 10px; background-color: #37a0f5; border-radius: 5px;">
                             <p style="font-size: 14px;">Postpone</p>
                         </div>
-                        <div style="padding: 10px; background-color: #98d7ff; border-radius: 5px; margin-left: 10px; background-color: crimson">
-                            <p style="font-size: 14px;">Cancel</p>
+                        <div onclick="show_cancel_dinner_date_form('${index}');" style="padding: 10px; background-color: #98d7ff; border-radius: 5px; margin-left: 10px; background-color: crimson">
+                            <p style="font-size: 14px;">Cancel Date</p>
                         </div>
                     </div>
             </div>

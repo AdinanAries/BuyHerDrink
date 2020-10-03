@@ -317,6 +317,15 @@ function show_postpone_dinner_date_form(number){
     
 }
 
+function show_cancel_dinner_date_form(number){
+    let ddf_elem = "cancel_dinner_date_form"+number;
+    let update_btns_elem = "update_dinner_date_btns"+number;
+    
+    $("#"+ddf_elem).toggle('top');
+    $("#"+update_btns_elem).toggle('top');
+    
+}
+
 function check_if_drink_offers_list_node_are_all_hidden(){
     let drink_offers_list = document.getElementById("drink_offers_list");
     let isAllHidden = true;
