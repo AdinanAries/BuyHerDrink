@@ -218,34 +218,27 @@ $("#editUserProfileIcon").click(function(){
 });
 
 var showNotifications = () => {
-    let notificationsDiv = document.getElementById("notificationsDiv");
-    notificationsDiv.style.display = "block";
-    
+    $("#notificationsDiv").toggle("up");
 };
 
 var showGalleryDiv = () => {
-    let galleryDiv = document.getElementById("galleryDiv");
-    galleryDiv.style.display = "block";
+    $("#galleryDiv").toggle("up");
 };
 
 var showUserActivity = () => {
-    let UserActivityDiv = document.getElementById("UserActivityDiv");
-    UserActivityDiv.style.display = "block";
+    $("#UserActivityDiv").toggle("up");
 };
 
 var closeUserActivity = () => {
-    let UserActivityDiv = document.getElementById("UserActivityDiv");
-    UserActivityDiv.style.display = "none";
+    $("#UserActivityDiv").toggle("up");
 };
 
 var closeNotification = () => {
-    let notificationsDiv = document.getElementById("notificationsDiv");
-    notificationsDiv.style.display = "none";
+    $("#notificationsDiv").toggle("up");
 };
 
 var closeGallery = () => {
-    let galleryDiv = document.getElementById("galleryDiv");
-    galleryDiv.style.display = "none";
+    $("#galleryDiv").toggle("up");
 };
 
 /*$(".viewFullProfileBtn").click(function(event){
