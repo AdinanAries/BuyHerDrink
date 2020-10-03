@@ -598,9 +598,11 @@ span, p, option{
 }
 #DrinkRequestsIframe{
     display: none;
+    min-height: 600px;
 }
 #DrinkOffersIframe{
     display: none;
+    min-height: 600px;
 }
 
 input[type=checkbox] {

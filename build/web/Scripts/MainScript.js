@@ -2,6 +2,8 @@ var SearchResultDiv = document.getElementById("SearchResultDiv");
 var search_page_start_page = document.getElementById("search_page_start_page");
 var no_available_drink_offers_msg = document.getElementById("no_available_drink_offers_msg");
 var no_available_drink_request_msg = document.getElementById("no_available_drink_request_msg");
+var ViewOffererFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewOffererFullProfileAndMakeOfferBtns")[0];
+var ViewRequesteeFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewRequesteeFullProfileAndMakeOfferBtns")[0];
 
 document.querySelector(".MainMenu").style.display = "none";
 document.cookie = "SameSite=None;";
@@ -328,9 +330,17 @@ function check_if_drink_offers_list_node_are_all_hidden(){
     }
     
     if(isAllHidden){
+        document.getElementById("available_offers_p").style.display = "none";
+        if(document.getElementById("see_highest_bidder_btn"))
+            document.getElementById("see_highest_bidder_btn").style.display = "none";
         no_available_drink_offers_msg.style.display = "block";
+        ViewOffererFullProfileAndMakeOfferBtns.style.display = "none";
     }else{
         no_available_drink_offers_msg.style.display = "none";
+        if(document.getElementById("see_highest_bidder_btn"))
+            document.getElementById("see_highest_bidder_btn").style.display = "block";
+        ViewOffererFullProfileAndMakeOfferBtns.style.display = "flex";
+        document.getElementById("available_offers_p").style.display = "block";
     }
 }
 
@@ -358,9 +368,13 @@ function check_if_drink_request_list_node_are_all_hidden(){
     }
     
     if(isAllHidden){
+        document.getElementById("available_requests_p").style.display = "none";
         no_available_drink_request_msg.style.display = "block";
+        ViewRequesteeFullProfileAndMakeOfferBtns.style.display = "none";
     }else{
+        ViewRequesteeFullProfileAndMakeOfferBtns.style.display = "flex";
         no_available_drink_request_msg.style.display = "none";
+        document.getElementById("available_requests_p").style.display = "block";
     }
 }
 

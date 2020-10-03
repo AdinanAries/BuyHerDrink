@@ -449,7 +449,6 @@ function get_recent_ten_dinner_dates(user_id){
         success: function(result){
             let data = JSON.parse(result);
             data.forEach(item => {
-                console.log(item);
                 render_dinner_date(item.date_name, item.date_gender, item.date_age, item.date_address,
                                     item.rest_name, item.rest_location, item.meeting_date, 
                                     item.meeting_time, item.meeting_purpose, item.meeting_pric
