@@ -622,7 +622,7 @@ and open the template in the editor.
                     </div>
                     <div id="viewFullProfileDiv">
                         <p style="text-align: right; padding: 0 5px;">
-                            <span onclick="document.getElementById('viewFullProfileDiv').style.display = 'none';" 
+                            <span onclick="$( '#viewFullProfileDiv' ).toggle( 'up' );" 
                                 style="color: white; padding: 2px 10px; background-color: red; border-radius: 5px; ">
                                 x
                             </span>
@@ -641,7 +641,7 @@ and open the template in the editor.
                                 <p style="font-size: 14px;">(1) 737 282 7721</p>
                             </div>
                         </div>
-                        <div style="background-color: black; min-height: 250px; margin: 0 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                        <div style="background-color: black; height: 345px; margin: 0 5px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                             
                         </div>
                     </div>

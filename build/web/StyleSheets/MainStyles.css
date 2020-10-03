@@ -657,7 +657,7 @@ input[type=radio]:checked {
     background-color: #afe9ff;
     z-index: 1000;
     width: 100%;
-    height: 400px;
+    height: 500px;
     margin: auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;

@@ -162,8 +162,9 @@ var showFullProfileDiv = () => {
     let settingsDiv = document.getElementById("settingsDiv");*/
     
     //SetWindowTitle("Profile Details");
-    let fullProfileDiv = document.getElementById("viewFullProfileDiv");
-    fullProfileDiv.style.display = "block";
+    //let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+    //fullProfileDiv.style.display = "block";
+    $( '#viewFullProfileDiv' ).toggle( 'up');
     /*UserProfileIframe.style.display = "none";
     DrinkRequestsIframe.style.display = "none";
     DrinkOffersIframe.style.display = "none";
