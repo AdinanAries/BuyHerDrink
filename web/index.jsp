@@ -627,7 +627,7 @@ and open the template in the editor.
                                 x
                             </span>
                         </p>
-                        <div style="display: flex; padding: 5px; border-bottom: #98d7ff 1px solid; padding-bottom: 20px;">
+                        <div style="display: flex; padding: 5px; padding-bottom: 20px;">
                             <div>
                                 <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #D9DADC;">
                                     
@@ -641,8 +641,23 @@ and open the template in the editor.
                                 <p style="font-size: 14px;">(1) 737 282 7721</p>
                             </div>
                         </div>
-                        <div style="background-color: black; height: 345px; margin: 0 5px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-                            
+                        <div style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                            <div style='display: flex; justify-content: center;'>
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
+                                    
+                                </div>
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
+                                    
+                                </div>
+                            </div>
+                            <div style='display: flex; justify-content: center; margin-top: 5px;'>
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
+                                    
+                                </div>
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div id="settingsDiv">
