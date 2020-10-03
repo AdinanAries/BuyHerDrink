@@ -588,8 +588,12 @@ span, p, option{
     width: 100px !important;
     height: 100px !important;
     float: left !important;
-    border: 3px solid white;
+    border: 3px solid white !important;
+    opacity: 1 !important;
     overflow: hidden !important;
+    margin: 0 !important;
+    border-spacing: 0 !important;
+    padding: 0 !important;
 }
 #DrinkRequestsIframe{
     display: none;
