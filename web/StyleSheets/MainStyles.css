@@ -816,7 +816,7 @@ input[type=radio]:checked {
     height: 100vh;
     overflow-y: auto;
     z-index: 1100;
-    background-color: black;
+    background-color: rgba(0,0,0,0.9);
     color: white;
 }
 

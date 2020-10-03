@@ -208,10 +208,28 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-                        <div id='galleryDiv'>
+                        <div id='galleryDiv' style='display: flex; flex-direction: column; justify-content: center;'>
                             <div>
                                 <img id="closeGalleryBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
                                 <p style="width: 100%; text-align: center; margin-top: -30px;">Your Photos</p>
+                            </div>
+                            <div style='display: flex; flex-direction: column; justify-content: center; padding-top: 15px;'>
+                                <div style='display: flex; justify-content: center;'>
+                                    <div style='height: 45vh; width: 48%; background-color: #333333; border-radius: 5px; margin-right: 5px; display: flex; flex-direction: column; justify-content: center;'>
+                                        <p style='text-align: center;'><i class="fa fa-plus" aria-hidden="true" style='color: #4CAF50; font-size: 45px;'></i></p>
+                                    </div>
+                                    <div style='height: 45vh; width: 48%; background-color: #333333; border-radius: 5px; display: flex; flex-direction: column; justify-content: center;'>
+                                        <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
+                                    </div>
+                                </div>
+                                <div style='display: flex; justify-content: center; margin-top: 5px;'>
+                                    <div style='height: 45vh; width: 48%; background-color: #333333; border-radius: 5px; margin-right: 5px; display: flex; flex-direction: column; justify-content: center;'>
+                                        <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
+                                    </div>
+                                    <div style='height: 45vh; width: 48%; background-color: #333333; border-radius: 5px; display: flex; flex-direction: column; justify-content: center;'>
+                                        <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class='ProfileDetailsDiv'>
