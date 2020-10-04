@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-  width: 360px;
-  padding: 8% 0 0;
+  /*width: 360px;*/
   margin: auto;
 }
 .form {
@@ -173,7 +172,6 @@ body {
 }
 header{
     padding: 10px 0;
-    border-bottom: 1px solid darkgrey;
 }
 header h1{
     font-family: serif;
