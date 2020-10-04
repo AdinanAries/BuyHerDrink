@@ -38,7 +38,7 @@
             <p style='margin: 10px 0; color: darkgrey; font-weight: bolder; opacity: 0.8; text-align: center;'>&copy; 2020, BuyMeDrink</p>
         </div>
         <header>
-            <h1>BuyMeDrink</h1>
+            <p style='text-align: center;'><img src='buyherdrinkLOGO.png' style='width: 120px; height: auto;' /></p>
             <p style="text-align: center; margin-top: -10px;">&copy; 2020, all rights reserved</p>
             <p style="text-align: center; color: darkblue; font-weight: bolder;">
                 <i id="lgn_snp_pg_status_icon" class="fa fa-exclamation-triangle" style="color: red;"></i>
