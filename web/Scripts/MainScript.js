@@ -332,6 +332,14 @@ function show_cancel_dinner_date_form(number){
     
 }
 
+function show_delete_request_form(number){
+    let dlt_dr_elem = "delet_drink_request_form"+number;
+    let update_dr_btns_elem = "update_your_drink_request_list_btns"+number;
+    
+    $("#"+dlt_dr_elem).toggle('top');
+    $("#"+update_dr_btns_elem).toggle('top');
+}
+
 function check_if_drink_offers_list_node_are_all_hidden(){
     let drink_offers_list = document.getElementById("drink_offers_list");
     let isAllHidden = true;

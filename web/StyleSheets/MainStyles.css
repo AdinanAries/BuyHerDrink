@@ -893,7 +893,7 @@ input[type=radio]:checked {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
-.postpone_dinner_date_form, .cancel_dinner_date_form{
+.postpone_dinner_date_form, .cancel_dinner_date_form, .delete_drink_request_form{
     display: none;
     padding-bottom: 10px;
 }
@@ -903,12 +903,12 @@ input[type=radio]:checked {
     border: none;
     border-radius: 5px !important;
 }
-.postpone_dinner_date_btns, .cancel_dinner_date_btns{
+.postpone_dinner_date_btns, .cancel_dinner_date_btns, .delete_drink_request_btns{
     width: 300px;
     display: flex;
     justify-content: space-between;
 }
-.update_dinner_date_btn, .cancel_update_dinner_date_btn, ._cancel_dinner_date_no_btn, .cancel_dinner_date_yes_btn{
+.update_dinner_date_btn, .cancel_update_dinner_date_btn, ._cancel_dinner_date_no_btn, .cancel_dinner_date_yes_btn, .delete_drink_request_yes_btn, .delete_drink_request_no_btn{
     border-radius: 5px;
     background-color: #4ED164;
     color: white;
@@ -917,7 +917,7 @@ input[type=radio]:checked {
     text-align: center;
     width: 80px;
 }
-.cancel_update_dinner_date_btn, .cancel_dinner_date_yes_btn{
+.cancel_update_dinner_date_btn, .cancel_dinner_date_yes_btn, .delete_drink_request_yes_btn{
     background-color: crimson;
 }
 
