@@ -238,11 +238,23 @@ and open the template in the editor.
                                             <p>restaurant, food, point of interest, establishment</p>
                                         </div>
                                     </div>
-                                    <div class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
+                                    <div class='delete_drink_request_form' id="delet_drink_request_form0">
+                                        <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
+                                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
+                                        </p>
+
+                                        <div style="display: flex; justify-content: center; padding: 5px;">
+                                            <div class="delete_drink_request_btns">
+                                                <div class='delete_drink_request_yes_btn'>Yes</div>
+                                                <div onclick="show_delete_request_form('0');" class='delete_drink_request_no_btn'>No</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
                                         <div class='your_drink_request_update_btn'>
                                             Update
                                         </div>
-                                        <div class='your_drink_request_delete_btn'>
+                                        <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
                                             Delete
                                         </div>
                                     </div>
@@ -272,7 +284,7 @@ and open the template in the editor.
                                     </div>
                                     <div class='delete_drink_request_form' id="delet_drink_request_form1">
                                         <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to cancel this date
+                                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
                                         </p>
 
                                         <div style="display: flex; justify-content: center; padding: 5px;">
