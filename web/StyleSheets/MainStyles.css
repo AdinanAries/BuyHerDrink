@@ -644,7 +644,7 @@ input[type=radio]:checked {
     box-shadow: inset 20px 0 0 0 #4ED164;
 }
 
-#ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv, #notificationsDiv, #galleryDiv, #UserActivityDiv{
+#ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv, #notificationsDiv, #galleryDiv, #UserActivityDiv, #YourDrinkRequestsDiv{
     display: none;
 }
 #ExploreRestaurantsDiv table{
@@ -698,13 +698,17 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
-#dinner_dates_header{
+#dinner_dates_header, #your_drink_requests_header{
     position: fixed; 
     padding: 5px;
     width: 100%;
     background-color: black;
     padding-bottom: 15px;
     border-bottom: #4ED164 1px solid;
+}
+#your_drink_requests_header{
+    background-color: #afe9ff;
+    border-bottom: #98d7ff 1px solid;
 }
 #SearchResultDiv{
     padding: 5px;
@@ -803,7 +807,7 @@ input[type=radio]:checked {
     padding: 0 4px;
     padding-top: 1px;
 }
-#notificationsDiv, #galleryDiv, #UserActivityDiv{
+#notificationsDiv, #galleryDiv, #UserActivityDiv, #YourDrinkRequestsDiv{
     position: fixed;
     top: 0;
     left: 0;
@@ -815,7 +819,34 @@ input[type=radio]:checked {
     color: white;
 }
 
-
+#YourDrinkRequestsDiv, #notificationsDiv{
+    background-color: white !important;
+    color: black !important;
+}
+#YourDrinkRequestsListDiv, .each_your_drink_request_div{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.each_your_drink_request_div{
+    padding: 10px 0;
+    background-color: lightcyan;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.your_drink_request_delete_btn, .your_drink_request_update_btn{
+    padding: 10px 0;
+    width: 40%;
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+.your_drink_request_update_btn{
+    background-color: #4ED164;
+}
 .RestaurantListPopup {
   position: relative;
   display: inline-block;

@@ -217,6 +217,10 @@ $("#editUserProfileIcon").click(function(){
     fullProfileDiv.style.display = "none";
 });
 
+var showYourDrinkRequests = () => {
+    $("#YourDrinkRequestsDiv").toggle("up");
+};
+
 var showNotifications = () => {
     $("#notificationsDiv").toggle("up");
 };
@@ -245,6 +249,15 @@ var closeGallery = () => {
     alert("clicked");
     showFullProfileDiv();
 });*/
+
+$("#YourDrinkRequestMenuOption").click(function(event){
+    showUserProfile();
+    showYourDrinkRequests();
+});
+
+$("#closeYourDrinkRequestsDivBtn").click(function(event){
+    showYourDrinkRequests();
+});
 
 $("#closeUserActivityBtn").click(function(event){
     closeUserActivity();
