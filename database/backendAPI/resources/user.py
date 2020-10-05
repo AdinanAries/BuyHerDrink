@@ -14,8 +14,9 @@ from flask_jwt_extended import (
 )
 from models.user import UserModel
 from blacklist import BLACKLIST
-from flask import jsonify, make_response
+from flask import jsonify, make_response,request
 from dataclasses import dataclass
+import db
 import json
 # User class 
 
@@ -85,7 +86,7 @@ class GetAll(Resource):
         user = UserModel.find_by_id(uid)
         #print(user.__dict__)
         #print(vars(user))
-        ufixed={c.name:getattr(user,c.name) for c in user.__table__.columns}
+        
         print(ufixed)
         return ufixed,200
 
@@ -130,6 +131,35 @@ class UserLogout(Resource):
         unset_jwt_cookies(resp)
         return resp
 
+class EditUser(Resource):
+     # Edit a post- take form data
+    @classmethod
+    @jwt_required
+    def put(cls):
+        data=request.form.to_dict()
+
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user=UserModel.find_by_id(uid)
+
+        # Editable fields
+        params={
+        'username':user.username,
+        'password':user.password,
+        'name':user.name}
+        
+        if user.user_id==uid:
+
+            for key in params:
+                if key in data:
+                    setattr(user,key,data[key])
+                else:
+                    setattr(user,key,params[key])
+                db.db.session.commit()
+        else:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        return user.json()
 
 class TokenRefresh(Resource):
     @jwt_refresh_token_required

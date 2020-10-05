@@ -3,8 +3,8 @@ from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 from db import db,connection_string
-from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout,Username,GetAll
-from resources.posts import Post,AllPosts,PostRegister
+from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout,Username,GetAll,EditUser
+from resources.posts import Post,AllPosts,PostRegister,EditPost
 
 from flask import jsonify
 
@@ -116,8 +116,10 @@ api.add_resource(Username, "/username/<string:name>")
 api.add_resource(UserLogin, "/login")
 api.add_resource(TokenRefresh, "/refresh")
 api.add_resource(UserLogout, "/logout")
+api.add_resource(EditUser,"/edituser")
 api.add_resource(GetAll,"/getusers")
 api.add_resource(Post,"/mypost")
+api.add_resource(EditPost,"/editpost")
 api.add_resource(AllPosts,"/allposts")
 api.add_resource(PostRegister,"/createpost")
 if __name__ == "__main__":

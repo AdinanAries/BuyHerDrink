@@ -43,6 +43,11 @@ class PostModel(db.Model):
         db.session.commit()
     
     # Search Queries using SQLaclhemy
+    # Find Post by ID
+    @classmethod
+    def find_by_id(cls, _id):
+        print("Looking for post with ID of "+str(_id))
+        return cls.query.filter_by(post_id=_id).first()
     @classmethod
     def find_user_posts(cls, _id):
         print("Looking for user posts")

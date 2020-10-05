@@ -11,6 +11,7 @@ from flask_jwt_extended import (
 from flask import jsonify, make_response,request
 from models.posts import PostModel
 import datetime
+import db
 # View all posts
 class AllPosts(Resource):
     @classmethod
@@ -31,15 +32,44 @@ class Post(Resource):
             posts="None Found"
         print(posts)
         return {"posts":posts}
-    # Edit a post- take form data
+   
+class EditPost(Resource):
+     # Edit a post- take form data
     @classmethod
     @jwt_required
     def put(cls):
         data=request.form.to_dict()
+        if 'id' not in data:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        print(data)
         post=PostModel.find_by_id(data['id'])
-        db.session.commit()
-        return post
-
+        if not post:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        
+        # Editable fields
+        params={
+        'title':post.title,
+        'body':post.body,
+        'start_date':post.start_date,
+        'end_date':post.end_date,
+        'active':post.active}
+        
+        if post.user_id==uid:
+            # post.body=data['body'] if 'body' in data else post.body
+            for key in params:
+                if key in data:
+                    setattr(post,key,data[key])
+                else:
+                    setattr(post,key,params[key])
+                db.db.session.commit()
+        else:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        return post.json()
 
 class PostRegister(Resource):
  
