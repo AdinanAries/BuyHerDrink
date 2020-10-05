@@ -145,7 +145,10 @@ class EditUser(Resource):
         'username':user.username,
         'password':user.password,
         'name':user.name}
-        
+        if 'username' in data:
+            if UserModel.checkusername(data['username']):
+                return {"message":"Username Taken"},403
+
         if user.user_id==uid:
 
             for key in params:

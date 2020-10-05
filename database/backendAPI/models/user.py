@@ -44,3 +44,7 @@ class UserModel(db.Model):
     @classmethod
     def find_all(cls):
         return cls.query.all()
+    @classmethod
+    def checkusername(cls,username):
+        exists = cls.query.filter_by(username=username).scalar()
+        return exists
