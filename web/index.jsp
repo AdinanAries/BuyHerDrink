@@ -459,7 +459,7 @@ and open the template in the editor.
                                         <tr>
                                             <td>
                                                 <!--img class="RegularIcons_3" src="icons/icons8-restaurant-table-50 (1).png" alt=""/-->
-                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-cutlery" aria-hidden="true"></i>
+                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-map-marker" aria-hidden="true"></i>
                                             </td>
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search place by name:</p>
