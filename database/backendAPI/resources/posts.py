@@ -8,7 +8,7 @@ from flask_jwt_extended import (
     jwt_required,
     get_raw_jwt,
 )
-from flask import jsonify, make_response
+from flask import jsonify, make_response,request
 from models.posts import PostModel
 import datetime
 # View all posts
@@ -31,6 +31,14 @@ class Post(Resource):
             posts="None Found"
         print(posts)
         return {"posts":posts}
+    # Edit a post- take form data
+    @classmethod
+    @jwt_required
+    def put(cls):
+        data=request.form.to_dict()
+        post=PostModel.find_by_id(data['id'])
+        db.session.commit()
+        return post
 
 
 class PostRegister(Resource):
@@ -38,6 +46,8 @@ class PostRegister(Resource):
     @classmethod
     @jwt_required
     def post(cls):
+        data=request.form.to_dict()
+        print(data)
         from models.user import UserModel
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         uid = get_jwt_identity()

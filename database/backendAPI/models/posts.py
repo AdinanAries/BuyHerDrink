@@ -28,7 +28,15 @@ class PostModel(db.Model):
     def json(self):
         print("JSON ing the thing")
         # return vars(self)
-        post= {"post_id":self.post_id,"user_id":self.user_id,"title":self.title,"body":self.body,"start_date":str(self.start_date),"end_date":str(self.end_date),"active":self.active,"request status":self.request_status}
+        post= {"post_id":self.post_id,
+        "user_id":self.user_id,
+        "title":self.title,
+        "body":self.body,
+        "start_date":str(self.start_date),
+        "end_date":str(self.end_date),
+        "active":self.active,
+        "request status":self.request_status}
+        #post={c.name:getattr(self,c.name) for c in self.__table__.columns}
         return post
     def save_to_db(self):
         db.session.add(self)
@@ -37,11 +45,11 @@ class PostModel(db.Model):
     # Search Queries using SQLaclhemy
     @classmethod
     def find_user_posts(cls, _id):
-        print("About to try to find them all")
+        print("Looking for user posts")
         return cls.query.filter_by(user_id=_id).all()
     @classmethod
     def find_all_posts(cls):
-        print("About to try to find them all")
+        print("Getting all posts")
         return cls.query.all()
 
     

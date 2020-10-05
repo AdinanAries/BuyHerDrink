@@ -15,6 +15,8 @@ from flask_jwt_extended import (
 from models.user import UserModel
 from blacklist import BLACKLIST
 from flask import jsonify, make_response
+from dataclasses import dataclass
+import json
 # User class 
 
 _user_parser = reqparse.RequestParser()
@@ -81,7 +83,11 @@ class GetAll(Resource):
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         uid = get_jwt_identity()
         user = UserModel.find_by_id(uid)
-        return user.alljson(),200
+        #print(user.__dict__)
+        #print(vars(user))
+        ufixed={c.name:getattr(user,c.name) for c in user.__table__.columns}
+        print(ufixed)
+        return ufixed,200
 
 class Username(Resource):
     @classmethod
