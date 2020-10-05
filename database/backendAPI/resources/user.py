@@ -86,9 +86,7 @@ class GetAll(Resource):
         user = UserModel.find_by_id(uid)
         #print(user.__dict__)
         #print(vars(user))
-        
-        print(ufixed)
-        return ufixed,200
+        return user.json(),200
 
 class Username(Resource):
     @classmethod
