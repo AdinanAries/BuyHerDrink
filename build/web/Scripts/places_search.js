@@ -79,7 +79,7 @@ function initMap(lat, lng, search_radius) {
     var request = {
         location: current_location,
         radius: search_radius,
-        type: ['restaurant']
+        type: [type_of_search]
     };
     
     service = new google.maps.places.PlacesService(map);

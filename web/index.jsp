@@ -403,13 +403,44 @@ and open the template in the editor.
                                   <legend style="font-size: 15px; font-weight: bolder;">Add Bar/Restaurant</legend>
                                   <table>
                                       <tbody>
+                                        <tr>
+                                            <td>
+                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-bars" aria-hidden="true"></i>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Choose a type of place</p>
+                                                    <select id="add_place_search_types">
+                                                        <option value="restaurant">
+                                                            Restaurant
+                                                        </option>
+                                                        <option value="bar">
+                                                            Bar
+                                                        </option>
+                                                        <option value="park">
+                                                            Park
+                                                        </option>
+                                                        <option value="movie_theater">
+                                                            Movie Theater
+                                                        </option>
+                                                        <option value="museum">
+                                                            Museum
+                                                        </option>
+                                                        <option value="cafe">
+                                                            Cafe
+                                                        </option>
+                                                    </select>
+                                                </div> 
+                                            </td>
+                                        </tr>
                                         <tr style="background-color: #afe9ff;">
                                             <td>
                                               <!--img class="RegularIcons_3" src="icons/icons8-marker-filled-30_1.png" alt=""/-->
                                               <i style="font-size: 22px; margin: 0 10px;" class="fa fa-map-marker" aria-hidden="true"></i>
+                                            </td>
                                             <td>
                                               <div class="RestaurantListPopup" style="width: 100%">
-                                                  <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurants by location:</p>
+                                                  <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search places by location:</p>
                                                 <input id="rest_locations_input_fld" onclick="hideRestaurantPopupListByAddress();" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
                                                 <div class="RestaurantListDiv" id="RestaurantList" style="width: 100%;">
                                                     <p style="text-align: right; padding-right: 10px;"><span onclick="hideRestaurantPopupListByAddress();" style="color: white; background-color: red; padding: 0 10px; border-radius: 4px;">x</span></p>
@@ -431,7 +462,7 @@ and open the template in the editor.
                                                 <i style="font-size: 22px; margin: 0 10px;" class="fa fa-cutlery" aria-hidden="true"></i>
                                             </td>
                                             <td>
-                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurant by name:</p>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search place by name:</p>
                                                 <input id="search_rest_by_name_fld" onclick="hideRestaurantPopupListByAddress();" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
                                                 <button id="ABR_confirm_restaurant_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant</button>
                                             </td>

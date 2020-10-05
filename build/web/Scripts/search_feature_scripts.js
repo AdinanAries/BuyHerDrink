@@ -16,7 +16,6 @@ var back_to_search_home_icons_btn = document.getElementById("back_to_search_home
 var main_search_types = document.getElementById("main_search_types");
 
 //this global variable lets us know what search button was clicked
-var type_of_search = "restaurant";
 var current_lng, current_lat;
 
 //even handlers for search option clicks
@@ -68,7 +67,7 @@ search_page_cafe_option.addEventListener("click", (evnt)=>{
     get_location();
 });
 
-//skating option
+//bar option
 search_page_bar_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
