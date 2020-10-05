@@ -579,7 +579,8 @@ function start_update_drink_request(number, user_id, drink_request_id, date, tim
     RP_post_request_btn.style.display = "none";
     RP_update_request_btn.style.display = "flex";
     
-    document.getElementById("search_rest_by_name_fld").focus();
+    search_rest_by_name_fld.value = rest_name + " " + rest_location;
+    search_rest_by_name_fld.focus();
     
     rest_locations_input_fld.value = rest_location;
     PDR_date_fld.value = date;
@@ -587,7 +588,6 @@ function start_update_drink_request(number, user_id, drink_request_id, date, tim
     PDR_price_fld.value = price;
     
     pick_restaurant(rest_name, imgurl, iconUrl, rating, rest_location, types, rating_number);
-    search_rest_by_name_fld.value = rest_name + " " + rest_location;
     
     //this hides drink requests div since its a toggle
     showYourDrinkRequests();
