@@ -4,6 +4,7 @@ var search_rest_by_name_fld = document.getElementById("search_rest_by_name_fld")
 var search_restaurants_btn = document.getElementById("search_restaurants_btn");
 var rests_list_location_display = document.getElementById("rests_list_location_display");
 var current_restaurants_list = document.getElementById("current_restaurants_list");
+var add_place_search_types = document.getElementById("add_place_search_types");
 
 var GoogleReturnedZipCode;
 var GoogleReturnedCity;
@@ -70,6 +71,10 @@ var service;
 var infowindow;
 
 function initMap(lat, lng, search_radius) {
+    
+    current_lng = lng;
+    current_lat = lat;
+    
     var current_location = new google.maps.LatLng(lat, lng);
     
     infowindow = new google.maps.InfoWindow();
@@ -238,6 +243,13 @@ function initialize() {
     });
     
 }
+
+add_place_search_types.addEventListener("change", (evnt)=>{
+    type_of_search = add_place_search_types.value;
+    initMap(current_lat, current_lng, '5000');
+    search_rest_by_name_fld.value = '';
+    document.getElementById("rest_list_scroll_div").scrollTop = 0;
+});
 
 /*/this function returns google address obj using address as parameter.
 function getLatLong(address){

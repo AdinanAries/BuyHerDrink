@@ -27,8 +27,6 @@ var customizeOfferBtn = document.getElementById("customizeOfferBtn");
 var drink_request_status_P = document.getElementById("drink_request_status_P");
 var drink_bidding_form = document.getElementById("drink_bidding_form");
 var drink_request_comments_div = document.getElementById("drink_request_comments_div");
-var add_place_search_types = document.getElementById("add_place_search_types");
-
 
 //In memory Object to hold processes data
 var publish_request_data = {
@@ -408,10 +406,6 @@ setInterval(()=>{
     }
 },1);
 
-
-add_place_search_types.addEventListener("change", (evnt)=>{
-    type_of_search = add_place_search_types.value;
-});
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Reaching out to endpoints for data
 
