@@ -123,6 +123,15 @@ function clean_slate_after_drink_request(){
                                          
         </div>
     `;
+    
+    RP_rest_name = document.getElementById("RP_rest_name");
+    RP_rest_photo = document.getElementById("RP_rest_photo");
+    RP_rest_icon = document.getElementById("RP_rest_icon");
+    RP_rest_rating = document.getElementById("RP_rest_rating");
+    RP_rest_location = document.getElementById("RP_rest_location");
+    RP_rest_types = document.getElementById("RP_rest_types");
+    RP_post_request_btn = document.getElementById("RP_post_request_btn");
+    RP_purpose_display = document.getElementById("RP_purpose_display");
 }
 
 //this function displays selected restaurants for drink request to review and post pane
