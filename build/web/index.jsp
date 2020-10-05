@@ -215,7 +215,7 @@ and open the template in the editor.
                             </div>
                             
                             <div id='YourDrinkRequestsListDiv' style='padding-top: 70px;'>
-                                <div class='each_your_drink_request_div'>
+                                <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
                                     <div>
                                         <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
                                         <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
@@ -227,12 +227,12 @@ and open the template in the editor.
                                             <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
 
                                             <p style='color: darkgrey; padding-top: 10px;'>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
-                                                <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>12:00am</span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>2/2/2020</span>
+                                                <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>10:00am</span>
                                             </p>
                                             <p style='color: darkgrey; padding-bottom: 10px;'>
                                                 <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$5.00</span>
+                                                <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$15.00</span>
                                             </p>
                                             <p style="color: darkgrey;">types: </p>
                                             <p>restaurant, food, point of interest, establishment</p>
@@ -251,7 +251,11 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                     <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                        <div class='your_drink_request_update_btn'>
+                                        <div 
+                                            onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
+                                                        "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
+                                                        "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222");' 
+                                            class='your_drink_request_update_btn'>
                                             Update
                                         </div>
                                         <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
@@ -259,7 +263,7 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                 </div>
-                                <div class='each_your_drink_request_div'>
+                                <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
                                     <div>
                                         <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
                                         <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
@@ -295,7 +299,9 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                     <div id='update_your_drink_request_list_btns1' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                        <div class='your_drink_request_update_btn'>
+                                        <div 
+                                            onclick='start_update_drink_request(1,"user_id","drink_request_id","date", "time","rest_name","rest_location","price");'
+                                            class='your_drink_request_update_btn'>
                                             Update
                                         </div>
                                         <div onclick="show_delete_request_form('1');" class='your_drink_request_delete_btn'>
@@ -427,7 +433,7 @@ and open the template in the editor.
                                             <td>
                                                 <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search restaurant by name:</p>
                                                 <input id="search_rest_by_name_fld" onclick="hideRestaurantPopupListByAddress();" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
-                                                <button onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant</button>
+                                                <button id="ABR_confirm_restaurant_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant</button>
                                             </td>
                                         </tr>
                                         <tr style="background-color: #afe9ff;" onclick="hideRestaurantPopupListByAddress();">
@@ -535,6 +541,7 @@ and open the template in the editor.
                                                         <img id='RP_rest_photo' src="" style="width: 200px; height: auto;"/>
                                                     </div>
                                                     <p id="RP_post_request_btn" style="padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; display: flex; flex-direction: column; justify-content: center;">Post</p>
+                                                    <p id="RP_update_request_btn" style="display: none; padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; flex-direction: column; justify-content: center;">Update</p>
                                                 </div>
                                                 <p><img id='RP_rest_icon' src="" style="width: 20px; height: auto;"/> <span id='RP_rest_rating' style="color: #37a0f5; font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
                                                 <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span id='RP_rest_location'><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></span><p>

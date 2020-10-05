@@ -97,6 +97,7 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
     RP_rest_types.innerText = typesList;
     hideRestaurantPopupListByAddress();
     add_selected_rest_post_data(name, rating_number, photoUrl, iconUrl, typesList, locationAddress);
+    search_rest_by_name_fld.value = name;
 }
 
 //this function renders drink requests to list that displays them
@@ -542,11 +543,58 @@ function post_drink_request(data){
     });
 }
 
+function update_drink_request(data){
+    //ajax code here
+    //then success funtion here
+    alert("drink request updated");
+    RP_update_request_btn.style.display = "none";
+    RP_post_request_btn.style.display = "flex";
+    
+}
+
 $("#RP_post_request_btn").click(function(event){
     //alert(RP_post_request_btn.disabled);
     post_drink_request(publish_request_data);
 });
 
+$("#RP_update_request_btn").click(function(evnt){
+    update_drink_request(publish_request_data);
+});
+
+function start_update_drink_request(number, user_id, drink_request_id, date, time, rest_name, types, rating, rating_number, iconUrl, purpose, rest_location, price, imgurl){
+    let each_your_dr = "each_your_drink_request_div"+number;
+    $("#"+each_your_dr).slideUp("fast");
+    
+    /*$("#search_rest_by_name_fld").val(rest_name + " " + rest_location).trigger('change');
+    document.getElementById("search_rest_by_name_fld").click();
+    
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&address="+rest_location+"&sensor=false",
+        type: "POST",
+        success: function(res){
+           initMap(res.results[0].geometry.location.lat, res.results[0].geometry.location.lng, '1000');
+        }
+      });*/
+    
+    RP_post_request_btn.style.display = "none";
+    RP_update_request_btn.style.display = "flex";
+    
+    document.getElementById("search_rest_by_name_fld").focus();
+    
+    rest_locations_input_fld.value = rest_location;
+    PDR_date_fld.value = date;
+    PDR_time_fld.value = time;
+    PDR_price_fld.value = price;
+    
+    pick_restaurant(rest_name, imgurl, iconUrl, rating, rest_location, types, rating_number);
+    search_rest_by_name_fld.value = rest_name + " " + rest_location;
+    
+    //this hides drink requests div since its a toggle
+    showYourDrinkRequests();
+    
+    document.getElementById("publish_drink_request_fields").scrollIntoView();
+    document.getElementById("search_rest_by_name_fld").scrollTop = 0;
+}
 
 function post_dinner_date(data, current_item){
     console.log(data.user_id);

@@ -239,4 +239,17 @@ function initialize() {
     
 }
 
+/*/this function returns google address obj using address as parameter.
+function getLatLong(address){
+      var geo = new google.maps.Geocoder;
 
+      geo.geocode({'address':address},function(results, status){
+              if (status == google.maps.GeocoderStatus.OK) {
+                return results;
+              } else {
+                alert("Geocode was not successful for the following reason: " + status);
+              }
+
+       });
+
+  }*/
