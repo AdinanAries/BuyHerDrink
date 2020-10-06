@@ -27,7 +27,7 @@ var customizeOfferBtn = document.getElementById("customizeOfferBtn");
 var drink_request_status_P = document.getElementById("drink_request_status_P");
 var drink_bidding_form = document.getElementById("drink_bidding_form");
 var drink_request_comments_div = document.getElementById("drink_request_comments_div");
-
+var PDR_details_pane = document.getElementById("PDR_details_pane");
 
 //In memory Object to hold processes data
 var publish_request_data = {
@@ -80,12 +80,28 @@ var highest_bidder = {
 
 
 //Gobal variables for various utility functions
+var type_of_search = "restaurant";
 var current_drink_offer_item = "";
 var current_drink_request_item = "";
 var currentDate = new Date();
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //DOM manipulation functions
+
+//cleaning the slate after drink request post and update
+function clean_slate_after_drink_request(){
+    rest_locations_input_fld.value = '';
+    search_rest_by_name_fld.value = '';
+    
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    
+    RP_rest_name.innerHTML = `<i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span>`;
+    RP_rest_photo.src = "";
+    RP_rest_icon.src = "";
+    RP_rest_rating = document.getElementById("RP_rest_rating");
+    RP_rest_location.innerHTML = `<i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></span>`;
+    RP_rest_types.innerHTML = `<i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span>`;
+}
 
 //this function displays selected restaurants for drink request to review and post pane
 function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, typesList, rating_number){
@@ -97,6 +113,7 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
     RP_rest_types.innerText = typesList;
     hideRestaurantPopupListByAddress();
     add_selected_rest_post_data(name, rating_number, photoUrl, iconUrl, typesList, locationAddress);
+    search_rest_by_name_fld.value = name;
 }
 
 //this function renders drink requests to list that displays them
@@ -537,9 +554,21 @@ function post_drink_request(data){
         url: "./post_drink_request_controller",
         data: JSON.stringify(data),
         success: function(result){
-            //alert(result);
+            publish_request_data.rest_name = null;
+            clean_slate_after_drink_request();
         }
     });
+}
+
+function update_drink_request(data){
+    //ajax code here
+    //then success funtion here
+    alert("drink request updated");
+    RP_update_request_btn.style.display = "none";
+    RP_post_request_btn.style.display = "flex";
+    publish_request_data.rest_name = null;
+    clean_slate_after_drink_request();
+    
 }
 
 $("#RP_post_request_btn").click(function(event){
@@ -547,6 +576,43 @@ $("#RP_post_request_btn").click(function(event){
     post_drink_request(publish_request_data);
 });
 
+$("#RP_update_request_btn").click(function(evnt){
+    update_drink_request(publish_request_data);
+});
+
+function start_update_drink_request(number, user_id, drink_request_id, date, time, rest_name, types, rating, rating_number, iconUrl, purpose, rest_location, price, imgurl){
+    let each_your_dr = "each_your_drink_request_div"+number;
+    $("#"+each_your_dr).slideUp("fast");
+    
+    /*$("#search_rest_by_name_fld").val(rest_name + " " + rest_location).trigger('change');
+    document.getElementById("search_rest_by_name_fld").click();
+    
+    $.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&address="+rest_location+"&sensor=false",
+        type: "POST",
+        success: function(res){
+           initMap(res.results[0].geometry.location.lat, res.results[0].geometry.location.lng, '1000');
+        }
+      });*/
+    
+    RP_post_request_btn.style.display = "none";
+    RP_update_request_btn.style.display = "flex";
+    
+    rest_locations_input_fld.value = rest_location;
+    PDR_date_fld.value = date;
+    PDR_time_fld.value = time;
+    PDR_price_fld.value = price;
+    
+    pick_restaurant(rest_name, imgurl, iconUrl, rating, rest_location, types, rating_number);
+    
+    //this hides drink requests div since its a toggle
+    showYourDrinkRequests();
+    
+    search_rest_by_name_fld.value = rest_name + " " + rest_location;
+    search_rest_by_name_fld.focus();
+    document.getElementById("publish_drink_request_fields").scrollIntoView();
+    document.getElementById("search_rest_by_name_fld").scrollTop = 0;
+}
 
 function post_dinner_date(data, current_item){
     console.log(data.user_id);
@@ -605,10 +671,10 @@ $(document).ready(()=>{
 
 setInterval(()=>{
     if(publish_request_data.rest_name === null){
-        RP_post_request_btn.style.backgroundColor = "darkgrey";
-        RP_post_request_btn.disabled = "true";
+        document.getElementById("RP_post_request_btn").style.backgroundColor = "darkgrey";
+        document.getElementById("RP_post_request_btn").disabled = "true";
     }else{
-        RP_post_request_btn.style.backgroundColor = "darkslateblue";
-        RP_post_request_btn.disabled = "false";
+        document.getElementById("RP_post_request_btn").style.backgroundColor = "darkslateblue";
+        document.getElementById("RP_post_request_btn").disabled = "false";
     }
 }, 1);
