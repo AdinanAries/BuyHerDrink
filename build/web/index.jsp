@@ -405,7 +405,7 @@ and open the template in the editor.
                                       <tbody>
                                         <tr>
                                             <td>
-                                                <i style="font-size: 22px; margin: 0 10px;" class="fa fa-bars" aria-hidden="true"></i>
+                                                <i style="font-size: 22px; margin-left: 15px;" class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                             </td>
                                             <td>
                                                 <div>

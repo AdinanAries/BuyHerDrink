@@ -39,6 +39,7 @@ var publish_request_data = {
     "rest_photo": "url from google",
     "rest_category_icon": "from google places",
     "rest_service_types": "from google places",
+    "place_type_of_search": "resturant",
     "meeting_date": "09/04/2020",
     "meeting_time": "14:00",
     "meeting_budget": "$5.00",

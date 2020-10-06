@@ -18,6 +18,7 @@ public class RequestData {
     private String rest_photo;
     private String rest_category_icon;
     private String rest_service_types;
+    private String place_type_of_search;
     private String meeting_date;
     private String meeting_time;
     private String meeting_budget;
@@ -26,7 +27,7 @@ public class RequestData {
 
     public RequestData(){}
     
-    public RequestData(String request_id, String request_purpose, String rest_location, String rest_name, String rest_rating, String rest_photo, String rest_category_icon, String rest_service_types, String meeting_date, String meeting_time, String meeting_budget, String added_message, String requestee_id) {
+    public RequestData(String request_id, String request_purpose, String rest_location, String rest_name, String rest_rating, String rest_photo, String rest_category_icon, String rest_service_types, String place_type_of_search, String meeting_date, String meeting_time, String meeting_budget, String added_message, String requestee_id) {
         this.request_id = request_id;
         this.request_purpose = request_purpose;
         this.rest_location = rest_location;
@@ -35,6 +36,7 @@ public class RequestData {
         this.rest_photo = rest_photo;
         this.rest_category_icon = rest_category_icon;
         this.rest_service_types = rest_service_types;
+        this.place_type_of_search = place_type_of_search;
         this.meeting_date = meeting_date;
         this.meeting_time = meeting_time;
         this.meeting_budget = meeting_budget;
@@ -108,6 +110,14 @@ public class RequestData {
         this.rest_service_types = rest_service_types;
     }
 
+    public String getPlace_type_of_search(){
+        return this.place_type_of_search;
+    }
+    
+    public void setPlace_type_of_search(String place_type_of_search){
+        this.place_type_of_search = place_type_of_search;
+    }
+    
     public String getMeeting_date() {
         return meeting_date;
     }

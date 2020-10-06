@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.buyherdrink.controller;
 
 import com.buyherdrink.model.RequestData;
@@ -16,7 +20,6 @@ public class post_drink_request_controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String payload = "";
         RequestData request_data = null;
         Gson gson = new Gson();
@@ -30,6 +33,7 @@ public class post_drink_request_controller extends HttpServlet {
        request_data = gson.fromJson(payload, RequestData.class);
        
        /*JOptionPane.showMessageDialog(null, request_data.getMeeting_budget());
+       JOptionPane.showMessageDialog(null, request_data.getPlace_type_of_search());
        JOptionPane.showMessageDialog(null, request_data.getRest_location());
        JOptionPane.showMessageDialog(null, request_data.getMeeting_date());
        JOptionPane.showMessageDialog(null, request_data.getMeeting_time());
@@ -39,8 +43,6 @@ public class post_drink_request_controller extends HttpServlet {
        JOptionPane.showMessageDialog(null, request_data.getRest_service_types());
        JOptionPane.showMessageDialog(null, request_data.getRequest_purpose());*/
        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

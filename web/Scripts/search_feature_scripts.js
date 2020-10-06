@@ -31,7 +31,11 @@ search_page_restaurant_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "restaurant";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //parks option
@@ -39,7 +43,11 @@ search_page_parks_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "park";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //movies option
@@ -47,7 +55,11 @@ search_page_movies_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "movie_theater";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 
@@ -56,7 +68,11 @@ search_page_museums_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "museum";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //.get_location();
 });
 
 //garderns option
@@ -64,7 +80,11 @@ search_page_cafe_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "cafe";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //bar option
@@ -72,7 +92,11 @@ search_page_bar_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "bar";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 
@@ -263,6 +287,9 @@ function show_position(position){
         current_lng = place.geometry['location'].lng();
         current_lat = place.geometry['location'].lat();
         
+        rest_locations_input_fld.value = place.formatted_address;
+        initMap(current_lat, current_lng, '5000');
+        
         // place variable will have all the information you are looking for.
         let search_type = main_search_types.value;
         init_map(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000', search_type);
@@ -278,6 +305,8 @@ function show_position(position){
     //when the selected type of search value changes
     main_search_types.addEventListener("change", ()=>{
         init_map(current_lat, current_lng, '5000', main_search_types.value);
+        add_place_search_types.value = main_search_types.value;
+        initMap(current_lat, current_lng, '5000');
         search_page_location_P.innerText = main_search_fld.value;
         //document.getElementById("rest_list_scroll_div").scrollTop = 0;
         sp_showExploreRestaurantsDiv();
@@ -306,7 +335,6 @@ function show_position(position){
 function pick_restaurant_from_search(rest_name, rest_photos, rest_icon, stars, rest_location, rest_types_list, rest_rating_number){
     document.getElementById("rest_locations_input_fld").value = main_search_fld.value;
     
-    initMap(current_lat, current_lng, '5000');
     document.getElementById("rest_list_scroll_div").scrollTop = 0;
     
     pick_restaurant(rest_name, rest_photos, rest_icon, stars, rest_location, rest_types_list, rest_rating_number);
