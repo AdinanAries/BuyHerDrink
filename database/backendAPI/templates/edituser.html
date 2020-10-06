@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>Edit User Details!</title>
+<body>
+    <div>
+        <p>
+            System test. Non-production!
+        </p>
+    </div>
+    <form action="/edituser" method="POST">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" value="{{ data['username'] }}" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="New Password" name="password"  value="{{ data['password'] }}"required>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="New Name" name="name"  value="{{ data['name'] }}"required>
+
+        <button type="submit">Update Credentials</button>
+    
+    </form>
+
+</form>
+</body>

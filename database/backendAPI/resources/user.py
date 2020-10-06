@@ -133,7 +133,8 @@ class EditUser(Resource):
      # Edit a post- take form data
     @classmethod
     @jwt_required
-    def put(cls):
+    def post(cls):
+        print("Coming in from a post request")
         data=request.form.to_dict()
 
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
@@ -147,7 +148,42 @@ class EditUser(Resource):
         'name':user.name}
         if 'username' in data:
             if UserModel.checkusername(data['username']):
-                return {"message":"Username Taken"},403
+                if user.username != data['username']:
+                    return {"message":"Username Taken"},403
+
+
+        if user.user_id==uid:
+
+            for key in params:
+                if key in data:
+                    setattr(user,key,data[key])
+                else:
+                    setattr(user,key,params[key])
+                db.db.session.commit()
+        else:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        return user.json()
+    
+    @classmethod
+    @jwt_required
+    def put(cls):
+
+        data=request.form.to_dict()
+
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user=UserModel.find_by_id(uid)
+
+        # Editable fields
+        params={
+        'username':user.username,
+        'password':user.password,
+        'name':user.name}
+        if 'username' in data:
+            if UserModel.checkusername(data['username']):
+                if user.username != data['username']:
+                    return {"message":"Username Taken"},403
 
         if user.user_id==uid:
 
