@@ -31,7 +31,11 @@ search_page_restaurant_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "restaurant";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //parks option
@@ -39,7 +43,11 @@ search_page_parks_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "park";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //movies option
@@ -47,7 +55,11 @@ search_page_movies_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "movie_theater";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 
@@ -56,7 +68,11 @@ search_page_museums_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "museum";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //.get_location();
 });
 
 //garderns option
@@ -64,7 +80,11 @@ search_page_cafe_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "cafe";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 //bar option
@@ -72,7 +92,11 @@ search_page_bar_option.addEventListener("click", (evnt)=>{
     search_page_start_page.style.display = "none";
     SearchResultDiv.style.display = "block";
     type_of_search = "bar";
-    get_location();
+    init_map(current_lat, current_lng, '5000', type_of_search);
+    initMap(current_lat, current_lng, '5000');
+    add_place_search_types.value = type_of_search;
+    main_search_types.value = type_of_search;
+    //get_location();
 });
 
 
