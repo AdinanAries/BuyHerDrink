@@ -123,8 +123,10 @@ api.add_resource(Post,"/mypost")
 api.add_resource(EditPost,"/editpost")
 api.add_resource(AllPosts,"/allposts")
 api.add_resource(PostRegister,"/createpost")
-api.add_resource(tester.Test_UserEdit,"/editself")
 
+api.add_resource(tester.Test_UserEdit,"/editself")
+api.add_resource(tester.Test_EditPostList,"/editposts")
+api.add_resource(tester.Test_EditPost,"/edit/post/<int:post_id>","/edit/post/")
 
 if __name__ == "__main__":
     db.init_app(app)

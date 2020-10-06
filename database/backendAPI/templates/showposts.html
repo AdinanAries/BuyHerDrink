@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>Edit User Details!</title>
+<body>
+    <div>
+        <p>
+            System test. Non-production!
+        </p>
+    </div>
+    <table> </table>
+    {% for post in posts %}
+    
+
+        <p>Post Title</p>
+        <p>{{ post['title'] }}</p>
+
+        <p>Post Body</p>
+        <p>{{ post['body'] }}</p>
+        
+        <p> Post Start Date</p>
+        <p>{{ post['start_date'] }}</p>
+        
+        <label for="end_date"><b>Post End Date</b></label>
+        <p name="end_date">{{ post['end_date'] }}</p>
+
+        <p>{{post['active']}}</p>
+
+    <form action="/edit/post/" method="POST">
+        <input type="hidden"  name="post_id"  value="{{ post['post_id'] }}"required>
+
+        <button type="submit">Update Credentials</button>
+    
+    </form>
+    {% endfor %}
+</body>
