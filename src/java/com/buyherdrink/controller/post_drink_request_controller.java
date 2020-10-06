@@ -30,6 +30,7 @@ public class post_drink_request_controller extends HttpServlet {
        request_data = gson.fromJson(payload, RequestData.class);
        
        /*JOptionPane.showMessageDialog(null, request_data.getMeeting_budget());
+       JOptionPane.showMessageDialog(null, request_data.getPlace_type_of_search());
        JOptionPane.showMessageDialog(null, request_data.getRest_location());
        JOptionPane.showMessageDialog(null, request_data.getMeeting_date());
        JOptionPane.showMessageDialog(null, request_data.getMeeting_time());
