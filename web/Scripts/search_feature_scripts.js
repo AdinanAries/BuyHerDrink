@@ -288,10 +288,13 @@ function show_position(position){
         current_lat = place.geometry['location'].lat();
         
         rest_locations_input_fld.value = place.formatted_address;
+        type_of_search = main_search_types.value;
+        
         initMap(current_lat, current_lng, '5000');
         
         // place variable will have all the information you are looking for.
         let search_type = main_search_types.value;
+        
         init_map(place.geometry['location'].lat(), place.geometry['location'].lng(), '5000', search_type);
         search_page_location_P.innerText = main_search_fld.value;
         //document.getElementById("rest_list_scroll_div").scrollTop = 0;
@@ -306,7 +309,10 @@ function show_position(position){
     main_search_types.addEventListener("change", ()=>{
         init_map(current_lat, current_lng, '5000', main_search_types.value);
         add_place_search_types.value = main_search_types.value;
+        
+        type_of_search = main_search_types.value;
         initMap(current_lat, current_lng, '5000');
+        
         search_page_location_P.innerText = main_search_fld.value;
         //document.getElementById("rest_list_scroll_div").scrollTop = 0;
         sp_showExploreRestaurantsDiv();
