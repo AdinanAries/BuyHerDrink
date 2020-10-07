@@ -123,6 +123,8 @@ span, p, option{
     width: 100%;
 }
 .wrapper{
+    max-width: 700px;
+    margin: auto;
 }
 .Header{
     max-width: 700px;
@@ -698,15 +700,19 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
-#dinner_dates_header, #your_drink_requests_header{
-    position: fixed; 
+.popup_window_headers{
+    max-width: 730px;
     padding: 5px;
-    width: 100%;
     background-color: black;
     padding-bottom: 15px;
     border-bottom: #4ED164 1px solid;
 }
-#your_drink_requests_header{
+#dinner_dates_header, #your_drink_requests_header{
+    position: fixed;
+    width: 100%;
+    
+}
+#your_drink_requests_header .popup_window_headers{
     background-color: #afe9ff;
     border-bottom: #98d7ff 1px solid;
 }
@@ -731,7 +737,6 @@ input[type=radio]:checked {
 }
 #dates_list_container{
     /*border-top: 1px #D9DADC solid;*/
-    margin-top: 85px;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -815,12 +820,19 @@ input[type=radio]:checked {
     height: 100vh;
     overflow-y: auto;
     z-index: 1100;
-    background-color: rgba(0,0,0,0.9);
     color: white;
 }
-
-#YourDrinkRequestsDiv, #notificationsDiv{
-    background-color: white !important;
+.popup_window_content{
+    background-color: rgba(0,0,0,0.9);
+    max-width: 730px;
+    margin: auto;
+    min-height: 100vh;
+}
+.popup_window_top_padding{
+    height: 85px;
+}
+#YourDrinkRequestsDiv .popup_window_content, #notificationsDiv .popup_window_content{
+    background-color: #d4f3ff !important;
     color: black !important;
 }
 #YourDrinkRequestsListDiv, .each_your_drink_request_div{
@@ -831,7 +843,7 @@ input[type=radio]:checked {
 }
 .each_your_drink_request_div{
     padding: 10px 0;
-    background-color: lightcyan;
+    background-color: #afe9ff;
     border-radius: 10px;
     margin-bottom: 5px;
 }
