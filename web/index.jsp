@@ -74,7 +74,7 @@ and open the template in the editor.
     </script>
     
     <body>
-        <div class="wrapper" id='loadingPage'>
+        <div id='loadingPage'>
             <div class='loader_container'>
                 <div class="loader">
                     <div></div>
@@ -259,7 +259,7 @@ and open the template in the editor.
                                             <div 
                                                 onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
                                                             "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
-                                                            "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222");' 
+                                                            "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538");' 
                                                 class='your_drink_request_update_btn'>
                                                 Update
                                             </div>
@@ -817,7 +817,7 @@ and open the template in the editor.
                         </p>
                         <div style="display: flex; padding: 5px; padding-bottom: 20px;">
                             <div>
-                                <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #D9DADC;">
+                                <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #98b3ff;">
                                     
                                 </div>
                             </div>
@@ -831,19 +831,19 @@ and open the template in the editor.
                         </div>
                         <div style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                             <div style='display: flex; justify-content: center;'>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
                             </div>
                             <div style='display: flex; justify-content: center; margin-top: 5px;'>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
                             </div>
                         </div>

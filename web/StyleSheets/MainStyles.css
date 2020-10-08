@@ -50,6 +50,7 @@ span, p, option{
     z-index: 1111;
     background-color: white;
     width: 100vw;
+    max-width: 700px !important;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -69,6 +70,7 @@ span, p, option{
 
 .loader_container{
     width: 100vw;
+    max-width: 700px !important;
     display: flex;
     justify-content: center;
 }
