@@ -649,6 +649,9 @@ input[type=radio]:checked {
 #ExploreRestaurantsDiv, #viewFullProfileDiv, #settingsDiv, #notificationsDiv, #galleryDiv, #UserActivityDiv, #YourDrinkRequestsDiv{
     display: none;
 }
+#ExploreRestaurantsDiv{
+    min-height: calc(100vh - 140px);
+}
 #ExploreRestaurantsDiv table{
     border-spacing: 15px;
     height: 100%;

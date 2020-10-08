@@ -238,7 +238,7 @@ function render_each_selected_drink_request_user(name, age, gender, address){
                     </div>
                     <p style="clear: both;"></p>
                     <p class="viewFullProfileBtn" onclick="showFullProfileDiv();"
-                       style="margin: auto; color: white; background-color: tomato; padding: 5px; 
+                       style="margin: auto; color: white; background-color: tomato; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
                     </p>
@@ -262,8 +262,8 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                                 <span style="color: tomato; font-size: 14px;">${budget} </span>
                             </p>
                             <p id="see_highest_bidder_btn" 
-                                        style="color: darkgreen; font-size: 14px; font-weight: bolder; padding: 5px; border-radius: 4px; 
-                                                background-color: darkslateblue; color: white; margin: 5px 0; max-width: 250px; text-align: center;">
+                                        style="color: darkgreen; font-size: 14px; font-weight: bolder; padding: 10px 5px; border-radius: 4px; 
+                                                background-color: darkslateblue; color: white; margin: 5px 0; text-align: center;">
                                     see highest bidder: ${highest_bidder.meeting_budget}
                               
                             </p>
@@ -295,7 +295,7 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                     <div class="OffererCoverPhoto">
                         <span class="OffererOnlineStatusLed"></span>
                         <span class="OffererOnlineStatusText">Offline</span>
-                        <div class='OffererPicture'>
+                        <div style="border-color: #d4f3ff;" class='OffererPicture'>
                             <img src="Pictures/TestPhotos/1.jpg" alt=""/>
                         </div>
                     </div>
@@ -306,7 +306,7 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                     </div>
                     <p style="clear: both;"></p>
                     <p class="viewFullProfileBtn" onclick="showFullProfileDiv();"
-                        style="margin: auto; color: white; background-color: cadetblue; padding: 5px; 
+                        style="margin: auto; color: white; background-color: cadetblue; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
                     </p>
@@ -672,10 +672,11 @@ $(document).ready(()=>{
 
 setInterval(()=>{
     if(publish_request_data.rest_name === null){
-        document.getElementById("RP_post_request_btn").style.backgroundColor = "darkgrey";
-        document.getElementById("RP_post_request_btn").disabled = "true";
+        document.getElementById("RP_post_request_btn").style.display = "none";
+        //document.getElementById("RP_post_request_btn").disabled = "true";
     }else{
-        document.getElementById("RP_post_request_btn").style.backgroundColor = "darkslateblue";
-        document.getElementById("RP_post_request_btn").disabled = "false";
+        if(document.getElementById("RP_update_request_btn").style.display === "none")
+            document.getElementById("RP_post_request_btn").style.display = "flex";
+        //document.getElementById("RP_post_request_btn").disabled = "false";
     }
 }, 1);
