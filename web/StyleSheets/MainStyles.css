@@ -654,6 +654,9 @@ input[type=radio]:checked {
 #ExploreRestaurantsDiv{
     min-height: calc(100vh - 140px);
 }
+#settingsDiv{
+    min-height: calc(100vh - 148px);
+}
 #ExploreRestaurantsDiv table{
     border-spacing: 15px;
     height: 100%;
