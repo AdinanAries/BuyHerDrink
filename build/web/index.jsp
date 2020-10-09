@@ -200,133 +200,143 @@ and open the template in the editor.
                     </div>
                     <div id='UserProfileIframe'>
                         <div id='notificationsDiv'>
-                            <div>
-                                <img id="closeNotificationBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
-                                <p style="width: 100%; text-align: center; margin-top: -30px; color: darkblue; font-weight: bolder;">Notifications</p>
+                            <div class="popup_window_content">
+                                <div>
+                                    <img id="closeNotificationBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                    <p style="width: 100%; text-align: center; margin-top: -30px; color: darkblue; font-weight: bolder;">Notifications</p>
+                                </div>
                             </div>
                         </div>
                         <div id='YourDrinkRequestsDiv'>
-                            <div id="your_drink_requests_header">
-                                <div>
-                                    <img id="closeYourDrinkRequestsDivBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
-                                    <p style="width: 100%; text-align: center; color: black; font-weight: bolder; margin-top: -30px;">Your Drink Requests</p>
-                                </div>
-                                <p style="font-weight: bolder; text-align: center; font-size: 14px; color: #37a0f5;">&COPY; 2020, BuyMeDrink</p>
-                            </div>
-                            
-                            <div id='YourDrinkRequestsListDiv' style='padding-top: 70px;'>
-                                <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
-                                    <div>
-                                        <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
-                                        <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
-                                            <img style='width: 100%; height: auto;'
-                                                src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222' />
+                            <div class="popup_window_content">
+                                <div id="your_drink_requests_header">
+                                    <div class="popup_window_headers">
+                                        <div>
+                                            <img id="closeYourDrinkRequestsDivBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                            <p style="text-align: center; color: black; font-weight: bolder; margin-top: -30px;">Your Drink Requests</p>
                                         </div>
-                                        <div style='padding: 5px;'>
-                                            <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                            <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
-
-                                            <p style='color: darkgrey; padding-top: 10px;'>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>2/2/2020</span>
-                                                <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>10:00am</span>
-                                            </p>
-                                            <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$15.00</span>
-                                            </p>
-                                            <p style="color: darkgrey;">types: </p>
-                                            <p>restaurant, food, point of interest, establishment</p>
-                                        </div>
+                                        <p style="font-weight: bolder; text-align: center; font-size: 14px; color: #37a0f5;">&COPY; 2020, BuyMeDrink</p>
                                     </div>
-                                    <div class='delete_drink_request_form' id="delet_drink_request_form0">
-                                        <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
-                                        </p>
+                                </div>
+                                <div style='height: 70px;'></div>
+                                <div id='YourDrinkRequestsListDiv'>
+                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
+                                        <div>
+                                            <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
+                                            <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
+                                                <img style='width: 100%; height: auto;'
+                                                    src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538' />
+                                            </div>
+                                            <div style='padding: 5px;'>
+                                                <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
 
-                                        <div style="display: flex; justify-content: center; padding: 5px;">
-                                            <div class="delete_drink_request_btns">
-                                                <div class='delete_drink_request_yes_btn'>Yes</div>
-                                                <div onclick="show_delete_request_form('0');" class='delete_drink_request_no_btn'>No</div>
+                                                <p style='color: darkgrey; padding-top: 10px;'>
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>2/2/2020</span>
+                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>10:00am</span>
+                                                </p>
+                                                <p style='color: darkgrey; padding-bottom: 10px;'>
+                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
+                                                    <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$15.00</span>
+                                                </p>
+                                                <p style="color: darkgrey;">types: </p>
+                                                <p>restaurant, food, point of interest, establishment</p>
+                                            </div>
+                                        </div>
+                                        <div class='delete_drink_request_form' id="delet_drink_request_form0">
+                                            <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
+                                                <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
+                                            </p>
+
+                                            <div style="display: flex; justify-content: center; padding: 5px;">
+                                                <div class="delete_drink_request_btns">
+                                                    <div class='delete_drink_request_yes_btn'>Yes</div>
+                                                    <div onclick="show_delete_request_form('0');" class='delete_drink_request_no_btn'>No</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
+                                            <div 
+                                                onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
+                                                            "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
+                                                            "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538");' 
+                                                class='your_drink_request_update_btn'>
+                                                Update
+                                            </div>
+                                            <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
+                                                Delete
                                             </div>
                                         </div>
                                     </div>
-                                    <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                        <div 
-                                            onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
-                                                        "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
-                                                        "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222");' 
-                                            class='your_drink_request_update_btn'>
-                                            Update
-                                        </div>
-                                        <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
-                                            Delete
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
-                                    <div>
-                                        <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
-                                        <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
-                                            <img style='width: 100%; height: auto;'
-                                                src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222' />
-                                        </div>
-                                        <div style='padding: 5px;'>
-                                            <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                            <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
+                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div1">
+                                        <div>
+                                            <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
+                                            <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
+                                                <img style='width: 100%; height: auto;'
+                                                    src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222' />
+                                            </div>
+                                            <div style='padding: 5px;'>
+                                                <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
+                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
 
-                                            <p style='color: darkgrey; padding-top: 10px;'>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
-                                                <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>12:00am</span>
-                                            </p>
-                                            <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$5.00</span>
-                                            </p>
-                                            <p style="color: darkgrey;">types: </p>
-                                            <p>restaurant, food, point of interest, establishment</p>
-                                        </div>
-                                    </div>
-                                    <div class='delete_drink_request_form' id="delet_drink_request_form1">
-                                        <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                            <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
-                                        </p>
-
-                                        <div style="display: flex; justify-content: center; padding: 5px;">
-                                            <div class="delete_drink_request_btns">
-                                                <div class='delete_drink_request_yes_btn'>Yes</div>
-                                                <div onclick="show_delete_request_form('1');" class='delete_drink_request_no_btn'>No</div>
+                                                <p style='color: darkgrey; padding-top: 10px;'>
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
+                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>12:00am</span>
+                                                </p>
+                                                <p style='color: darkgrey; padding-bottom: 10px;'>
+                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
+                                                    <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$5.00</span>
+                                                </p>
+                                                <p style="color: darkgrey;">types: </p>
+                                                <p>restaurant, food, point of interest, establishment</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id='update_your_drink_request_list_btns1' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                        <div 
-                                            onclick='start_update_drink_request(1,"user_id","drink_request_id","date", "time","rest_name","rest_location","price");'
-                                            class='your_drink_request_update_btn'>
-                                            Update
+                                        <div class='delete_drink_request_form' id="delet_drink_request_form1">
+                                            <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
+                                                <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
+                                            </p>
+
+                                            <div style="display: flex; justify-content: center; padding: 5px;">
+                                                <div class="delete_drink_request_btns">
+                                                    <div class='delete_drink_request_yes_btn'>Yes</div>
+                                                    <div onclick="show_delete_request_form('1');" class='delete_drink_request_no_btn'>No</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div onclick="show_delete_request_form('1');" class='your_drink_request_delete_btn'>
-                                            Delete
+                                        <div id='update_your_drink_request_list_btns1' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
+                                            <div 
+                                                onclick='start_update_drink_request(1,"user_id","drink_request_id","date", "time","rest_name","rest_location","price");'
+                                                class='your_drink_request_update_btn'>
+                                                Update
+                                            </div>
+                                            <div onclick="show_delete_request_form('1');" class='your_drink_request_delete_btn'>
+                                                Delete
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id='UserActivityDiv'>
-                            <div id="dinner_dates_header">
-                                <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
-                                <p style="font-weight: bolder; width: 100%; text-align: center; margin-top: -30px; margin-bottom: 5px;">Your Dates 
-                                    <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
-                                </p>
-                                <p style="font-weight: bolder; text-align: center; font-size: 14px; color: darkgray">&COPY; 2020, BuyMeDrink</p>
-                            </div>
-                            <div>
-                                <div id="dates_list_container">
+                            <div class="popup_window_content">
+                                <div id="dinner_dates_header">
+                                    <div class="popup_window_headers">
+                                        <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
+                                        <p style="font-weight: bolder; width: 100%; text-align: center; margin-top: -30px; margin-bottom: 5px;">Your Dates 
+                                            <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                        </p>
+                                        <p style="font-weight: bolder; text-align: center; font-size: 14px; color: darkgray">&COPY; 2020, BuyMeDrink</p>
+                                    </div>
                                     
+                                </div>
+                                <div class="popup_window_top_padding"></div>
+                                <div id="dates_list_container">
+
                                 </div>
                             </div>
                         </div>
                         <div id='galleryDiv'>
-                            <div style='display: flex; flex-direction: column; justify-content: center;'>
+                            <div class="popup_window_content" style='display: flex; flex-direction: column; justify-content: center;'>
                                 <div>
                                     <img id="closeGalleryBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
                                     <p style="width: 100%; text-align: center; margin-top: -30px;">Your Photos</p>
@@ -807,7 +817,7 @@ and open the template in the editor.
                         </p>
                         <div style="display: flex; padding: 5px; padding-bottom: 20px;">
                             <div>
-                                <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #D9DADC;">
+                                <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #98b3ff;">
                                     
                                 </div>
                             </div>
@@ -821,19 +831,19 @@ and open the template in the editor.
                         </div>
                         <div style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                             <div style='display: flex; justify-content: center;'>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
                             </div>
                             <div style='display: flex; justify-content: center; margin-top: 5px;'>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; margin-right: 5px; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
-                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px;'>
-                                    
+                                <div style='width: 48%; height: 170px; background-color: #4d4d4d; border-radius: 5px; display:flex; flex-direction: column; justify-content: center;'>
+                                    <p style='text-align: center; opacity: 0.2;'><i class="fa fa-picture-o" aria-hidden="true" style='font-size: 100px;'></i></p>
                                 </div>
                             </div>
                         </div>

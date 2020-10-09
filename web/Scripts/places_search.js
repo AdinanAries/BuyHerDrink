@@ -95,7 +95,7 @@ function initMap(lat, lng, search_radius) {
             rests_list_location_display.innerText = rest_locations_input_fld.value;
             current_restaurants_list.innerHTML = "";
             for(var i = 0; i < results.length; i++) {
-                
+                console.log(results[i]);
                 createMarker(results[i], map, infowindow);
                 
                 let rating_int = Math.round(results[i].rating);
