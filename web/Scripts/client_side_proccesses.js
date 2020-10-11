@@ -28,6 +28,7 @@ var drink_request_status_P = document.getElementById("drink_request_status_P");
 var drink_bidding_form = document.getElementById("drink_bidding_form");
 var drink_request_comments_div = document.getElementById("drink_request_comments_div");
 var PDR_details_pane = document.getElementById("PDR_details_pane");
+var cancel_update_drink_request_btn = document.getElementById("cancel_update_drink_request_btn");
 
 //In memory Object to hold processes data
 var publish_request_data = {
@@ -423,6 +424,13 @@ setInterval(()=>{
     }
 },1);
 
+cancel_update_drink_request_btn.addEventListener("click", (evnt)=>{
+    cancel_update_drink_request_btn.style.display = "none";
+    RP_update_request_btn.style.display = "none";
+    clean_slate_after_drink_request();
+    publish_request_data.rest_name = null;
+});
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Reaching out to endpoints for data
 
@@ -598,6 +606,7 @@ function start_update_drink_request(number, user_id, drink_request_id, date, tim
     
     RP_post_request_btn.style.display = "none";
     RP_update_request_btn.style.display = "flex";
+    cancel_update_drink_request_btn.style.display = "block";
     
     rest_locations_input_fld.value = rest_location;
     PDR_date_fld.value = date;
@@ -673,10 +682,13 @@ $(document).ready(()=>{
 setInterval(()=>{
     if(publish_request_data.rest_name === null){
         document.getElementById("RP_post_request_btn").style.display = "none";
+        cancel_update_drink_request_btn.style.display = "none";
         //document.getElementById("RP_post_request_btn").disabled = "true";
     }else{
-        if(document.getElementById("RP_update_request_btn").style.display === "none")
+        if(document.getElementById("RP_update_request_btn").style.display === "none"){
             document.getElementById("RP_post_request_btn").style.display = "flex";
+            cancel_update_drink_request_btn.style.display = "block";
+        }
         //document.getElementById("RP_post_request_btn").disabled = "false";
     }
 }, 1);

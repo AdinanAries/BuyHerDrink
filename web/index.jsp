@@ -574,7 +574,11 @@ and open the template in the editor.
                             <div id="PDR_details_pane">
                                 <p style="text-align: center; font-weight: bolder; font-size: 16px; padding: 10px 0;">Review and Post</p>
                                 <div style="margin: 5px; border: #37a0f5 1px solid; padding: 5px; background-color: #d4f3ff;">
-                                    <p id='RP_rest_name' style="font-weight: bolder; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
+                                    <div id="cancel_update_drink_request_btn" 
+                                         style="display: none; color: white; padding: 10px; margin: 5px 0; border-radius: 5px; background-color: crimson; text-align: center; font-size: 14px;">
+                                        Cancel Post
+                                    </div>
+                                    <p id='RP_rest_name' style="font-weight: bolder; margin-top: 10px; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
                                             <div style="margin: 5px 0;">
                                                 <div style="display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
