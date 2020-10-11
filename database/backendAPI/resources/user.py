@@ -14,7 +14,10 @@ from flask_jwt_extended import (
 )
 from models.user import UserModel
 from blacklist import BLACKLIST
-from flask import jsonify, make_response
+from flask import jsonify, make_response,request
+from dataclasses import dataclass
+import db
+import json
 # User class 
 
 _user_parser = reqparse.RequestParser()
@@ -81,7 +84,9 @@ class GetAll(Resource):
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         uid = get_jwt_identity()
         user = UserModel.find_by_id(uid)
-        return user.alljson(),200
+        #print(user.__dict__)
+        #print(vars(user))
+        return user.json(),200
 
 class Username(Resource):
     @classmethod
@@ -124,6 +129,74 @@ class UserLogout(Resource):
         unset_jwt_cookies(resp)
         return resp
 
+class EditUser(Resource):
+     # Edit a post- take form data-Remove POST in production maybe
+    @classmethod
+    @jwt_required
+    def post(cls):
+        print("Coming in from a post request")
+        data=request.form.to_dict()
+
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user=UserModel.find_by_id(uid)
+
+        # Editable fields
+        params={
+        'username':user.username,
+        'password':user.password,
+        'name':user.name}
+        if 'username' in data:
+            if UserModel.checkusername(data['username']):
+                if user.username != data['username']:
+                    return {"message":"Username Taken"},403
+
+
+        if user.user_id==uid:
+
+            for key in params:
+                if key in data:
+                    setattr(user,key,data[key])
+                else:
+                    setattr(user,key,params[key])
+                db.db.session.commit()
+        else:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        return user.json()
+    
+    @classmethod
+    @jwt_required
+    def put(cls):
+
+        data=request.form.to_dict()
+
+        jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        uid = get_jwt_identity()
+        user=UserModel.find_by_id(uid)
+
+        # Editable fields
+        params={
+        'username':user.username,
+        'password':user.password,
+        'name':user.name}
+        if 'username' in data:
+            if UserModel.checkusername(data['username']):
+                if user.username != data['username']:
+                    return {"message":"Username Taken"},403
+
+        if user.user_id==uid:
+
+            for key in params:
+                if key in data:
+                    setattr(user,key,data[key])
+                else:
+                    setattr(user,key,params[key])
+                db.db.session.commit()
+        else:
+            resp={"message":"Not Authoirized"}
+            return resp,403
+        return user.json()
 
 class TokenRefresh(Resource):
     @jwt_refresh_token_required

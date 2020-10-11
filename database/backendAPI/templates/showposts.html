@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<title>Edit User Details!</title>
+<head>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            System test. Non-production!
+        </p>
+    </div>
+    <table> </table>
+    
+    <table style="border:1px solid black" >
+        <thead>    
+        <tr>
+                <th>Post Title</th>
+                <th>Post Body</th>
+                <th>Start Date</th>
+                <th>End date</th>
+                <th>Active Status</th>
+                <th>Update Post</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{post['title']}}</td>
+                    <td>{{ post['body'] }}</td>
+        
+                    <td>{{ post['start_date'] }}</td>
+                    
+                    <td>{{ post['end_date'] }}</td>
+            
+                    <td>{{post['active']}}</td>
+                    <td>
+                        <form action="/edit/post/" method="POST">
+                            <input type="hidden"  name="post_id"  value="{{ post['post_id'] }}"required>
+                    
+                            <button type="submit">Update Post</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+
+
+
+
+</body>
