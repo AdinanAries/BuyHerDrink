@@ -33,6 +33,7 @@ and open the template in the editor.
         
         //Get user login jwt token 
         var userToken = JSON.parse(localStorage.getItem("BHDJWT"));
+        console.log(userToken);
         
         //function definition for displaying currently logged in user information
         function display_user_profile_info(username, gender, age, address){
