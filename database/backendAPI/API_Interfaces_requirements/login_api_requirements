@@ -12,7 +12,7 @@
     "status": "success",
     "token_id": "jwt_token_here",
     "refresh_id: "jwt_refresh_id_here",
-    "user_id": "user_id_generated_after_signup",
+    "user_id": "user_id_from_user_table",
     "user_name": "user_full_name_here",
     "age": "user_age_here",
     "area": "user address here"

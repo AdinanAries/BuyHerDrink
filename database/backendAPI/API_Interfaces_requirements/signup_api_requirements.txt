@@ -12,12 +12,12 @@
            -> street, town, city, country, zipcode
 8. password -> DB type (char(reasonable length))
 
-user table should contain these fields
-that should be collected after signup to complete
+user table should contain these fields to complete
 profile data
 
-8. interests -> DB values (Male, Female, Both)
-9. 4 fields to store 4 user pictures
+9. user_id: primary key, not null, auto incrment
+10. interests -> DB values (Male, Female, Both)
+11. 4 fields to store 4 user pictures
 
 
 **------------------------------------------------------------------------------**/
@@ -29,7 +29,7 @@ returned
     "status": "success",
     "token_id": "jwt_token_here",
     "refresh_id: "jwt_refresh_id_here",
-    "user_id": "user_id_generated_after_signup",
+    "user_id": "user_id_generated_at_signup",
     "user_name": "user_full_name_here",
     "age": "user_age_here",
     "area": "user address here"

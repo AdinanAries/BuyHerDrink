@@ -1,0 +1,57 @@
+***Post Drink Request Api Requirements***
+
+** sql table fields**
+    1. request_id -> (int, primary key, not null, auto incrment)
+    2. request_purpose -> char(reasonable lenght) eg. "DrinK", "Dinner", "Other"
+    3. place_id -> varchar(long string from google)
+                     -> "EicxMyBNYXJrZXQgU3QsIFdpbG1pbmd0b24sIE5DIDI4NDAxLCBVU0EiGhIYChQKEgnRTo6ixx-qiRHo_bbmkCm7ZRAN"
+    4. place_location -> char(reasonable length) eg. "1913 Bronxdale Ave, The Bronx"
+    5. place_name -> char(reasonable length)
+    6. place_rating -> (int values of 1 to 5)
+    7. place_photo_url -> varchar("long url string from google")
+                         -> eg. "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538"
+    8. place__icon -> char("long url string from google places")
+                       -> eg. "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png"
+    9. place_service_types -> char(comma separated string)
+                            -> eg. "restaurant, food, point of interest, establishment"
+    10. place_type_of_search -> char(possible values ("resturant","Bar", "Park", "Movie Theater","Museum", "Cafe"))
+    11. meeting_date -> date eg 09/04/2020
+    12. meeting_time ->  time eg 14:00
+    13. meeting_budget -> money eg. 5.00
+    14. added_message -> char(user added message of reasonable length)
+    15. user_id -> int(primary key of person posting drink request)
+    16. user_town -> char(reasonable lenght(town of person posting drink request eg. Brooklyn)) 
+
+
+**Api should be able to recieve object in the following format from client**
+     {
+        "request_id": "created on server",
+        "request_purpose": "Drink",
+        "place_id": "google place id",
+        "place_location": "1913 Bronxdale Ave, The Bronx",
+        "place_name": "from google api",
+        "place_rating": 5,
+        "place_photo": "url from google",
+        "place_icon": "from google places",
+        "place_service_types": "from google places",
+        "place_type_of_search": "eg. Restaurant",
+        "meeting_date": "09/04/2020",
+        "meeting_time": "14:00",
+        "meeting_budget": "5.00",
+        "added_message": "This is a place holder text for message to be added on for the drink request",
+        "requestee_id": "value from client",
+        "requestee_town: "town value from user table"
+    }
+
+**Api response can look something like this**
+*if success*
+{
+    "status": "success",
+    "msg": "Your drink request has been posted"
+}
+
+*if failed*
+{
+    "status": "fail",
+    "msg": "error message"
+}
