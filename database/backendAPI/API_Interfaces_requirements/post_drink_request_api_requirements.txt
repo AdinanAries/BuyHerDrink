@@ -4,7 +4,7 @@
     1. request_id -> (int, primary key, not null, auto incrment)
     2. request_purpose -> char(reasonable lenght) eg. "DrinK", "Dinner", "Other"
     3. place_id -> varchar(long string from google)
-                     -> "EicxMyBNYXJrZXQgU3QsIFdpbG1pbmd0b24sIE5DIDI4NDAxLCBVU0EiGhIYChQKEgnRTo6ixx-qiRHo_bbmkCm7ZRAN"
+                     -> eg. "EicxMyBNYXJrZXQgU3QsIFdpbG1pbmd0b24sIE5DIDI4NDAxLCBVU0EiGhIYChQKEgnRTo6ixx-qiRHo_bbmkCm7ZRAN"
     4. place_location -> char(reasonable length) eg. "1913 Bronxdale Ave, The Bronx"
     5. place_name -> char(reasonable length)
     6. place_rating -> (int values of 1 to 5)
@@ -24,7 +24,7 @@
 
 
 **Api should be able to recieve object in the following format from client**
-     {
+    {
         "request_id": "created on server",
         "request_purpose": "Drink",
         "place_id": "google place id",
