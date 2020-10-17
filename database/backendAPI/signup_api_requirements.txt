@@ -10,6 +10,7 @@
 7. address -> a string of format "260 Manning Blvd, Albany New York,  USA 12206"
            -> should be parsed on backend to get different address parts
            -> street, town, city, country, zipcode
+8. password -> DB type (char(reasonable length))
 
 user table should contain these fields
 that should be collected after signup to complete
@@ -18,8 +19,12 @@ profile data
 8. interests -> DB values (Male, Female, Both)
 9. 4 fields to store 4 user pictures
 
+
+**------------------------------------------------------------------------------**/
 **After signup the following object format can be
 returned
+
+**if success**
 {
     "status": "success",
     "token_id": "jwt_token_here",
@@ -27,6 +32,12 @@ returned
     "user_id": "user_id_generated_after_signup",
     "user_name": "user_full_name_here",
     "age": "user_age_here",
-    ""area": "user address here"
+    "area": "user address here"
+}
+
+**if failed**
+{
+    "status": "fail",
+    "msg": "error message here"
 }
 

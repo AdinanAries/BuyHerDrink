@@ -1,0 +1,25 @@
+***Login api requirements***
+
+**User provided inputs**
+
+1. Email
+2. Password
+
+**Json return from api
+
+**if success**
+{
+    "status": "success",
+    "token_id": "jwt_token_here",
+    "refresh_id: "jwt_refresh_id_here",
+    "user_id": "user_id_generated_after_signup",
+    "user_name": "user_full_name_here",
+    "age": "user_age_here",
+    "area": "user address here"
+}
+
+**if failed**
+{
+    "status": "fail",
+    "msg": "error message here"
+}
