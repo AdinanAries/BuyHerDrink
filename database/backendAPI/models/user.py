@@ -44,7 +44,15 @@ class UserModel(db.Model):
         self.interests=interests if interests else "Not Specified"
     def json(self):
         #ufixed={c.name:getattr(user,c.name) for c in user.__table__.columns}
-        return {"id": self.user_id, "username": self.username,"name":self.name,"email":self.email}
+        return {"id": self.user_id, 
+        "username": self.username,
+        "name":self.name,
+        "email":self.email,
+        "age":self.age,
+        "phone":self.phone,
+        "sex_orientation":self.sex_orientation,
+        "address":self.address,
+        "interests":self.interests}
     @classmethod
     def alljson(cls):
         return jsonify(cls.asdict())
