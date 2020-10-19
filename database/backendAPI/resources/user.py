@@ -38,7 +38,7 @@ _user_parser.add_argument(
     "age", type=int,  default=1,help="Enter your age please.", required=False
 )
 _user_parser.add_argument(
-    "phone", type=int,  default=1,help="Enter the phone number please.",required=False
+    "phone", type=str,  default="None",help="Enter the phone number please.",required=False
 )
 _user_parser.add_argument(
     "sex_orientation", type=str,  help="Enter an sexual orientation please.",default="Not specified"
@@ -169,7 +169,13 @@ class EditUser(Resource):
         params={
         'username':user.username,
         'password':user.password,
-        'name':user.name}
+        'name':user.name,
+        "email":user.email,
+        "age":user.age,
+        "phone":user.phone,
+        "sex_orientation":user.sex_orientation,
+        "address":user.address,
+        "interests":user.interests}
         if 'username' in data:
             if UserModel.checkusername(data['username']):
                 if user.username != data['username']:
@@ -203,7 +209,13 @@ class EditUser(Resource):
         params={
         'username':user.username,
         'password':user.password,
-        'name':user.name}
+        'name':user.name,
+        "email":self.email,
+        "age":self.age,
+        "phone":self.phone,
+        "sex_orientation":self.sex_orientation,
+        "address":self.address,
+        "interests":self.interests}
         if 'username' in data:
             if UserModel.checkusername(data['username']):
                 if user.username != data['username']:

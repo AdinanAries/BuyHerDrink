@@ -12,7 +12,7 @@ class UserModel(db.Model):
     # Mohammed requested additions
     email=db.Column(db.String(80))
     age=db.Column(db.Integer)
-    phone=db.Column(db.Integer)
+    phone=db.Column(db.String(11))
     sex_orientation=db.Column(db.String(80)) # sexual orientation -> DB values (striaght, gey, bi, prefer not to say)
     address=db.Column(db.String(500)) # a string of format "260 Manning Blvd, Albany New York,  USA 12206"
                                       # street, town, city, country, zipcode
@@ -27,7 +27,7 @@ class UserModel(db.Model):
         self.name=name
         self.email="Not Specified"
         self.age=0
-        self.phone=0
+        self.phone="None"
         self.sex_orientation="Not Specified"
         self.address="Not Specified"
         self.interests="Not Specified"
@@ -38,7 +38,7 @@ class UserModel(db.Model):
         self.name=name
         self.email=email if email else "Not Specified"
         self.age=age if age else 0
-        self.phone=phone if phone else 0
+        self.phone=phone if phone else "None"
         self.sex_orientation=sex_orientation if sex_orientation else "Not Specified"
         self.address=address if address else "Not Specified"
         self.interests=interests if interests else "Not Specified"
