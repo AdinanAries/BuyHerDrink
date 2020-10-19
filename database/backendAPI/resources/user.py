@@ -19,7 +19,7 @@ from dataclasses import dataclass
 import db
 import json
 # User class 
-
+# Used to Register a new User
 _user_parser = reqparse.RequestParser()
 _user_parser.add_argument(
     "username", type=str, required=True, help="This field cannot be blank."
@@ -30,15 +30,39 @@ _user_parser.add_argument(
 _user_parser.add_argument(
     "name", type=str,  help="Enter the name please.",default="Drink User"
 )
+# Mohamed requested additions
+_user_parser.add_argument(
+    "email", type=str,  help="Enter an email please.",default="Not specified"
+)
+_user_parser.add_argument(
+    "age", type=int,  default=1,help="Enter your age please.", required=False
+)
+_user_parser.add_argument(
+    "phone", type=int,  default=1,help="Enter the phone number please.",required=False
+)
+_user_parser.add_argument(
+    "sex_orientation", type=str,  help="Enter an sexual orientation please.",default="Not specified"
+)
+_user_parser.add_argument(
+    "address", type=str,  help="Enter an address please.",default="Not specified"
+)
+_user_parser.add_argument(
+    "interests", type=str,  help="Enter interests please.",default="Not specified"
+)
 class UserRegister(Resource):
     def post(self):
+        print("Gettting data")
         data = _user_parser.parse_args()
-
+        print("Preppuig")
         if UserModel.find_by_username(data["username"]):
-            return {"message": "A user with that username already exists."}, 400
-
-        user = UserModel(**data)
-        user.save_to_db()
+            return {"status":"Failed","message": "A user with that username already exists."}, 400
+        try:    
+            user = UserModel(**data)
+            user.save_to_db()
+        except Exception as e:
+            print(e)
+            print("Not sure of failure")
+            return {"message":e}, 403
 
         return {"message": "User created successfully."}, 201
 
@@ -106,7 +130,7 @@ class UserLogin(Resource):
             access_token = create_access_token(identity=user.user_id, fresh=True)
             refresh_token = create_refresh_token(user.user_id)
 
-            resp = jsonify({'login': True,'access_token':access_token,'refresh_token':refresh_token})
+            resp = jsonify({'login': True,'status':'Sucess','access_token':access_token,'refresh_token':refresh_token,'user_name':user.name,'age':user.age,'area':user.address})
             set_access_cookies(resp, access_token)
             set_refresh_cookies(resp, refresh_token)
             #cookies=[ ('Set-Cookie', 'access_token=%s'.format(access_token)), ('Set-Cookie', 'refresh_token=%s'.format(refresh_token)),'Set-Cookie' ]
