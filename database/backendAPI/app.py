@@ -7,7 +7,7 @@ from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogo
 from resources.posts import Post,AllPosts,PostRegister,EditPost
 import resources.testEditor as tester
 from flask import jsonify
-
+from werkzeug.utils import secure_filename
 from blacklist import BLACKLIST
 
 app = Flask(__name__)
@@ -25,6 +25,13 @@ app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = [
 app.config['JWT_SECRET_KEY']='TestingMagic'
 app.config['JWT_TOKEN_LOCATION'] = ['cookies','headers']
 app.config['JWT_COOKIE_CSRF_PROTECT'] = False
+
+# For uploading Images and such
+# UPLOAD_FOLDER = '/uploads'
+# ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# app = Flask(__name__)
+
 api = Api(app)
 
 @app.route('/')
