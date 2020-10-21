@@ -1,2 +1,33 @@
 ***Post drink offers api requirements***
 
+**sql table fields**
+    1. drink_offer_id -> char, not null, auto-increment, primary key
+    2. drink_request_id -> foreign key reference from drink request table
+    3. drink_offer_user_id -> foreign key reference from users table
+    4. drink_offer_msg -> char (reasonable lenght),
+    5. drink_offer_bid_amount -> money value
+    6. offer_date -> date
+    7. offer_time -> time
+
+**API interface must be able to accept object of the following format
+    {
+        "drink_request_id": "reference from drink request table",
+        "drink_offer_user_id": "person making the drink offer",
+        "drink_offer_msg": "message add by drink person making the offer",
+        "drink_offer_bid_amount": "amount specified by person or the orginal drink request amout if otherwise"
+    };
+
+
+**Clients expected object from API**
+*if success*
+{
+    "status": "success",
+    "msg": "Your drink request has been posted"
+}
+
+*if failed*
+{
+    "status": "fail",
+    "msg": "error message"
+}
+
