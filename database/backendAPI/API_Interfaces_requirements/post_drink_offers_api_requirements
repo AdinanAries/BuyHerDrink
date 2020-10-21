@@ -13,7 +13,7 @@
     {
         "drink_request_id": "reference from drink request table",
         "drink_offer_user_id": "person making the drink offer",
-        "drink_offer_msg": "message add by drink person making the offer",
+        "drink_offer_msg": "message added by person making the offer",
         "drink_offer_bid_amount": "amount specified by person or the orginal drink request amout if otherwise"
     };
 
