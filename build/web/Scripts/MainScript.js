@@ -158,22 +158,16 @@ var showExploreRestaurantsDiv = () => {
    search_page_start_page.style.display = "block";
 };
 
-var showFullProfileDiv = () => {
-    /*let UserProfileIframe = document.getElementById("UserProfileIframe");
-    let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
-    let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
-    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
-    let settingsDiv = document.getElementById("settingsDiv");*/
+var showFullProfileDiv = (name, age, gender, address, user_id) => {
+    //alert(user_id);
+    document.getElementById("SFP_name").innerText = name;
+    document.getElementById("SFP_age_gender").innerText = `${age} years, ${gender}`;
+    document.getElementById("SFP_address").innerText = address;
+    document.getElementById("SFP_email").innerText = 'email_from_db';
+    document.getElementById("SFP_tel").innerText = 'tel_from_db';
     
-    //SetWindowTitle("Profile Details");
-    //let fullProfileDiv = document.getElementById("viewFullProfileDiv");
-    //fullProfileDiv.style.display = "block";
     $( '#viewFullProfileDiv' ).toggle( 'up');
-    /*UserProfileIframe.style.display = "none";
-    DrinkRequestsIframe.style.display = "none";
-    DrinkOffersIframe.style.display = "none";
-    ExploreRestaurantsDiv.style.display = "none";
-    settingsDiv.style.display = "none";*/
+    
 };
 
 var showSettingsDiv = () => {

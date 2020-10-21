@@ -827,11 +827,11 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div style="display: flex; flex-direction: column; justify-content: flex-end; margin-left: 15px;">
-                                <p style="font-weight: bolder;">Ana Rodiriquez</p>
-                                <p style="font-size: 14px;">25 years, Female</p>
-                                <p style="font-size: 14px;">1332 davidson ave, Bronx, NY</p>
-                                <p style="font-size: 14px;">somebody@emailserver.com</p>
-                                <p style="font-size: 14px;">(1) 737 282 7721</p>
+                                <p id="SFP_name" style="font-weight: bolder;">Ana Rodiriquez</p>
+                                <p id="SFP_age_gender" style="font-size: 14px;">25 years, Female</p>
+                                <p id="SFP_address" style="font-size: 14px;">1332 davidson ave, Bronx, NY</p>
+                                <p id="SFP_email" style="font-size: 14px;">somebody@emailserver.com</p>
+                                <p id="SFP_tel" style="font-size: 14px;">(1) 737 282 7721</p>
                             </div>
                         </div>
                         <div style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
