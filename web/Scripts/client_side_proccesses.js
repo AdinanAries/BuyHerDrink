@@ -141,7 +141,7 @@ function render_drink_request_to_list(number, requestee_name, requestee_gender, 
         drink_request_comments_div.style.display = "none";
         
         render_each_selected_drink_request(restaurant, request_purpose, location, date, time, budget, message);
-        render_each_selected_drink_request_user(requestee_name, requestee_age, requestee_gender, requestee_address);
+        render_each_selected_drink_request_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address);
         set_current_drink_request_item("drink_request_"+number);
     });
     
@@ -173,7 +173,7 @@ function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_o
         declineOfferBtn.style.display = "block";
         
         render_each_selected_drink_offer(restaurant, request_purpose, location, date, time, budget, message);
-        render_each_selected_drink_offer_user(requestee_name, requestee_age, requestee_gender, requestee_address);
+        render_each_selected_drink_offer_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address);
         add_dinner_date_data(date_party_id, drink_offer_id);
         set_current_drink_offer_item("drink_offer_"+ drink_offer_counter);
         get_highest_bidder(drink_request_id);
@@ -232,7 +232,7 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
 }
 
 //this function renders each selected drink request's user info
-function render_each_selected_drink_request_user(name, age, gender, address){
+function render_each_selected_drink_request_user(user_id, name, age, gender, address){
     selected_drink_request_user_info.innerHTML = `
                     <div class="RequesteeCoverPhoto">
                         <span class="RequesteeOnlineStatusLed"></span>
@@ -247,7 +247,7 @@ function render_each_selected_drink_request_user(name, age, gender, address){
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','user_id');"
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}');"
                        style="margin: auto; color: white; background-color: tomato; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
@@ -292,7 +292,7 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
         
         document.getElementById("see_highest_bidder_btn").addEventListener("click", (evnt) => {
             render_each_selected_drink_offer(highest_bidder.rest_name, highest_bidder.request_purpose, highest_bidder.rest_location, highest_bidder.meeting_date, highest_bidder.meeting_time, highest_bidder.meeting_budget, highest_bidder.added_message);
-            render_each_selected_drink_offer_user(highest_bidder.bidder_name, highest_bidder.bidder_age, highest_bidder.bidder_gender, highest_bidder.bidder_address);
+            render_each_selected_drink_offer_user('userid',highest_bidder.bidder_name, highest_bidder.bidder_age, highest_bidder.bidder_gender, highest_bidder.bidder_address);
             document.getElementById("see_highest_bidder_btn").style.display = "none";
             //console.log("rendering highest bidder");
             
@@ -300,7 +300,7 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
 }
 
 //this function renders each selected drink offer's user info
-function render_each_selected_drink_offer_user(name, age, gender, address){
+function render_each_selected_drink_offer_user(user_id,name, age, gender, address){
     selected_drink_offer_user_info.innerHTML = `
                     <div class="OffererCoverPhoto">
                         <span class="OffererOnlineStatusLed"></span>
@@ -315,7 +315,7 @@ function render_each_selected_drink_offer_user(name, age, gender, address){
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','user_id');"
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}');"
                         style="margin: auto; color: white; background-color: cadetblue; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
@@ -481,7 +481,7 @@ function get_recent_ten_drink_request(city, town, country){
             //rendering first request as selected by default
             //user details
             render_each_selected_drink_request_user(
-                                                        request_list[0].requestee_name, request_list[0].requestee_age,
+                                                        'user_id',request_list[0].requestee_name, request_list[0].requestee_age,
                                                         request_list[0].requestee_gender, request_list[0].requestee_address
                                                     );
             //request details
@@ -517,7 +517,7 @@ function get_recent_ten_drink_offers(clientId){
             
             //rendering first offer as selected by default
             //user details
-            render_each_selected_drink_offer_user(offer_list[0].requestee_name, offer_list[0].requestee_age, offer_list[0].requestee_gender, offer_list[0].requestee_address);
+            render_each_selected_drink_offer_user('user_id',offer_list[0].requestee_name, offer_list[0].requestee_age, offer_list[0].requestee_gender, offer_list[0].requestee_address);
             //offer details
             render_each_selected_drink_offer(offer_list[0].rest_name, offer_list[0].request_purpose, offer_list[0].rest_location, offer_list[0].meeting_date, offer_list[0].meeting_time, offer_list[0].meeting_budget, offer_list[0].added_message);
             current_drink_offer_item = "drink_offer_0";
