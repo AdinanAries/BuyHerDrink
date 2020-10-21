@@ -378,10 +378,10 @@ function render_dinner_date(index, name, gender, age, address, rest_name, rest_l
             </div>
         `;
     document.getElementById("dates_list_container").appendChild(div);
+    $("#postpone_dinner_date_fld"+index).datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 }
 
 $("#PDR_date_fld").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
-$("#postpone_dinner_date_fld0").datepicker({ minDate: 0 }).datepicker("setDate", currentDate);
 
 setInterval(()=>{
     let picked_date = document.getElementById("PDR_date_fld").value;
