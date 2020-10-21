@@ -918,10 +918,16 @@ input[type=radio]:checked {
     padding-bottom: 10px;
 }
 .postpone_dinner_date_fld, .postpone_dinner_time_fld{
-    width: 145px;
-    padding: 5px;
+    width: 145px !important;
+    padding: 10px 5px !important;
     border: none;
     border-radius: 5px !important;
+    font-size: 15px;
+    text-align: center !important;
+}
+.postpone_dinner_time_fld{
+    background-color: white;
+    margin-left: 5px !important;
 }
 .postpone_dinner_date_btns, .cancel_dinner_date_btns, .delete_drink_request_btns{
     width: 300px;

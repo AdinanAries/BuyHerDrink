@@ -341,9 +341,34 @@ function render_dinner_date(index, name, gender, age, address, rest_name, rest_l
                     <div class='postpone_dinner_date_form' id="postpone_dinner_date_form${index}">
                         <p style="text-align: center; color: white; font-weight: bolder; margin: 5px 0;">Postpone this date</p>
                         <div style="display: flex; justify-content: center;">
-                            <div style="width: 300px;">
+                            <div style="width: 300px; display: flex;">
                                 <input style="margin-right: 5px;" id="postpone_dinner_date_fld${index}" class="postpone_dinner_date_fld" type="text" />
-                                <input class="postpone_dinner_time_fld" id="postpone_dinner_time_fld${index}" type="text" />
+                                <select class="postpone_dinner_time_fld" id="postpone_dinner_time_fld${index}">
+                                    <option>12:00am</option>
+                                    <option>1:00am</option>
+                                    <option>2:00am</option>
+                                    <option>3:00am</option>
+                                    <option>4:00am</option>
+                                    <option>5:00am</option>
+                                    <option>6:00am</option>
+                                    <option>7:00am</option>
+                                    <option>8:00am</option>
+                                    <option>9:00am</option>
+                                    <option>10:00am</option>
+                                    <option>11:00am</option>
+                                    <option>12:00pm</option>
+                                    <option>1:00pm</option>
+                                    <option>2:00pm</option>
+                                    <option>3:00pm</option>
+                                    <option>4:00pm</option>
+                                    <option>5:00pm</option>
+                                    <option>6:00pm</option>
+                                    <option>7:00pm</option>
+                                    <option>8:00pm</option>
+                                    <option>9:00pm</option>
+                                    <option>10:00pm</option>
+                                    <option>11:00pm</option>
+                                </select>
                             </div>
                         </div>
                         <div style="display: flex; justify-content: center; padding: 5px;">
