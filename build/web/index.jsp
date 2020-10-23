@@ -125,6 +125,7 @@ and open the template in the editor.
                                     </td>
                                     <td class="SettingName">
                                         Drink Offers
+                                        <sup id="menu_drink_offers_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                     </td>
                                 </tr>
                                 <tr id="DrinkRequestMenuOption">
@@ -164,7 +165,7 @@ and open the template in the editor.
                                         <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
                                     </td>
                                     <td class="SettingName">
-                                        Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                        Your Dates <sup id="menu_dinner_dates_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                     </td>
                                 </tr>
                             </tbody>
@@ -324,7 +325,7 @@ and open the template in the editor.
                                     <div class="popup_window_headers">
                                         <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
                                         <p style="font-weight: bolder; width: 100%; text-align: center; margin-top: -30px; margin-bottom: 5px;">Your Dates 
-                                            <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                            <sup id="dinner_dates_counter_of_dates" style="color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                         </p>
                                         <p style="font-weight: bolder; text-align: center; font-size: 14px; color: darkgray">&COPY; 2020, BuyMeDrink</p>
                                     </div>
@@ -387,13 +388,13 @@ and open the template in the editor.
                                             <td id="YourActivitiesBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
-                                                    Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                                    Your Dates <sup id="user_profile_page_dates_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                                 </p>
                                             </td>
                                             <td id="viewDrinkOffersBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-glass" aria-hidden="true"></i>
-                                                    Drink Offers <sup style="font-size: 14px; color: seagreen; margin-left: 5px; font-weight: bolder;">5</sup>
+                                                    Drink Offers <sup id="user_profile_page_offers_counter" style="font-size: 14px; color: seagreen; margin-left: 5px; font-weight: bolder;"></sup>
                                                 </p>
                                             </td>
                                         </tr>

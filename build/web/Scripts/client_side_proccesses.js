@@ -505,6 +505,12 @@ function get_recent_ten_drink_request(city, town, country){
     });
 }
 
+//this function shows the number of drink offers to user
+function display_number_of_drink_offers(number){
+    document.getElementById("menu_drink_offers_counter").innerText = number;
+    document.getElementById("user_profile_page_offers_counter").innerText = number;
+}
+
 //getting and rendering drink offers
 function get_recent_ten_drink_offers(clientId){
     $.ajax({
@@ -515,6 +521,8 @@ function get_recent_ten_drink_offers(clientId){
             //console.log(JSON.parse(result));
             let offer_list = JSON.parse(result);
             
+            //displaying dinner dates to user
+            display_number_of_drink_offers(offer_list.length);
             //rendering first offer as selected by default
             //user details
             render_each_selected_drink_offer_user('user_id',offer_list[0].requestee_name, offer_list[0].requestee_age, offer_list[0].requestee_gender, offer_list[0].requestee_address);
@@ -529,6 +537,12 @@ function get_recent_ten_drink_offers(clientId){
     });
 }
 
+//this function shows the number of dinner dates to user
+function display_number_of_dinner_dates(number){
+    document.getElementById("menu_dinner_dates_counter").innerText = number;
+    document.getElementById("dinner_dates_counter_of_dates").innerText = number;
+    document.getElementById("user_profile_page_dates_counter").innerText = number;
+}
 
 //getting and rendering dinner dates
 function get_recent_ten_dinner_dates(user_id){
@@ -538,6 +552,10 @@ function get_recent_ten_dinner_dates(user_id){
         data: "user_id="+user_id,
         success: function(result){
             let data = JSON.parse(result);
+            
+            //displaying dinner dates to user
+            display_number_of_dinner_dates(data.length);
+            
             data.forEach((item, index) => {
                 render_dinner_date(index, item.date_name, item.date_gender, item.date_age, item.date_address,
                                     item.rest_name, item.rest_location, item.meeting_date, 
