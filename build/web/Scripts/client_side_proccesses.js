@@ -10,6 +10,7 @@ var RP_rest_types = document.getElementById("RP_rest_types");
 var RP_post_request_btn = document.getElementById("RP_post_request_btn");
 var drink_requests_list = document.getElementById("drink_requests_list");
 var drink_offers_list = document.getElementById("drink_offers_list");
+var YourDrinkRequestsListDiv = document.getElementById("YourDrinkRequestsListDiv");
 var current_selected_drink_request = document.getElementById("current_selected_drink_request");
 var current_selected_drink_offer = document.getElementById("current_selected_drink_offer");
 var selected_drink_request_user_info = document.getElementById("selected_drink_request_user_info");
@@ -323,6 +324,77 @@ function render_each_selected_drink_offer_user(user_id,name, age, gender, addres
                 `;
 }
 
+//this function renders users posted own drink request
+function render_users_posted_own_drink_requests(index, user_id, drink_request_id, rest_name, rest_photo_url, rest_icon_url, rating_number, rest_address, rest_types, date, time, request_purpose, request_budget){
+    
+    let rating_int = rating_number;
+    let stars = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+    if(rating_int === 1){
+        stars="&#9733;&#9734;&#9734;&#9734;&#9734;";
+    }else if(rating_int === 2){
+        stars="&#9733;&#9733;&#9734;&#9734;&#9734;";
+    }else if(rating_int === 3){
+        stars="&#9733;&#9733;&#9733;&#9734;&#9734;";
+    }else if(rating_int === 4){
+        stars="&#9733;&#9733;&#9733;&#9733;&#9734;";
+    }else {
+        stars="&#9733;&#9733;&#9733;&#9733;&#9733;";
+    }
+    
+    var div = document.createElement("div");
+    div.innerHTML = `
+        <div class='each_your_drink_request_div' id="each_your_drink_request_div${index}">
+            <div>
+                <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>${rest_name}</p>
+                <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
+                    <img style='width: 100%; height: auto;' src='${rest_photo_url}' alt=''/>
+                </div>
+                <div style='padding: 5px;'>
+                    <p style='color: darkblue;'><img src="${rest_icon_url}" alt="" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">${stars}</span></p>
+                    <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>${rest_address}</span></span><p>
+
+                    <p style='color: darkgrey; padding-top: 10px;'>
+                        <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>${date}</span>
+                        <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>${time}</span>
+                    </p>
+                    <p style='color: darkgrey; padding-bottom: 10px;'>
+                        <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>${request_purpose}</span>
+                        <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>${request_budget}</span>
+                    </p>
+                    <p style="color: darkgrey;">types: </p>
+                    <p>${rest_types}</p>
+                </div>
+            </div>
+            <div class='delete_drink_request_form' id="delet_drink_request_form${index}">
+                <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
+                    <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
+                </p>
+
+                <div style="display: flex; justify-content: center; padding: 5px;">
+                    <div class="delete_drink_request_btns">
+                        <div class='delete_drink_request_yes_btn'>Yes</div>
+                        <div onclick="show_delete_request_form('${index}');" class='delete_drink_request_no_btn'>No</div>
+                    </div>
+                </div>
+            </div>
+            <div id='update_your_drink_request_list_btns${index}' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
+                <div 
+                      onclick='start_update_drink_request(${index},"${user_id}","${drink_request_id}","${date}","${time}","${rest_name}","${rest_types}",
+                                                            "${stars}", ${rating_int},"${rest_icon_url}","${request_purpose}","${rest_address}","${request_budget}",
+                                                            "${rest_photo_url}");' 
+                      class='your_drink_request_update_btn'>
+                    Update
+                </div>
+                <div onclick="show_delete_request_form('${index}');" class='your_drink_request_delete_btn'>
+                    Delete
+                </div>
+            </div>
+        </div>
+    `;
+    
+    YourDrinkRequestsListDiv.appendChild(div);
+}
+
 //this function renders dinner dates
 function render_dinner_date(index, name, gender, age, address, rest_name, rest_location, meeting_date, meeting_time, meeting_purpose, meeting_price){
     let div = document.createElement("div");
@@ -582,6 +654,31 @@ function get_highest_bidder(drink_request_id){
     document.getElementById("see_highest_bidder_btn").innerText = "see highest bidder: " + highest_bidder.meeting_budget;
 }
 
+
+//getting users own posted drink request
+function get_users_posted_own_drink_request(user_id){
+    
+    $.ajax({
+        type: "GET",
+        url: "./get_users_posted_own_drink_request",
+        data: "user_id="+user_id,
+        success: function(result){
+            let data = JSON.parse(result);
+            
+            data.forEach((data, index) => {
+                render_users_posted_own_drink_requests(index, data.user_id, data.drink_request_id, 
+                                                        data.rest_name, data.rest_photo_url, data.rest_icon_url, data.rating_number, 
+                                                        data.rest_address, data.rest_types, data.date, data.time, data.request_purpose, data.request_budget);
+            });
+            
+        }
+    });
+    
+   
+    
+}
+
+
 //functions that collect data for various processes
 //
 //This function sets the selected restaurant's data to data object to be published to the server
@@ -726,6 +823,7 @@ $(document).ready(()=>{
     get_recent_ten_drink_request("New York", "Bronx", "USA");
     get_recent_ten_drink_offers("jkdhise43hkjJJdjkI4h8dGN09lskw");
     get_recent_ten_dinner_dates("jkdhise43hkjJJdjkI4h8dGN09lskw");
+    get_users_posted_own_drink_request("jkdhise43hkjJJdjkI4h8dGN09lskw");
 });
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------

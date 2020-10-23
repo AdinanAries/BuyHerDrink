@@ -222,55 +222,8 @@ and open the template in the editor.
                                 </div>
                                 <div style='height: 70px;'></div>
                                 <div id='YourDrinkRequestsListDiv'>
-                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
-                                        <div>
-                                            <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
-                                            <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
-                                                <img style='width: 100%; height: auto;'
-                                                    src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538' />
-                                            </div>
-                                            <div style='padding: 5px;'>
-                                                <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
-
-                                                <p style='color: darkgrey; padding-top: 10px;'>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>2/2/2020</span>
-                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>10:00am</span>
-                                                </p>
-                                                <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                    <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$15.00</span>
-                                                </p>
-                                                <p style="color: darkgrey;">types: </p>
-                                                <p>restaurant, food, point of interest, establishment</p>
-                                            </div>
-                                        </div>
-                                        <div class='delete_drink_request_form' id="delet_drink_request_form0">
-                                            <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                                <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
-                                            </p>
-
-                                            <div style="display: flex; justify-content: center; padding: 5px;">
-                                                <div class="delete_drink_request_btns">
-                                                    <div class='delete_drink_request_yes_btn'>Yes</div>
-                                                    <div onclick="show_delete_request_form('0');" class='delete_drink_request_no_btn'>No</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                            <div 
-                                                onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
-                                                            "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
-                                                            "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538");' 
-                                                class='your_drink_request_update_btn'>
-                                                Update
-                                            </div>
-                                            <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
-                                                Delete
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div1">
+                                    
+                                    <!--div class='each_your_drink_request_div' id="each_your_drink_request_div1">
                                         <div>
                                             <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
                                             <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
@@ -315,7 +268,7 @@ and open the template in the editor.
                                                 Delete
                                             </div>
                                         </div>
-                                    </div>
+                                    </div-->
                                 </div>
                             </div>
                         </div>
