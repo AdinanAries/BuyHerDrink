@@ -10,7 +10,7 @@ instead a query parameter in the form "city=Manhattan&seed_id=drink_request_id" 
 
 Params Description and Purpose
 
-1. city -> this query parameter value shoul help pull drink request posted by people in the same area as current user
+1. city -> this query parameter value should help pull drink request posted by people in the same area as current user
         -> eg. city = New York
 
 2. seed_id -> when client reaches out to get drink requests, the max number acceptable should be only 10 drink requests
