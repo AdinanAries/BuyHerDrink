@@ -172,7 +172,11 @@ class PostRegister(Resource):
         _post_parser.add_argument(
         "town", type=str,  help="Enter the name please.",default="Not Speced")
         data = _post_parser.parse_args()
-
+        alldata=request.form.to_dict()
+        
+        if 'meeting_date' in alldata and 'meeting_time' in alldata:
+            data['start_date']=alldata['meeting_date']+" "+alldata['meeting_time']
+        
         print(data)
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         uid = get_jwt_identity()
@@ -182,5 +186,5 @@ class PostRegister(Resource):
 
         post = PostModel(**data)
         post.save_to_db()
-
+        
         return {"message": "Post created successfully."}, 201

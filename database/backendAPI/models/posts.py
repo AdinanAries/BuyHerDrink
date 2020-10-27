@@ -3,6 +3,7 @@ from db import db
 from models.user import UserModel
 from flask import jsonify
 import json as js
+from sqlalchemy import cast
 class PostModel(db.Model):
     __tablename__ = "posts"
     
@@ -63,7 +64,9 @@ class PostModel(db.Model):
         "place_photo":self.place_photo,
         "place_icon":self.place_icon,
         "place_service_type":self.place_service_type,
-        "requestee_town":self.town
+        "requestee_town":self.town,
+        "meeting_date":str(self.start_date.date()),
+        "meeting_time":str(self.start_date.time())
         }
         #post={c.name:getattr(self,c.name) for c in self.__table__.columns}
         return post
