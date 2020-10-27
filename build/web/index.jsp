@@ -125,6 +125,7 @@ and open the template in the editor.
                                     </td>
                                     <td class="SettingName">
                                         Drink Offers
+                                        <sup id="menu_drink_offers_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                     </td>
                                 </tr>
                                 <tr id="DrinkRequestMenuOption">
@@ -164,7 +165,7 @@ and open the template in the editor.
                                         <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
                                     </td>
                                     <td class="SettingName">
-                                        Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                        Your Dates <sup id="menu_dinner_dates_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                     </td>
                                 </tr>
                             </tbody>
@@ -221,100 +222,7 @@ and open the template in the editor.
                                 </div>
                                 <div style='height: 70px;'></div>
                                 <div id='YourDrinkRequestsListDiv'>
-                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div0">
-                                        <div>
-                                            <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
-                                            <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
-                                                <img style='width: 100%; height: auto;'
-                                                    src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538' />
-                                            </div>
-                                            <div style='padding: 5px;'>
-                                                <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
-
-                                                <p style='color: darkgrey; padding-top: 10px;'>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>2/2/2020</span>
-                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>10:00am</span>
-                                                </p>
-                                                <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                    <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$15.00</span>
-                                                </p>
-                                                <p style="color: darkgrey;">types: </p>
-                                                <p>restaurant, food, point of interest, establishment</p>
-                                            </div>
-                                        </div>
-                                        <div class='delete_drink_request_form' id="delet_drink_request_form0">
-                                            <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                                <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
-                                            </p>
-
-                                            <div style="display: flex; justify-content: center; padding: 5px;">
-                                                <div class="delete_drink_request_btns">
-                                                    <div class='delete_drink_request_yes_btn'>Yes</div>
-                                                    <div onclick="show_delete_request_form('0');" class='delete_drink_request_no_btn'>No</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id='update_your_drink_request_list_btns0' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                            <div 
-                                                onclick='start_update_drink_request(0,"user_id","drink_request_id","2/2/2020","10:00am","Cafe Bravo","restaurant, food, point of interest, establishment",
-                                                            "&#9733;&#9734;&#9734;&#9734;&#9734;", 1,"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png","Drink","9th Avenue, New York, NY, USA","$15.00",
-                                                            "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAAnp5jaz2fdkJUU9di0Ilug1EfhqN_X6OjlWOOZTCRwjEtOoE0GgcnQfQzv_Jg48dceXMpXHiMRRWitvWgBZLKb7C2EIL4EZHwU00-t1Lf8BmZ3ajXyKNeMu-rd4_nRlgCEhBawaUkUE5ufTXnFXs3eYUFGhQJSaw2n4GoS2y4QloO6MfrScdiaw&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=36538");' 
-                                                class='your_drink_request_update_btn'>
-                                                Update
-                                            </div>
-                                            <div onclick="show_delete_request_form('0');" class='your_drink_request_delete_btn'>
-                                                Delete
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class='each_your_drink_request_div' id="each_your_drink_request_div1">
-                                        <div>
-                                            <p style='font-weight: bolder; color: darkblue; margin-bottom: 10px; margin-left: 5px;'>Restaurant Name</p>
-                                            <div style='height: 200px; background-color: #D9DADC; margin-bottom: 10px; overflow: hidden;'>
-                                                <img style='width: 100%; height: auto;'
-                                                    src='https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sCmRaAAAALfEmoWwMDroJAku0GVwK-rWuKwFvgHYVs2CTlV8SSBW0RKsc3h6sfAmM19Dnve0Ki9xC6hKz2hyUEeSW5p5oAzc7vWkk1secdPs90VPIicUx_4noDCCx8Ipqp5xacljLEhBXejtuBJV-RnOpbXw6djCMGhQM4ScWIC9ysBFkXicMadvctBrdVA&3u1920&5m1&2e1&callback=none&key=AIzaSyAoltHbe0FsMkNbMCAbY5dRYBjxwkdSVQQ&token=54222' />
-                                            </div>
-                                            <div style='padding: 5px;'>
-                                                <p style='color: darkblue;'><img src="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png" style="width: 20px; height: auto;"/> <span style="font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
-                                                <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span><span>Restaurant location here</span></span><p>
-
-                                                <p style='color: darkgrey; padding-top: 10px;'>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
-                                                    <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span style='color: darkblue;'>12:00am</span>
-                                                </p>
-                                                <p style='color: darkgrey; padding-bottom: 10px;'>
-                                                    <i class="fa fa-glass" aria-hidden="true"></i> <span style='color: darkblue; margin-right: 15px;'>Drink</span>
-                                                    <i class="fa fa-money" aria-hidden="true"></i> <span style='color: darkblue;'>$5.00</span>
-                                                </p>
-                                                <p style="color: darkgrey;">types: </p>
-                                                <p>restaurant, food, point of interest, establishment</p>
-                                            </div>
-                                        </div>
-                                        <div class='delete_drink_request_form' id="delet_drink_request_form1">
-                                            <p style="text-align: center; color: #4d4d4d; font-size: 15px; font-weight: bolder; margin: 5px 0;">
-                                                <i class="fa fa-exclamation" style="color: red;"></i> Are you sure you want to remove this request
-                                            </p>
-
-                                            <div style="display: flex; justify-content: center; padding: 5px;">
-                                                <div class="delete_drink_request_btns">
-                                                    <div class='delete_drink_request_yes_btn'>Yes</div>
-                                                    <div onclick="show_delete_request_form('1');" class='delete_drink_request_no_btn'>No</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id='update_your_drink_request_list_btns1' class='update_your_drink_request_list_btns' style='display: flex; justify-content: space-between; padding: 5px;'>
-                                            <div 
-                                                onclick='start_update_drink_request(1,"user_id","drink_request_id","date", "time","rest_name","rest_location","price");'
-                                                class='your_drink_request_update_btn'>
-                                                Update
-                                            </div>
-                                            <div onclick="show_delete_request_form('1');" class='your_drink_request_delete_btn'>
-                                                Delete
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -324,7 +232,7 @@ and open the template in the editor.
                                     <div class="popup_window_headers">
                                         <img id="closeUserActivityBtn" class="RegularIcons_5" src="icons/icons8-close-window-50.png" alt=""/>
                                         <p style="font-weight: bolder; width: 100%; text-align: center; margin-top: -30px; margin-bottom: 5px;">Your Dates 
-                                            <sup style="color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                            <sup id="dinner_dates_counter_of_dates" style="color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                         </p>
                                         <p style="font-weight: bolder; text-align: center; font-size: 14px; color: darkgray">&COPY; 2020, BuyMeDrink</p>
                                     </div>
@@ -387,13 +295,13 @@ and open the template in the editor.
                                             <td id="YourActivitiesBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-list" aria-hidden="true"></i>
-                                                    Your Dates <sup style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;">3</sup>
+                                                    Your Dates <sup id="user_profile_page_dates_counter" style="font-size: 14px; color: #4CAF50; margin-left: 5px; font-weight: bolder;"></sup>
                                                 </p>
                                             </td>
                                             <td id="viewDrinkOffersBtn">
                                                 <p style="font-size: 14px; font-weight: bolder;">
                                                     <i style="margin-right: 5px; color: goldenrod;" class="fa fa-glass" aria-hidden="true"></i>
-                                                    Drink Offers <sup style="font-size: 14px; color: seagreen; margin-left: 5px; font-weight: bolder;">5</sup>
+                                                    Drink Offers <sup id="user_profile_page_offers_counter" style="font-size: 14px; color: seagreen; margin-left: 5px; font-weight: bolder;"></sup>
                                                 </p>
                                             </td>
                                         </tr>
@@ -827,11 +735,11 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div style="display: flex; flex-direction: column; justify-content: flex-end; margin-left: 15px;">
-                                <p style="font-weight: bolder;">Ana Rodiriquez</p>
-                                <p style="font-size: 14px;">25 years, Female</p>
-                                <p style="font-size: 14px;">1332 davidson ave, Bronx, NY</p>
-                                <p style="font-size: 14px;">somebody@emailserver.com</p>
-                                <p style="font-size: 14px;">(1) 737 282 7721</p>
+                                <p id="SFP_name" style="font-weight: bolder;">Ana Rodiriquez</p>
+                                <p id="SFP_age_gender" style="font-size: 14px;">25 years, Female</p>
+                                <p id="SFP_address" style="font-size: 14px;">1332 davidson ave, Bronx, NY</p>
+                                <p id="SFP_email" style="font-size: 14px;">somebody@emailserver.com</p>
+                                <p id="SFP_tel" style="font-size: 14px;">(1) 737 282 7721</p>
                             </div>
                         </div>
                         <div style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
