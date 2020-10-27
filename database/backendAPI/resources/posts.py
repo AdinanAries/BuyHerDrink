@@ -92,7 +92,15 @@ class EditPost(Resource):
         'body':post.body,
         'start_date':post.start_date,
         'end_date':post.end_date,
-        'active':post.active}
+        'active':post.active,
+        'location_id':post.location_id,
+        'place_location':post.place_location,
+        'place_name':post.place_name,
+        'place_rating':post.place_rating,
+        'place_photo':post.place_photo,
+        'place_icon':post.place_icon,
+        'place_service_type':post.place_service_type,
+        'town':post.town}
         
         if post.user_id==uid:
             # post.body=data['body'] if 'body' in data else post.body
@@ -142,7 +150,29 @@ class PostRegister(Resource):
 
         _post_parser.add_argument(
         "request_status", type=str,  help="Enter the name please.",default="Pending")
+
+        _post_parser.add_argument(
+        "location_id", type=str,  help="Enter the name please.",default="Not Speced")
+        _post_parser.add_argument(
+        "place_location", type=str,  help="Enter the name please.",default="Not Speced")
+        _post_parser.add_argument(
+        "place_name", type=str,  help="Enter the name please.",default="Not Speced")
+        _post_parser.add_argument(
+        "place_rating", type=int,  help="Enter the name please.",default=0)
+
+        _post_parser.add_argument(
+        "place_photo", type=str,  help="Enter the name please.",default="Not Speced")
+
+        _post_parser.add_argument(
+        "place_icon", type=str,  help="Enter the name please.",default="Not Speced")
+
+        _post_parser.add_argument(
+        "place_service_type", type=str,  help="Enter the name please.",default="Not Speced")
+
+        _post_parser.add_argument(
+        "town", type=str,  help="Enter the name please.",default="Not Speced")
         data = _post_parser.parse_args()
+
         print(data)
         jti = get_raw_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         uid = get_jwt_identity()
