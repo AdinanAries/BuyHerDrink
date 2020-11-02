@@ -61,7 +61,29 @@ Parameters: Must be logged in, user_id,-int
             start_date,end_date- both datetimes  
             active- bool but technically int,
             request_status-string(not required)
-
+            meeting_date: Format of YYY-MM-DD  
+            meeting_time: Format of HH:MM:SS  
+            place_name: Name of place  
+            place_location: My Place Location  
+            place_rating:Integer, 0 to 5  
+            place_photo:My Place Photo URL  
+            place_icon:My place icon URL  
+            place_service_type:Bar, Restaurant, etc  
+            town:My Town  
+            location_id:Google Place API URL  
+Sample:  
+    "title":DrinkyBoy  
+    "body":Mixer  
+    "meeting_date":2020-10-10  
+    "meeting_time":14:00:00  
+    "place_name":My Place Name  
+    "place_location":My Place Location  
+    "place_rating":5  
+    "place_photo":My Place Photo  
+    "place_icon":My place icon  
+    "place_service_type":My place  
+    "town":My Town  
+    "location_id":My Location ID  
 Result: Finds current logged in User ID and creates a post linked to them. 
 ## /edituser
 ### Method: POST(for browsers) and PUT(for Postman or other tools)
@@ -134,3 +156,4 @@ Results:
     Returns a form with all the fields of the post that can be changed by the user. 
     
     On submit, will send form via POST to /editpost
+
