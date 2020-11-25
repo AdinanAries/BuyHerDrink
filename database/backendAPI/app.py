@@ -7,7 +7,7 @@ from db import db,connection_string
 from ma import ma
 # Import resources aka API endpoints
 from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout,Username,GetAll,EditUser
-from resources.posts import Post,AllPosts,PostRegister,EditPost
+from resources.posts import Post,AllPosts,PostRegister,EditPost,FindNearbyPosts
 from resources.offers import OfferRegister
 
 import resources.testEditor as tester
@@ -138,6 +138,8 @@ api.add_resource(EditPost,"/editpost")
 api.add_resource(AllPosts,"/allposts")
 api.add_resource(PostRegister,"/createpost")
 api.add_resource(OfferRegister,"/createoffer")
+api.add_resource(FindNearbyPosts,"/findnearby")
+
 api.add_resource(tester.Test_UserEdit,"/editself")
 api.add_resource(tester.Test_EditPostList,"/editposts")
 api.add_resource(tester.Test_EditPost,"/edit/post/<int:post_id>","/edit/post/")
