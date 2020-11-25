@@ -147,7 +147,7 @@ Sample:
     "city":"Not Speced"  
     "offset":1  
  
-Result: Returns a JSON list of posts.  
+Result: Returns a JSON list of posts. On fail, does return error message.  
 
 
 # The following are samples of browser based methods of editing posts and users.
