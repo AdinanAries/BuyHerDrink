@@ -134,6 +134,22 @@ Sample:
     Note: User making the bid is set to the logged in User.  
 Result: Returns a JSON message on success or failure indicating such.  
 
+## /findnearby
+### Method: Post  
+Returns a list of posts that are availble to make requests on, based on city and offset.  
+
+Parameters: Must be logged in, parameters sent as URL parameters
+            city  int  *City looking for posts in*    
+            offset  string(500) *Offset(if 0, gives first 10, 1, gives second ten, etc*  
+            drink_offer_bid_amount  int *Amount offering user is putting up*  
+            
+Sample:  
+    "city":"Not Speced"  
+    "offset":1  
+ 
+Result: Returns a JSON list of posts.  
+
+
 # The following are samples of browser based methods of editing posts and users.
 
 ## /editself
