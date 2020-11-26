@@ -43,10 +43,10 @@ public class login_controller extends HttpServlet {
                 + "\"status\": \"success\","
                 + "\"token_id\": \"JWTi4Udhe4348HDkidksseiIK094Kw\","
                 + "\"user_id\": \"2eighkui3iwuhdo9478khdskj022\","
-                + "\"user_name\": \"Mohammed Adinan\","
+                + "\"user_name\": \"Mohammed Adinan Salifu Wumpini\","
                 + "\"gender\": \"male\","
                 + "\"age\": \"26\","
-                + "\"area\": \"General New York Area\""
+                + "\"area\": \"New York City Area\""
                 + "}";
         
         response.getWriter().print(json_res);

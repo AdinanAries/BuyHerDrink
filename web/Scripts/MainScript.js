@@ -191,6 +191,8 @@ var showSettingsDiv = () => {
 
 $("#SettingsMenuOption").click(function(event){
     showSettingsDiv();
+    document.getElementById("settingsDivUploadProfile").style.display = "none";
+    document.getElementById("settingsDivMainSettings").style.display = "block";
 });
 
 $("#editUserProfileIcon").click(function(){
@@ -202,6 +204,8 @@ $("#editUserProfileIcon").click(function(){
     let settingsDiv = document.getElementById("settingsDiv");
     
     SetWindowTitle("Settings");
+    document.getElementById("settingsDivUploadProfile").style.display = "none";
+    document.getElementById("settingsDivMainSettings").style.display = "block";
     
     settingsDiv.style.display = "block";
     UserProfileIframe.style.display = "none";
@@ -239,6 +243,37 @@ var closeGallery = () => {
     $("#galleryDiv").toggle("up");
 };
 
+var showUploadProfilePhotoPage = () => {
+    let UserProfileIframe = document.getElementById("UserProfileIframe");
+    let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
+    let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
+    let ExploreRestaurantsDiv = document.getElementById("ExploreRestaurantsDiv");
+    let fullProfileDiv = document.getElementById("viewFullProfileDiv");
+    let settingsDiv = document.getElementById("settingsDiv");
+    
+    SetWindowTitle("Settings");
+    
+    document.getElementById("settingsDivUploadProfile").style.display = "block";
+    document.getElementById("settingsDivMainSettings").style.display = "none";
+    
+    settingsDiv.style.display = "block";
+    UserProfileIframe.style.display = "none";
+    DrinkRequestsIframe.style.display = "none";
+    DrinkOffersIframe.style.display = "none";
+    ExploreRestaurantsDiv.style.display = "none";
+    fullProfileDiv.style.display = "none";
+};
+
+$("#mainSettingsDivProfilePicture").click((evnt)=>{
+    showUploadProfilePhotoPage();
+});
+$("#dashboardProfilePic").click((evnt)=>{
+    showUploadProfilePhotoPage();
+});
+$("#back_to_main_settings_div").click((evnt)=>{
+    document.getElementById("settingsDivUploadProfile").style.display = "none";
+    document.getElementById("settingsDivMainSettings").style.display = "block";
+});
 /*$(".viewFullProfileBtn").click(function(event){
     alert("clicked");
     showFullProfileDiv();

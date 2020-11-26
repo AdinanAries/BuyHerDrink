@@ -37,6 +37,11 @@ and open the template in the editor.
         
         //function definition for displaying currently logged in user information
         function display_user_profile_info(username, gender, age, address){
+            if(username.length > 22){
+                username = (username.substring(0,20) + "...");
+            }if(address.length > 22){
+                address = (address.substring(0,21) + "...");
+            }
             document.getElementById("user_info_name_display").innerText = username;
             document.getElementById("user_info_gender_display").innerText = gender;
             document.getElementById("user_info_age_display").innerText = age;
@@ -272,7 +277,7 @@ and open the template in the editor.
                         </div>
                         <div class='ProfileDetailsDiv'>
                             <div class="ProfileCover">
-                                <div class='ProfilePicture'>
+                                <div id="dashboardProfilePic" class='ProfilePicture'>
                                     <img src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
                                 </div>
                                 <div class="UserProfileSettingsIcons">
@@ -762,81 +767,106 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div id="settingsDiv">
-                        <p style="font-size: 20px; font-weight: bolder; margin: 10px; width: fit-content; float: right;">
-                            <img id="profilePic" src="Pictures/ProfilePicPlaceHolder.jpg" alt=""/>
-                        </p> 
-                        <div style="width: fit-content; margin: 10px;">
-                            <p style="font-size: 11px; color: red;">8 people viewed you.</p>
-                            <p style="font-size: 11px; color: red;">15 people viewed your drink requests.</p>
-                            <p style="font-size: 14px; color: blue;">Profile Score: 40%</p>
+                        <div  style="display: none;" id="settingsDivUploadProfile">
+                            
+                            <div id="back_to_main_settings_div">
+                                <i style="margin-right: 5px; font-size: 17px; color: white;" class="fa fa-long-arrow-left"></i>
+                                back to settings
+                            </div>
+                            
+                            <p style="margin: 15px 0; text-align: center; font-weight: bolder; color: #4d4d4d;">Change Profile Photo</p>
+                            <div id="uploadPhotoPictureDisplayArea"></div>
+                            <div id="settingsDivUploadProfileFormArea">
+                                <input id="settingsDivUploadProfileFileInput" type="file" />
+                                <div style="margin-bottom: 10px;">
+                                    <label for="settingsDivUploadProfileFileInput">
+                                        <div id="settingsDivUploadProfileChoosePhotoBtn">Choose Photo</div>
+                                    </label>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div class='settingsUploadPhotoBtn' style="background-color: #4CAF50;">Upload</div>
+                                    <div class='settingsUploadPhotoBtn' style="background-color: #EF3B3A;">Remove Profile</div>
+                                </div>
+                            </div>
                         </div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td style="background-color: #D9DADC;">
-                                        <div style="font-size: 14px;">Full Name: <br/>
-                                            <span><input type="text" value="Mohammed Adinan"/></span></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #ffffff;">
-                                        <div style="font-size: 14px;">Age: <br/>
-                                            <span><input type="text" value="26"/></span></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #D9DADC;">
-                                        <div style="font-size: 14px;">Sex: <br/>
-                                            <span>
-                                                <select style="max-width: 200px;"> 
-                                                    <option>Male</option> 
-                                                    <option>Female</option>
-                                                    <option>Prefer not to say</option>
-                                                </select>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #ffffff;">
-                                        <p class='status_1'>your email is not verified</p>
-                                        <div style="font-size: 14px;">Email: <br/>
-                                            <span><input type="text" value="m.adinan@yahoo.com"/></span></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #D9DADC;">
-                                        <div style="font-size: 14px;">Phone: <br/>
-                                            <span><input type="text" value="8482481118"/></span></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #ffffff;">
-                                        <div style="font-size: 14px;">Search Radius: <br/>
-                                            <span><sub>0</sub><input style="background: none; width: 80%; height: 0; border: 1px solid black; margin-bottom: 15px;" type="range" id="points" name="points" min="0" max="100"><sub>100%</sub></span></div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #D9DADC;">
-                                        <div style="font-size: 14px;">Interests: <br/>
-                                            <span>
-                                                <select style="max-width: 200px;"> 
-                                                    <option>Male</option> 
-                                                    <option>Female</option>
-                                                    <option>Both</option>
-                                                </select>
-                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div id="logout_btn" style="width: fit-content; background-color: #ff9c9c; padding: 10px; padding-bottom: 5px; margin: 10px; border-radius: 4px;">
-                            <img src="icons/icons8-sign-out-50.png" style="width: 25px; height: 25px;" alt=""/>
-                            <sup style="font-size: 14px;">Signout</sup>
+                        <div id="settingsDivMainSettings">
+                            <div style="display: flex; justify-content: space-between; padding: 15px 10px;">
+                                <div style="height: 70px; width: 70px; border-radius: 100%; overflow: hidden;">
+                                    <img style="width: 70px; height: auto; min-height: 70px;" id="mainSettingsDivProfilePicture" src="Pictures/ProfilePicPlaceHolder.jpg" alt=""/>
+                                </div> 
+                                <div style="width: fit-content; margin: 10px;">
+                                    <p style="font-size: 11px; color: red;">8 people viewed you.</p>
+                                    <p style="font-size: 11px; color: red;">15 people viewed your drink requests.</p>
+                                    <p style="font-size: 14px; color: blue;">Profile Score: 40%</p>
+                                </div>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="background-color: #D9DADC;">
+                                            <div style="font-size: 14px;">Full Name: <br/>
+                                                <span><input type="text" value="Mohammed Adinan"/></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ffffff;">
+                                            <div style="font-size: 14px;">Age: <br/>
+                                                <span><input type="text" value="26"/></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #D9DADC;">
+                                            <div style="font-size: 14px;">Sex: <br/>
+                                                <span>
+                                                    <select style="max-width: 200px;"> 
+                                                        <option>Male</option> 
+                                                        <option>Female</option>
+                                                        <option>Prefer not to say</option>
+                                                    </select>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ffffff;">
+                                            <p class='status_1'>your email is not verified</p>
+                                            <div style="font-size: 14px;">Email: <br/>
+                                                <span><input type="text" value="m.adinan@yahoo.com"/></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #D9DADC;">
+                                            <div style="font-size: 14px;">Phone: <br/>
+                                                <span><input type="text" value="8482481118"/></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ffffff;">
+                                            <div style="font-size: 14px;">Search Radius: <br/>
+                                                <span><sub>0</sub><input style="background: none; width: 80%; height: 0; border: 1px solid black; margin-bottom: 15px;" type="range" id="points" name="points" min="0" max="100"><sub>100%</sub></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #D9DADC;">
+                                            <div style="font-size: 14px;">Interests: <br/>
+                                                <span>
+                                                    <select style="max-width: 200px;"> 
+                                                        <option>Male</option> 
+                                                        <option>Female</option>
+                                                        <option>Both</option>
+                                                    </select>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="logout_btn" style="width: fit-content; background-color: #ff9c9c; padding: 10px; padding-bottom: 5px; margin: 10px; border-radius: 4px;">
+                                <img src="icons/icons8-sign-out-50.png" style="width: 25px; height: 25px;" alt=""/>
+                                <sup style="font-size: 14px;">Signout</sup>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
                 <div></div>
                 <div class='Footer'><p style='color: white; font-weight: bolder; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>

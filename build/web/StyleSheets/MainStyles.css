@@ -696,7 +696,52 @@ input[type=radio]:checked {
     background: none;
     font-size: 20px;
 }
-
+#settingsDivUploadProfile{
+    height: 100%;
+    padding: 10px;
+}
+#uploadPhotoPictureDisplayArea{
+    min-height: 400px;
+    background-color: #eee;
+    background-image: url(../Pictures/ProfilePicPlaceHolder.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#back_to_main_settings_div{
+    padding: 10px;
+    max-width: 180px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #37a0f5;
+    font-weight: bolder;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+#settingsDivUploadProfileFormArea{
+    padding: 10px 0;
+}
+#settingsDivUploadProfileFileInput{
+    display: none;
+}
+#settingsDivUploadProfileChoosePhotoBtn{
+    padding: 10px 0;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    background-color: #98b3ff;
+    border-radius: 4px;
+    font-weight: bolder;
+}
+.settingsUploadPhotoBtn{
+    padding: 10px; 
+    min-width: 120px;
+    width: 44%;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bolder;
+}
 #ExploreRestaurantsDiv table tbody tr td{
     padding-top: 10px;
     padding-bottom: 10px;
