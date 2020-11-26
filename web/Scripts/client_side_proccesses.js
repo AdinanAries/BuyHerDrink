@@ -197,8 +197,8 @@ function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_o
 function render_each_selected_drink_request(restaurant, purpose, location, date, time, budget, message){
     current_selected_drink_request.innerHTML = `
                         <div style="padding: 3px; padding-top: 0;">
-                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Request Details</p>
-                            <p style="font-size: 14px;">
+                            <p style="font-size: 14px; font-weight: bolder; margin-bottom: 10px; text-align: center; color: navy;">Request Details</p>
+                            <p style="font-size: 14px; margin-bottom: 10px;">
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${restaurant}</span>
                                 - <span style="color: tomato; font-size: 14px;">${purpose}</span><br/>
@@ -213,7 +213,7 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
                                style="color: white; font-size: 14px; border-radius: 4px; padding: 10px; background-color: darkslateblue; text-align: center; margin: 5px 0;">beat current bid: $50.00</p>
                         </div>
                         <div style="padding: 10px;">
-                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
+                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy; margin-bottom: 10px;">Added Message</p>
                             <p style="font-size: 14px;">
                                 ${message}
                             </p>
@@ -242,7 +242,7 @@ function render_each_selected_drink_request_user(user_id, name, age, gender, add
                             <img src="Pictures/TestPhotos/1.jpg" alt=""/>
                         </div>
                     </div>
-                    <div class="RequesteeInfoDiv">
+                    <div style="padding: 10px 0;" class="RequesteeInfoDiv">
                         <p style="font-weight: bolder;">${name}</p>
                         <p>${age} years, ${gender}</p>
                         <p>${address}</p>
@@ -260,8 +260,8 @@ function render_each_selected_drink_request_user(user_id, name, age, gender, add
 function render_each_selected_drink_offer(restaurant, purpose, location, date, time, budget, message){
     current_selected_drink_offer.innerHTML = `
                         <div style="padding: 3px; padding-top: 0;">
-                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Offer Details</p>
-                            <p style="font-size: 14px;">
+                            <p style="font-size: 14px; font-weight: bolder; margin-bottom: 10px;text-align: center; color: navy;">Offer Details</p>
+                            <p style="font-size: 14px; margin-bottom: 10px;">
                                 <img style="margin-right: 15px;" class="RegularIcons_2" src="icons/icons8-restaurant-table-50 (1).png" alt=""/>
                                 <span style="color: tomato; font-size: 14px;">${restaurant}</span>
                                 - <span style="color: tomato; font-size: 14px;">${purpose}</span><br/>
@@ -280,7 +280,7 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
                             </p>
                         </div>
                         <div style="padding: 10px;">
-                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy;">Added Message</p>
+                            <p style="font-size: 14px; font-weight: bolder; text-align: center; color: navy; margin-bottom: 10px;">Added Message</p>
                             <p style="font-size: 14px;">
                                 ${message}
                             </p>
@@ -310,7 +310,7 @@ function render_each_selected_drink_offer_user(user_id,name, age, gender, addres
                             <img src="Pictures/TestPhotos/1.jpg" alt=""/>
                         </div>
                     </div>
-                    <div class="OffererInfoDiv">
+                    <div style="padding: 10px 0;" class="OffererInfoDiv">
                         <p style="font-weight: bolder;">${name}</p>
                         <p>${age} years, ${gender}</p>
                         <p>${address}</p>

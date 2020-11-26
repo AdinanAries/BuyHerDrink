@@ -530,7 +530,7 @@ and open the template in the editor.
                             </div>
                             
                             <div class="RequesteeAdditionalMessage">
-                                <div id="current_selected_drink_request">
+                                <div style="padding: 15px 0;" id="current_selected_drink_request">
                                     
                                 </div>
                                 
@@ -585,7 +585,7 @@ and open the template in the editor.
                                 
                             </div>
                             
-                            <p id='available_requests_p' style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Requests</p>
+                            <p id='available_requests_p' style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 15px; margin-bottom: 10px;">Available Requests</p>
                             <div class="DrinkRequesteesListDiv">
                                 <p id='no_available_drink_request_msg' style='margin-top: 20px; margin-bottom: 80px; text-align: center;'>
                                     <i class='fa fa-exclamation-triangle' style='color: orange'></i> there are no requests at this time
@@ -608,7 +608,7 @@ and open the template in the editor.
                             </div>
                             
                             <div class="OffererAdditionalMessage">
-                                <div id="current_selected_drink_offer">
+                                <div style="padding: 15px 0;" id="current_selected_drink_offer">
                                     
                                 </div>
                                 
@@ -627,7 +627,7 @@ and open the template in the editor.
                                 
                             </div>
                             
-                            <p id='available_offers_p' style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 5px;">Available Offers</p>
+                            <p id='available_offers_p' style="text-align: center; font-size: 14px; font-weight: bolder; color: darkblue; margin-top: 15px; margin-bottom: 10px;">Available Offers</p>
                             <div class="DrinkOfferersListDiv">
                                 <p id='no_available_drink_offers_msg' style='margin-top: 20px; margin-bottom: 80px; text-align: center;'>
                                     <i class='fa fa-exclamation-triangle' style='color: orange'></i> you don't have any offer at this time
