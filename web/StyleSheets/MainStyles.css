@@ -331,7 +331,7 @@ span, p, option{
     width: calc(100% - 170px);
     /*float: left;*/
     background: none;
-    height: 31px;
+    padding: 10px;
 }
 #main_search_types{
     width: 100px;
