@@ -386,8 +386,7 @@ span, p, option{
     background-color: pink;
 }
 .ActivitiesAndDrinkOffersBtn #viewDrinkOffersBtn{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 10px 0;
     text-align: center;
     font-size: 15px;
     width: 50%;

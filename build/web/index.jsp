@@ -315,8 +315,8 @@ and open the template in the editor.
                             </div>
                         </div>
                         <div class='PublishRequestDiv'>
-                            <p style="text-align: center; font-weight: bolder; margin-top: 10px; font-size: 16px;">Publish Drink Request Below</p>
-                            <p style="margin: 10px 5px; font-size: 15px; color: darkgray; text-align: center;">
+                            <p style="text-align: center; font-weight: bolder; margin-top: 15px; font-size: 16px;">Publish Drink Request Below</p>
+                            <p style="margin: 10px 5px; margin-bottom: 15px; font-size: 15px; color: darkgray; text-align: center;">
                                     A drink request lets you reach out for potential date.
                                     Other people will see your drink request and make an offer.
                                     Then its up to you to either accept or decline their offer.
@@ -333,8 +333,8 @@ and open the template in the editor.
                                             </td>
                                             <td>
                                                 <div>
-                                                    <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Choose a type of place</p>
-                                                    <select id="add_place_search_types">
+                                                    <p style="font-size: 15px; color: darkblue; font-weight: bolder; margin-top: 5px;">Choose a type of place</p>
+                                                    <select style="padding: 10px 0;" id="add_place_search_types">
                                                         <option value="restaurant">
                                                             Restaurant
                                                         </option>
@@ -364,18 +364,18 @@ and open the template in the editor.
                                             </td>
                                             <td>
                                               <div class="RestaurantListPopup" style="width: 100%">
-                                                  <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search places by location:</p>
-                                                <input id="rest_locations_input_fld" onclick="hideRestaurantPopupListByAddress();" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
+                                                  <p style="font-size: 15px; color: darkblue; font-weight: bolder; margin-top: 5px;">Search places by location:</p>
+                                                <input id="rest_locations_input_fld" onclick="hideRestaurantPopupListByAddress();" style="padding: 10px 0 !important;" type="text"  placeholder="resturant/bar location" name="BarAddress" /><br />
                                                 <div class="RestaurantListDiv" id="RestaurantList" style="width: 100%;">
                                                     <p style="text-align: right; padding-right: 10px;"><span onclick="hideRestaurantPopupListByAddress();" style="color: white; background-color: red; padding: 0 10px; border-radius: 4px;">x</span></p>
-                                                    <p style="color: seagreen; font-size: 14px; margin: 0 5px; padding: 5px 0; border-bottom: cadetblue 1px solid;"><i class="fa fa-map-marker" style="color: black; font-size: 20px;" aria-hidden="true"></i> <span id="rests_list_location_display">2034 murthal ave. Brookly, NY 1203</span></p>
+                                                    <p style="color: seagreen; font-size: 14px; margin: 0 5px; padding: 5px 0; padding-bottom: 10px; border-bottom: cadetblue 1px solid;"><i class="fa fa-map-marker" style="color: black; font-size: 20px;" aria-hidden="true"></i> <span id="rests_list_location_display">2034 murthal ave. Brookly, NY 1203</span></p>
                                                     <div id="rest_list_scroll_div" style="height: 300px; overflow-y: auto; background-color: #98d7ff; margin: 0 5px;">
                                                         <ul id="current_restaurants_list" style="text-align: left; margin: 5px 0;">
 
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <button id="search_restaurants_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Browse Restaurants</button>
+                                                <button id="search_restaurants_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 10px; background-color: steelblue; font-weight: bolder; color: white; border-radius: 4px;">Browse Restaurants</button>
                                               </div>
                                                 
                                             </td>
@@ -386,9 +386,9 @@ and open the template in the editor.
                                                 <i style="font-size: 22px; margin: 0 10px;" class="fa fa-map-marker" aria-hidden="true"></i>
                                             </td>
                                             <td>
-                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Search place by name:</p>
-                                                <input id="search_rest_by_name_fld" onclick="hideRestaurantPopupListByAddress();" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
-                                                <button id="ABR_confirm_restaurant_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 5px; background-color: #98d7ff; color: red; border-radius: 4px;">Confirm Restaurant</button>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder; margin-top: 5px;">Search place by name:</p>
+                                                <input id="search_rest_by_name_fld" onclick="hideRestaurantPopupListByAddress();" style="padding: 10px 0 !important;" type="text" name="Bar"  placeholder="resturant/bar name" /><br />
+                                                <button id="ABR_confirm_restaurant_btn" onclick="showRestaurantsPopupListByAddress()" style="font-size: 14px; bottom: 5px; width: fit-content; border: 0; padding: 10px; background-color: steelblue; font-weight: bolder; color: white; border-radius: 4px;">Confirm Restaurant</button>
                                             </td>
                                         </tr>
                                         <tr style="background-color: #afe9ff;" onclick="hideRestaurantPopupListByAddress();">
@@ -397,10 +397,10 @@ and open the template in the editor.
                                                 <i style="font-size: 22px; margin: 0 10px;" class="fa fa-calendar" aria-hidden="true"></i>
                                             </td>
                                             <td>
-                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Add date and time:</p>
-                                                <input id="PDR_date_fld" style="width: 100px; margin-right: 10px;" type="text" placeholder="add date here" />
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder; margin-top: 5px;">Add date and time:</p>
+                                                <input id="PDR_date_fld" style="width: 100px; margin-right: 10px; padding: 10px 0 !important;" type="text" placeholder="add date here" />
                                                 -
-                                                <select id='PDR_time_fld'>
+                                                <select id='PDR_time_fld' style="padding: 10px 0 !important;">
                                                     <option>12:00am</option>
                                                     <option>1:00am</option>
                                                     <option>2:00am</option>
@@ -434,8 +434,8 @@ and open the template in the editor.
                                                 <i style="font-size: 22px; margin: 0 10px;" class="fa fa-money" aria-hidden="true"></i>
                                             </td>
                                             <td>
-                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder;">Put a price on your date:</p>
-                                                <select id='PDR_price_fld'>
+                                                <p style="font-size: 15px; color: darkblue; font-weight: bolder; margin-top: 5px;">Put a price on your date:</p>
+                                                <select id='PDR_price_fld' style="padding: 10px 0 !important;">
                                                     <option>$5.00</option>
                                                     <option>$10.00</option>
                                                     <option>$15.00</option>
@@ -468,14 +468,14 @@ and open the template in the editor.
                                 </table>
                                       </fieldset>
 
-                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px; padding: 10px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Purpose</legend>
                                         <input checked="true" id="DrinkOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-right: 5px;" /><label style="font-size: 14px; margin-right: 10px;" for="DrinkOnlyPurpose">Drink</label> |
                                         <input id="DinnerOnlyPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;"/><label style="font-size: 14px; margin-right: 10px;" for="DinnerOnlyPurpose">Dinner</label> |
                                         <input id="DrinkAndDinnerPurpose" name="MeetingPurpose" type="checkbox" style="margin-left: 10px; margin-right: 5px;" /><label style="font-size: 14px;" for="DrinkAndDinnerPurpose">Other</label>
                                       </fieldset>
 
-                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px;" onclick="hideRestaurantPopupListByAddress();">
+                                      <fieldset style="border: 1px solid pink; margin: 5px; font-size: 15px; padding: 10px;" onclick="hideRestaurantPopupListByAddress();">
                                         <legend style="font-size: 15px; font-weight: bolder;">Add Notes</legend>
                                         <center><textarea id='PDR_notes_fld' style="width: 95%; height: 70px;">
 
