@@ -114,6 +114,46 @@ class EditPost(Resource):
             resp={"message":"Not Authoirized"}
             return resp,403
         return post.json()
+    
+class FindNearbyPosts(Resource):
+    # Takes city and offset, using defaults if not set
+    @classmethod
+    @jwt_required
+    def get(cls):
+        try:
+            city=request.args.get('city')
+            if city is None:
+                raise Exception
+            
+        except Exception as e:
+            return {"status":"Failed","message":"City not set"},400
+        try:
+            old_offset=request.args.get('offset')
+            if old_offset is None:
+                raise Exception
+        except Exception as e:
+            old_offset=-1
+        try:
+            old_offset=int(old_offset)
+        except Exception as e:
+            {"status":"Failed","message":"Number not supplied"},400
+        new_offset=int(old_offset) + 1 #To get groups of 10
+
+        uid = get_jwt_identity()
+        # town,_id,qry_offset=0
+        try:
+            posts=[post.json() for post in PostModel.find_nearby_posts(city,old_offset) if post.user_id != uid]
+            # old_offset=old_offset*10
+            
+            posts=posts[:10]
+
+        except Exception as e:
+            print(e)
+            return {"status":"Failed","message":"Unknown Error occurred"}
+
+        return {"seed":new_offset,"posts":posts}
+
+
 
 class PostRegister(Resource):
  

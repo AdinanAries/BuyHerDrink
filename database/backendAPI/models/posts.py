@@ -11,7 +11,7 @@ class PostModel(db.Model):
     user_id=db.Column(db.Integer,db.ForeignKey("users.user_id"))#Foreign Key to users
     title=db.Column(db.String(1000))
     body=db.Column(db.Text)
-    start_date=db.Column(db.DateTime)
+    start_date=db.Column(db.DateTime) # Datetime for when date should start
     end_date=db.Column(db.DateTime)
     active=db.Column(db.Integer)
     request_status=db.Column(db.Text)
@@ -88,5 +88,9 @@ class PostModel(db.Model):
     def find_all_posts(cls):
         print("Getting all posts")
         return cls.query.all()
-
-    
+    # Find Posts you can make offers on
+    @classmethod
+    def find_nearby_posts(cls,town,qry_offset=0):
+        query=cls.query.filter_by(town=town).offset(qry_offset*10)
+        #query=cls.query.filter_by(town=town).all()
+        return query

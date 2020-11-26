@@ -28,7 +28,7 @@ Result: Shows if you are logged in as the user.
 ##  /login
 ### Method: POST  
 Parameters: username,password
-Result: Logs user in by returning a cookie with access and refresh tokens
+Result: Logs user in by returning a cookie with access and refresh tokens. Cookie is used to authenticate users.
 
 ## /logout  
 ### Method: POST  
@@ -117,6 +117,38 @@ Results:
     If all is well, returns the new post as a JSON object with code 200  
 Additional Information:  
     User Id and Post Id cannot be set by user, and is not accessible via this endpoint.
+
+
+## /createoffer
+### Method: Post
+Parameters: Must be logged in, parameters sent as form data  
+            drink_request_id  int  *Request offer made on*    
+            drink_offer_msg  string(500) *Message for the poster*  
+            drink_offer_bid_amount  int *Amount offering user is putting up*  
+            
+Sample:  
+    "drink_request_id":2  
+    "drink_offer_msg": "I want to meet up!"  
+    "drink_offer_bid_amount": 42    
+
+    Note: User making the bid is set to the logged in User.  
+Result: Returns a JSON message on success or failure indicating such.  
+
+## /findnearby
+### Method: Post  
+Returns a list of posts that are availble to make requests on, based on city and offset.  
+
+Parameters: Must be logged in, parameters sent as URL parameters
+            city  int  *City looking for posts in*    
+            offset  string(500) *Offset(if 0, gives first 10, 1, gives second ten, etc*  
+            drink_offer_bid_amount  int *Amount offering user is putting up*  
+            
+Sample:  
+    "city":"Not Speced"  
+    "offset":1  
+ 
+Result: Returns a JSON list of posts. On fail, does return error message.  
+
 
 # The following are samples of browser based methods of editing posts and users.
 

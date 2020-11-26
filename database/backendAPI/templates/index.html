@@ -35,8 +35,8 @@
         <label for="phone"><b>Phone</b></label>
         <input type="number" placeholder="Enter Phone" name="phone" value="0">
         
-        <label for="sex_orientation"><b>Sexual Orientation</b></label>
-        <input type="text" placeholder="Enter Sexual Orientation" name="sex_orientation">
+        <label for="sex_orientation"><b>Sex</b></label>
+        <input type="text" placeholder="Enter Sex" name="sex_orientation">
 
         <label for="address"><b>Address</b></label>
         <input type="text" placeholder="Enter Address" name="address">
@@ -65,6 +65,13 @@
         <button type="submit">Get User Posts</button>
     </form>
 
+    <p>Get posts by location</p>
+    <form action="/findnearby" method="GET">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter City, Town, etc" name="city" required>
+
+        <button type="submit">Get User Posts</button>
+    </form>
     <p>Edit posts made by user</p>
     <form action="/editposts" method="GET">
 
