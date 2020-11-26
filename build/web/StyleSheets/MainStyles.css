@@ -709,9 +709,9 @@ input[type=radio]:checked {
 }
 #back_to_main_settings_div{
     padding: 10px;
-    max-width: 180px;
+    max-width: 150px;
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     background-color: #37a0f5;
     font-weight: bolder;
     border-radius: 4px;

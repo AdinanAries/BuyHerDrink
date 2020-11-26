@@ -771,10 +771,10 @@ and open the template in the editor.
                             
                             <div id="back_to_main_settings_div">
                                 <i style="margin-right: 5px; font-size: 17px; color: white;" class="fa fa-long-arrow-left"></i>
-                                back to settings
+                                Settings
                             </div>
                             
-                            <p style="margin: 15px 0; text-align: center; font-weight: bolder; color: #4d4d4d;">Change Profile Photo</p>
+                            <p style="margin: 15px 0; text-align: center; font-weight: bolder; color: darkblue;">Change Profile Photo</p>
                             <div id="uploadPhotoPictureDisplayArea"></div>
                             <div id="settingsDivUploadProfileFormArea">
                                 <input id="settingsDivUploadProfileFileInput" type="file" />
