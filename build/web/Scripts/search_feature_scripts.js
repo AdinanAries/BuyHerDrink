@@ -211,18 +211,18 @@ function init_map(lat, lng, search_radius, type = "restaurant") {
                 div.innerHTML = `
                             <div class="each_search_result_item">
                                 <div style="display: flex;">
-                                    <div style="width: 100px; height: 100px; background-color: #4d4d4d; overflow: hidden;">
+                                    <div style="width: 100px; max-height: 100px; overflow: hidden;">
                                         <img src="${results[w].photos[0].getUrl()}" style="width: 100px; height: auto;">
                                     </div>
                                     <div style="max-width: 200px; margin-left: 10px;">
                                         <p style="color: darkblue; font-weight: bolder; margin-bottom: 5px;">${rest_name}</p>
-                                        <p><img src="${results[w].icon}" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
+                                        <p style="margin: 5px 0;"><img src="${results[w].icon}" style="width: 20px; height: auto;"> <span style="color: #37a0f5; font-size: 20px;">${stars}</span></p>
                                         <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> ${results[w].vicinity}<p>
                                     </div>
                                 </div>
                                 <div style="margin-top: 5px;">
-                                    <p style="color: darkgrey;">types: </p>
-                                    <p>${types_list}</p>
+                                    <p style="color: darkgrey; margin-top: 15px;">types: </p>
+                                    <p style="margin: 5px 0;">${types_list}</p>
                                 </div>
                                 <div onclick="pick_restaurant_from_search('${rest_name}', '${results[w].photos[0].getUrl()}', '${results[w].icon}', '${stars}', '${results[w].vicinity}', '${types_list}', '${results[w].rating}');"
                                      style="margin: 10px; padding: 10px 5px; text-align: center; border-radius: 4px; background-color: darkslateblue; color: white; font-size: 16px;">

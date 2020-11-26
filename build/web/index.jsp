@@ -322,8 +322,8 @@ and open the template in the editor.
                                     Then its up to you to either accept or decline their offer.
                             </p>
                             <div class="PublishDrinkFieldSet">
-                                <div id="map" style="height: 200px;"></div>
-                                <fieldset id="publish_drink_request_fields" style="border: 1px solid pink; margin: 5px; font-size: 15px;">
+                                <div id="map" style="height: 200px; margin-bottom: 15px;"></div>
+                                <fieldset id="publish_drink_request_fields" style="padding-top: 10px; border: 1px solid pink; margin: 5px; font-size: 15px;">
                                   <legend style="font-size: 15px; font-weight: bolder;">Add Bar/Restaurant</legend>
                                   <table>
                                       <tbody>
@@ -486,13 +486,13 @@ and open the template in the editor.
                                       </fieldset>
                             </div>
                             <div id="PDR_details_pane">
-                                <p style="text-align: center; font-weight: bolder; font-size: 16px; padding: 10px 0;">Review and Post</p>
+                                <p style="text-align: center; font-weight: bolder; font-size: 16px; padding: 15px 0;">Review and Post</p>
                                 <div style="margin: 5px; border: #37a0f5 1px solid; padding: 5px; background-color: #d4f3ff;">
                                     <div id="cancel_update_drink_request_btn" 
                                          style="display: none; color: white; padding: 10px; margin: 5px 0; border-radius: 5px; background-color: crimson; text-align: center; font-size: 14px;">
                                         Cancel Post
                                     </div>
-                                    <p id='RP_rest_name' style="font-weight: bolder; margin-top: 10px; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
+                                    <p id='RP_rest_name' style="font-weight: bolder; margin-top: 10px; padding: 5px; color: blue;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p> 
                                          <div style="background-color: white; padding: 5px; margin-top: 5px; border-radius: 4px;">
                                             <div style="margin: 5px 0;">
                                                 <div style="display: flex; justify-content: space-between; margin-bottom: 5px; padding-bottom: 5px;">
@@ -502,9 +502,9 @@ and open the template in the editor.
                                                     <p id="RP_post_request_btn" style="padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; display: flex; flex-direction: column; justify-content: center;">Post</p>
                                                     <p id="RP_update_request_btn" style="display: none; padding: 0 20px; background-color: darkslateblue; color: white; border-radius: 4px; font-weight: bolder; height: 60px; flex-direction: column; justify-content: center;">Update</p>
                                                 </div>
-                                                <p><img id='RP_rest_icon' src="" style="width: 20px; height: auto;"/> <span id='RP_rest_rating' style="color: #37a0f5; font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
+                                                <p style="padding: 10px 0;"><img id='RP_rest_icon' src="" style="width: 20px; height: auto;"/> <span id='RP_rest_rating' style="color: #37a0f5; font-size: 20px;">&#9733;&#9734;&#9734;&#9734;&#9734;</span></p>
                                                 <p><i class="fa fa-map-marker" style="color: darkgrey; font-size: 18px;" aria-hidden="true"></i> <span id='RP_rest_location'><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></span><p>
-                                                <p style='color: darkgrey; padding-top: 10px;'>
+                                                <p style='color: darkgrey; padding: 10px 0;'>
                                                     <i class="fa fa-calendar" aria-hidden="true"></i> <span id='RP_date_display' style='color: darkblue; margin-right: 15px;'>9/2/2020</span>
                                                     <i style='font-size: 20px;' class="fa fa-clock-o" aria-hidden="true"></i> <span id='RP_time_display' style='color: darkblue;'>12:00am</span>
                                                 </p>
@@ -513,8 +513,8 @@ and open the template in the editor.
                                                     <i class="fa fa-money" aria-hidden="true"></i> <span id='RP_price_display' style='color: darkblue;'>$5.00</span>
                                                 </p>
                                              </div>
-                                             <p style="color: darkgrey;">types: </p>
-                                             <p id='RP_rest_types'><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p>
+                                             <p style="color: darkgrey; margin: 10px 0;">types: </p>
+                                             <p id='RP_rest_types' style="margin-bottom: 10px;"><i class='fa fa-exclamation-triangle' style='color: red;'></i> <span>no restaurant chosen</span></p>
                                          </div>
                                          
                                     </div>
@@ -695,7 +695,7 @@ and open the template in the editor.
                         
                         <div id="SearchResultDiv">
                             <p id="back_to_search_home_icons_btn"
-                                style="font-weight: bolder; margin: 5px; padding: 5px; border-radius: 4px; background-color: dodgerblue; width: 150px; text-align: center;">
+                                style="font-weight: bolder; margin: 5px; padding: 10px; border-radius: 4px; background-color: dodgerblue; width: 150px; text-align: center;">
                                 <i style="color: white; font-weight: bolder; margin-right: 10px;" class="fa fa-long-arrow-left" aria-hidden="true"></i>
                                 Categories
                             </p>
