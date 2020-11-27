@@ -727,7 +727,7 @@ input[type=radio]:checked {
     width: 100%;
     font-size: 15px;
     text-align: center;
-    background-color: #98b3ff;
+    background-color: #ff9c9c;
     border-radius: 4px;
     font-weight: bolder;
 }
@@ -820,9 +820,7 @@ input[type=radio]:checked {
 #drink_request_comments_div{
     display: none;
     padding: 5px;
-    padding-top: 10px;
     margin-top: 10px;
-    border-top: 1px solid #D9DADC;
 }
 #drink_request_comments_fld{
     width: 100%;

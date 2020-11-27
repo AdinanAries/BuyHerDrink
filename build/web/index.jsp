@@ -534,7 +534,7 @@ and open the template in the editor.
                                     
                                 </div>
                                 
-                                <div id="drink_bidding_form" style="display: none; padding: 5px; padding-top: 10px; border-top: 1px solid #D9DADC; margin-top: 10px;">
+                                <div id="drink_bidding_form" style="display: none; padding: 5px; padding-top: 10px; margin-top: 10px;">
                                     <p style="font-size: 17px; padding: 5px 0; color: darkblue; font-weight: bolder; min-width: 200px;"><i style="margin-right: 5px;" class="fa fa-money"></i> name your price here:</p>
                                     <select style="font-size: 15px; border: 1px solid black;" id='bidding_price_fld'>
                                         <option>$5.00</option>
