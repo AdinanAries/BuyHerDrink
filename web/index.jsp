@@ -102,7 +102,7 @@ and open the template in the editor.
                     <p style="text-align: center; color: white; font-size: 17px; font-weight: bolder; margin-bottom: 10px;">
                         <i style="color: #98b3ff; font-size: 30px; margin-right: 10px;" class="fa fa-spinner" aria-hidden="true" ></i>
                     <p>
-                    <p style='margin-top: 20px; font-size: 20px; color: white; font-weight: bolder; text-align: center;'>&copy; 2020, BuyMeDrink</p>
+                    <p style='margin-top: 20px; color: white; font-weight: bolder; text-align: center;'>&copy; 2020, BuyMeDrink</p>
                 </div>
                 <img id="fullScreenPhotoViewerImg" src="Pictures/TestPhotos/1.jpg" alt="" />
             </div>
