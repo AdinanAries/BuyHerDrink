@@ -264,9 +264,11 @@ var showUploadProfilePhotoPage = () => {
     fullProfileDiv.style.display = "none";
 };
 
-var vewFullScreenPhotoViewer = (imgTitle) =>{
+var vewFullScreenPhotoViewer = (imgSrc) =>{
     
-    console.log(imgTitle);
+    console.log(imgSrc);
+    
+    document.getElementById("fullScreenPhotoViewerImg").src = imgSrc;
     
     document.getElementById("fullScreenPhotoViewerImg").style.display = "none";
     document.getElementById("fullScreenPhotoViewerLoader").style.display = "block";
@@ -275,6 +277,7 @@ var vewFullScreenPhotoViewer = (imgTitle) =>{
         document.getElementById("fullScreenPhotoViewerImg").style.display = "block";
         document.getElementById("fullScreenPhotoViewerLoader").style.display = "none";
     }, 2000);
+    
     $("#fullScreenPhotoViewerContainer").toggle("up");
     document.getElementById("fullScreenPhotoViewerContainer").style.display = "flex";
 };

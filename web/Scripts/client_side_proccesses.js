@@ -130,9 +130,15 @@ function pick_restaurant(name, photoUrl, iconUrl, rating, locationAddress, types
 
 //this function renders drink requests to list that displays them
 //it also add a click event listener to each request in the list thats used to diplay the selected user and drink request info
-function render_drink_request_to_list(number, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
+function render_drink_request_to_list(number, requestee_name, requestee_gender, requestee_age, requestee_address,
+requestee_profile_pic, requestee_cover_pic, request_purpose, restaurant, location, date, time, budget, message){
+    
+    if(!requestee_cover_pic)
+        requestee_cover_pic = requestee_profile_pic;
+    
     let td = document.createElement("td");
     td.id = "drink_request_"+number;
+    td.style.backgroundImage = "url('"+ requestee_cover_pic +"')";
     
     td.addEventListener("click", ()=>{
         drink_request_status_P.innerHTML = "";
@@ -142,14 +148,14 @@ function render_drink_request_to_list(number, requestee_name, requestee_gender, 
         drink_request_comments_div.style.display = "none";
         
         render_each_selected_drink_request(restaurant, request_purpose, location, date, time, budget, message);
-        render_each_selected_drink_request_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address);
+        render_each_selected_drink_request_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address, requestee_profile_pic, requestee_cover_pic);
         set_current_drink_request_item("drink_request_"+number);
     });
     
     td.classList.add("RequesteeListCoverPhoto");
     td.innerHTML = `
                     <div class="RequesteesProfileFromList">
-                        <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <img src="${requestee_profile_pic}" alt=""/>
                     </div>
                     <div>
                         <p style="font-size: 15px; font-weight: bolder;">${requestee_name}</p>
@@ -162,11 +168,16 @@ function render_drink_request_to_list(number, requestee_name, requestee_gender, 
 //this function renders drink offers to list that displays them
 //it also add a click event listener to each request in the list thats used to diplay the selected user and drink offer info
 
-function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_offer_id, drink_request_id, requestee_name, requestee_gender, requestee_age, requestee_address, request_purpose, restaurant, location, date, time, budget, message){
+function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_offer_id, drink_request_id, requestee_name, requestee_gender, requestee_age, requestee_address, 
+    requestee_profile_pic, requestee_cover_photo, request_purpose, restaurant, location, date, time, budget, message){
+    
+    if(!requestee_cover_photo)
+        requestee_cover_photo = requestee_profile_pic;
     
     let td = document.createElement("td");
     td.classList.add("OfferesListCoverPhoto");
     td.id = "drink_offer_"+ drink_offer_counter;
+    td.style.backgroundImage = "url('"+ requestee_cover_photo +"')";
     
     td.addEventListener("click", ()=>{
         drink_offer_status_P.innerHTML = "";
@@ -174,7 +185,7 @@ function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_o
         declineOfferBtn.style.display = "block";
         
         render_each_selected_drink_offer(restaurant, request_purpose, location, date, time, budget, message);
-        render_each_selected_drink_offer_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address);
+        render_each_selected_drink_offer_user('user_id',requestee_name, requestee_age, requestee_gender, requestee_address, requestee_profile_pic, requestee_cover_photo);
         add_dinner_date_data(date_party_id, drink_offer_id);
         set_current_drink_offer_item("drink_offer_"+ drink_offer_counter);
         get_highest_bidder(drink_request_id);
@@ -182,7 +193,7 @@ function render_drink_offers_to_list(drink_offer_counter, date_party_id, drink_o
     
     td.innerHTML = `
                     <div class="OfferersProfileFromList">
-                        <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <img src="${requestee_profile_pic}" alt=""/>
                     </div>
                     <div>
                         <p style="font-size: 15px; font-weight: bolder;">${requestee_name}</p>
@@ -233,14 +244,20 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
 }
 
 //this function renders each selected drink request's user info
-function render_each_selected_drink_request_user(user_id, name, age, gender, address){
-    let base64Image = "randomString";
+function render_each_selected_drink_request_user(user_id, name, age, gender, address, picture, cover){
+    
+    let base64Image = picture;
+    let base64Cover = cover;
+    
+    if(!base64Cover)
+        base64Cover = base64Image;
+    
     selected_drink_request_user_info.innerHTML = `
-                    <div onclick="vewFullScreenPhotoViewer('${base64Image}');" class="RequesteeCoverPhoto">
+                    <div style="background-image: url('${base64Cover}');" class="RequesteeCoverPhoto">
                         <span class="RequesteeOnlineStatusLed"></span>
                         <span class="RequesteeOnlineStatusText">Offline</span>
-                        <div class='RequesteePicture'>
-                            <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <div onclick="vewFullScreenPhotoViewer('${base64Image}');" class='RequesteePicture'>
+                            <img src="${base64Image}" alt=""/>
                         </div>
                     </div>
                     <div style="padding: 10px 0;" class="RequesteeInfoDiv">
@@ -302,14 +319,20 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
 }
 
 //this function renders each selected drink offer's user info
-function render_each_selected_drink_offer_user(user_id,name, age, gender, address){
-    let base64Image = "randomString";
+function render_each_selected_drink_offer_user(user_id,name, age, gender, address, picture, cover){
+    
+    let base64Image = picture;
+    let base64Cover = cover;
+    
+    if(!base64Cover)
+        base64Cover = base64Image;
+    
     selected_drink_offer_user_info.innerHTML = `
-                    <div onclick="vewFullScreenPhotoViewer('${base64Image}');" class="OffererCoverPhoto">
+                    <div style="background-image: url('${base64Cover}');" class="OffererCoverPhoto">
                         <span class="OffererOnlineStatusLed"></span>
                         <span class="OffererOnlineStatusText">Offline</span>
-                        <div style="border-color: #d4f3ff;" class='OffererPicture'>
-                            <img src="Pictures/TestPhotos/1.jpg" alt=""/>
+                        <div onclick="vewFullScreenPhotoViewer('${base64Image}');" style="border-color: #d4f3ff;" class='OffererPicture'>
+                            <img src="${base64Image}" alt=""/>
                         </div>
                     </div>
                     <div style="padding: 10px 0;" class="OffererInfoDiv">
@@ -556,7 +579,8 @@ function get_recent_ten_drink_request(city, town, country){
             //user details
             render_each_selected_drink_request_user(
                                                         'user_id',request_list[0].requestee_name, request_list[0].requestee_age,
-                                                        request_list[0].requestee_gender, request_list[0].requestee_address
+                                                        request_list[0].requestee_gender, request_list[0].requestee_address,
+                                                        request_list[0].requestee_propic, request_list[0].requestee_coverphoto
                                                     );
             //request details
             render_each_selected_drink_request(
@@ -571,7 +595,8 @@ function get_recent_ten_drink_request(city, town, country){
                 render_drink_request_to_list(
                                                 index,
                                                 request.requestee_name, request.requestee_gender, request.requestee_age, 
-                                                request.requestee_address, request.request_purpose, request.rest_name, request.rest_location,
+                                                request.requestee_address, request.requestee_propic, request.requestee_coverphoto,
+                                                request.request_purpose, request.rest_name, request.rest_location,
                                                 request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message
                                             );
             });
@@ -599,13 +624,26 @@ function get_recent_ten_drink_offers(clientId){
             display_number_of_drink_offers(offer_list.length);
             //rendering first offer as selected by default
             //user details
-            render_each_selected_drink_offer_user('user_id',offer_list[0].requestee_name, offer_list[0].requestee_age, offer_list[0].requestee_gender, offer_list[0].requestee_address);
+            render_each_selected_drink_offer_user(
+                                                      'user_id',offer_list[0].requestee_name, offer_list[0].requestee_age, 
+                                                      offer_list[0].requestee_gender, offer_list[0].requestee_address,
+                                                      offer_list[0].requestee_propic, offer_list[0].requestee_coverphoto
+                                                  );
             //offer details
-            render_each_selected_drink_offer(offer_list[0].rest_name, offer_list[0].request_purpose, offer_list[0].rest_location, offer_list[0].meeting_date, offer_list[0].meeting_time, offer_list[0].meeting_budget, offer_list[0].added_message);
+            render_each_selected_drink_offer(
+                                                offer_list[0].rest_name, offer_list[0].request_purpose, offer_list[0].rest_location, 
+                                                offer_list[0].meeting_date, offer_list[0].meeting_time, offer_list[0].meeting_budget, 
+                                                offer_list[0].added_message
+                                            );
             current_drink_offer_item = "drink_offer_0";
             
             offer_list.forEach( (request, index) => {
-                render_drink_offers_to_list(index,"new_date_party_id", "new_drink_offer_id", "new_drink_request_id", request.requestee_name, request.requestee_gender, request.requestee_age, request.requestee_address, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, request.meeting_time, request.meeting_budget, request.added_message);
+                render_drink_offers_to_list(
+                                                index,"new_date_party_id", "new_drink_offer_id", "new_drink_request_id", request.requestee_name, 
+                                                request.requestee_gender, request.requestee_age, request.requestee_address, request.requestee_propic, 
+                                                request.requestee_coverphoto, request.request_purpose, request.rest_name, request.rest_location, request.meeting_date, 
+                                                request.meeting_time, request.meeting_budget, request.added_message
+                                            );
             });
         }
     });
