@@ -752,6 +752,30 @@ input[type=radio]:checked {
     text-align: center;
     box-shadow: #ccc 3px 3px 3px;
 }
+#fullScreenPhotoViewerContainer{
+    width: 100%;
+    max-width: 730px;
+    margin: auto;
+    height: 100vh;
+    z-index: 1002; 
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.8);
+}
+#fullScreenPhotoViewer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333333;
+    text-align: center;
+}
+#fullScreenPhotoViewer img{
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+}
 .popup_window_headers{
     max-width: 730px;
     padding: 5px;

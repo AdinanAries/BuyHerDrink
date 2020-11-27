@@ -234,8 +234,9 @@ function render_each_selected_drink_request(restaurant, purpose, location, date,
 
 //this function renders each selected drink request's user info
 function render_each_selected_drink_request_user(user_id, name, age, gender, address){
+    let base64Image = "randomString";
     selected_drink_request_user_info.innerHTML = `
-                    <div class="RequesteeCoverPhoto">
+                    <div onclick="vewFullScreenPhotoViewer('${base64Image}');" class="RequesteeCoverPhoto">
                         <span class="RequesteeOnlineStatusLed"></span>
                         <span class="RequesteeOnlineStatusText">Offline</span>
                         <div class='RequesteePicture'>
@@ -302,8 +303,9 @@ function render_each_selected_drink_offer(restaurant, purpose, location, date, t
 
 //this function renders each selected drink offer's user info
 function render_each_selected_drink_offer_user(user_id,name, age, gender, address){
+    let base64Image = "randomString";
     selected_drink_offer_user_info.innerHTML = `
-                    <div class="OffererCoverPhoto">
+                    <div onclick="vewFullScreenPhotoViewer('${base64Image}');" class="OffererCoverPhoto">
                         <span class="OffererOnlineStatusLed"></span>
                         <span class="OffererOnlineStatusText">Offline</span>
                         <div style="border-color: #d4f3ff;" class='OffererPicture'>

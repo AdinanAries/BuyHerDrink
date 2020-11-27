@@ -96,6 +96,18 @@ and open the template in the editor.
             </div>
             <p style='margin: 10px 0; color: darkgrey; font-weight: bolder; opacity: 0.8; text-align: center;'>&copy; 2020, BuyMeDrink</p>
         </div>
+        <div onclick="vewFullScreenPhotoViewer('hiding photo viewer')" id="fullScreenPhotoViewerContainer">
+            <div id="fullScreenPhotoViewer">
+                <div id="fullScreenPhotoViewerLoader">
+                    <p style="text-align: center; color: white; font-size: 17px; font-weight: bolder; margin-bottom: 10px;">
+                        <i style="color: #98b3ff; font-size: 30px; margin-right: 10px;" class="fa fa-spinner" aria-hidden="true" ></i>
+                        Loading...
+                    <p>
+                    <p style='margin-top: 30px; font-size: 20px; color: white; font-weight: bolder; text-align: center;'>&copy; 2020, BuyMeDrink</p>
+                </div>
+                <img id="fullScreenPhotoViewerImg" src="Pictures/TestPhotos/1.jpg" alt="" />
+            </div>
+        </div>
         <div class='Container'>
             <div class='wrapper'>
                 <div class='Header'>
@@ -780,7 +792,10 @@ and open the template in the editor.
                                 <input id="settingsDivUploadProfileFileInput" type="file" />
                                 <div style="margin-bottom: 10px;">
                                     <label for="settingsDivUploadProfileFileInput">
-                                        <div id="settingsDivUploadProfileChoosePhotoBtn">Choose Photo</div>
+                                        <div id="settingsDivUploadProfileChoosePhotoBtn">
+                                            <i class="fa fa-file-image-o" style="color: crimson; margin-right: 5px; font-size: 20px"></i>
+                                            Choose Photo
+                                        </div>
                                     </label>
                                 </div>
                                 <div style="display: flex; justify-content: space-between;">

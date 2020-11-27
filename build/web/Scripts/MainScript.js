@@ -264,6 +264,21 @@ var showUploadProfilePhotoPage = () => {
     fullProfileDiv.style.display = "none";
 };
 
+var vewFullScreenPhotoViewer = (imgTitle) =>{
+    
+    console.log(imgTitle);
+    
+    document.getElementById("fullScreenPhotoViewerImg").style.display = "none";
+    document.getElementById("fullScreenPhotoViewerLoader").style.display = "block";
+    
+    setTimeout(()=>{
+        document.getElementById("fullScreenPhotoViewerImg").style.display = "block";
+        document.getElementById("fullScreenPhotoViewerLoader").style.display = "none";
+    }, 2000);
+    $("#fullScreenPhotoViewerContainer").toggle("up");
+    document.getElementById("fullScreenPhotoViewerContainer").style.display = "flex";
+};
+
 $("#mainSettingsDivProfilePicture").click((evnt)=>{
     showUploadProfilePhotoPage();
 });
