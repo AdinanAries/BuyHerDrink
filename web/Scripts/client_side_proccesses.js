@@ -266,7 +266,7 @@ function render_each_selected_drink_request_user(user_id, name, age, gender, add
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}');"
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}','${base64Image}');"
                        style="margin: auto; color: white; background-color: tomato; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile
@@ -341,7 +341,7 @@ function render_each_selected_drink_offer_user(user_id,name, age, gender, addres
                         <p>${address}</p>
                     </div>
                     <p style="clear: both;"></p>
-                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}');"
+                    <p class="viewFullProfileBtn" onclick="showFullProfileDiv('${name}','${age}','${gender}','${address}','${user_id}','${base64Image}');"
                         style="margin: auto; color: white; background-color: cadetblue; padding: 10px 5px; 
                             text-align: center; margin-top: 5px; font-size: 14px; width: 95%; margin-bottom: 5px; border-radius: 4px;">
                         View Full Profile

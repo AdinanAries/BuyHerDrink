@@ -158,8 +158,9 @@ var showExploreRestaurantsDiv = () => {
    search_page_start_page.style.display = "block";
 };
 
-var showFullProfileDiv = (name, age, gender, address, user_id) => {
+var showFullProfileDiv = (name, age, gender, address, user_id, image) => {
     //alert(user_id);
+    document.getElementById("SFP_profile").src = image;
     document.getElementById("SFP_name").innerText = name;
     document.getElementById("SFP_age_gender").innerText = `${age} years, ${gender}`;
     document.getElementById("SFP_address").innerText = address;

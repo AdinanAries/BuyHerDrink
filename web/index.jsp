@@ -747,7 +747,7 @@ and open the template in the editor.
                         <div style="display: flex; padding: 5px; padding-bottom: 20px;">
                             <div>
                                 <div style="border-radius: 100%; background-color: darkgray; width: 100px; height: 100px; overflow: hidden; border: 3px solid #98b3ff;">
-                                    
+                                    <img id="SFP_profile" style="width: 100px; min-height: 100px; height: auto;" src="" alt="" />
                                 </div>
                             </div>
                             <div style="display: flex; flex-direction: column; justify-content: flex-end; margin-left: 15px;">
