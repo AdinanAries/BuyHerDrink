@@ -569,7 +569,7 @@ cancel_update_drink_request_btn.addEventListener("click", (evnt)=>{
 function get_recent_ten_drink_request(city, town, country){
     $.ajax({
         type: "GET",
-        url: "./get_recent_ten_drink_request_controller",
+        url: "./get_recent_drink_request_controller",
         data: "city="+city+"&town="+town+"&country="+country,
         success: function(result){
             console.log(JSON.parse(result));
@@ -614,7 +614,7 @@ function display_number_of_drink_offers(number){
 function get_recent_ten_drink_offers(clientId){
     $.ajax({
         type: "GET",
-        url: "./get_recent_ten_drink_offers_controller",
+        url: "./get_recent_drink_offers_controller",
         data: "client_id="+clientId,
         success: function(result){
             //console.log(JSON.parse(result));

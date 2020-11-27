@@ -18,11 +18,11 @@
     </servlet>
     <servlet>
         <servlet-name>get_recent_ten_drink_request_controller</servlet-name>
-        <servlet-class>com.buyherdrink.controller.get_recent_ten_drink_request_controller</servlet-class>
+        <servlet-class>com.buyherdrink.controller.get_recent_drink_request_controller</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>get_recent_ten_drink_offers_controller</servlet-name>
-        <servlet-class>com.buyherdrink.controller.get_recent_ten_drink_offers_controller</servlet-class>
+        <servlet-class>com.buyherdrink.controller.get_recent_drink_offers_controller</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>get_recent_ten_dinner_dates</servlet-name>

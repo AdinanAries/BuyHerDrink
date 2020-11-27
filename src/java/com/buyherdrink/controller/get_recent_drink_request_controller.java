@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aries
  */
-public class get_recent_ten_drink_request_controller extends HttpServlet {
+public class get_recent_drink_request_controller extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
