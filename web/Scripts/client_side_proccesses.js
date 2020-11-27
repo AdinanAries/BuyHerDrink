@@ -638,6 +638,7 @@ function get_recent_ten_drink_offers(clientId){
             current_drink_offer_item = "drink_offer_0";
             
             offer_list.forEach( (request, index) => {
+                console.log(request);
                 render_drink_offers_to_list(
                                                 index,"new_date_party_id", "new_drink_offer_id", "new_drink_request_id", request.requestee_name, 
                                                 request.requestee_gender, request.requestee_age, request.requestee_address, request.requestee_propic, 

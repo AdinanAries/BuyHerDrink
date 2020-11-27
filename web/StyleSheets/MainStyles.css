@@ -668,6 +668,7 @@ input[type=radio]:checked {
     background-color: #afe9ff;
     z-index: 1000;
     width: 100%;
+    max-width: 700px;
     height: 500px;
     margin: auto;
     border-bottom-left-radius: 10px;
@@ -754,7 +755,7 @@ input[type=radio]:checked {
 }
 #fullScreenPhotoViewerContainer{
     width: 100%;
-    max-width: 730px;
+    max-width: 700px;
     margin: auto;
     height: 100vh;
     z-index: 1002; 
