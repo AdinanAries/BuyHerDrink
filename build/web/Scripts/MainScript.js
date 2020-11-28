@@ -2,6 +2,8 @@ var SearchResultDiv = document.getElementById("SearchResultDiv");
 var search_page_start_page = document.getElementById("search_page_start_page");
 var no_available_drink_offers_msg = document.getElementById("no_available_drink_offers_msg");
 var no_available_drink_request_msg = document.getElementById("no_available_drink_request_msg");
+var showMoreMenuOnUserProfilePageSettingsIcons = document.getElementById("showMoreMenuOnUserProfilePageSettingsIcons")
+var UserProfilePageSettingsDropDown = document.getElementById("UserProfilePageSettingsDropDown");
 var ViewOffererFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewOffererFullProfileAndMakeOfferBtns")[0];
 var ViewRequesteeFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewRequesteeFullProfileAndMakeOfferBtns")[0];
 
@@ -470,6 +472,13 @@ function hideRestaurantPopupListByAddress() {
     RestaurantList.classList.remove("show");
     
 }
+
+showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseover", ()=>{
+    $("#UserProfilePageSettingsDropDown").slideDown("fast");
+});
+showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseout", ()=>{
+    $("#UserProfilePageSettingsDropDown").slideUp("fast");
+});
 
 function ProcessImageForBase64String(Path){
   

@@ -294,7 +294,7 @@ and open the template in the editor.
                                 <div class="UserProfileSettingsIcons">
                                     <div class="UserProfileSettingsIconsItem" style="margin-right: 5px;" id='notificationsIcon'>
                                         <div>
-                                            <p style="margin-bottom: -21px;">
+                                            <p style="margin-bottom: -29px;">
                                                 <i style="font-size: 20px;" class="fa fa-bell" aria-hidden="true"></i>
                                             </p>
                                             <p class='notificationCounter' id="profilePageNotificationCounter">0</p>
@@ -306,12 +306,12 @@ and open the template in the editor.
                                     <p class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
                                         <i style="font-size: 20px;" class="fa fa-picture-o" aria-hidden="true"></i>
                                     </p>
-                                    <p class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
+                                    <p id="showMoreMenuOnUserProfilePageSettingsIcons" class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
                                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                                     </p>
-                                    <div class="UserProfileSettingsIconsDropDown">
+                                    <div id="UserProfilePageSettingsDropDown" class="UserProfileSettingsIconsDropDown">
                                         <p style="margin-top: 10px;">Change Cover Photo</p>
-                                        <p>Change Profile Photo</p>
+                                        <p onclick="showUploadProfilePhotoPage();">Change Profile Photo</p>
                                     </div>
                                 </div>
                                 <p style="height: 0; clear: both;"></p>
