@@ -292,10 +292,27 @@ and open the template in the editor.
                                     <img src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
                                 </div>
                                 <div class="UserProfileSettingsIcons">
-                                    <img id="galleryIcon" src="icons/icons8-photo-gallery-20.png" alt=""/>
-                                    <span id='notificationsIcon'><img src="icons/icons8-notification-50.png" alt=""/>
-                                        <span class='notificationCounter'>0</span></span>
-                                    <img id="editUserProfileIcon" src="icons/icons8-pencil-20.png" alt=""/>
+                                    <div class="UserProfileSettingsIconsItem" style="margin-right: 5px;" id='notificationsIcon'>
+                                        <div>
+                                            <p style="margin-bottom: -21px;">
+                                                <i style="font-size: 20px;" class="fa fa-bell" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='notificationCounter' id="profilePageNotificationCounter">0</p>
+                                        </div>
+                                    </div>
+                                    <p class="UserProfileSettingsIconsItem" id="editUserProfileIcon">
+                                        <i style="font-size: 20px;" class="fa fa-pencil" aria-hidden="true"></i>
+                                    </p>
+                                    <p class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
+                                        <i style="font-size: 20px;" class="fa fa-picture-o" aria-hidden="true"></i>
+                                    </p>
+                                    <p class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </p>
+                                    <div class="UserProfileSettingsIconsDropDown">
+                                        <p style="margin-top: 10px;">Change Cover Photo</p>
+                                        <p>Change Profile Photo</p>
+                                    </div>
                                 </div>
                                 <p style="height: 0; clear: both;"></p>
                             </div>

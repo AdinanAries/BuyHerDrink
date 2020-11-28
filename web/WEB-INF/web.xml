@@ -58,11 +58,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>get_recent_ten_drink_request_controller</servlet-name>
-        <url-pattern>/get_recent_ten_drink_request_controller</url-pattern>
+        <url-pattern>/get_recent_drink_request_controller</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>get_recent_ten_drink_offers_controller</servlet-name>
-        <url-pattern>/get_recent_ten_drink_offers_controller</url-pattern>
+        <url-pattern>/get_recent_drink_offers_controller</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>get_recent_ten_dinner_dates</servlet-name>
