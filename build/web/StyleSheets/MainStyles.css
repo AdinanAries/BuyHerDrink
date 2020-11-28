@@ -308,6 +308,7 @@ span, p, option{
     justify-content: center;
 }
 .UserProfileSettingsIconsDropDown{
+    display: none;
     position: absolute;
     top: 32px;
     z-index: 1;
