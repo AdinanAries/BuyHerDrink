@@ -310,8 +310,14 @@ and open the template in the editor.
                                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                                     </p>
                                     <div id="UserProfilePageSettingsDropDown" class="UserProfileSettingsIconsDropDown">
-                                        <p style="margin-top: 10px;">Change Cover Photo</p>
-                                        <p onclick="showUploadProfilePhotoPage();">Change Profile Photo</p>
+                                        <p style="margin-top: 10px;">
+                                            <i style="margin-right: 5px; font-size: 20px;" class="fa fa-file-image-o" aria-hidden="true"></i>
+                                            Change Cover
+                                        </p>
+                                        <p onclick="showUploadProfilePhotoPage();">
+                                            <i style="margin-right: 5px; font-size: 20px;" class="fa fa-user-circle" aria-hidden="true"></i>
+                                            Change Photo
+                                        </p>
                                     </div>
                                 </div>
                                 <p style="height: 0; clear: both;"></p>

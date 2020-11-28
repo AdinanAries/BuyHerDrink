@@ -474,7 +474,9 @@ function hideRestaurantPopupListByAddress() {
 }
 
 showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseover", ()=>{
+    
     $("#UserProfilePageSettingsDropDown").slideDown("fast");
+   
 });
 showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseout", ()=>{
     $("#UserProfilePageSettingsDropDown").slideUp("fast");
