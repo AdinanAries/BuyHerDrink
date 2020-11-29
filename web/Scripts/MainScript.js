@@ -490,8 +490,7 @@ function hideRestaurantPopupListByAddress() {
 }*/
 
 UserProfilePageSettingsDropDown.style.display = "none";
-showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
-    
+var showDropDownMenuAtUserProfileSetting = ()=>{
     if(UserProfilePageSettingsDropDown.style.display === "none"){
         Array.prototype.slice.call(dropdown_hidden_options).forEach(elem => {
             elem.style.opacity = 0;
@@ -518,7 +517,9 @@ showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
         
         document.getElementById("profilePageSettingsMenuDropDownbtnIcon").style.transform = "rotate(360deg)";
     }
-   
+}
+showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
+    showDropDownMenuAtUserProfileSetting();
 });
 showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
     

@@ -312,15 +312,20 @@ and open the template in the editor.
                                     </p>
                                     <div id="UserProfilePageSettingsDropDown" class="UserProfileSettingsIconsDropDown">
                                         <p onclick="(()=>{
-                                                    showSettingsWithoutMenuToggle();
-                                                    document.getElementById('settingsDivUploadProfile').style.display = 'none';
-                                                    document.getElementById('settingsDivMainSettings').style.display = 'block';
+                                                        showSettingsWithoutMenuToggle();
+                                                        showDropDownMenuAtUserProfileSetting();
+                                                        document.getElementById('settingsDivUploadProfile').style.display = 'none';
+                                                        document.getElementById('settingsDivMainSettings').style.display = 'block';
                                                     })()" 
                                                 style="margin-top: 10px;">
                                             <i style="margin-right: 5px; font-size: 20px;" class="fa fa-pencil" aria-hidden="true"></i>
                                             Edit Profile
                                         </p>
-                                        <p onclick="showGalleryDiv();">
+                                        <p onclick="(()=>{
+                                                        showGalleryDiv();
+                                                        showDropDownMenuAtUserProfileSetting();
+                                                    })()"
+                                        >
                                             <i style="margin-right: 5px; font-size: 20px;" class="fa fa-picture-o" aria-hidden="true"></i>
                                             Gallery
                                         </p>
@@ -328,7 +333,11 @@ and open the template in the editor.
                                             <i style="margin-right: 5px; font-size: 20px;" class="fa fa-file-image-o" aria-hidden="true"></i>
                                             Change Cover
                                         </p>
-                                        <p onclick="showUploadProfilePhotoPage();">
+                                        <p onclick="(()=>{
+                                                        showUploadProfilePhotoPage();
+                                                        showDropDownMenuAtUserProfileSetting();
+                                                    })()"
+                                        >
                                             <i style="margin-right: 5px; font-size: 20px;" class="fa fa-user-circle" aria-hidden="true"></i>
                                             Change Photo
                                         </p>
