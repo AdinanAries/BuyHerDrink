@@ -228,7 +228,12 @@ var showYourDrinkRequests = () => {
 };
 
 var showNotifications = () => {
+    
     $("#notificationsDiv").toggle("up");
+    
+    if(document.getElementById("UserProfileIconsNoticationSpan").style.display === "block"){
+        showDropDownMenuAtUserProfileSetting();
+    }
 };
 
 var showGalleryDiv = () => {
