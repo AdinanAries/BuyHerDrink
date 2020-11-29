@@ -292,6 +292,7 @@ and open the template in the editor.
                                     <img src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
                                 </div>
                                 <div class="UserProfileSettingsIcons">
+                                    <div id="UserProfileIconsNoticationSpan">Notifications</div>
                                     <div class="UserProfileSettingsIconsItem" style="margin-right: 5px;" id='notificationsIcon'>
                                         <div>
                                             <p style="margin-bottom: -29px;">
@@ -300,17 +301,30 @@ and open the template in the editor.
                                             <p class='notificationCounter' id="profilePageNotificationCounter">0</p>
                                         </div>
                                     </div>
-                                    <p class="UserProfileSettingsIconsItem" id="editUserProfileIcon">
+                                    <p class="UserProfileSettingsIconsItem  dropdown_hidden" id="editUserProfileIcon">
                                         <i style="font-size: 20px;" class="fa fa-pencil" aria-hidden="true"></i>
                                     </p>
-                                    <p class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
+                                    <p class="UserProfileSettingsIconsItem  dropdown_hidden" style="margin-left: 5px;" id="galleryIcon">
                                         <i style="font-size: 20px;" class="fa fa-picture-o" aria-hidden="true"></i>
                                     </p>
                                     <p id="showMoreMenuOnUserProfilePageSettingsIcons" class="UserProfileSettingsIconsItem" style="margin-left: 5px;" id="galleryIcon">
-                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        <i id="profilePageSettingsMenuDropDownbtnIcon" style="font-size: 30px; padding: 0 5px; color: steelblue;" class="fa fa-angle-down" aria-hidden="true"></i>
                                     </p>
                                     <div id="UserProfilePageSettingsDropDown" class="UserProfileSettingsIconsDropDown">
-                                        <p style="margin-top: 10px;">
+                                        <p onclick="(()=>{
+                                                    showSettingsWithoutMenuToggle();
+                                                    document.getElementById('settingsDivUploadProfile').style.display = 'none';
+                                                    document.getElementById('settingsDivMainSettings').style.display = 'block';
+                                                    })()" 
+                                                style="margin-top: 10px;">
+                                            <i style="margin-right: 5px; font-size: 20px;" class="fa fa-pencil" aria-hidden="true"></i>
+                                            Edit Profile
+                                        </p>
+                                        <p onclick="showGalleryDiv();">
+                                            <i style="margin-right: 5px; font-size: 20px;" class="fa fa-picture-o" aria-hidden="true"></i>
+                                            Gallery
+                                        </p>
+                                        <p>
                                             <i style="margin-right: 5px; font-size: 20px;" class="fa fa-file-image-o" aria-hidden="true"></i>
                                             Change Cover
                                         </p>

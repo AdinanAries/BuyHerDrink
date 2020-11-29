@@ -272,7 +272,7 @@ span, p, option{
     text-align: right;
     padding: 5px;
     padding-left: 10px;
-    max-width: calc(100% - 140px);
+    width: 150px;
     float: right;
     background-color: #d4f3ff;
     border-top-left-radius: 5px;
@@ -307,6 +307,18 @@ span, p, option{
     flex-direction: column;
     justify-content: center;
 }
+#UserProfileIconsNoticationSpan{
+    display: none;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 39px;
+    height: 40px;
+    padding-top: 20px;
+    font-weight: bolder;
+    margin-left: 5px;
+    font-size: 11px;
+}
 .UserProfileSettingsIconsDropDown{
     padding-top: 10px;
     display: none;
@@ -315,7 +327,6 @@ span, p, option{
     z-index: 1;
     left: 0;
     width: 100%;
-    height: 90px;
     background-color: #d4f3ff;
     /*box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.3), 0px 0px 2.9px rgba(0, 0, 0, 0.33);*/
     border-bottom-left-radius: 5px;

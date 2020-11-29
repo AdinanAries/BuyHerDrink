@@ -4,6 +4,8 @@ var no_available_drink_offers_msg = document.getElementById("no_available_drink_
 var no_available_drink_request_msg = document.getElementById("no_available_drink_request_msg");
 var showMoreMenuOnUserProfilePageSettingsIcons = document.getElementById("showMoreMenuOnUserProfilePageSettingsIcons")
 var UserProfilePageSettingsDropDown = document.getElementById("UserProfilePageSettingsDropDown");
+var UserProfileIconsNoticationSpan = document.getElementById("UserProfileIconsNoticationSpan");
+var dropdown_hidden_options = document.getElementsByClassName("dropdown_hidden");
 var ViewOffererFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewOffererFullProfileAndMakeOfferBtns")[0];
 var ViewRequesteeFullProfileAndMakeOfferBtns = document.getElementsByClassName("ViewRequesteeFullProfileAndMakeOfferBtns")[0];
 
@@ -191,14 +193,7 @@ var showSettingsDiv = () => {
     ExploreRestaurantsDiv.style.display = "none";
     fullProfileDiv.style.display = "none";
 };
-
-$("#SettingsMenuOption").click(function(event){
-    showSettingsDiv();
-    document.getElementById("settingsDivUploadProfile").style.display = "none";
-    document.getElementById("settingsDivMainSettings").style.display = "block";
-});
-
-$("#editUserProfileIcon").click(function(){
+var showSettingsWithoutMenuToggle = ()=>{
     let UserProfileIframe = document.getElementById("UserProfileIframe");
     let DrinkRequestsIframe = document.getElementById("DrinkRequestsIframe");
     let DrinkOffersIframe = document.getElementById("DrinkOffersIframe");
@@ -216,6 +211,16 @@ $("#editUserProfileIcon").click(function(){
     DrinkOffersIframe.style.display = "none";
     ExploreRestaurantsDiv.style.display = "none";
     fullProfileDiv.style.display = "none";
+};
+
+$("#SettingsMenuOption").click(function(event){
+    showSettingsDiv();
+    document.getElementById("settingsDivUploadProfile").style.display = "none";
+    document.getElementById("settingsDivMainSettings").style.display = "block";
+});
+
+$("#editUserProfileIcon").click(function(){
+    showSettingsWithoutMenuToggle();
 });
 
 var showYourDrinkRequests = () => {
@@ -330,9 +335,10 @@ $("#DatesMenuOption").click(function(){
 });
 $("#notificationsIcon").click(function (event){
     showNotifications();
-    
 });
-
+$("#UserProfileIconsNoticationSpan").click(function (event){
+    showNotifications();
+});
 $("#galleryIcon").click(function (event){
     showGalleryDiv();
 });
@@ -473,13 +479,49 @@ function hideRestaurantPopupListByAddress() {
     
 }
 
-showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseover", ()=>{
+/*function rotateProfileSettingsDropDownCaret(degree){
+    // For webkit browsers: e.g. Chrome
+    $("#profilePageSettingsMenuDropDownbtnIcon").css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
+    // For Mozilla browser: e.g. Firefox
+    $("#profilePageSettingsMenuDropDownbtnIcon").css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
+
+    // Animate rotation with a recursive call
+    setTimeout(function() { rotateProfileSettingsDropDownCaret(++degree); },5);
+}*/
+
+UserProfilePageSettingsDropDown.style.display = "none";
+showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
     
-    $("#UserProfilePageSettingsDropDown").slideDown("fast");
+    if(UserProfilePageSettingsDropDown.style.display === "none"){
+        Array.prototype.slice.call(dropdown_hidden_options).forEach(elem => {
+            elem.style.opacity = 0;
+        });
+        $("#editUserProfileIcon").off("click");
+        $("#galleryIcon").off("click");
+        UserProfileIconsNoticationSpan.style.display = "block";
+        $("#UserProfilePageSettingsDropDown").slideDown("fast");
+        
+        document.getElementById("profilePageSettingsMenuDropDownbtnIcon").style.transform = "rotate(180deg)";
+        
+    }else{
+        Array.prototype.slice.call(dropdown_hidden_options).forEach(elem => {
+            elem.style.opacity = 1;
+        });
+        $("#editUserProfileIcon").click(function(evnt){
+            showSettingsWithoutMenuToggle();
+        });
+        $("#galleryIcon").click(function (evnt){
+            showGalleryDiv();
+        });
+        UserProfileIconsNoticationSpan.style.display = "none";
+        $("#UserProfilePageSettingsDropDown").slideUp("fast");
+        
+        document.getElementById("profilePageSettingsMenuDropDownbtnIcon").style.transform = "rotate(360deg)";
+    }
    
 });
-showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("mouseout", ()=>{
-    $("#UserProfilePageSettingsDropDown").slideUp("fast");
+showMoreMenuOnUserProfilePageSettingsIcons.addEventListener("click", ()=>{
+    
 });
 
 function ProcessImageForBase64String(Path){
