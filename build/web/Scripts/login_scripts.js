@@ -92,6 +92,17 @@ function login_function(username_param, password_param){
         data: JSON.stringify({"username": username_param, "password": password_param}),
         success: function(result){
             console.log(result);
+            var res_ob = {
+                        status: "",
+                        token_id: "",
+                        refresh_id: "",
+                        token_validity_duration: "",
+                        user_id: "",
+                        user_name: "",
+                        gender: "",
+                        age: 26,
+                        area: ""
+                    };
             //localStorage.setItem("BHDJWT", result);
             //window.location.href = "./index.jsp";
             document.getElementById("loadingPage").style.display = "none";
@@ -109,14 +120,133 @@ function login_function(username_param, password_param){
 
 //this onclick event gets the username and password inputs and try to log in
 $(document).ready(()=>{
+    //login button event listener
     document.getElementById("login_btn").addEventListener("click", (evnt)=>{
+        let all_set = true;
         evnt.preventDefault();
         document.getElementById("loadingPage").style.display = "flex";
         let username = document.getElementById("lgn_user_name_fld").value;
+        if(username === ""){
+            all_set = false;
+            document.getElementById("lgn_user_name_fld").focus();
+            document.getElementById("lgn_user_name_fld").placeholder = "please enter username";
+            document.getElementById("lgn_user_name_fld`").style.backgroundColor = "#FBEFEF";
+        }
         let password = document.getElementById("lgn_password_fld").value;
-        login_function(username, password);
+        if(password === ""){
+            all_set = false;
+            document.getElementById("lgn_password_fld").focus();
+            document.getElementById("lgn_password_fld").placeholder = "please enter password";
+            document.getElementById("lgn_password_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        
+        if(all_set){
+            login_function(username, password);
+        }
     });
+    
+    //signup button event listener
+    document.getElementById("signup_btn").addEventListener("click", (evnt)=>{
+        evnt.preventDefault();
+        let all_set = true;
+        
+        let full_name = document.getElementById("signup_full_name_fld").value;
+        if(full_name === ""){
+            all_set = false;
+            document.getElementById("signup_full_name_fld").focus();
+            document.getElementById("signup_full_name_fld").placeholder = "please enter full name";
+            document.getElementById("signup_full_name_fld").style.backgroundColor = "#FBEFEF";
+        }
+        let age = document.getElementById("signup_age_fld").value;
+        if(age === ""){
+            all_set = false;
+            document.getElementById("signup_age_fld").focus();
+            document.getElementById("signup_age_fld").placeholder = "please enter age";
+            document.getElementById("signup_age_fld").style.backgroundColor = "#FBEFEF";
+        }
+        let gender = document.getElementById("signup_gender_fld").value;
+        if(gender === ""){
+            all_set = false;
+            document.getElementById("signup_gender_fld").focus();
+            document.getElementById("signup_gender_fld").placeholder = "please enter gender";
+            document.getElementById("signup_gender_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let sexual_orientation = document.getElementById("signup_sexual_orientation_fld").value;
+        if(sexual_orientation === ""){
+            all_set = false;
+            document.getElementById("signup_sexual_orientation_fld").focus();
+            document.getElementById("signup_sexual_orientation_fld").placeholder = "please enter sexual orientation";
+            document.getElementById("signup_sexual_orientation_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let residency_address = document.getElementById("signup_address_fld").value;
+        if(residency_address === ""){
+            all_set = false;
+            document.getElementById("signup_address_fld").focus();
+            document.getElementById("signup_address_fld").placeholder = "please enter address";
+            document.getElementById("signup_address_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let email = document.getElementById("signup_email_fld").value;
+        if(email === ""){
+            all_set = false;
+            document.getElementById("signup_email_fld").focus();
+            document.getElementById("signup_email_fld").placeholder = "please enter email";
+            document.getElementById("signup_email_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let username = document.getElementById("signup_username_fld").value;
+        if(username === ""){
+            all_set = false;
+            document.getElementById("signup_username_fld").focus();
+            document.getElementById("signup_username_fld").placeholder = "please enter username";
+            document.getElementById("signup_username_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let password = document.getElementById("signup_password_fld").value;
+        if(password === ""){
+            all_set = false;
+            document.getElementById("signup_password_fld").focus();
+            document.getElementById("signup_password_fld").placeholder = "please enter password";
+            document.getElementById("signup_password_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        let confirm_password = document.getElementById("signup_confirm_password_fld");
+        if(confirm_password === ""){
+            all_set = false;
+            document.getElementById("signup_confirm_password_fld").focus();
+            document.getElementById("signup_confirm_password_fld").placeholder = "please confirm your password";
+            document.getElementById("signup_confirm_password_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        if(password !== confirm_password){
+            all_set = false;
+            document.getElementById("signup_confirm_password_fld").value = "";
+            document.getElementById("signup_confirm_password_fld").focus();
+            document.getElementById("signup_confirm_password_fld").placeholder = "passwords don't match";
+            document.getElementById("signup_confirm_password_fld`").style.backgroundColor = "#FBEFEF";
+        }
+        
+        if(all_set){
+            let postObj = {};
+
+            $.ajax({
+                beforeSend: xhrObj =>{
+                    xhrObj.setRequestHeader("Content-Type", "application/json");
+                    xhrObj.setRequestHeader("Accept", "application/json");
+                },
+                type: "POST",
+                url: "",
+                data: JSON.stringify(postObj),
+                success: res =>{
+                    console.log(res);
+                },
+                error: err => {
+                    console.log(err);
+                }
+            });
+        }
+    });
+    
+//end of $(document).ready();
 });
+
+
+
 
 //loadingPage is display: block; by default, so set it to display none when page finishes loading
 $(document).ready(()=>{

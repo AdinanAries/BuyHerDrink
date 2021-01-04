@@ -53,9 +53,9 @@
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     Register
                 </h1>
-                <input type="text" placeholder="full name"/>
-                <select>
-                    <option>21 years</option>
+                <input id="signup_full_name_fld" type="text" placeholder="full name"/>
+                <select id="signup_age_fld">
+                    <option value="21">21 years</option>
                     <option>22 years</option>
                     <option>23 years</option>
                     <option>24 years</option>
@@ -74,23 +74,30 @@
                     <option>37 years</option>
                     <option>38 years</option>
                 </select>
-                <select>
+                <select id="signup_gender_fld">
                     <option>gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
-                <select>
+                <select id="signup_sexual_orientation_fld">
                     <option>sexual orientation</option>
                     <option>Straight</option>
                     <option>Gay</option>
                     <option>Bi</option>
                     <option>Prefer Not to Say</option>
                 </select>
+                <input id="signup_email_fld" type="email" placeholder="email address"/>
                 <input id="signup_address_fld" type="text" placeholder="residence address"/>
-                <input type="password" placeholder="password"/>
-                <input type="text" placeholder="email address"/>
-                <button>Register</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
+                
+                <p style="text-align: left; margin: 10px 0; margin-top: 15px; font-size: 12px; letter-spacing: 0.6px; font-weight: bolder; color: darkblue">
+                    Add Login Information Below
+                </p>
+                <input id="signup_username_fld" type="text" placeholder="username"/>
+                <input id="signup_password_fld" type="password" placeholder="password"/>
+                <input id="signup_confirm_password_fld" type="password" placeholder="confirm password"/>
+                
+                <button id="signup_btn">Sign Up</button>
+                <p class="message">Already have an account? <a href="#">Sign In</a></p>
               </form>
               <form class="login-form">
                 <h1 style="font-weight: bolder; color: #37a0f5;
@@ -98,8 +105,9 @@
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     Login
                 </h1>
-                <input id='lgn_user_name_fld' type="text" placeholder="username"/>
+                  <input id='lgn_user_name_fld' type="text" placeholder="username" required="true"/>
                 <input id='lgn_password_fld' type="password" placeholder="password"/>
+                
                 <button id='login_btn'>login</button>
                 <p id="login_status_message" style="display: none; color: darkblue; font-size: 14px; margin: 20px 0;">
                     <i style="color: orangered; margin-right: 5px;" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
