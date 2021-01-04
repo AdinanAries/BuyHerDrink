@@ -142,9 +142,13 @@ function signup_function(name, age, gender, address, email, sex, username, passw
 $(document).ready(()=>{
     //login button event listener
     document.getElementById("login_btn").addEventListener("click", (evnt)=>{
-        let all_set = true;
-        evnt.preventDefault();
         document.getElementById("loadingPage").style.display = "flex";
+        evnt.preventDefault();
+        let all_set = true;
+        
+        document.getElementById("lgn_user_name_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("lgn_password_fld").style.backgroundColor = "#f2f2f2";
+        
         let username = document.getElementById("lgn_user_name_fld").value;
         if(username === ""){
             all_set = false;
@@ -167,8 +171,19 @@ $(document).ready(()=>{
     
     //signup button event listener
     document.getElementById("signup_btn").addEventListener("click", (evnt)=>{
+        document.getElementById("loadingPage").style.display = "flex";
         evnt.preventDefault();
         let all_set = true;
+        
+        document.getElementById("signup_full_name_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_age_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_gender_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_address_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_email_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_username_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_password_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#f2f2f2";
         
         let full_name = document.getElementById("signup_full_name_fld").value;
         if(full_name === ""){
