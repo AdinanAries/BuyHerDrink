@@ -118,6 +118,26 @@ function login_function(username_param, password_param){
     });
 }
 
+function signup_function(name, age, gender, address, email, sex, username, password){
+    let postObj = {};
+
+    $.ajax({
+        beforeSend: xhrObj =>{
+            xhrObj.setRequestHeader("Content-Type", "application/json");
+            xhrObj.setRequestHeader("Accept", "application/json");
+        },
+        type: "POST",
+        url: "",
+        data: JSON.stringify(postObj),
+        success: res =>{
+            console.log(res);
+        },
+        error: err => {
+            console.log(err);
+        }
+    });
+}
+
 //this onclick event gets the username and password inputs and try to log in
 $(document).ready(()=>{
     //login button event listener
@@ -130,14 +150,14 @@ $(document).ready(()=>{
             all_set = false;
             document.getElementById("lgn_user_name_fld").focus();
             document.getElementById("lgn_user_name_fld").placeholder = "please enter username";
-            document.getElementById("lgn_user_name_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("lgn_user_name_fld").style.backgroundColor = "#FBEFEF";
         }
         let password = document.getElementById("lgn_password_fld").value;
         if(password === ""){
             all_set = false;
             document.getElementById("lgn_password_fld").focus();
             document.getElementById("lgn_password_fld").placeholder = "please enter password";
-            document.getElementById("lgn_password_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("lgn_password_fld").style.backgroundColor = "#FBEFEF";
         }
         
         if(all_set){
@@ -169,28 +189,28 @@ $(document).ready(()=>{
             all_set = false;
             document.getElementById("signup_gender_fld").focus();
             document.getElementById("signup_gender_fld").placeholder = "please enter gender";
-            document.getElementById("signup_gender_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_gender_fld").style.backgroundColor = "#FBEFEF";
         }
         let sexual_orientation = document.getElementById("signup_sexual_orientation_fld").value;
         if(sexual_orientation === ""){
             all_set = false;
             document.getElementById("signup_sexual_orientation_fld").focus();
             document.getElementById("signup_sexual_orientation_fld").placeholder = "please enter sexual orientation";
-            document.getElementById("signup_sexual_orientation_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#FBEFEF";
         }
         let residency_address = document.getElementById("signup_address_fld").value;
         if(residency_address === ""){
             all_set = false;
             document.getElementById("signup_address_fld").focus();
             document.getElementById("signup_address_fld").placeholder = "please enter address";
-            document.getElementById("signup_address_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_address_fld").style.backgroundColor = "#FBEFEF";
         }
         let email = document.getElementById("signup_email_fld").value;
         if(email === ""){
             all_set = false;
             document.getElementById("signup_email_fld").focus();
             document.getElementById("signup_email_fld").placeholder = "please enter email";
-            document.getElementById("signup_email_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_email_fld").style.backgroundColor = "#FBEFEF";
         }
         let username = document.getElementById("signup_username_fld").value;
         if(username === ""){
@@ -204,41 +224,25 @@ $(document).ready(()=>{
             all_set = false;
             document.getElementById("signup_password_fld").focus();
             document.getElementById("signup_password_fld").placeholder = "please enter password";
-            document.getElementById("signup_password_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_password_fld").style.backgroundColor = "#FBEFEF";
         }
         let confirm_password = document.getElementById("signup_confirm_password_fld");
         if(confirm_password === ""){
             all_set = false;
             document.getElementById("signup_confirm_password_fld").focus();
             document.getElementById("signup_confirm_password_fld").placeholder = "please confirm your password";
-            document.getElementById("signup_confirm_password_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#FBEFEF";
         }
         if(password !== confirm_password){
             all_set = false;
             document.getElementById("signup_confirm_password_fld").value = "";
             document.getElementById("signup_confirm_password_fld").focus();
             document.getElementById("signup_confirm_password_fld").placeholder = "passwords don't match";
-            document.getElementById("signup_confirm_password_fld`").style.backgroundColor = "#FBEFEF";
+            document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#FBEFEF";
         }
         
         if(all_set){
-            let postObj = {};
-
-            $.ajax({
-                beforeSend: xhrObj =>{
-                    xhrObj.setRequestHeader("Content-Type", "application/json");
-                    xhrObj.setRequestHeader("Accept", "application/json");
-                },
-                type: "POST",
-                url: "",
-                data: JSON.stringify(postObj),
-                success: res =>{
-                    console.log(res);
-                },
-                error: err => {
-                    console.log(err);
-                }
-            });
+            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password);
         }
     });
     
