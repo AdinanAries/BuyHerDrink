@@ -86,19 +86,18 @@ function login_function(username_param, password_param){
         beforeSend: function(xhrObj){
             xhrObj.setRequestHeader("Content-Type","application/json");
             xhrObj.setRequestHeader("Accept","application/json");
-            xhrObj.setRequestHeader("mode:", "no-cors");
-            /*xhrObj.setRequestHeader("Access-Control-Request-Method","POST");
-            xhrObj.setRequestHeader("Host","");
-            xhrObj.setRequestHeader("Origin","http://localhost/");*/
         },
         type: "POST",
         url: "http://www.bmurphyapi.com/login",
-        data: {username: username_param, password: password_param},
+        data: JSON.stringify({"username": username_param, "password": password_param}),
         success: function(result){
             console.log(result);
             //localStorage.setItem("BHDJWT", result);
             //window.location.href = "./index.jsp";
             //document.getElementById("loadingPage").style.display = "none";
+        },
+        error: function(err){
+            console.log(err);
         }
     });
 }
