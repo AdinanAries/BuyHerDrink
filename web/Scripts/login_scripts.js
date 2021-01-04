@@ -119,6 +119,7 @@ function login_function(username_param, password_param){
 }
 
 function signup_function(name, age, gender, address, email, sex, username, password){
+    document.getElementById("loadingPage").style.display = "none";
     let postObj = {};
 
     $.ajax({
