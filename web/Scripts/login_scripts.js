@@ -118,19 +118,30 @@ function login_function(username_param, password_param){
     });
 }
 
-function signup_function(name, age, gender, address, email, sex, username, password){
+function signup_function(name_param, age_param, gender_param, address_param, email_param, sex_param, username_param, password_param, phone_param, interests_param){
     document.getElementById("loadingPage").style.display = "none";
-    let postObj = {};
+    let postObj = {
+        full_name: name_param,
+        username: username_param,
+        password: password_param,
+        email: email_param,
+        gender: gender_param,
+        age: age_param,
+        phone: phone_param,
+        sex_orientation: sex_param,
+        address: address_param,
+        interests: interests_param
+    };
 
     $.ajax({
-        beforeSend: xhrObj =>{
+        beforeSend: xhrObj => {
             xhrObj.setRequestHeader("Content-Type", "application/json");
             xhrObj.setRequestHeader("Accept", "application/json");
         },
         type: "POST",
         url: "",
         data: JSON.stringify(postObj),
-        success: res =>{
+        success: res => {
             console.log(res);
         },
         error: err => {
@@ -181,6 +192,7 @@ $(document).ready(()=>{
         document.getElementById("signup_gender_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_address_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_phone_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_email_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_username_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_password_fld").style.backgroundColor = "#f2f2f2";
@@ -228,6 +240,13 @@ $(document).ready(()=>{
             document.getElementById("signup_email_fld").placeholder = "please enter email";
             document.getElementById("signup_email_fld").style.backgroundColor = "#FBEFEF";
         }
+        let phone = document.getElementById("signup_phone_fld").value;
+        if(phone === ""){
+            all_set = false;
+            document.getElementById("signup_phone_fld").focus();
+            document.getElementById("signup_phone_fld").placeholder = "please enter email";
+            document.getElementById("signup_phone_fld").style.backgroundColor = "#FBEFEF";
+        }
         let username = document.getElementById("signup_username_fld").value;
         if(username === ""){
             all_set = false;
@@ -258,7 +277,7 @@ $(document).ready(()=>{
         }
         alert(password, confirm_password);
         if(all_set){
-            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password);
+            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password, phone);
         }
     });
     

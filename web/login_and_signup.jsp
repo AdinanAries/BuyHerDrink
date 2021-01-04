@@ -86,6 +86,7 @@
                     <option>Bi</option>
                     <option>Prefer Not to Say</option>
                 </select>
+                <input id="signup_phone_fld" type="number" placeholder="phone"/>
                 <input id="signup_email_fld" type="email" placeholder="email address"/>
                 <input id="signup_address_fld" type="text" placeholder="residence address"/>
                 
