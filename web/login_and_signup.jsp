@@ -101,6 +101,10 @@
                 <input id='lgn_user_name_fld' type="text" placeholder="username"/>
                 <input id='lgn_password_fld' type="password" placeholder="password"/>
                 <button id='login_btn'>login</button>
+                <p id="login_status_message" style="display: none; color: darkblue; font-size: 14px; margin: 20px 0;">
+                    <i style="color: orangered; margin-right: 5px;" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                   Enter correct username or password. Or sign up if you don't have an account
+                </p>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
               </form>
             </div>

@@ -94,10 +94,15 @@ function login_function(username_param, password_param){
             console.log(result);
             //localStorage.setItem("BHDJWT", result);
             //window.location.href = "./index.jsp";
-            //document.getElementById("loadingPage").style.display = "none";
+            document.getElementById("loadingPage").style.display = "none";
         },
         error: function(err){
-            console.log(err);
+            document.getElementById("loadingPage").style.display = "none";
+            //console.log(err);
+            if(err.status === 401){
+                //console.log(true);
+                document.getElementById("login_status_message").style.display = "block";
+            }
         }
     });
 }
@@ -161,3 +166,10 @@ function showPosition(position){
 }
 
 getLocation();
+
+document.getElementById("lgn_user_name_fld").addEventListener('input',(evnt)=>{
+    document.getElementById("login_status_message").style.display = "none";
+});
+document.getElementById("lgn_password_fld").addEventListener('input',(evnt)=>{
+    document.getElementById("login_status_message").style.display = "none";
+});
