@@ -65,7 +65,7 @@ $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
 
-//this function logs the user in
+/*/this function logs the user in
 function login_function(username, password){
     $.ajax({
         type: "GET",
@@ -78,11 +78,35 @@ function login_function(username, password){
             //document.getElementById("loadingPage").style.display = "none";
         }
     });
+}*/
+
+//this function logs the user in
+function login_function(username_param, password_param){
+    $.ajax({
+        beforeSend: function(xhrObj){
+            xhrObj.setRequestHeader("Content-Type","application/json");
+            xhrObj.setRequestHeader("Accept","application/json");
+            xhrObj.setRequestHeader("mode:", "no-cors");
+            /*xhrObj.setRequestHeader("Access-Control-Request-Method","POST");
+            xhrObj.setRequestHeader("Host","");
+            xhrObj.setRequestHeader("Origin","http://localhost/");*/
+        },
+        type: "POST",
+        url: "http://www.bmurphyapi.com/login",
+        data: {username: username_param, password: password_param},
+        success: function(result){
+            console.log(result);
+            //localStorage.setItem("BHDJWT", result);
+            //window.location.href = "./index.jsp";
+            //document.getElementById("loadingPage").style.display = "none";
+        }
+    });
 }
 
 //this onclick event gets the username and password inputs and try to log in
 $(document).ready(()=>{
-    document.getElementById("login_btn").addEventListener("click", ()=>{
+    document.getElementById("login_btn").addEventListener("click", (evnt)=>{
+        evnt.preventDefault();
         document.getElementById("loadingPage").style.display = "flex";
         let username = document.getElementById("lgn_user_name_fld").value;
         let password = document.getElementById("lgn_password_fld").value;
