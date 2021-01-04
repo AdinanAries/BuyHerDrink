@@ -132,7 +132,9 @@ function signup_function(name_param, age_param, gender_param, address_param, ema
         address: address_param,
         interests: interests_param
     };
-
+    
+    console.log(postObj);
+    
     $.ajax({
         beforeSend: xhrObj => {
             xhrObj.setRequestHeader("Content-Type", "application/json");
@@ -191,6 +193,7 @@ $(document).ready(()=>{
         document.getElementById("signup_age_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_gender_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#f2f2f2";
+        document.getElementById("signup_interest_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_address_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_phone_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_email_fld").style.backgroundColor = "#f2f2f2";
@@ -206,25 +209,32 @@ $(document).ready(()=>{
             document.getElementById("signup_full_name_fld").style.backgroundColor = "#FBEFEF";
         }
         let age = document.getElementById("signup_age_fld").value;
-        if(age === ""){
+        if(age === "default"){
             all_set = false;
             document.getElementById("signup_age_fld").focus();
             document.getElementById("signup_age_fld").placeholder = "please enter age";
             document.getElementById("signup_age_fld").style.backgroundColor = "#FBEFEF";
         }
         let gender = document.getElementById("signup_gender_fld").value;
-        if(gender === ""){
+        if(gender === "default"){
             all_set = false;
             document.getElementById("signup_gender_fld").focus();
             document.getElementById("signup_gender_fld").placeholder = "please enter gender";
             document.getElementById("signup_gender_fld").style.backgroundColor = "#FBEFEF";
         }
         let sexual_orientation = document.getElementById("signup_sexual_orientation_fld").value;
-        if(sexual_orientation === ""){
+        if(sexual_orientation === "default"){
             all_set = false;
             document.getElementById("signup_sexual_orientation_fld").focus();
             document.getElementById("signup_sexual_orientation_fld").placeholder = "please enter sexual orientation";
             document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#FBEFEF";
+        }
+        let interest = document.getElementById("signup_interest_fld").value;
+        if(gender === "default"){
+            all_set = false;
+            document.getElementById("signup_interest_fld").focus();
+            document.getElementById("signup_interest_fld").placeholder = "please pick your interest";
+            document.getElementById("signup_interest_fld").style.backgroundColor = "#FBEFEF";
         }
         let residency_address = document.getElementById("signup_address_fld").value;
         if(residency_address === ""){
@@ -244,7 +254,7 @@ $(document).ready(()=>{
         if(phone === ""){
             all_set = false;
             document.getElementById("signup_phone_fld").focus();
-            document.getElementById("signup_phone_fld").placeholder = "please enter email";
+            document.getElementById("signup_phone_fld").placeholder = "please enter phone";
             document.getElementById("signup_phone_fld").style.backgroundColor = "#FBEFEF";
         }
         let username = document.getElementById("signup_username_fld").value;
@@ -275,9 +285,8 @@ $(document).ready(()=>{
             document.getElementById("signup_confirm_password_fld").placeholder = "passwords don't match";
             document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#FBEFEF";
         }
-        alert(password, confirm_password);
         if(all_set){
-            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password, phone);
+            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password, phone, interest);
         }
     });
     

@@ -55,6 +55,7 @@
                 </h1>
                 <input id="signup_full_name_fld" type="text" placeholder="full name"/>
                 <select id="signup_age_fld">
+                    <option value="default">Age</option>
                     <option value="21">21 years</option>
                     <option>22 years</option>
                     <option>23 years</option>
@@ -75,12 +76,18 @@
                     <option>38 years</option>
                 </select>
                 <select id="signup_gender_fld">
-                    <option>gender</option>
+                    <option value="default">gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
+                <select id="signup_interest_fld">
+                    <option value="default">Interested in</option>
+                    <option>Men</option>
+                    <option>Women</option>
+                    <option>Both</option>
+                </select>
                 <select id="signup_sexual_orientation_fld">
-                    <option>sexual orientation</option>
+                    <option value="default">sexual orientation</option>
                     <option>Straight</option>
                     <option>Gay</option>
                     <option>Bi</option>
