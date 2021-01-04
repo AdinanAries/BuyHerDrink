@@ -172,7 +172,7 @@ $(document).ready(()=>{
     
     //signup button event listener
     document.getElementById("signup_btn").addEventListener("click", (evnt)=>{
-        document.getElementById("loadingPage").style.display = "flex";
+        //document.getElementById("loadingPage").style.display = "flex";
         evnt.preventDefault();
         let all_set = true;
         
@@ -242,7 +242,7 @@ $(document).ready(()=>{
             document.getElementById("signup_password_fld").placeholder = "please enter password";
             document.getElementById("signup_password_fld").style.backgroundColor = "#FBEFEF";
         }
-        let confirm_password = document.getElementById("signup_confirm_password_fld");
+        let confirm_password = document.getElementById("signup_confirm_password_fld").value;
         if(confirm_password === ""){
             all_set = false;
             document.getElementById("signup_confirm_password_fld").focus();
@@ -256,7 +256,7 @@ $(document).ready(()=>{
             document.getElementById("signup_confirm_password_fld").placeholder = "passwords don't match";
             document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#FBEFEF";
         }
-        
+        alert(password, confirm_password);
         if(all_set){
             signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password);
         }
