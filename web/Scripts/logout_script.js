@@ -1,6 +1,7 @@
 
 function logout_function(userToken){
-    $.ajax({
+    window.location.href = "./login_and_signup.jsp";
+    /*$.ajax({
         type: "GET",
         url: "./logout_controller",
         data: "user_token="+userToken,
@@ -10,7 +11,7 @@ function logout_function(userToken){
                 window.location.href = "./login_and_signup.jsp";
             }
         }
-    });
+    });*/
 }
 
 function clean_mess(){

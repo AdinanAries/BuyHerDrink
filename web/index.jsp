@@ -67,14 +67,17 @@ and open the template in the editor.
         
         //flow control that handles whether user gets sent to login/signup page or checkes if verification of token is needed to allow user login
         //if userToken is null, then it is not present in localStorage
-        if(userToken === null){
-            window.location.href = "./login_and_signup.jsp";
-        }else{
-            checkUserLoginStatus();
-            $(document).ready(()=>{
-                display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
-            });
-        }
+        $(document).ready(()=> {
+            if(userToken === null){
+                window.location.href = "./login_and_signup.jsp";
+            }else{
+                document.getElementById("loadingPage").style.display = "none";
+                //checkUserLoginStatus();
+                $(document).ready(()=>{
+                    display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
+                });
+            }
+        });
         
         
     </script>

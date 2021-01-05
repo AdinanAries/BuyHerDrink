@@ -91,21 +91,21 @@ function login_function(username_param, password_param){
         url: "http://www.bmurphyapi.com/login",
         data: JSON.stringify({"username": username_param, "password": password_param}),
         success: function(result){
-            console.log(result);
-            var res_ob = {
-                        status: "",
-                        token_id: "",
-                        refresh_id: "",
+            //console.log(result);
+            var res_obj = {
+                        status: "success",
+                        token_id: result.access_token,
+                        refresh_id: result.refresh_token,
                         token_validity_duration: "",
-                        user_id: "",
-                        user_name: "",
-                        gender: "",
-                        age: 26,
-                        area: ""
+                        user_id: result.user_id,
+                        user_name: result.user_name,
+                        gender: result.gender,
+                        age: result.age,
+                        area: result.area
                     };
-            //localStorage.setItem("BHDJWT", result);
-            //window.location.href = "./index.jsp";
-            document.getElementById("loadingPage").style.display = "none";
+                    //console.log(res_obj)
+            localStorage.setItem("BHDJWT", JSON.stringify(res_obj));
+            window.location.href = "./index.jsp";
         },
         error: function(err){
             document.getElementById("loadingPage").style.display = "none";
@@ -118,22 +118,21 @@ function login_function(username_param, password_param){
     });
 }
 
-function signup_function(name_param, age_param, gender_param, address_param, email_param, sex_param, username_param, password_param, phone_param, interests_param){
-    document.getElementById("loadingPage").style.display = "none";
+function signup_function(name_param, age_param, gender_param, address_param, email_param, username_param, password_param, phone_param, interests_param){
+    
     let postObj = {
-        full_name: name_param,
+        name: name_param,
         username: username_param,
         password: password_param,
         email: email_param,
-        gender: gender_param,
+        sex_orientation: gender_param,
         age: age_param,
         phone: phone_param,
-        sex_orientation: sex_param,
         address: address_param,
         interests: interests_param
     };
     
-    console.log(postObj);
+    //console.log(postObj);
     
     $.ajax({
         beforeSend: xhrObj => {
@@ -141,13 +140,17 @@ function signup_function(name_param, age_param, gender_param, address_param, ema
             xhrObj.setRequestHeader("Accept", "application/json");
         },
         type: "POST",
-        url: "",
+        url: "http://www.bmurphyapi.com/register",
         data: JSON.stringify(postObj),
         success: res => {
+            
             console.log(res);
+            //document.getElementById("loadingPage").style.display = "none";
+            login_function(username_param, password_param);
         },
         error: err => {
             console.log(err);
+            document.getElementById("loadingPage").style.display = "none";
         }
     });
 }
@@ -185,14 +188,13 @@ $(document).ready(()=>{
     
     //signup button event listener
     document.getElementById("signup_btn").addEventListener("click", (evnt)=>{
-        //document.getElementById("loadingPage").style.display = "flex";
+        document.getElementById("loadingPage").style.display = "flex";
         evnt.preventDefault();
         let all_set = true;
         
         document.getElementById("signup_full_name_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_age_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_gender_fld").style.backgroundColor = "#f2f2f2";
-        document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_interest_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_address_fld").style.backgroundColor = "#f2f2f2";
         document.getElementById("signup_phone_fld").style.backgroundColor = "#f2f2f2";
@@ -221,13 +223,6 @@ $(document).ready(()=>{
             document.getElementById("signup_gender_fld").focus();
             document.getElementById("signup_gender_fld").placeholder = "please enter gender";
             document.getElementById("signup_gender_fld").style.backgroundColor = "#FBEFEF";
-        }
-        let sexual_orientation = document.getElementById("signup_sexual_orientation_fld").value;
-        if(sexual_orientation === "default"){
-            all_set = false;
-            document.getElementById("signup_sexual_orientation_fld").focus();
-            document.getElementById("signup_sexual_orientation_fld").placeholder = "please enter sexual orientation";
-            document.getElementById("signup_sexual_orientation_fld").style.backgroundColor = "#FBEFEF";
         }
         let interest = document.getElementById("signup_interest_fld").value;
         if(gender === "default"){
@@ -286,7 +281,7 @@ $(document).ready(()=>{
             document.getElementById("signup_confirm_password_fld").style.backgroundColor = "#FBEFEF";
         }
         if(all_set){
-            signup_function(full_name, age, gender, residency_address, email, sexual_orientation, username, password, phone, interest);
+            signup_function(full_name, age, gender, residency_address, email, username, password, phone, interest);
         }
     });
     
