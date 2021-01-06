@@ -247,7 +247,8 @@ span, p, option{
     height: 100px;
     background-size: cover;
     background-position: center;
-    background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");
+    background-color: #f2f2f2;
+    /*background-image: url("../Pictures/ProfilePicPlaceHolder.jpg");*/
     background-position: center;
 }
 .ProfilePicture{
@@ -257,8 +258,12 @@ span, p, option{
     height: 100px;
     float: left;
     margin-left: 5px;
-    background-color: darkgrey;
+    background-color: pink;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     /*background-size: cover;
     object-fit: cover;
    background-position: center;*/
@@ -266,6 +271,10 @@ span, p, option{
 .ProfilePicture img{
     width: 100px;
     height: auto;
+}
+.ProfilePicture i{
+    font-size: 50px;
+    color: hotpink;
 }
 .UserProfileSettingsIcons{
     position: relative;

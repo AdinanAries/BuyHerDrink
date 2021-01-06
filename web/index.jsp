@@ -48,6 +48,16 @@ and open the template in the editor.
             document.getElementById("user_info_address_display").innerText = address;
         };
         
+        function display_user_current_settings(full_name, age, gender, email, phone, address, interests){
+            document.getElementById("setting_page_full_name_fld").value = full_name;
+            document.getElementById("setting_page_age_fld").value = age;
+            document.getElementById("setting_page_gender_fld").value = gender;
+            document.getElementById("setting_page_email_fld").value = email;
+            document.getElementById("setting_page_phone_fld").value = phone;
+            document.getElementById("setting_page_interest_fld").value = interests;
+            document.getElementById("setting_page_address_fld").value = address;
+        }
+        
         //function that calls the backend server to verify if user's tokenId is valid as a logged in user
         function checkUserLoginStatus(){
             $.ajax({
@@ -73,8 +83,28 @@ and open the template in the editor.
             }else{
                 document.getElementById("loadingPage").style.display = "none";
                 //checkUserLoginStatus();
+                console.log(userToken.token_id);
                 $(document).ready(()=>{
+                    $.ajax({
+                        beforeSend: xhrObj => {
+                            xhrObj.setRequestHeader("Authorization", ("Bearer " + userToken.token_id));
+                            xhrObj.setRequestHeader("Accept", "application/json");
+                        },
+                        type: "GET",
+                        url: "http://www.bmurphyapi.com/getusers",
+                        data: "user_id="+userToken.user_id,
+                        success: res =>{
+                            window.localStorage.setItem("BHDUserData", JSON.stringify(res));
+                            display_user_current_settings(res.name, res.age, res.sex_orientation, res.email, res.phone, res.address, res.interests);
+                            //console.log(res);
+                        },
+                        error: err =>{
+                            console.log(err);
+                        }
+                    });
+                    
                     display_user_profile_info(userToken.user_name, userToken.gender, userToken.age, userToken.area);
+                    
                 });
             }
         });
@@ -292,7 +322,8 @@ and open the template in the editor.
                         <div class='ProfileDetailsDiv'>
                             <div class="ProfileCover">
                                 <div id="dashboardProfilePic" class='ProfilePicture'>
-                                    <img src="Pictures/ProfilePicPlaceHolder.jpg" alt="">
+                                    <!--img src="Pictures/ProfilePicPlaceHolder.jpg" alt=""-->
+                                    <i class='fa fa-user' aria-hidden='true'></i>
                                 </div>
                                 <div class="UserProfileSettingsIcons">
                                     <div id="UserProfileIconsNoticationSpan">Notifications</div>
@@ -374,7 +405,32 @@ and open the template in the editor.
                                 </table>
                             </div>
                         </div>
-                        <div class='PublishRequestDiv'>
+                        <div style="background-color: #e8e8e8; padding: 10px 0;">
+                            <p style="font-size: 14px; color: darkblue; font-weight: bolder; text-align: center;">
+                                Choose type of date?</p>
+                            <div style="display: flex; flex-direction: row !important; padding: 10px; justify-content: space-between;" 
+                                 id="home_or_restaurant_date_btns">
+                                <div style="width: 49%; display: flex; flex-direction: row !important; justify-content: center;">
+                                    <div>
+                                        <input id="restaurant_type_date_btn" style="margin-right: 5px; width: 12px; height: 12px;" type="radio" name="date_type" checked />
+                                        <label for="restaurant_type_date_btn">
+                                            <span style="font-size: 14px; color: steelblue;">Restaurant/Bar Date</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div style="width: 49%; display: flex; flex-direction: row !important; justify-content: center;">
+                                    <div><input id="home_type_date_btn" style="margin-right: 5px; width: 12px; height: 12px;" type="radio" name="date_type" />
+                                        <label for="home_type_date_btn">
+                                            <span style="font-size: 14px; color: steelblue;">Home Date 
+                                                <span style="font-size: 10px; padding: 2px 5px; background: red; color: white; border-radius: 3px;">
+                                                new</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="restaurant_date_container" class='PublishRequestDiv'>
                             <p style="text-align: center; font-weight: bolder; margin-top: 15px; font-size: 16px;">Publish Drink Request Below</p>
                             <p style="margin: 10px 5px; margin-bottom: 15px; font-size: 15px; color: darkgray; text-align: center;">
                                     A drink request lets you reach out for potential date.
@@ -580,6 +636,13 @@ and open the template in the editor.
                                     </div>
                                 <!--p class="UserProfilePageSubmitDrinkRequestBtn"></p-->
                             </div>
+                        </div>
+                        <div style="display: none;" id="home_date_container">
+                            <p style="text-align: center; font-weight: bolder; margin-top: 15px; font-size: 16px;">Publish Home Date Below</p>
+                            <p style="margin: 10px 5px; margin-bottom: 15px; font-size: 15px; color: darkgray; text-align: center;">
+                                Home Date is a new feature that BuyHerDrink implements to help you arrange a 'come to my place date'.
+                                This feature is also important in order to meet the new requirements in society due to Covid19.
+                            </p>
                         </div>
                     </div>
                     <div id="DrinkRequestsIframe">
@@ -868,20 +931,20 @@ and open the template in the editor.
                                     <tr>
                                         <td style="background-color: #D9DADC;">
                                             <div style="font-size: 14px;">Full Name: <br/>
-                                                <span><input type="text" value="Mohammed Adinan"/></span></div>
+                                                <span><input id='setting_page_full_name_fld' type="text" value=""/></span></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="background-color: #ffffff;">
                                             <div style="font-size: 14px;">Age: <br/>
-                                                <span><input type="text" value="26"/></span></div>
+                                                <span><input id='setting_page_age_fld' type="text" value=""/></span></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="background-color: #D9DADC;">
                                             <div style="font-size: 14px;">Sex: <br/>
                                                 <span>
-                                                    <select style="max-width: 200px;"> 
+                                                    <select id='setting_page_gender_fld' style="max-width: 200px;"> 
                                                         <option>Male</option> 
                                                         <option>Female</option>
                                                         <option>Prefer not to say</option>
@@ -894,13 +957,19 @@ and open the template in the editor.
                                         <td style="background-color: #ffffff;">
                                             <p class='status_1'>your email is not verified</p>
                                             <div style="font-size: 14px;">Email: <br/>
-                                                <span><input type="text" value="m.adinan@yahoo.com"/></span></div>
+                                                <span><input id='setting_page_email_fld' type="text" value=""/></span></div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="background-color: #D9DADC;">
                                             <div style="font-size: 14px;">Phone: <br/>
-                                                <span><input type="text" value="8482481118"/></span></div>
+                                                <span><input id='setting_page_phone_fld' type="text" value="8482481118"/></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ffffff;">
+                                            <div style="font-size: 14px;">Address: <br/>
+                                                <span><input id='setting_page_address_fld' type="text" value=""/></span></div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -913,9 +982,9 @@ and open the template in the editor.
                                         <td style="background-color: #D9DADC;">
                                             <div style="font-size: 14px;">Interests: <br/>
                                                 <span>
-                                                    <select style="max-width: 200px;"> 
-                                                        <option>Male</option> 
-                                                        <option>Female</option>
+                                                    <select id='setting_page_interest_fld' style="max-width: 200px;"> 
+                                                        <option>Men</option> 
+                                                        <option>Women</option>
                                                         <option>Both</option>
                                                     </select>
                                                 </span>
@@ -935,6 +1004,22 @@ and open the template in the editor.
                 <div class='Footer'><p style='color: white; font-weight: bolder; margin-right: 10px; font-size: 15px;'>BuyHerDrink 2020</p></div>
             </div>
         </div>
+        <script>
+            function show_home_dates_forms(){
+                $("#restaurant_date_container").slideUp("fast");
+                $("#home_date_container").slideDown("fast");
+            }
+            document.getElementById("home_type_date_btn").addEventListener("click", (evnt)=>{
+                show_home_dates_forms();
+            });
+            function show_restaurant_dates_forms(){
+                $("#home_date_container").slideUp("fast");
+                $("#restaurant_date_container").slideDown("fast");
+            }
+            document.getElementById("restaurant_type_date_btn").addEventListener("click", (evnt)=>{
+                show_restaurant_dates_forms();
+            });
+        </script>
         <script src="Scripts/client_side_proccesses.js" type="text/javascript"></script>
         <script src="Scripts/places_search.js" type="text/javascript"></script>
         <script src="Scripts/logout_script.js" type="text/javascript"></script>
