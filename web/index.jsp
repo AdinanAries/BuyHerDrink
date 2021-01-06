@@ -380,9 +380,9 @@ and open the template in the editor.
                                 <p style="height: 0; clear: both;"></p>
                             </div>
                             <div class='ProfileDetailsInfoDiv'>
-                                <p id='user_info_name_display' style="font-weight: bolder;"></p>
-                                <p><span style='font-size: 16px;' id='user_info_gender_display'></span>, <span style='font-size: 16px;' id='user_info_age_display'></span> years</p>
-                                <p id='user_info_address_display'></p>
+                                <p id='user_info_name_display' style="font-weight: bolder; color: #4d4d4ds;"></p>
+                                <p style="opacity: 0.7;"><span style='font-size: 16px;' id='user_info_gender_display'></span>, <span style='font-size: 16px;' id='user_info_age_display'></span> years</p>
+                                <p style='opacity: 0.7' id='user_info_address_display'></p>
                             </div>
                             <div class="ActivitiesAndDrinkOffersBtn">
                                 <table style="width: 100%;">
